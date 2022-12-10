@@ -23,7 +23,7 @@ import javax.swing.JToolBar;
 
 /**
  *
- * @author sushmitamaity
+ * @author harshita
  */
 public class KGradientPanel extends JPanel {
 
