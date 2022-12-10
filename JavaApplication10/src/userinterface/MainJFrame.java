@@ -19,7 +19,7 @@ import userinterface.PatientLogin.CreateNewPatientSelfJPanel;
 
 /**
  *
- * @author harshita
+ * @author sushmitamaity
  */
 public class MainJFrame extends javax.swing.JFrame {
 
@@ -31,6 +31,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
     static boolean maximized = true;
     static ImageIcon ii;
+
     public MainJFrame() {
         initComponents();
         system = dB4OUtil.retrieveSystem();
@@ -48,22 +49,22 @@ public class MainJFrame extends javax.swing.JFrame {
 
         jSplitPane1 = new javax.swing.JSplitPane();
         jPanel1 = new javax.swing.JPanel();
-        loginJButton = new javax.swing.JButton();
-        userNameJTextField = new javax.swing.JTextField();
-        passwordField = new javax.swing.JPasswordField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        btnLogin = new javax.swing.JButton();
+        txtUsername = new javax.swing.JTextField();
+        txtPasswordField = new javax.swing.JPasswordField();
+        lblUsername = new javax.swing.JLabel();
+        lblPassword = new javax.swing.JLabel();
         loginJLabel = new javax.swing.JLabel();
-        logoutJButton = new javax.swing.JButton();
+        btnLogout = new javax.swing.JButton();
         close = new javax.swing.JLabel();
         maximizer = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        registerBtn = new javax.swing.JButton();
+        SideSubHeading = new javax.swing.JLabel();
+        btnRegister = new javax.swing.JButton();
         container = new javax.swing.JPanel();
+        kGradientPanel1 = new userinterface.KGradientPanel();
+        lblHero = new javax.swing.JLabel();
+        lblHeroHeading = new javax.swing.JLabel();
+        lblHeroSubHeading = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -72,7 +73,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jSplitPane1.setBackground(new java.awt.Color(255, 255, 255));
         jSplitPane1.setDividerLocation(200);
 
-        jPanel1.setBackground(new java.awt.Color(68, 145, 157));
+        jPanel1.setBackground(new java.awt.Color(137, 207, 225));
         jPanel1.setToolTipText("");
         jPanel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
@@ -86,52 +87,52 @@ public class MainJFrame extends javax.swing.JFrame {
         });
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        loginJButton.setFont(new java.awt.Font("Cochin", 1, 12)); // NOI18N
-        loginJButton.setText("LOGIN");
-        loginJButton.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 204, 255)));
-        loginJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnLogin.setBackground(new java.awt.Color(153, 51, 0));
+        btnLogin.setFont(new java.awt.Font("Cochin", 1, 14)); // NOI18N
+        btnLogin.setForeground(new java.awt.Color(255, 255, 255));
+        btnLogin.setText("LOGIN");
+        btnLogin.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 204, 255)));
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginJButtonActionPerformed(evt);
+                btnLoginActionPerformed(evt);
             }
         });
-        jPanel1.add(loginJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 138, 32));
+        jPanel1.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 140, 35));
 
-        userNameJTextField.setBackground(new java.awt.Color(196, 224, 229));
-        userNameJTextField.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
-        userNameJTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 2, 1, new java.awt.Color(255, 255, 255)));
-        userNameJTextField.addActionListener(new java.awt.event.ActionListener() {
+        txtUsername.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        txtUsername.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 2, 1, new java.awt.Color(255, 255, 255)));
+        txtUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                userNameJTextFieldActionPerformed(evt);
+                txtUsernameActionPerformed(evt);
             }
         });
-        jPanel1.add(userNameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 160, 30));
+        jPanel1.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 160, 30));
 
-        passwordField.setBackground(new java.awt.Color(196, 224, 229));
-        passwordField.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
-        passwordField.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 2, 1, new java.awt.Color(255, 255, 255)));
-        jPanel1.add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, 160, 30));
+        txtPasswordField.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        txtPasswordField.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 2, 1, new java.awt.Color(255, 255, 255)));
+        jPanel1.add(txtPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 160, 30));
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("User Name:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 323, -1, -1));
+        lblUsername.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblUsername.setForeground(new java.awt.Color(255, 255, 255));
+        lblUsername.setText("User Name:");
+        jPanel1.add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, -1, 30));
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Password:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 410, -1, -1));
+        lblPassword.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblPassword.setForeground(new java.awt.Color(255, 255, 255));
+        lblPassword.setText("Password:");
+        jPanel1.add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, -1, -1));
         jPanel1.add(loginJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(157, 210, -1, -1));
 
-        logoutJButton.setFont(new java.awt.Font("Cochin", 1, 12)); // NOI18N
-        logoutJButton.setText("LOGOUT");
-        logoutJButton.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 204, 255)));
-        logoutJButton.setEnabled(false);
-        logoutJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnLogout.setFont(new java.awt.Font("Cochin", 1, 12)); // NOI18N
+        btnLogout.setText("LOGOUT");
+        btnLogout.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 204, 255)));
+        btnLogout.setEnabled(false);
+        btnLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logoutJButtonActionPerformed(evt);
+                btnLogoutActionPerformed(evt);
             }
         });
-        jPanel1.add(logoutJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, 138, 28));
+        jPanel1.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 590, 140, 35));
 
         close.setBackground(new java.awt.Color(255, 255, 255));
         close.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/cancel.png"))); // NOI18N
@@ -150,40 +151,24 @@ public class MainJFrame extends javax.swing.JFrame {
         });
         jPanel1.add(maximizer, new org.netbeans.lib.awtextra.AbsoluteConstraints(68, 13, 29, 28));
 
-        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("SAM Medcare ");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, -1, 40));
+        SideSubHeading.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        SideSubHeading.setForeground(new java.awt.Color(255, 255, 255));
+        SideSubHeading.setText("Please Login!");
+        jPanel1.add(SideSubHeading, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, 40));
 
-        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("For you!");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, -1, 40));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/user (7).png"))); // NOI18N
-        jLabel4.setToolTipText("");
-        jLabel4.setMaximumSize(new java.awt.Dimension(50, 50));
-        jLabel4.setMinimumSize(new java.awt.Dimension(50, 50));
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 135, 160));
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/house-key (1).png"))); // NOI18N
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 30, 30));
-
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/user (6).png"))); // NOI18N
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 310, 30, 30));
-
-        registerBtn.setFont(new java.awt.Font("Cochin", 1, 12)); // NOI18N
-        registerBtn.setText("REGISTER");
-        registerBtn.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 204, 255)));
-        registerBtn.addActionListener(new java.awt.event.ActionListener() {
+        btnRegister.setFont(new java.awt.Font("Cochin", 1, 12)); // NOI18N
+        btnRegister.setText("REGISTER");
+        btnRegister.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 204, 255)));
+        btnRegister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                registerBtnActionPerformed(evt);
+                btnRegisterActionPerformed(evt);
             }
         });
-        jPanel1.add(registerBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 600, 138, 32));
+        jPanel1.add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 540, 140, 35));
 
         jSplitPane1.setLeftComponent(jPanel1);
 
+        container.setBackground(new java.awt.Color(161, 237, 246));
         container.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 containerMouseDragged(evt);
@@ -195,86 +180,125 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
         container.setLayout(new java.awt.CardLayout());
+
+        lblHero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/herobg.jpeg"))); // NOI18N
+
+        lblHeroHeading.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        lblHeroHeading.setForeground(new java.awt.Color(255, 255, 255));
+        lblHeroHeading.setText("Effective Health Care");
+
+        lblHeroSubHeading.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblHeroSubHeading.setForeground(new java.awt.Color(255, 255, 255));
+        lblHeroSubHeading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblHeroSubHeading.setText("Exceptional Care Close to You.");
+        lblHeroSubHeading.setToolTipText("");
+
+        javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
+        kGradientPanel1.setLayout(kGradientPanel1Layout);
+        kGradientPanel1Layout.setHorizontalGroup(
+            kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                .addComponent(lblHero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                .addGap(315, 315, 315)
+                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblHeroSubHeading, javax.swing.GroupLayout.PREFERRED_SIZE, 401, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblHeroHeading, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        kGradientPanel1Layout.setVerticalGroup(
+            kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addComponent(lblHeroHeading, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblHeroSubHeading, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
+                .addComponent(lblHero, javax.swing.GroupLayout.PREFERRED_SIZE, 523, Short.MAX_VALUE)
+                .addGap(67, 67, 67))
+        );
+
+        container.add(kGradientPanel1, "card2");
+
         jSplitPane1.setRightComponent(container);
 
-        getContentPane().add(jSplitPane1, java.awt.BorderLayout.CENTER);
+        getContentPane().add(jSplitPane1, java.awt.BorderLayout.PAGE_START);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void loginJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginJButtonActionPerformed
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // Get user name
-        String userName = userNameJTextField.getText();
+        String userName = txtUsername.getText();
         // Get Password
-        char[] passwordCharArray = passwordField.getPassword();
+        char[] passwordCharArray = txtPasswordField.getPassword();
         String password = String.valueOf(passwordCharArray);
-        
+
         //Step1: Check in the system admin user account directory if you have the user
-        UserAccount userAccount=system.getUserAccountDirectory().authenticateUser(userName, password);
-        
-        Enterprise inEnterprise=null;
-        Organization inOrganization=null;
-        Network assignedNetwork=null;
-        if(userAccount==null){
+        UserAccount userAccount = system.getUserAccountDirectory().authenticateUser(userName, password);
+
+        Enterprise inEnterprise = null;
+        Organization inOrganization = null;
+        Network assignedNetwork = null;
+        if (userAccount == null) {
             //Step 2: Go inside each network and check each enterprise
-            for(Network network:system.getNetworkList()){
+            for (Network network : system.getNetworkList()) {
                 //Step 2.a: check against each enterprise
-                for(Enterprise enterprise:network.getEnterpriseDirectory().getEnterpriseList()){
-                    userAccount=enterprise.getUserAccountDirectory().authenticateUser(userName, password);
-                    if(userAccount==null){
-                       //Step 3:check against each organization for each enterprise
-                       for(Organization organization:enterprise.getOrganizationDirectory().getOrganizationList()){
-                           userAccount=organization.getUserAccountDirectory().authenticateUser(userName, password);
-                           if(userAccount!=null){
-                               inEnterprise=enterprise;
-                               inOrganization=organization;
-                               assignedNetwork = network;
-                               break;
-                           }
-                       }
-                        
-                    }
-                    else{
-                       inEnterprise=enterprise;
-                       break;
-                    }
-                    if(inOrganization!=null){
+                for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
+                    userAccount = enterprise.getUserAccountDirectory().authenticateUser(userName, password);
+                    if (userAccount == null) {
+                        //Step 3:check against each organization for each enterprise
+                        for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
+                            userAccount = organization.getUserAccountDirectory().authenticateUser(userName, password);
+                            if (userAccount != null) {
+                                inEnterprise = enterprise;
+                                inOrganization = organization;
+                                assignedNetwork = network;
+                                break;
+                            }
+                        }
+
+                    } else {
+                        inEnterprise = enterprise;
                         break;
-                    }  
+                    }
+                    if (inOrganization != null) {
+                        break;
+                    }
                 }
-                if(inEnterprise!=null){
+                if (inEnterprise != null) {
                     break;
                 }
             }
         }
-        
-        if(userAccount==null){
+
+        if (userAccount == null) {
             JOptionPane.showMessageDialog(null, "Invalid credentials");
             return;
-        }
-        else{
-            CardLayout layout=(CardLayout)container.getLayout();
-            container.add("workArea",userAccount.getRole().createWorkArea(container, userAccount, inOrganization, inEnterprise, system));
+        } else {
+            CardLayout layout = (CardLayout) container.getLayout();
+            container.add("workArea", userAccount.getRole().createWorkArea(container, userAccount, inOrganization, inEnterprise, system));
             //System.out.println("In network-> "+ assignedNetwork.getName());
             layout.next(container);
         }
-        
-        loginJButton.setEnabled(false);
-        logoutJButton.setEnabled(true);
-        userNameJTextField.setEnabled(false);
-        passwordField.setEnabled(false);
-        registerBtn.setEnabled(false);
-    }//GEN-LAST:event_loginJButtonActionPerformed
 
-    private void logoutJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutJButtonActionPerformed
-        logoutJButton.setEnabled(false);
-        userNameJTextField.setEnabled(true);
-        passwordField.setEnabled(true);
-        loginJButton.setEnabled(true);
+        btnLogin.setEnabled(false);
+        btnLogout.setEnabled(true);
+        txtUsername.setEnabled(false);
+        txtPasswordField.setEnabled(false);
+        btnRegister.setEnabled(false);
+    }//GEN-LAST:event_btnLoginActionPerformed
 
-        registerBtn.setEnabled(true);
-        userNameJTextField.setText("");
-        passwordField.setText("");
+    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
+        btnLogout.setEnabled(false);
+        txtUsername.setEnabled(true);
+        txtPasswordField.setEnabled(true);
+        btnLogin.setEnabled(true);
+
+        btnRegister.setEnabled(true);
+        txtUsername.setText("");
+        txtPasswordField.setText("");
 
         container.removeAll();
         //JPanel blankJP = new JPanel();
@@ -283,93 +307,89 @@ public class MainJFrame extends javax.swing.JFrame {
         CardLayout crdLyt = (CardLayout) container.getLayout();
         crdLyt.next(container);
         dB4OUtil.storeSystem(system);
-    }//GEN-LAST:event_logoutJButtonActionPerformed
+    }//GEN-LAST:event_btnLogoutActionPerformed
 
     private void closeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeMouseClicked
         // TODO add your handling code here:
-         System.exit(0);
+//        System.exit(0);
     }//GEN-LAST:event_closeMouseClicked
 
     private void maximizerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_maximizerMouseClicked
         // TODO add your handling code here:
-        
-         if(maximized)
-        {
-            //handle fullscreen - taskbar
-            MainJFrame.this.setExtendedState(JFrame.MAXIMIZED_BOTH);  
-            GraphicsEnvironment env = GraphicsEnvironment.getLocalGraphicsEnvironment();  
-            MainJFrame.this.setMaximizedBounds(env.getMaximumWindowBounds());
-             ii = new ImageIcon(getClass().getResource("minimize.png"));
-             maximizer.setIcon(ii);
-            maximized = false;
-         }
-        else
-        {
-            
-            setExtendedState(JFrame.NORMAL);
-            ii = new ImageIcon(getClass().getResource("maximize.png"));
-             maximizer.setIcon(ii);
-            maximized = true;
-        }
+
+//        if (maximized) {
+//            //handle fullscreen - taskbar
+//            MainJFrame.this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+//            GraphicsEnvironment env = GraphicsEnvironment.getLocalGraphicsEnvironment();
+//            MainJFrame.this.setMaximizedBounds(env.getMaximumWindowBounds());
+//            ii = new ImageIcon(getClass().getResource("minimize.png"));
+//            maximizer.setIcon(ii);
+//            maximized = false;
+//        } else {
+//
+//            setExtendedState(JFrame.NORMAL);
+//            ii = new ImageIcon(getClass().getResource("maximize.png"));
+//            maximizer.setIcon(ii);
+//            maximized = true;
+//        }
     }//GEN-LAST:event_maximizerMouseClicked
-int xy;
-int xx;
+    int xy;
+    int xx;
     //private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {                                     
-        // TODO add your handling code here:
-       
+    // TODO add your handling code here:
+
     //}  
     private void containerMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_containerMousePressed
         // TODO add your handling code here:
-         xx = evt.getX();
+        xx = evt.getX();
         xy = evt.getY();
     }//GEN-LAST:event_containerMousePressed
 
     private void containerMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_containerMouseDragged
         // TODO add your handling code here:
-        
-         int x = evt.getXOnScreen();
+
+        int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
-        this.setLocation(x-xx,y-xy);
+        this.setLocation(x - xx, y - xy);
     }//GEN-LAST:event_containerMouseDragged
-int xy1;
-int xx1;
+    int xy1;
+    int xx1;
     private void jPanel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MousePressed
         // TODO add your handling code here:
-        
-          xx1 = evt.getX();
+
+        xx1 = evt.getX();
         xy1 = evt.getY();
-          
-        
+
+
     }//GEN-LAST:event_jPanel1MousePressed
 
     private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
         // TODO add your handling code here:
-         int x = evt.getXOnScreen();
+        int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
-        this.setLocation(x-xx1,y-xy1);
+        this.setLocation(x - xx1, y - xy1);
     }//GEN-LAST:event_jPanel1MouseDragged
 
-    private void registerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerBtnActionPerformed
+    private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
         // TODO add your handling code here:
-        registerBtn.setEnabled(true);
-            loginJButton.setEnabled(true);
-        logoutJButton.setEnabled(false);
-        userNameJTextField.setEnabled(true);
-        passwordField.setEnabled(true);
-       // registerBtn.setEnabled(false);
-        CardLayout layout=(CardLayout)container.getLayout();
-        container.add(new CreateNewPatientSelfJPanel(container,dB4OUtil,system));
-           // container.add("workArea",userAccount.getRole().createWorkArea(container, userAccount, inOrganization, inEnterprise, system));
-            //System.out.println("In network-> "+ assignedNetwork.getName());
-            layout.next(container);
-            
-            
-            
-    }//GEN-LAST:event_registerBtnActionPerformed
+        btnRegister.setEnabled(true);
+        btnLogin.setEnabled(true);
+        btnLogout.setEnabled(false);
+        txtUsername.setEnabled(true);
+        txtPasswordField.setEnabled(true);
+        // registerBtn.setEnabled(false);
+        CardLayout layout = (CardLayout) container.getLayout();
+        container.add(new CreateNewPatientSelfJPanel(container, dB4OUtil, system));
+        // container.add("workArea",userAccount.getRole().createWorkArea(container, userAccount, inOrganization, inEnterprise, system));
+        //System.out.println("In network-> "+ assignedNetwork.getName());
+        layout.next(container);
 
-    private void userNameJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userNameJTextFieldActionPerformed
+
+    }//GEN-LAST:event_btnRegisterActionPerformed
+
+    private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_userNameJTextFieldActionPerformed
+    }//GEN-LAST:event_txtUsernameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -406,23 +426,23 @@ int xx1;
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel SideSubHeading;
+    private javax.swing.JButton btnLogin;
+    private javax.swing.JButton btnLogout;
+    private javax.swing.JButton btnRegister;
     private javax.swing.JLabel close;
     private javax.swing.JPanel container;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSplitPane jSplitPane1;
-    private javax.swing.JButton loginJButton;
+    private userinterface.KGradientPanel kGradientPanel1;
+    private javax.swing.JLabel lblHero;
+    private javax.swing.JLabel lblHeroHeading;
+    private javax.swing.JLabel lblHeroSubHeading;
+    private javax.swing.JLabel lblPassword;
+    private javax.swing.JLabel lblUsername;
     private javax.swing.JLabel loginJLabel;
-    private javax.swing.JButton logoutJButton;
     private javax.swing.JLabel maximizer;
-    private javax.swing.JPasswordField passwordField;
-    private javax.swing.JButton registerBtn;
-    private javax.swing.JTextField userNameJTextField;
+    private javax.swing.JPasswordField txtPasswordField;
+    private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables
 }

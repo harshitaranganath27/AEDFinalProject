@@ -23,13 +23,15 @@ import javax.swing.JToolBar;
 
 /**
  *
- * @author harshita
+ * @author sushmitamaity
  */
 public class KGradientPanel extends JPanel {
 
 //    public Color kStartColor = Color.MAGENTA;
-    public Color kStartColor = Color.decode("#4ca1af");
-    public Color kEndColor = Color.decode("#c4e0e5");
+//    public Color kStartColor = Color.decode("#4ca1af");
+    public Color kStartColor = Color.decode("#A1EDF6");
+//    public Color kEndColor = Color.decode("#c4e0e5");
+    public Color kEndColor = Color.decode("#0882F6");
     public boolean kTransparentControls = true;
     public int kGradientFocus = 500;
 
