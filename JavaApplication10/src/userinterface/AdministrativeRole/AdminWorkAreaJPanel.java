@@ -58,15 +58,15 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         
         if(enterpriseType.equals("Hospital"))
         {        
-        lblEnterpriseImage.setIcon(new ImageIcon("src/icon/hospital.png"));
+        //lblEnterpriseImage.setIcon(new ImageIcon("src/icon/hospital.png"));
         }
         else if(enterpriseType.equals("Pharmacy"))
         {        
-        lblEnterpriseImage.setIcon(new ImageIcon("src/icon/pharm1.png"));
+        //lblEnterpriseImage.setIcon(new ImageIcon("src/icon/pharm1.png"));
         }
         else if(enterpriseType.equals("Lab"))
         {        
-        lblEnterpriseImage.setIcon(new ImageIcon("src/icon/laboratory.jpg"));
+        //lblEnterpriseImage.setIcon(new ImageIcon("src/icon/laboratory.jpg"));
         }   
     }
     
@@ -83,7 +83,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         manageInventoryBtn = new javax.swing.JButton();
         manageDeptBtn = new javax.swing.JButton();
         manageStaffBtn = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -92,7 +92,6 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         lblEnterprise.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         lblEnterprise.setForeground(new java.awt.Color(0, 51, 255));
         lblEnterprise.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblEnterprise.setText("Welcome Admin!");
         add(lblEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, 280, 30));
 
         manageBedsBtn.setBackground(new java.awt.Color(0, 51, 255));
@@ -141,8 +140,9 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         });
         add(manageStaffBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 180, 200, 140));
 
-        jLabel1.setBackground(new java.awt.Color(0, 51, 255));
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 60));
+        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel5.setForeground(new java.awt.Color(0, 51, 255));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 240, 60));
     }// </editor-fold>//GEN-END:initComponents
 
     private void manageInventoryBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageInventoryBtnActionPerformed
@@ -204,7 +204,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel lblEnterprise;
     private javax.swing.JButton manageBedsBtn;
     private javax.swing.JButton manageDeptBtn;

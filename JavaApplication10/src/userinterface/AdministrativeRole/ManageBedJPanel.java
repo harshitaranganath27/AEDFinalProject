@@ -94,9 +94,6 @@ public class ManageBedJPanel extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         currentBedCountTxt = new javax.swing.JTextField();
         btnViewGraph = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jPanel14 = new javax.swing.JPanel();
-        jPanel13 = new javax.swing.JPanel();
         btnViewApptntStatus = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -140,7 +137,7 @@ public class ManageBedJPanel extends javax.swing.JPanel {
         bedJTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(bedJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, 480, 149));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 240, 480, 149));
 
         btnSave.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         btnSave.setText("Save");
@@ -164,7 +161,7 @@ public class ManageBedJPanel extends javax.swing.JPanel {
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel5.setText("Bed Status");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, -1, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, -1, -1));
 
         bedStatusCmb.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         bedStatusCmb.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Available", "Occupied", "Assigned Laundry" }));
@@ -173,12 +170,12 @@ public class ManageBedJPanel extends javax.swing.JPanel {
                 bedStatusCmbActionPerformed(evt);
             }
         });
-        add(bedStatusCmb, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 60, 146, -1));
+        add(bedStatusCmb, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, 146, -1));
 
         jLabel6.setBackground(new java.awt.Color(68, 145, 157));
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel6.setText("Bed Management");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 10, -1, -1));
+        jLabel6.setText("Manage Beds");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, -1, -1));
 
         btnView.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         btnView.setText("View");
@@ -190,7 +187,6 @@ public class ManageBedJPanel extends javax.swing.JPanel {
         });
         add(btnView, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 60, -1, -1));
 
-        backJButton.setBackground(new java.awt.Color(102, 147, 255));
         backJButton.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         backJButton.setLabel("Back");
         backJButton.setPreferredSize(new java.awt.Dimension(100, 40));
@@ -199,7 +195,7 @@ public class ManageBedJPanel extends javax.swing.JPanel {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 80, -1));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 80, -1));
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel4.setText("Current Bed Count");
@@ -217,42 +213,7 @@ public class ManageBedJPanel extends javax.swing.JPanel {
                 btnViewGraphActionPerformed(evt);
             }
         });
-        add(btnViewGraph, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 180, -1));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/BedMangmt.JPG"))); // NOI18N
-        jLabel1.setMaximumSize(new java.awt.Dimension(100, 100));
-        jLabel1.setMinimumSize(new java.awt.Dimension(100, 100));
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 310, 299, 227));
-
-        jPanel14.setBackground(new java.awt.Color(196, 224, 229));
-
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 160, Short.MAX_VALUE)
-        );
-
-        add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 160));
-
-        jPanel13.setBackground(new java.awt.Color(68, 145, 157));
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 190, Short.MAX_VALUE)
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 190, -1));
+        add(btnViewGraph, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 180, 180, -1));
 
         btnViewApptntStatus.setBackground(new java.awt.Color(255, 155, 54));
         btnViewApptntStatus.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -263,7 +224,7 @@ public class ManageBedJPanel extends javax.swing.JPanel {
                 btnViewApptntStatusActionPerformed(evt);
             }
         });
-        add(btnViewApptntStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 210, -1));
+        add(btnViewApptntStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 180, 240, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
@@ -369,13 +330,10 @@ public class ManageBedJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnViewApptntStatus;
     private javax.swing.JButton btnViewGraph;
     private javax.swing.JTextField currentBedCountTxt;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

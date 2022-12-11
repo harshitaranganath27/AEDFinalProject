@@ -138,7 +138,6 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         backJButton = new javax.swing.JButton();
         jPanel14 = new javax.swing.JPanel();
         jPanel13 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -179,7 +178,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
             organizationJTable.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, -1, 148));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 200, -1, 148));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(68, 145, 157));
@@ -265,11 +264,12 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
 
         add(addDeptJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 380, 350, -1));
 
-        jPanel1.setBackground(new java.awt.Color(164, 208, 215));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        addDeptShowJpanelBtn.setBackground(new java.awt.Color(255, 155, 54));
+        addDeptShowJpanelBtn.setBackground(new java.awt.Color(0, 51, 255));
         addDeptShowJpanelBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        addDeptShowJpanelBtn.setForeground(new java.awt.Color(102, 102, 102));
+        addDeptShowJpanelBtn.setForeground(new java.awt.Color(255, 255, 255));
         addDeptShowJpanelBtn.setText("Create Department");
         addDeptShowJpanelBtn.setPreferredSize(new java.awt.Dimension(167, 40));
         addDeptShowJpanelBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -277,10 +277,11 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
                 addDeptShowJpanelBtnActionPerformed(evt);
             }
         });
+        jPanel1.add(addDeptShowJpanelBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 200, 150));
 
-        viewBtn.setBackground(new java.awt.Color(255, 155, 54));
+        viewBtn.setBackground(new java.awt.Color(0, 51, 255));
         viewBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        viewBtn.setForeground(new java.awt.Color(102, 102, 102));
+        viewBtn.setForeground(new java.awt.Color(255, 255, 255));
         viewBtn.setText("View Department");
         viewBtn.setPreferredSize(new java.awt.Dimension(167, 40));
         viewBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -288,10 +289,11 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
                 viewBtnActionPerformed(evt);
             }
         });
+        jPanel1.add(viewBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 170, 200, 150));
 
-        deletBtn.setBackground(new java.awt.Color(255, 155, 54));
+        deletBtn.setBackground(new java.awt.Color(0, 51, 255));
         deletBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        deletBtn.setForeground(new java.awt.Color(102, 102, 102));
+        deletBtn.setForeground(new java.awt.Color(255, 255, 255));
         deletBtn.setText("Delete Department");
         deletBtn.setPreferredSize(new java.awt.Dimension(167, 40));
         deletBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -299,9 +301,10 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
                 deletBtnActionPerformed(evt);
             }
         });
+        jPanel1.add(deletBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 170, 200, 150));
 
-        backJButton.setBackground(new java.awt.Color(102, 147, 255));
         backJButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        backJButton.setForeground(new java.awt.Color(0, 51, 255));
         backJButton.setText("Back");
         backJButton.setPreferredSize(new java.awt.Dimension(100, 40));
         backJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -309,36 +312,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
                 backJButtonActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(addDeptShowJpanelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(viewBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(deletBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(addDeptShowJpanelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(deletBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(viewBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jPanel1.add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 142, 55));
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 88, 820, 80));
 
@@ -371,9 +345,6 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         );
 
         add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 200, -1));
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/wholePic.PNG"))); // NOI18N
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 250, 490, 440));
     }// </editor-fold>//GEN-END:initComponents
 
     private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed
@@ -495,7 +466,6 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
     private javax.swing.JButton deletBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
