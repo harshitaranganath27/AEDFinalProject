@@ -140,7 +140,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        organizationJTable.setBackground(new java.awt.Color(102, 204, 255));
+        organizationJTable.setBackground(new java.awt.Color(153, 204, 255));
         organizationJTable.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 204, 255)));
         organizationJTable.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         organizationJTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -301,7 +301,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(deletBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 170, 200, 150));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 820, 80));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 820, 80));
 
         backJButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         backJButton.setForeground(new java.awt.Color(0, 51, 255));
@@ -332,8 +332,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
 
             }
         }      
-        
-        //Type type= Type.valueOf(stringType);
+
         Organization dept = directory.createOrganization(type);
         if(type.getValue().equals("Bed Management Department")){
             int selectedBedCount =Integer.parseInt((String) cmbBedNUmber.getSelectedItem());
@@ -365,7 +364,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
             lblNumofBeds.setVisible(false);
             cmbBedNUmber.setVisible(false);
         }
-        }//end outer if
+        }
         
     }//GEN-LAST:event_organizationJComboBoxActionPerformed
 
@@ -373,7 +372,6 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         ManageUserAccountJPanel muajp = new ManageUserAccountJPanel(userProcessContainer, enterprise, system);
         userProcessContainer.add("ManageUserAccountJPanel", muajp);
-
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_viewBtnActionPerformed
@@ -403,23 +401,13 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
          int dialogButton= JOptionPane.YES_NO_CANCEL_OPTION;
             int dialogResult = JOptionPane.showConfirmDialog(null, "Would you like to delete the department details?", "Warning",dialogButton);
             if(dialogResult==JOptionPane.YES_OPTION){
-                //UserAccount selectedUsrAcc = (UserAccount) organizationJTable.getValueAt(row,0);
                 Organization org = (Organization) organizationJTable.getValueAt(row,1);
-                //reomve account
-                ArrayList<Organization> orgList = enterprise.getOrganizationDirectory().getOrganizationList();
-           // for (Organization organization : orgList) 
-           // {
-             ///   if(org.equals(organization)){
-                
+                ArrayList<Organization> orgList = enterprise.getOrganizationDirectory().getOrganizationList(); 
                 org.removeAllUserAccount();    
                 org.removeAllEmployee();
-                //org.getEmployeeDirectory().removeAllEmployee();
                 orgList.remove(org);
                  populateTable();
-                // populateCombo();
                  JOptionPane.showMessageDialog(null, "Deleted successfully!!");
-               // }//inner for 
-                //}//if 
             }
         
     }//GEN-LAST:event_deletBtnActionPerformed

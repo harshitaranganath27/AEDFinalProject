@@ -253,15 +253,12 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
 
         Network network = (Network) networkJComboBox.getSelectedItem();
         Enterprise.EnterpriseType type = (Enterprise.EnterpriseType) enterpriseTypeJComboBox.getSelectedItem();
-
         if (network == null || type == null) {
             JOptionPane.showMessageDialog(null, "Invalid Input!");
             return;
         }
-
         String name = nameJTextField.getText();
-        if(name == null || name.equals(""))
-        {
+        if (name == null || name.equals("")) {
             JOptionPane.showMessageDialog(null, "Enter name!");
             return;
         }
@@ -280,36 +277,31 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         Component component = componentArray[componentArray.length - 1];
         SystemAdminWorkAreaJPanel sysAdminwjp = (SystemAdminWorkAreaJPanel) component;
         sysAdminwjp.populateTree();
-
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_backJButtonActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
-        
+
         int selectedRow = enterpriseJTable.getSelectedRow();
-        if(selectedRow>=0){
-            int dialogButton= JOptionPane.YES_NO_CANCEL_OPTION;
-            int dialogResult = JOptionPane.showConfirmDialog(null, "Would you like to delete enterprise?", "Warning",dialogButton);
-            if(dialogResult==JOptionPane.YES_OPTION){
+        if (selectedRow >= 0) {
+            int dialogButton = JOptionPane.YES_NO_CANCEL_OPTION;
+            int dialogResult = JOptionPane.showConfirmDialog(null, "Would you like to delete enterprise?", "Warning", dialogButton);
+            if (dialogResult == JOptionPane.YES_OPTION) {
                 Enterprise enter = (Enterprise) enterpriseJTable.getValueAt(selectedRow, 0);
-                Network netwrk = (Network)enterpriseJTable.getValueAt(selectedRow, 1);
-                
-                
-                
-                netwrk.getEnterpriseDirectory().getEnterpriseList().remove(enter); //.deleteAccount(account);
+                Network netwrk = (Network) enterpriseJTable.getValueAt(selectedRow, 1);
+                netwrk.getEnterpriseDirectory().getEnterpriseList().remove(enter);
                 populateTable();
                 dB4OUtil.storeSystem(system);
                 JOptionPane.showMessageDialog(null, "Deleted successfully");
- 
-            }       
-            
-        }
-        else{
-            JOptionPane.showMessageDialog(null, "Please select a row from table first","Warning",JOptionPane.WARNING_MESSAGE);
+
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Please select a row from table first", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
-        }  
+        }
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void nameJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameJTextFieldActionPerformed
