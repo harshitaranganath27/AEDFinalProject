@@ -19,7 +19,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author 
+ * @author
  */
 public class ManageOrganizationJPanel extends javax.swing.JPanel {
 
@@ -27,91 +27,76 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private Enterprise enterprise;
     private EcoSystem system;
+
     /**
      * Creates new form ManageOrganizationJPanel
      */
-    public ManageOrganizationJPanel(JPanel userProcessContainer,OrganizationDirectory directory, Enterprise enterprise, EcoSystem system) {
+    public ManageOrganizationJPanel(JPanel userProcessContainer, OrganizationDirectory directory, Enterprise enterprise, EcoSystem system) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.directory = directory;
         this.enterprise = enterprise;
-        this.system= system;
+        this.system = system;
         populateTable();
-        //populateCombo();
-        
-        
         addDeptJPanel.setVisible(false);
-        
-        
-    }
-    
-    private void populateCombo(){
-        organizationJComboBox.removeAllItems();
-        
-          if(enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.Pharmacy.getValue()))
-          {
-              for (Type type : Organization.Type.values()){
-            if (type.getValue().equals(Type.MedicalStore.getValue()) || 
-                    type.getValue().equals(Type.Billing.getValue()) 
-                    )
-                organizationJComboBox.addItem(type);
-        }
-          }
-        //lab 
-          else if (enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.Lab.getValue())){
-              for (Type type : Organization.Type.values()){
-            if (type.getValue().equals(Type.Billing.getValue()) ||                    
-                    type.getValue().equals(Type.Pathology.getValue()) ||
-                    type.getValue().equals(Type.Radiology.getValue()) 
-                    )
-                organizationJComboBox.addItem(type);
-        }
-              
-              
-          }
-          
-          
-            else if (enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.Insurance.getValue())){
-              for (Type type : Organization.Type.values()){
-            if (type.getValue().equals(Type.Insurance.getValue()) ||
-                    type.getValue().equals(Type.Billing.getValue())
-                    
-                    )
-                organizationJComboBox.addItem(type);
-        }
-              
-              
-          }
-          
-          
-//lab
-          else{
-        for (Type type : Organization.Type.values()){
-            if (!type.getValue().equals(Type.Admin.getValue()) && 
-                    !type.getValue().equals(Type.Lab.getValue()) &&
-                    !type.getValue().equals(Type.Pathology.getValue()) &&
-                    !type.getValue().equals(Type.Radiology.getValue()) &&
-                    !type.getValue().equals(Type.MedicalStore.getValue()) &&
-                    !type.getValue().equals(Type.Insurance.getValue())
-                    )
-                organizationJComboBox.addItem(type);
-        }
-          }
+
     }
 
-    private void populateTable(){
+    private void populateCombo() {
+        organizationJComboBox.removeAllItems();
+
+        if (enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.Pharmacy.getValue())) {
+            for (Type type : Organization.Type.values()) {
+                if (type.getValue().equals(Type.MedicalStore.getValue())
+                        || type.getValue().equals(Type.Billing.getValue())) {
+                    organizationJComboBox.addItem(type);
+                }
+            }
+        } else if (enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.Lab.getValue())) {
+            for (Type type : Organization.Type.values()) {
+                if (type.getValue().equals(Type.Billing.getValue())
+                        || type.getValue().equals(Type.Pathology.getValue())
+                        || type.getValue().equals(Type.Radiology.getValue())) {
+                    organizationJComboBox.addItem(type);
+                }
+            }
+
+        } else if (enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.Insurance.getValue())) {
+            for (Type type : Organization.Type.values()) {
+                if (type.getValue().equals(Type.Insurance.getValue())
+                        || type.getValue().equals(Type.Billing.getValue())) {
+                    organizationJComboBox.addItem(type);
+                }
+            }
+
+        } else {
+            for (Type type : Organization.Type.values()) {
+                if (!type.getValue().equals(Type.Admin.getValue())
+                        && !type.getValue().equals(Type.Lab.getValue())
+                        && !type.getValue().equals(Type.Pathology.getValue())
+                        && !type.getValue().equals(Type.Radiology.getValue())
+                        && !type.getValue().equals(Type.MedicalStore.getValue())
+                        && !type.getValue().equals(Type.Insurance.getValue())) {
+                    organizationJComboBox.addItem(type);
+                }
+            }
+        }
+    }
+
+    private void populateTable() {
         DefaultTableModel model = (DefaultTableModel) organizationJTable.getModel();
-        
+
         model.setRowCount(0);
-        
-        for (Organization organization : directory.getOrganizationList()){
+
+        for (Organization organization : directory.getOrganizationList()) {
             Object[] row = new Object[2];
             row[0] = organization.getOrganizationID();
             row[1] = organization;//.getName();
-            
+
             model.addRow(row);
         }
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -316,30 +301,23 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed
-        
-        
-        
+
         Type type = (Type) organizationJComboBox.getSelectedItem();
-        
-        
-        //check if department is already present, if so not allowed to add duplicate department
-        for(Organization org : directory.getOrganizationList())
-        {
-            if(org.getName().equals(type.getValue()))
-            {
+        for (Organization org : directory.getOrganizationList()) {
+            if (org.getName().equals(type.getValue())) {
                 JOptionPane.showMessageDialog(null, "Department already exists, cannot create new!");
                 return;
 
             }
-        }      
+        }
 
         Organization dept = directory.createOrganization(type);
-        if(type.getValue().equals("Bed Management Department")){
-            int selectedBedCount =Integer.parseInt((String) cmbBedNUmber.getSelectedItem());
-            BedManagementDepartment bedMngDept = (BedManagementDepartment)dept;
+        if (type.getValue().equals("Bed Management Department")) {
+            int selectedBedCount = Integer.parseInt((String) cmbBedNUmber.getSelectedItem());
+            BedManagementDepartment bedMngDept = (BedManagementDepartment) dept;
             bedMngDept.createBedList(selectedBedCount);
         }
-        
+
         JOptionPane.showMessageDialog(null, "Added Successfully");
         DB4OUtil.getInstance().storeSystem(system);
         populateTable();
@@ -355,17 +333,16 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
     private void organizationJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_organizationJComboBoxActionPerformed
         // TODO add your handling code here:
         Type type = (Type) organizationJComboBox.getSelectedItem();
-        if(type !=null){
-        if( type.getValue().equals(Type.BedManagement.getValue())){
-        lblNumofBeds.setVisible(true);
-        cmbBedNUmber.setVisible(true);
+        if (type != null) {
+            if (type.getValue().equals(Type.BedManagement.getValue())) {
+                lblNumofBeds.setVisible(true);
+                cmbBedNUmber.setVisible(true);
+            } else {
+                lblNumofBeds.setVisible(false);
+                cmbBedNUmber.setVisible(false);
+            }
         }
-        else{
-            lblNumofBeds.setVisible(false);
-            cmbBedNUmber.setVisible(false);
-        }
-        }
-        
+
     }//GEN-LAST:event_organizationJComboBoxActionPerformed
 
     private void viewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewBtnActionPerformed
@@ -390,26 +367,25 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
 
     private void deletBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletBtnActionPerformed
         // TODO add your handling code here:
-        
+
         int row = organizationJTable.getSelectedRow();
-        if(row<0){
+        if (row < 0) {
             JOptionPane.showMessageDialog(null, "Please select a row!!", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        
-        
-         int dialogButton= JOptionPane.YES_NO_CANCEL_OPTION;
-            int dialogResult = JOptionPane.showConfirmDialog(null, "Would you like to delete the department details?", "Warning",dialogButton);
-            if(dialogResult==JOptionPane.YES_OPTION){
-                Organization org = (Organization) organizationJTable.getValueAt(row,1);
-                ArrayList<Organization> orgList = enterprise.getOrganizationDirectory().getOrganizationList(); 
-                org.removeAllUserAccount();    
-                org.removeAllEmployee();
-                orgList.remove(org);
-                 populateTable();
-                 JOptionPane.showMessageDialog(null, "Deleted successfully!!");
-            }
-        
+
+        int dialogButton = JOptionPane.YES_NO_CANCEL_OPTION;
+        int dialogResult = JOptionPane.showConfirmDialog(null, "Would you like to delete the department details?", "Warning", dialogButton);
+        if (dialogResult == JOptionPane.YES_OPTION) {
+            Organization org = (Organization) organizationJTable.getValueAt(row, 1);
+            ArrayList<Organization> orgList = enterprise.getOrganizationDirectory().getOrganizationList();
+            org.removeAllUserAccount();
+            org.removeAllEmployee();
+            orgList.remove(org);
+            populateTable();
+            JOptionPane.showMessageDialog(null, "Deleted successfully!!");
+        }
+
     }//GEN-LAST:event_deletBtnActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
