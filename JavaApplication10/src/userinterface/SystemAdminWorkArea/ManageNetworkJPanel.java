@@ -65,15 +65,12 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         nameJTextField = new javax.swing.JTextField();
         backJButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jPanel14 = new javax.swing.JPanel();
         jPanel13 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         btnViewGraph = new javax.swing.JButton();
         btnViewGraph1 = new javax.swing.JButton();
         btnViewApptntStatus = new javax.swing.JButton();
         jPanel15 = new javax.swing.JPanel();
-        jPanel16 = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -141,7 +138,6 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         });
         add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, 93, -1));
 
-        backJButton.setBackground(new java.awt.Color(102, 147, 255));
         backJButton.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         backJButton.setText("Back");
         backJButton.setPreferredSize(new java.awt.Dimension(100, 40));
@@ -150,29 +146,11 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, -1, -1));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel2.setText("Create Network");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, -1, 34));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Network.jpg"))); // NOI18N
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 130, 266, -1));
-
-        jPanel14.setBackground(new java.awt.Color(196, 224, 229));
-
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 210));
 
         jPanel13.setBackground(new java.awt.Color(68, 145, 157));
 
@@ -189,10 +167,10 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
 
         add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 200, -1));
 
-        jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(68, 145, 157));
-        jLabel12.setText("Manage Network");
-        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, 270, 50));
+        jLabel12.setFont(new java.awt.Font("Kannada MN", 1, 36)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(0, 51, 255));
+        jLabel12.setText("Manage Networks");
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 50, 350, 50));
 
         btnViewGraph.setBackground(new java.awt.Color(255, 155, 54));
         btnViewGraph.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -241,21 +219,6 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         );
 
         add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 210, -1));
-
-        jPanel16.setBackground(new java.awt.Color(68, 145, 157));
-
-        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
-        jPanel16.setLayout(jPanel16Layout);
-        jPanel16Layout.setHorizontalGroup(
-            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
-        );
-        jPanel16Layout.setVerticalGroup(
-            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 200, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
@@ -369,11 +332,8 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnViewGraph1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
-    private javax.swing.JPanel jPanel16;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField nameJTextField;
     private javax.swing.JTable networkJTable;
