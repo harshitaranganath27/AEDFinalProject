@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.SystemAdminWorkArea;
+package userinterface.SysAdminWorkArea;
 
 import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
@@ -26,7 +26,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author harshita
  */
-public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
+public class ManageEnterpriseAdmin extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
     private EcoSystem system;
@@ -34,7 +34,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManageEnterpriseJPanel
      */
-    public ManageEnterpriseAdminJPanel(JPanel userProcessContainer, EcoSystem system) {
+    public ManageEnterpriseAdmin(JPanel userProcessContainer, EcoSystem system) {
         initComponents();
 
         this.userProcessContainer = userProcessContainer;
@@ -393,7 +393,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         userProcessContainer.remove(this);
          Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
-        SystemAdminWorkAreaJPanel sysAdminwjp = (SystemAdminWorkAreaJPanel) component;
+        SysAdminWorkArea sysAdminwjp = (SysAdminWorkArea) component;
         sysAdminwjp.populateTree();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);

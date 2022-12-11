@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.SystemAdminWorkArea;
+package userinterface.SysAdminWorkArea;
 
 import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
@@ -20,7 +20,7 @@ import userinterface.AdministrativeRole.TotalBedCountGraph;
  *
  * @author harshita
  */
-public class ManageNetworkJPanel extends javax.swing.JPanel {
+public class ManageNetworks extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
     private EcoSystem system;
@@ -30,7 +30,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
      *
      * Creates new form ManageNetworkJPanel
      */
-    public ManageNetworkJPanel(JPanel userProcessContainer, EcoSystem system) {
+    public ManageNetworks(JPanel userProcessContainer, EcoSystem system) {
         initComponents();
 
         this.userProcessContainer = userProcessContainer;
@@ -71,13 +71,14 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         btnViewGraph1 = new javax.swing.JButton();
         btnViewApptntStatus = new javax.swing.JButton();
         jPanel15 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        networkJTable.setBackground(new java.awt.Color(255, 193, 131));
-        networkJTable.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 204, 255)));
-        networkJTable.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        networkJTable.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.red, null));
+        networkJTable.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        networkJTable.setForeground(new java.awt.Color(0, 0, 153));
         networkJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null},
@@ -116,10 +117,11 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
             networkJTable.getColumnModel().getColumn(0).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 130, 233, 183));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, 270, 190));
 
-        submitJButton.setBackground(new java.awt.Color(102, 147, 255));
-        submitJButton.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        submitJButton.setBackground(new java.awt.Color(0, 0, 153));
+        submitJButton.setFont(new java.awt.Font("Kannada MN", 0, 18)); // NOI18N
+        submitJButton.setForeground(new java.awt.Color(255, 255, 255));
         submitJButton.setText("Submit");
         submitJButton.setPreferredSize(new java.awt.Dimension(100, 40));
         submitJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -127,16 +129,19 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
                 submitJButtonActionPerformed(evt);
             }
         });
-        add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, -1, -1));
+        add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, -1, -1));
 
+        nameJTextField.setBackground(new java.awt.Color(255, 204, 0));
         nameJTextField.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        nameJTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 153, 255)));
+        nameJTextField.setBorder(null);
+        nameJTextField.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        nameJTextField.setSelectionColor(new java.awt.Color(255, 255, 255));
         nameJTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nameJTextFieldActionPerformed(evt);
             }
         });
-        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, 93, -1));
+        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, 140, 30));
 
         backJButton.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         backJButton.setText("Back");
@@ -148,9 +153,10 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         });
         add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel2.setText("Create Network");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, -1, 34));
+        jLabel2.setFont(new java.awt.Font("Kannada MN", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 153));
+        jLabel2.setText("Create a network");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 170, 34));
 
         jPanel13.setBackground(new java.awt.Color(68, 145, 157));
 
@@ -168,42 +174,36 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 200, -1));
 
         jLabel12.setFont(new java.awt.Font("Kannada MN", 1, 36)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(0, 51, 255));
+        jLabel12.setForeground(new java.awt.Color(0, 0, 153));
         jLabel12.setText("Manage Networks");
-        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 50, 350, 50));
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 350, 50));
 
-        btnViewGraph.setBackground(new java.awt.Color(255, 155, 54));
         btnViewGraph.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        btnViewGraph.setText("View Bed Graph");
         btnViewGraph.setPreferredSize(new java.awt.Dimension(167, 40));
         btnViewGraph.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnViewGraphActionPerformed(evt);
             }
         });
-        add(btnViewGraph, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 350, 230, -1));
+        add(btnViewGraph, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, 80, 40));
 
-        btnViewGraph1.setBackground(new java.awt.Color(255, 155, 54));
         btnViewGraph1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        btnViewGraph1.setText("View Appointment Graph");
         btnViewGraph1.setPreferredSize(new java.awt.Dimension(167, 40));
         btnViewGraph1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnViewGraph1ActionPerformed(evt);
             }
         });
-        add(btnViewGraph1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 450, 230, -1));
+        add(btnViewGraph1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 410, 80, 40));
 
-        btnViewApptntStatus.setBackground(new java.awt.Color(255, 155, 54));
         btnViewApptntStatus.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        btnViewApptntStatus.setText("View Appointment Status");
         btnViewApptntStatus.setPreferredSize(new java.awt.Dimension(167, 40));
         btnViewApptntStatus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnViewApptntStatusActionPerformed(evt);
             }
         });
-        add(btnViewApptntStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 560, 230, -1));
+        add(btnViewApptntStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 470, 230, -1));
 
         jPanel15.setBackground(new java.awt.Color(68, 145, 157));
 
@@ -219,6 +219,9 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         );
 
         add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 210, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/1501077931-network.jpeg"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, 990, 700));
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
@@ -255,7 +258,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         userProcessContainer.remove(this);
          Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
-        SystemAdminWorkAreaJPanel sysAdminwjp = (SystemAdminWorkAreaJPanel) component;
+        SysAdminWorkArea sysAdminwjp = (SysAdminWorkArea) component;
         sysAdminwjp.populateTree();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
@@ -330,6 +333,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnViewApptntStatus;
     private javax.swing.JButton btnViewGraph;
     private javax.swing.JButton btnViewGraph1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel13;
