@@ -27,7 +27,7 @@ import userinterface.KGradientPanel;
 
 /**
  *
- * @author avina
+ * @author harshita
  */
 public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
 

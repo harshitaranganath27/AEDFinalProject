@@ -301,7 +301,7 @@ public class BookSelfAppointmentJPanel extends javax.swing.JPanel {
                 .addGap(24, 24, 24))
         );
 
-        add(jpnael1014, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 308, 60, 40));
+        add(jpnael1014, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 310, 60, 40));
 
         jpnael15.setBackground(new java.awt.Color(164, 208, 215));
         jpnael15.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -355,10 +355,10 @@ public class BookSelfAppointmentJPanel extends javax.swing.JPanel {
         );
         jpnael11Layout.setVerticalGroup(
             jpnael11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnael11Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jpnael11Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
                 .addComponent(jLabel11)
-                .addGap(24, 24, 24))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         add(jpnael11, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 236, 60, 40));
@@ -385,13 +385,13 @@ public class BookSelfAppointmentJPanel extends javax.swing.JPanel {
         );
         jpnael12Layout.setVerticalGroup(
             jpnael12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpnael12Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnael12Layout.createSequentialGroup()
+                .addContainerGap(17, Short.MAX_VALUE)
                 .addComponent(jLabel12)
-                .addContainerGap(9, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
-        add(jpnael12, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 300, 60, 40));
+        add(jpnael12, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 310, 60, 40));
 
         jpnael16.setBackground(new java.awt.Color(164, 208, 215));
         jpnael16.addMouseListener(new java.awt.event.MouseAdapter() {

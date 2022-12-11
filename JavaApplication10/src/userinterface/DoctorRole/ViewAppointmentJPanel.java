@@ -18,7 +18,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author sushmitamaity
+ * @author 
  */
 public class ViewAppointmentJPanel extends javax.swing.JPanel {
 

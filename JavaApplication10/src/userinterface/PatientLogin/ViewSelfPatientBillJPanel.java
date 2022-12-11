@@ -18,7 +18,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author avina
+ * @author harshita
  */
 public class ViewSelfPatientBillJPanel extends javax.swing.JPanel {
 

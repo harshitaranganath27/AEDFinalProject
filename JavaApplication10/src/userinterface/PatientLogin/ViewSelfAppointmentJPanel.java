@@ -23,7 +23,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author avina
+ * @author harshita
  */
 public class ViewSelfAppointmentJPanel extends javax.swing.JPanel {
 

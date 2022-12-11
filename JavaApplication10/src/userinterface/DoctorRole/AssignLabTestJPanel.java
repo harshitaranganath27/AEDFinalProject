@@ -28,7 +28,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author sushmitamaity
+ * @author 
  */
 public class AssignLabTestJPanel extends javax.swing.JPanel {
 

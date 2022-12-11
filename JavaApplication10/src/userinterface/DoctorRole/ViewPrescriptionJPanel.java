@@ -21,7 +21,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author sushmitamaity
+ * @author 
  */
 public class ViewPrescriptionJPanel extends javax.swing.JPanel {
 

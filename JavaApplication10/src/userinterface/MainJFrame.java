@@ -19,7 +19,7 @@ import userinterface.PatientLogin.CreateNewPatientSelfJPanel;
 
 /**
  *
- * @author sushmitamaity
+ * @author 
  */
 public class MainJFrame extends javax.swing.JFrame {
 
