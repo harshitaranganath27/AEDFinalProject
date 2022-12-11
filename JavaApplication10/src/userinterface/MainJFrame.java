@@ -28,14 +28,9 @@ public class MainJFrame extends javax.swing.JFrame {
      */
     private EcoSystem system;
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
-
-    static boolean maximized = true;
-    static ImageIcon ii;
-
     public MainJFrame() {
         initComponents();
         system = dB4OUtil.retrieveSystem();
-        this.setSize(1300, 700);
     }
 
     /**
@@ -227,6 +222,82 @@ public class MainJFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    int xy;
+    int xx;
+    //private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {                                     
+    // TODO add your handling code here:
+
+    //}  
+    private void containerMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_containerMousePressed
+        // TODO add your handling code here:
+        xx = evt.getX();
+        xy = evt.getY();
+    }//GEN-LAST:event_containerMousePressed
+
+    private void containerMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_containerMouseDragged
+        // TODO add your handling code here:
+
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - xx, y - xy);
+    }//GEN-LAST:event_containerMouseDragged
+
+    private void jPanel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MousePressed
+        // TODO add your handling code here:
+
+        xx1 = evt.getX();
+        xy1 = evt.getY();
+
+    }//GEN-LAST:event_jPanel1MousePressed
+
+    private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
+        // TODO add your handling code here:
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - xx1, y - xy1);
+    }//GEN-LAST:event_jPanel1MouseDragged
+
+    private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
+        // TODO add your handling code here:
+        btnRegister.setEnabled(true);
+        btnLogin.setEnabled(true);
+        btnLogout.setEnabled(false);
+        txtUsername.setEnabled(true);
+        txtPasswordField.setEnabled(true);
+        CardLayout layout = (CardLayout) container.getLayout();
+        container.add(new CreateNewPatientSelfJPanel(container, dB4OUtil, system));
+        layout.next(container);
+
+    }//GEN-LAST:event_btnRegisterActionPerformed
+
+    private void maximizerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_maximizerMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_maximizerMouseClicked
+
+    private void closeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_closeMouseClicked
+
+    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
+        btnLogout.setEnabled(false);
+        txtUsername.setEnabled(true);
+        txtPasswordField.setEnabled(true);
+        btnLogin.setEnabled(true);
+
+        btnRegister.setEnabled(true);
+        txtUsername.setText("");
+        txtPasswordField.setText("");
+
+        container.removeAll();
+        container.add("blank", kGradientPanel1);
+        CardLayout crdLyt = (CardLayout) container.getLayout();
+        crdLyt.next(container);
+        dB4OUtil.storeSystem(system);
+    }//GEN-LAST:event_btnLogoutActionPerformed
+
+    private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsernameActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // Get user name
@@ -289,108 +360,8 @@ public class MainJFrame extends javax.swing.JFrame {
         txtPasswordField.setEnabled(false);
         btnRegister.setEnabled(false);
     }//GEN-LAST:event_btnLoginActionPerformed
-
-    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
-        btnLogout.setEnabled(false);
-        txtUsername.setEnabled(true);
-        txtPasswordField.setEnabled(true);
-        btnLogin.setEnabled(true);
-
-        btnRegister.setEnabled(true);
-        txtUsername.setText("");
-        txtPasswordField.setText("");
-
-        container.removeAll();
-        //JPanel blankJP = new JPanel();
-        //KGradientPanel blankJP = new KGradientPanel();
-        container.add("blank", kGradientPanel1);
-        CardLayout crdLyt = (CardLayout) container.getLayout();
-        crdLyt.next(container);
-        dB4OUtil.storeSystem(system);
-    }//GEN-LAST:event_btnLogoutActionPerformed
-
-    private void closeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeMouseClicked
-        // TODO add your handling code here:
-//        System.exit(0);
-    }//GEN-LAST:event_closeMouseClicked
-
-    private void maximizerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_maximizerMouseClicked
-        // TODO add your handling code here:
-
-//        if (maximized) {
-//            //handle fullscreen - taskbar
-//            MainJFrame.this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-//            GraphicsEnvironment env = GraphicsEnvironment.getLocalGraphicsEnvironment();
-//            MainJFrame.this.setMaximizedBounds(env.getMaximumWindowBounds());
-//            ii = new ImageIcon(getClass().getResource("minimize.png"));
-//            maximizer.setIcon(ii);
-//            maximized = false;
-//        } else {
-//
-//            setExtendedState(JFrame.NORMAL);
-//            ii = new ImageIcon(getClass().getResource("maximize.png"));
-//            maximizer.setIcon(ii);
-//            maximized = true;
-//        }
-    }//GEN-LAST:event_maximizerMouseClicked
-    int xy;
-    int xx;
-    //private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {                                     
-    // TODO add your handling code here:
-
-    //}  
-    private void containerMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_containerMousePressed
-        // TODO add your handling code here:
-        xx = evt.getX();
-        xy = evt.getY();
-    }//GEN-LAST:event_containerMousePressed
-
-    private void containerMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_containerMouseDragged
-        // TODO add your handling code here:
-
-        int x = evt.getXOnScreen();
-        int y = evt.getYOnScreen();
-        this.setLocation(x - xx, y - xy);
-    }//GEN-LAST:event_containerMouseDragged
     int xy1;
     int xx1;
-    private void jPanel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MousePressed
-        // TODO add your handling code here:
-
-        xx1 = evt.getX();
-        xy1 = evt.getY();
-
-
-    }//GEN-LAST:event_jPanel1MousePressed
-
-    private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
-        // TODO add your handling code here:
-        int x = evt.getXOnScreen();
-        int y = evt.getYOnScreen();
-        this.setLocation(x - xx1, y - xy1);
-    }//GEN-LAST:event_jPanel1MouseDragged
-
-    private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
-        // TODO add your handling code here:
-        btnRegister.setEnabled(true);
-        btnLogin.setEnabled(true);
-        btnLogout.setEnabled(false);
-        txtUsername.setEnabled(true);
-        txtPasswordField.setEnabled(true);
-        // registerBtn.setEnabled(false);
-        CardLayout layout = (CardLayout) container.getLayout();
-        container.add(new CreateNewPatientSelfJPanel(container, dB4OUtil, system));
-        // container.add("workArea",userAccount.getRole().createWorkArea(container, userAccount, inOrganization, inEnterprise, system));
-        //System.out.println("In network-> "+ assignedNetwork.getName());
-        layout.next(container);
-
-
-    }//GEN-LAST:event_btnRegisterActionPerformed
-
-    private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsernameActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -416,6 +387,7 @@ public class MainJFrame extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

@@ -62,7 +62,7 @@ public class AssignLabTestJPanel extends javax.swing.JPanel {
     }
 
     void populateNetworkLabs() {
-        cmbLabs.removeAllItems();;
+        labSelection.removeAllItems();;
         if(system.getNetworkList() == null)
         {
             return;
@@ -78,7 +78,7 @@ public class AssignLabTestJPanel extends javax.swing.JPanel {
             for (Enterprise enterprise : enterprsList) {
                 if (enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.Lab.getValue())) {
                     {
-                        cmbLabs.addItem(enterprise);
+                        labSelection.addItem(enterprise);
                     }
                 }
             }
@@ -101,19 +101,19 @@ public class AssignLabTestJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        testTypeTxt = new javax.swing.JTextField();
-        cmbLabs = new javax.swing.JComboBox();
+        testName = new javax.swing.JTextField();
+        labSelection = new javax.swing.JComboBox();
         submitBtn = new javax.swing.JButton();
         backJButton = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jPanel13 = new javax.swing.JPanel();
-        jPanel14 = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        assignTestTbl.setBackground(new java.awt.Color(255, 193, 131));
+        assignTestTbl.setBackground(new java.awt.Color(204, 204, 204));
         assignTestTbl.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 204, 255)));
-        assignTestTbl.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        assignTestTbl.setFont(new java.awt.Font("Big Caslon", 1, 18)); // NOI18N
+        assignTestTbl.setForeground(new java.awt.Color(255, 153, 0));
         assignTestTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -141,30 +141,37 @@ public class AssignLabTestJPanel extends javax.swing.JPanel {
             assignTestTbl.getColumnModel().getColumn(3).setResizable(false);
         }
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(68, 145, 157));
+        add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 300, 500, 240));
+
+        jLabel1.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 204, 0));
         jLabel1.setText("Assign Lab Test");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 40, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel2.setText("Test Name :");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 140, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel3.setText("Lab :");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 190, -1, -1));
 
-        testTypeTxt.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        testTypeTxt.addActionListener(new java.awt.event.ActionListener() {
+        testName.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        testName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                testTypeTxtActionPerformed(evt);
+                testNameActionPerformed(evt);
             }
         });
+        add(testName, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 130, 171, 35));
 
-        cmbLabs.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        cmbLabs.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        cmbLabs.addActionListener(new java.awt.event.ActionListener() {
+        labSelection.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        labSelection.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        labSelection.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbLabsActionPerformed(evt);
+                labSelectionActionPerformed(evt);
             }
         });
+        add(labSelection, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 190, 171, -1));
 
         submitBtn.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         submitBtn.setText("Submit");
@@ -174,8 +181,8 @@ public class AssignLabTestJPanel extends javax.swing.JPanel {
                 submitBtnActionPerformed(evt);
             }
         });
+        add(submitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 240, -1, -1));
 
-        backJButton.setBackground(new java.awt.Color(102, 147, 255));
         backJButton.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         backJButton.setText("Back");
         backJButton.setPreferredSize(new java.awt.Dimension(100, 40));
@@ -184,120 +191,18 @@ public class AssignLabTestJPanel extends javax.swing.JPanel {
                 backJButtonActionPerformed(evt);
             }
         });
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/assignLabTest.PNG"))); // NOI18N
-
-        jPanel13.setBackground(new java.awt.Color(68, 145, 157));
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 177, Short.MAX_VALUE)
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        jPanel14.setBackground(new java.awt.Color(196, 224, 229));
-
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 150, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(221, 221, 221)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(34, 34, 34)
-                                        .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(278, 278, 278)
-                                        .addComponent(jLabel2)))))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(106, 106, 106)
-                                .addComponent(testTypeTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(98, 98, 98)
-                                .addComponent(cmbLabs, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(216, 216, 216))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 482, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(30, 30, 30)))
-                        .addGap(213, 213, 213))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(submitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(393, 393, 393))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(77, 77, 77)
-                        .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1)
-                            .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(96, 96, 96)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(testTypeTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel2))))))
-                .addGap(12, 12, 12)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(cmbLabs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(46, 46, 46)
-                .addComponent(submitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 227, Short.MAX_VALUE)
-                .addGap(97, 97, 97))
-        );
+        jLabel4.setIcon(new javax.swing.ImageIcon("/Users/sirius/Downloads/blood-test-1200x628-facebook-1200x628.jpg")); // NOI18N
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 820));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void testTypeTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testTypeTxtActionPerformed
+    private void testNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_testTypeTxtActionPerformed
+    }//GEN-LAST:event_testNameActionPerformed
 
     private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
-        String testType = testTypeTxt.getText();
+        String testType = testName.getText();
         //String labName = cmbLabs.getActionCommand();
 
         //String medsPrescribed= medsPrescribedTxt.getText();
@@ -317,7 +222,7 @@ public class AssignLabTestJPanel extends javax.swing.JPanel {
                 workreq.setPatient(patient);
                 //workreq.setDoctor(doctor);
                 //workreq.setReceiver(userAccount);
-                Lab lab = (Lab) cmbLabs.getSelectedItem();
+                Lab lab = (Lab) labSelection.getSelectedItem();
                 lab.getWorkQueue().getWorkRequestList().add(workreq);
                 LabTest labTest= new LabTest();
                 labTest.setLab(lab);
@@ -388,23 +293,21 @@ public class AssignLabTestJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_backJButtonActionPerformed
 
-    private void cmbLabsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbLabsActionPerformed
-        String str = String.valueOf(cmbLabs.getSelectedItem());
-    }//GEN-LAST:event_cmbLabsActionPerformed
+    private void labSelectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_labSelectionActionPerformed
+        String str = String.valueOf(labSelection.getSelectedItem());
+    }//GEN-LAST:event_labSelectionActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable assignTestTbl;
     private javax.swing.JButton backJButton;
-    private javax.swing.JComboBox cmbLabs;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JComboBox labSelection;
     private javax.swing.JButton submitBtn;
-    private javax.swing.JTextField testTypeTxt;
+    private javax.swing.JTextField testName;
     // End of variables declaration//GEN-END:variables
 }

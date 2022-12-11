@@ -65,14 +65,14 @@ public class ViewPrescriptionJPanel extends javax.swing.JPanel {
         viewPrescriptionTbl = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         backJButton = new javax.swing.JButton();
-        jPanel13 = new javax.swing.JPanel();
-        jPanel14 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(196, 224, 229));
+        setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         viewPrescriptionTbl.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 204, 255)));
-        viewPrescriptionTbl.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        viewPrescriptionTbl.setFont(new java.awt.Font("Trattatello", 1, 14)); // NOI18N
+        viewPrescriptionTbl.setForeground(new java.awt.Color(255, 204, 204));
         viewPrescriptionTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -91,14 +91,13 @@ public class ViewPrescriptionJPanel extends javax.swing.JPanel {
         });
         jScrollPane3.setViewportView(viewPrescriptionTbl);
 
-        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(316, 140, 420, 370));
+        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 160, 420, 370));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(68, 145, 157));
+        jLabel1.setForeground(new java.awt.Color(0, 51, 51));
         jLabel1.setText("Prescription");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 110, -1, -1));
 
-        backJButton.setBackground(new java.awt.Color(102, 147, 255));
         backJButton.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         backJButton.setText("Back");
         backJButton.setPreferredSize(new java.awt.Dimension(100, 40));
@@ -107,37 +106,10 @@ public class ViewPrescriptionJPanel extends javax.swing.JPanel {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(58, 53, -1, -1));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
-        jPanel13.setBackground(new java.awt.Color(68, 145, 157));
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 160, Short.MAX_VALUE)
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 160, -1));
-
-        jPanel14.setBackground(new java.awt.Color(196, 224, 229));
-
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 160, Short.MAX_VALUE)
-        );
-
-        add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 160));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/DoctorRole/image copy.jpg"))); // NOI18N
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 640));
     }// </editor-fold>//GEN-END:initComponents
 
     public void populatePrescription(){
@@ -167,8 +139,7 @@ public class ViewPrescriptionJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable viewPrescriptionTbl;
     // End of variables declaration//GEN-END:variables

@@ -206,7 +206,7 @@ public class LabAssistantMainAreaJPanel extends javax.swing.JPanel {
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(68, 145, 157));
         jLabel5.setText("Welcome back!");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 480, 37));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 20, 480, 37));
     }// </editor-fold>//GEN-END:initComponents
 
     private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed
