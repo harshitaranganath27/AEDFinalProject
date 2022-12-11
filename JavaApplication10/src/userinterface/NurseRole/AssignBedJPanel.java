@@ -31,7 +31,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author avina
+ * @author harshita
  */
 public class AssignBedJPanel extends javax.swing.JPanel {
 

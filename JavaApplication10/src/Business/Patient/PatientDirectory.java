@@ -13,7 +13,7 @@ import java.util.List;
 
 /**
  *
- * @author Mohit
+ * @author harshita
  */
 public class PatientDirectory {
     private List<Patient> patientList;

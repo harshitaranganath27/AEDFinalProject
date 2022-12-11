@@ -9,7 +9,7 @@ import Business.Medicine.MedicineDirectory;
 
 /**
  *
- * @author Mohit
+ * @author harshita
  */
 public class PharmacyOrganization {
     

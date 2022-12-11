@@ -9,7 +9,7 @@ import Business.Department.Inventory;
 
 /**
  *
- * @author Mohit
+ * @author harshita
  */
 public class InventoryManagementDept {
     String productID;

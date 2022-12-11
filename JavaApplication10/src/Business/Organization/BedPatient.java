@@ -11,7 +11,7 @@ import java.util.Date;
 
 /**
  *
- * @author Mohit
+ * @author harshita
  */
 public class BedPatient {
  

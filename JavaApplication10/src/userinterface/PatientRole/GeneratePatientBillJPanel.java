@@ -29,7 +29,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author avina
+ * @author harshita
  */
 public class GeneratePatientBillJPanel extends javax.swing.JPanel {
 

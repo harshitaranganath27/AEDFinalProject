@@ -27,7 +27,7 @@ import java.util.logging.Logger;
 import java.text.ParseException;
 /**
  *
- * @author avina
+ * @author harshita
  */
 public class ManageBedsFinalJPanel extends javax.swing.JPanel {
 

@@ -19,7 +19,7 @@ import java.util.Date;
 
 /**
  *
- * @author Mohit
+ * @author harshita
  */
 public class Patient extends Employee{
     

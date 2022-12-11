@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Mohit
+ * @author harshita
  */
 public class LabOrganization extends Organization
 {

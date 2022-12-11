@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Mohit
+ * @author harshita
  */
 public class InsuranceOrganization extends Organization
 {

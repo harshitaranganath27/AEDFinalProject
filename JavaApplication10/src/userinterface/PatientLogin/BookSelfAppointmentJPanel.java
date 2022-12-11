@@ -38,7 +38,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author avina
+ * @author harshita
  */
 public class BookSelfAppointmentJPanel extends javax.swing.JPanel {
 

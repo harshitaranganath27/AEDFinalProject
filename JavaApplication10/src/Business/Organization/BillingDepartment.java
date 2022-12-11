@@ -16,7 +16,7 @@ import java.util.Date;
 
 /**
  *
- * @author Mohit
+ * @author harshita
  */
 public class BillingDepartment extends Organization{
     String billingId;

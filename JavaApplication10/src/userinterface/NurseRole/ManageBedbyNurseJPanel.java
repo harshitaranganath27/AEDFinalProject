@@ -17,7 +17,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author avina
+ * @author harshita
  */
 public class ManageBedbyNurseJPanel extends javax.swing.JPanel {
 

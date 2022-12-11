@@ -18,7 +18,7 @@ import userinterface.AdministrativeRole.TotalBedCountGraph;
 
 /**
  *
- * @author Mohit
+ * @author harshita
  */
 public class ManageNetworkJPanel extends javax.swing.JPanel {
 

@@ -28,7 +28,7 @@ import userinterface.ReceptionistRole.ReceptionistWorkAreaJPanel;
 
 /**
  *
- * @author avina
+ * @author harshita
  */
 public class CreateNewPatientJPanel extends javax.swing.JPanel {
 

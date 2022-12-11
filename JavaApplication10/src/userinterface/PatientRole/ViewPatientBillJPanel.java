@@ -19,7 +19,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Mohit
+ * @author harshita
  */
 public class ViewPatientBillJPanel extends javax.swing.JPanel {
 

@@ -14,7 +14,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Mohit
+ * @author harshita
  */
 public class PharmacyManageAreaJPanel extends javax.swing.JPanel {
 

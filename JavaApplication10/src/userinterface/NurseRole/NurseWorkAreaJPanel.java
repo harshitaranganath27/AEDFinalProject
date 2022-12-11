@@ -19,7 +19,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author avina
+ * @author harshita
  */
 public class NurseWorkAreaJPanel extends javax.swing.JPanel {
 
