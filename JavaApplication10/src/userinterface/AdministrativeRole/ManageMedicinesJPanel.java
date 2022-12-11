@@ -119,7 +119,6 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         organizationJTable = new javax.swing.JTable();
         cmbMainMedicineType = new javax.swing.JComboBox();
-        jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         addMedicineJPanel = new javax.swing.JPanel();
         dosageJTextField = new javax.swing.JTextField();
@@ -136,10 +135,6 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
         closebtn = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         expDate = new javax.swing.JTextField();
-        jPanel1 = new javax.swing.JPanel();
-        backJButton = new javax.swing.JButton();
-        btnAdd = new javax.swing.JButton();
-        btnView = new javax.swing.JButton();
         viewMedicineJPanel = new javax.swing.JPanel();
         dosageJTextField1 = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
@@ -156,13 +151,14 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
         closebtn1 = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
         expDate1 = new javax.swing.JTextField();
-        jPanel14 = new javax.swing.JPanel();
-        jPanel13 = new javax.swing.JPanel();
+        backJButton = new javax.swing.JButton();
+        btnAdd = new javax.swing.JButton();
+        btnView = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        organizationJTable.setBackground(new java.awt.Color(255, 193, 131));
+        organizationJTable.setBackground(new java.awt.Color(153, 204, 255));
         organizationJTable.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 204, 255)));
         organizationJTable.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         organizationJTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -187,23 +183,19 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 641, 177));
 
         cmbMainMedicineType.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        cmbMainMedicineType.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select", "Liquid", "Tablet", "Gel", "Injection", "Other" }));
+        cmbMainMedicineType.setForeground(new java.awt.Color(0, 51, 255));
+        cmbMainMedicineType.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Medicine Type", "Liquid", "Tablet", "Gel", "Injection", "Other" }));
         cmbMainMedicineType.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbMainMedicineTypeActionPerformed(evt);
             }
         });
-        add(cmbMainMedicineType, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 140, 179, -1));
-
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(68, 145, 157));
-        jLabel1.setText("Medicine Type");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 140, -1, -1));
+        add(cmbMainMedicineType, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 210, -1));
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(68, 145, 157));
+        jLabel4.setForeground(new java.awt.Color(0, 51, 255));
         jLabel4.setText("Manage Medicine Inventory");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, -1, -1));
 
         addMedicineJPanel.setBackground(new java.awt.Color(255, 255, 255));
         addMedicineJPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Add Medicine", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 14), new java.awt.Color(68, 145, 157))); // NOI18N
@@ -248,6 +240,11 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
         addMedicineJPanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
 
         availableQtyTxt.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
+        availableQtyTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                availableQtyTxtActionPerformed(evt);
+            }
+        });
         addMedicineJPanel.add(availableQtyTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 122, -1));
 
         btnSave.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
@@ -257,7 +254,7 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
                 btnSaveActionPerformed(evt);
             }
         });
-        addMedicineJPanel.add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 63, -1));
+        addMedicineJPanel.add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, 63, -1));
 
         closebtn.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
         closebtn.setText("Close");
@@ -276,61 +273,6 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
         addMedicineJPanel.add(expDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 122, -1));
 
         add(addMedicineJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 416, 310, 340));
-
-        jPanel1.setBackground(new java.awt.Color(164, 208, 215));
-
-        backJButton.setBackground(new java.awt.Color(102, 147, 255));
-        backJButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        backJButton.setText("Back");
-        backJButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backJButtonActionPerformed(evt);
-            }
-        });
-
-        btnAdd.setBackground(new java.awt.Color(255, 155, 54));
-        btnAdd.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        btnAdd.setText("Add Medicine");
-        btnAdd.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddActionPerformed(evt);
-            }
-        });
-
-        btnView.setBackground(new java.awt.Color(255, 155, 54));
-        btnView.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        btnView.setText("View Details");
-        btnView.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnViewActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
-                .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addComponent(btnView, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(39, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnView, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(192, 47, -1, -1));
 
         viewMedicineJPanel.setBackground(new java.awt.Color(255, 255, 255));
         viewMedicineJPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "View Medicine", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 14), new java.awt.Color(68, 145, 157))); // NOI18N
@@ -384,7 +326,7 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
                 btnSave1ActionPerformed(evt);
             }
         });
-        viewMedicineJPanel.add(btnSave1, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 256, 63, -1));
+        viewMedicineJPanel.add(btnSave1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 63, -1));
 
         btnUpdate1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         btnUpdate1.setText("Update Details");
@@ -393,7 +335,7 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
                 btnUpdate1ActionPerformed(evt);
             }
         });
-        viewMedicineJPanel.add(btnUpdate1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 256, 124, -1));
+        viewMedicineJPanel.add(btnUpdate1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, 124, -1));
 
         closebtn1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         closebtn1.setText("Close");
@@ -402,7 +344,7 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
                 closebtn1ActionPerformed(evt);
             }
         });
-        viewMedicineJPanel.add(closebtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, -1, -1));
+        viewMedicineJPanel.add(closebtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, -1, -1));
 
         jLabel14.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel14.setText("Expiry Date");
@@ -413,35 +355,36 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
 
         add(viewMedicineJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(547, 416, 300, 340));
 
-        jPanel14.setBackground(new java.awt.Color(196, 224, 229));
+        backJButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        backJButton.setText("Back");
+        backJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backJButtonActionPerformed(evt);
+            }
+        });
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 113, 44));
 
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 45, Short.MAX_VALUE)
-        );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 190, Short.MAX_VALUE)
-        );
+        btnAdd.setBackground(new java.awt.Color(0, 51, 255));
+        btnAdd.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnAdd.setForeground(new java.awt.Color(255, 255, 255));
+        btnAdd.setText("Add Medicine");
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddActionPerformed(evt);
+            }
+        });
+        add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 370, 179, 42));
 
-        add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 190));
-
-        jPanel13.setBackground(new java.awt.Color(68, 145, 157));
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 160, Short.MAX_VALUE)
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 160, -1));
+        btnView.setBackground(new java.awt.Color(0, 51, 255));
+        btnView.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnView.setForeground(new java.awt.Color(255, 255, 255));
+        btnView.setText("View Details");
+        btnView.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewActionPerformed(evt);
+            }
+        });
+        add(btnView, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 370, 171, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
@@ -786,6 +729,10 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
         populateViewMedicine(med);
     }//GEN-LAST:event_btnViewActionPerformed
 
+    private void availableQtyTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_availableQtyTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_availableQtyTxtActionPerformed
+
     
     void populateViewMedicine(Medicine med){
         
@@ -836,7 +783,6 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField dosageJTextField1;
     private javax.swing.JTextField expDate;
     private javax.swing.JTextField expDate1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -850,9 +796,6 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField nameJTextField;
     private javax.swing.JTextField nameJTextField1;
