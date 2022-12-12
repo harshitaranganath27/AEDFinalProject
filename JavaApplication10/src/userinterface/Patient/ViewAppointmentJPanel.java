@@ -87,11 +87,11 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) viewAppointmentJTable.getModel();
         model.setRowCount(0);
         List<Appointment> appointments = null;
-        if(enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.Hospital.getValue())){
+        if(enterprise.getType().getValue().equals(Enterprise.enterprseType.Hospital.getValue())){
             if(patient.getAppointmentDirectory() != null && patient.getAppointmentDirectory().getApptmentList() != null){
                 appointments = patient.getAppointmentDirectory().getApptmentList();
             }
-        }else if(enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.Lab.getValue())){
+        }else if(enterprise.getType().getValue().equals(Enterprise.enterprseType.Lab.getValue())){
             if(patient.getLabAppointmentDirectory()!= null && patient.getLabAppointmentDirectory().getApptmentList() != null){
                 appointments = patient.getLabAppointmentDirectory().getApptmentList();
             }
@@ -121,11 +121,11 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) viewAppointmentJTable.getModel();
         model.setRowCount(0);
         List<Appointment> appointments = null;
-        if(enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.Hospital.getValue())){
+        if(enterprise.getType().getValue().equals(Enterprise.enterprseType.Hospital.getValue())){
             if(patient.getAppointmentDirectory() != null && patient.getAppointmentDirectory().getApptmentList() != null){
                 appointments = patient.getAppointmentDirectory().getApptmentList();
             }
-        }else if(enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.Lab.getValue())){
+        }else if(enterprise.getType().getValue().equals(Enterprise.enterprseType.Lab.getValue())){
             if(patient.getLabAppointmentDirectory()!= null && patient.getLabAppointmentDirectory().getApptmentList() != null){
                 appointments = patient.getLabAppointmentDirectory().getApptmentList();
             }

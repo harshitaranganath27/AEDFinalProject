@@ -54,7 +54,7 @@ public class BedCountGraph extends javax.swing.JPanel {
         
         Map<String, Integer> workReqMap = new HashMap<>();
 
-        for (Organization org : enterprise.getOrganizationDirectory().getOrganizationList()) 
+        for (Organization org : enterprise.getOrgDirectory().getOrganizationList()) 
         {
             if (org instanceof BedManagementDepartment) {
                 List<Bed> bedList = ((BedManagementDepartment) org).getBedList().getBedList();

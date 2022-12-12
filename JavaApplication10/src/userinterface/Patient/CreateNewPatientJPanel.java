@@ -339,7 +339,7 @@ public class CreateNewPatientJPanel extends javax.swing.JPanel {
             //nothing
         } else {
             for (Enterprise enterprise : enterprsList) {
-                if (enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.Insurance.getValue())) {
+                if (enterprise.getType().getValue().equals(Enterprise.enterprseType.Insurance.getValue())) {
                     {
                         cmbInsuranceCompany.addItem(enterprise);
                     }
@@ -465,13 +465,13 @@ public class CreateNewPatientJPanel extends javax.swing.JPanel {
         Component component = componentArray[componentArray.length - 1];
         ReceptionistWorkAreaJPanel sysAdminwajp = (ReceptionistWorkAreaJPanel) component;
         
-         if(enterprise.getEnterpriseType().getValue().equals("Hospital"))
+         if(enterprise.getType().getValue().equals("Hospital"))
         {
            sysAdminwajp.populatePatients();
         }
         
         
-        if(enterprise.getEnterpriseType().getValue().equals("Lab"))
+        if(enterprise.getType().getValue().equals("Lab"))
         {
            sysAdminwajp.populateTest();
         }

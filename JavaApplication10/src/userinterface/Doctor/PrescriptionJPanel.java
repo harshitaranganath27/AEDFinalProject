@@ -90,7 +90,7 @@ public class PrescriptionJPanel extends javax.swing.JPanel {
                 enterpriseList=network.getEnterpriseDirectory().getEnterpriseList();
                 
                for(Enterprise enterpri: enterpriseList){
-                   if(enterpri.getEnterpriseType().equals(Enterprise.EnterpriseType.Pharmacy))
+                   if(enterpri.getType().equals(Enterprise.enterprseType.Pharmacy))
                    {
                        cmbPharmacy.addItem(enterpri);
                    }

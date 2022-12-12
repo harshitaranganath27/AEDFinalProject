@@ -42,7 +42,7 @@ public class Pharmacy extends Enterprise{
 
     
     public Pharmacy(String name){
-        super(name,EnterpriseType.Pharmacy);
+        super(name,enterprseType.Pharmacy);
         medicineList = new MedicineDirectory();
         populateMedicineListForNewPharmacy();
         

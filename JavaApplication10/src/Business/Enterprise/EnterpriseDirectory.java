@@ -32,21 +32,21 @@ public class EnterpriseDirectory {
     }
     
     //Create enterprise
-    public Enterprise createAndAddEnterprise(String name,Enterprise.EnterpriseType type){
+    public Enterprise createAndAddEnterprise(String name,Enterprise.enterprseType type){
         Enterprise enterprise=null;
-        if(type==Enterprise.EnterpriseType.Hospital){
+        if(type==Enterprise.enterprseType.Hospital){
             enterprise=new Hospital(name);
             enterpriseList.add(enterprise);
         }
-        else if(type==Enterprise.EnterpriseType.Pharmacy){
+        else if(type==Enterprise.enterprseType.Pharmacy){
             enterprise=new Pharmacy(name);
             enterpriseList.add(enterprise);
         }
-        else if(type==Enterprise.EnterpriseType.Lab){
+        else if(type==Enterprise.enterprseType.Lab){
             enterprise=new Lab(name);
             enterpriseList.add(enterprise);
         }
-        else if(type==Enterprise.EnterpriseType.Insurance){
+        else if(type==Enterprise.enterprseType.Insurance){
             enterprise=new Insurance(name);
             enterpriseList.add(enterprise);
         }

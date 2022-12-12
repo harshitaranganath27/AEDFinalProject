@@ -11,7 +11,7 @@ import Business.Enterprise.Enterprise;
 import Business.Operation.Operation;
 import Business.Org.BedManagementDepartment;
 import Business.Org.Organization;
-import Business.Org.OrganizationDirectory;
+import Business.Org.organizationDir;
 import Business.Patient.Patient;
 import Business.UserAccount.UserAccount;
 import Business.Utility.Validation;
@@ -83,7 +83,7 @@ public class AssignBedJPanel extends javax.swing.JPanel {
         
         boolean flag=false;
         BedManagementDepartment bedOrg=null;
-        OrganizationDirectory orgDir = enterprise.getOrganizationDirectory();
+        organizationDir orgDir = enterprise.getOrgDirectory();
         for(Organization org : orgDir.getOrganizationList() ){
             if(org.getName().equals(Organization.Type.BedManagement.getValue()))
             {

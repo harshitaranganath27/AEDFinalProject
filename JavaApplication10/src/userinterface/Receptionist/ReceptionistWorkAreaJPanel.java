@@ -48,25 +48,25 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
         
         jLabel5.setText("Welcome " + account.getEmployee().getEmpName());
         
-        if(enterprise.getEnterpriseType().getValue().equals("Hospital"))
+        if(enterprise.getType().getValue().equals("Hospital"))
         {
            populatePatients();
         }
         
         
-        if(enterprise.getEnterpriseType().getValue().equals("Lab"))
+        if(enterprise.getType().getValue().equals("Lab"))
         {
             populateTest();
         }
         
         
-        if(enterprise.getEnterpriseType().getValue().equals("Pharmacy"))
+        if(enterprise.getType().getValue().equals("Pharmacy"))
         {
            // populatepharmacyReceptionist();
         }
         
         
-        if(enterprise.getEnterpriseType().getValue().equals("Insurance"))
+        if(enterprise.getType().getValue().equals("Insurance"))
         {
           //  populateTest();
         }

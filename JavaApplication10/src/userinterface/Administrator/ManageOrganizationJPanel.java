@@ -10,7 +10,7 @@ import Business.Enterprise.Enterprise;
 import Business.Org.BedManagementDepartment;
 import Business.Org.Organization;
 import Business.Org.Organization.Type;
-import Business.Org.OrganizationDirectory;
+import Business.Org.organizationDir;
 import java.awt.CardLayout;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -23,7 +23,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ManageOrganizationJPanel extends javax.swing.JPanel {
 
-    private OrganizationDirectory directory;
+    private organizationDir directory;
     private JPanel userProcessContainer;
     private Enterprise enterprise;
     private EcoSystem system;
@@ -31,7 +31,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManageOrganizationJPanel
      */
-    public ManageOrganizationJPanel(JPanel userProcessContainer, OrganizationDirectory directory, Enterprise enterprise, EcoSystem system) {
+    public ManageOrganizationJPanel(JPanel userProcessContainer, organizationDir directory, Enterprise enterprise, EcoSystem system) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.directory = directory;
@@ -45,14 +45,14 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
     private void populateCombo() {
         organizationJComboBox.removeAllItems();
 
-        if (enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.Pharmacy.getValue())) {
+        if (enterprise.getType().getValue().equals(Enterprise.enterprseType.Pharmacy.getValue())) {
             for (Type type : Organization.Type.values()) {
                 if (type.getValue().equals(Type.MedicalStore.getValue())
                         || type.getValue().equals(Type.Billing.getValue())) {
                     organizationJComboBox.addItem(type);
                 }
             }
-        } else if (enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.Lab.getValue())) {
+        } else if (enterprise.getType().getValue().equals(Enterprise.enterprseType.Lab.getValue())) {
             for (Type type : Organization.Type.values()) {
                 if (type.getValue().equals(Type.Billing.getValue())
                         || type.getValue().equals(Type.Pathology.getValue())
@@ -61,7 +61,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
                 }
             }
 
-        } else if (enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.Insurance.getValue())) {
+        } else if (enterprise.getType().getValue().equals(Enterprise.enterprseType.Insurance.getValue())) {
             for (Type type : Organization.Type.values()) {
                 if (type.getValue().equals(Type.Insurance.getValue())
                         || type.getValue().equals(Type.Billing.getValue())) {
@@ -378,7 +378,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         int dialogResult = JOptionPane.showConfirmDialog(null, "Would you like to delete the department details?", "Warning", dialogButton);
         if (dialogResult == JOptionPane.YES_OPTION) {
             Organization org = (Organization) organizationJTable.getValueAt(row, 1);
-            ArrayList<Organization> orgList = enterprise.getOrganizationDirectory().getOrganizationList();
+            ArrayList<Organization> orgList = enterprise.getOrgDirectory().getOrganizationList();
             org.removeAllUserAccount();
             org.removeAllEmployee();
             orgList.remove(org);

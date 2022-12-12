@@ -77,7 +77,7 @@ public class ConfigureASystem {
                 System.out.println("Head: " + username);
             
                 System.out.println("Insurance Organization");
-                o = Ie.getOrganizationDirectory().createOrganization(Organization.Type.Insurance);
+                o = Ie.getOrgDirectory().createOrganization(Organization.Type.Insurance);
                     
                     for(int i = 41; i<=45; i++) 
                     {
@@ -130,7 +130,7 @@ public class ConfigureASystem {
                 System.out.println("Head: " + username);
                 
                 System.out.println("ENT Organization");
-                o = e.getOrganizationDirectory().createOrganization(Organization.Type.ENT);
+                o = e.getOrgDirectory().createOrganization(Organization.Type.ENT);
                 
                 for(int i = 1; i<=21; i++) 
                 {
@@ -195,7 +195,7 @@ public class ConfigureASystem {
                 System.out.println();
                 
                 System.out.println("Cardiology Organization");
-                o = e.getOrganizationDirectory().createOrganization(Organization.Type.Cardiology);
+                o = e.getOrgDirectory().createOrganization(Organization.Type.Cardiology);
                 
                 for(int i = 100; i<=121; i++) 
                 {
@@ -260,13 +260,13 @@ public class ConfigureASystem {
                 System.out.println();
                 
                 System.out.println("BedManagement Organization");
-                o = e.getOrganizationDirectory().createOrganization(Organization.Type.BedManagement);
+                o = e.getOrgDirectory().createOrganization(Organization.Type.BedManagement);
                 BedManagementDepartment bo = ((BedManagementDepartment)o);
                 bo.createBedList(23);
                 
                 
                 System.out.println("Billing Organization");
-                o = e.getOrganizationDirectory().createOrganization(Organization.Type.Billing);
+                o = e.getOrgDirectory().createOrganization(Organization.Type.Billing);
                 //((BillingDepartment)o).generateInvoice(date, patient);
                 
          
@@ -291,7 +291,7 @@ public class ConfigureASystem {
                 System.out.println("Head: " + username);
                 
                     System.out.println("Pathology Organization");
-                    o = e.getOrganizationDirectory().createOrganization(Organization.Type.Pathology);
+                    o = e.getOrgDirectory().createOrganization(Organization.Type.Pathology);
                     
                     for(int i = 22; i<=26; i++) 
                     {
@@ -338,7 +338,7 @@ public class ConfigureASystem {
                         
                 
                     System.out.println("Radiology Organization");
-                    o = e.getOrganizationDirectory().createOrganization(Organization.Type.Radiology);
+                    o = e.getOrgDirectory().createOrganization(Organization.Type.Radiology);
                     
                     for(int i = 27; i<=32; i++) 
                     {
@@ -400,7 +400,7 @@ public class ConfigureASystem {
                 System.out.println("Head: " + username);
             
                 System.out.println("Medical Store Organization");
-                o = e.getOrganizationDirectory().createOrganization(Organization.Type.MedicalStore);
+                o = e.getOrgDirectory().createOrganization(Organization.Type.MedicalStore);
                     
                     for(int i = 34; i<=39; i++) 
                     {
@@ -459,7 +459,7 @@ public class ConfigureASystem {
                 System.out.println("Head: " + username);
             
                 System.out.println("Insurance Organization");
-                o = Ie.getOrganizationDirectory().createOrganization(Organization.Type.Insurance);
+                o = Ie.getOrgDirectory().createOrganization(Organization.Type.Insurance);
                     
                     for(int i = 87; i<=92; i++) 
                     {
@@ -511,7 +511,7 @@ public class ConfigureASystem {
                 System.out.println("Head: " + username);
                 
                 System.out.println("Dental Organization");
-                o = e.getOrganizationDirectory().createOrganization(Organization.Type.Dental);
+                o = e.getOrgDirectory().createOrganization(Organization.Type.Dental);
                 
                 for(int i = 47; i<=68; i++) 
                 {
@@ -576,7 +576,7 @@ public class ConfigureASystem {
                 }
                 
                 System.out.println("CovidCenter Organization");
-                o = e.getOrganizationDirectory().createOrganization(Organization.Type.CovidCenter);
+                o = e.getOrgDirectory().createOrganization(Organization.Type.CovidCenter);
                 
                 for(int i = 200; i<=221; i++) 
                 {
@@ -640,13 +640,13 @@ public class ConfigureASystem {
                 System.out.println();
                 
                 System.out.println("BedManagement Organization");
-                o = e.getOrganizationDirectory().createOrganization(Organization.Type.BedManagement);
+                o = e.getOrgDirectory().createOrganization(Organization.Type.BedManagement);
                 bo = ((BedManagementDepartment)o);
                 bo.createBedList(43);
                 
                 System.out.println();
                 System.out.println("Billing Organization");
-                o = e.getOrganizationDirectory().createOrganization(Organization.Type.Billing);
+                o = e.getOrgDirectory().createOrganization(Organization.Type.Billing);
                 
             
             system.getNetworkList().get(1).getEnterpriseDirectory().getEnterpriseList().add(e) ;
@@ -670,7 +670,7 @@ public class ConfigureASystem {
                 System.out.println("Head: " + username);
                 
                     System.out.println("Pathology Organization");
-                    o = e.getOrganizationDirectory().createOrganization(Organization.Type.Pathology);
+                    o = e.getOrgDirectory().createOrganization(Organization.Type.Pathology);
                     
                     for(int i = 70; i<=74; i++) 
                     {
@@ -713,7 +713,7 @@ public class ConfigureASystem {
                     
                 
                     System.out.println("Radiology Organization");
-                    o = e.getOrganizationDirectory().createOrganization(Organization.Type.Radiology);
+                    o = e.getOrgDirectory().createOrganization(Organization.Type.Radiology);
                     
                     for(int i = 75; i<=79; i++) 
                     {
@@ -774,7 +774,7 @@ public class ConfigureASystem {
                 System.out.println("Head: " + username);
             
                 System.out.println("Medical Store Organization");
-                o = e.getOrganizationDirectory().createOrganization(Organization.Type.MedicalStore);
+                o = e.getOrgDirectory().createOrganization(Organization.Type.MedicalStore);
                     
                     for(int i = 81; i<=85; i++) 
                     {

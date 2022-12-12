@@ -6,7 +6,7 @@ import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Org.BedManagementDepartment;
 import Business.Org.Organization;
-import Business.Org.OrganizationDirectory;
+import Business.Org.organizationDir;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.ImageIcon;
@@ -34,7 +34,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         this.system = system;
         lblEnterprise.setText(enterprise.getName());
         jLabel5.setText("Welcome " + account.getEmployee().getEmpName());
-        String enterpriseType= enterprise.getEnterpriseType().toString();
+        String enterpriseType= enterprise.getType().toString();
         if(enterpriseType.equals("Hospital"))
         {
             manageBedsBtn.setEnabled(true);
@@ -149,7 +149,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
 
     private void manageInventoryBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageInventoryBtnActionPerformed
 
-        ManageMedicinesJPanel manageEmployeeJPanel = new ManageMedicinesJPanel(userProcessContainer, enterprise.getOrganizationDirectory(), enterprise);
+        ManageMedicinesJPanel manageEmployeeJPanel = new ManageMedicinesJPanel(userProcessContainer, enterprise.getOrgDirectory(), enterprise);
         userProcessContainer.add("ManageMedicinesJPanel", manageEmployeeJPanel);
 
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
@@ -162,7 +162,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         //check if bed management department is created or not
         boolean flag=false;
         BedManagementDepartment bedOrg=null;
-        OrganizationDirectory orgDir = enterprise.getOrganizationDirectory();
+        organizationDir orgDir = enterprise.getOrgDirectory();
         for(Organization org : orgDir.getOrganizationList() ){
             if(org.getName().equals(Organization.Type.BedManagement.getValue()))
             {
@@ -198,7 +198,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
 
     private void manageDeptBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageDeptBtnActionPerformed
 
-        ManageOrganizationJPanel manageOrganizationJPanel = new ManageOrganizationJPanel(userProcessContainer, enterprise.getOrganizationDirectory(), enterprise, system);
+        ManageOrganizationJPanel manageOrganizationJPanel = new ManageOrganizationJPanel(userProcessContainer, enterprise.getOrgDirectory(), enterprise, system);
         userProcessContainer.add("ManageOrganizationJPanel", manageOrganizationJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);

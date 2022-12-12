@@ -8,7 +8,7 @@ package userinterface.Nurse;
 import Business.Bed.Bed;
 import Business.Org.BedManagementDepartment;
 import Business.Org.Organization;
-import Business.Org.OrganizationDirectory;
+import Business.Org.organizationDir;
 import Business.Patient.Patient;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
@@ -22,13 +22,13 @@ import javax.swing.table.DefaultTableModel;
 public class ManageBedbyNurseJPanel extends javax.swing.JPanel {
 
     JPanel userProcessContainer;
-    OrganizationDirectory organizationDirectory;
+    organizationDir organizationDirectory;
     Organization organization;
     BedManagementDepartment bedorg;
     /**
      * Creates new form ManageBedJPanel
      */
-    public ManageBedbyNurseJPanel(JPanel userProcessContainer, OrganizationDirectory organizationDirectory, Organization organization, BedManagementDepartment bedorg) {
+    public ManageBedbyNurseJPanel(JPanel userProcessContainer, organizationDir organizationDirectory, Organization organization, BedManagementDepartment bedorg) {
         initComponents();
         this.userProcessContainer= userProcessContainer;
         this.organizationDirectory= organizationDirectory;

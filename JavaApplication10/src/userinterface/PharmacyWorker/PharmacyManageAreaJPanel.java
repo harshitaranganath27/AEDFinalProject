@@ -132,7 +132,7 @@ public class PharmacyManageAreaJPanel extends javax.swing.JPanel {
 
     private void manageMedicineBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageMedicineBtnActionPerformed
         // TODO add your handling code here:
-        ManageMedicinesJPanel managePatientsJPanel = new ManageMedicinesJPanel(userProcessContainer,  enterprise.getOrganizationDirectory(),enterprise);
+        ManageMedicinesJPanel managePatientsJPanel = new ManageMedicinesJPanel(userProcessContainer,  enterprise.getOrgDirectory(),enterprise);
         userProcessContainer.add("ManageMedicinesJPanel", managePatientsJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);

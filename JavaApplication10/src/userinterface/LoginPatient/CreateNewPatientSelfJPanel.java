@@ -349,7 +349,7 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
             //nothing
         } else {
             for (Enterprise enterprise : enterprsList) {
-                if (enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.Insurance.getValue())) {
+                if (enterprise.getType().getValue().equals(Enterprise.enterprseType.Insurance.getValue())) {
                     {
                         cmbInsuranceCompany.addItem(enterprise);
                     }

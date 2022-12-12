@@ -4,14 +4,7 @@
  * and open the template in the editor.
  */
 package Business.Enterprise.HospEnterprise;
-
-//import Business.Department.DepartmentDirectory;
 import Business.Enterprise.Enterprise;
-//import Business.Location.Location;
-//import Business.Nurse.NurseDirectory;
-//import Business.Patient.PatientDirectory;
-//import Business.Department.Receptionist;
-//import Business.Person.EmployeeDirectory;
 import Business.Role.Role;
 import java.util.ArrayList;
 
@@ -21,17 +14,8 @@ import java.util.ArrayList;
  */
 public class Hospital extends Enterprise {
     int id;
-    //EmployeeDirectory doctorList;
-    //NurseDirectory nurseList;
-    //Location location;
-    //DepartmentDirectory departmentList;
-    //PatientDirectory patientList;
-    //Receptionist receptionist;
-    
-    
-    //String enterpriseType;
     public Hospital(String name){
-        super(name,EnterpriseType.Hospital);
+        super(name,enterprseType.Hospital);
     }
     @Override
     public ArrayList<Role> getSupportedRole() {

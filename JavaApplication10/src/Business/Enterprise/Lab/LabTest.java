@@ -17,11 +17,11 @@ public class LabTest {
     int id;
     String name;
     String type;
-    double testCharge;
+    double charge;
     Date createdOn;
-    String status; //scheduled, in-process, complete
+    String status;
     Employee doctor;
-    Employee labTechnician;
+    Employee labTech;
     private Patient patient;
     private Lab lab;
 
@@ -49,12 +49,12 @@ public class LabTest {
         this.type = type;
     }
 
-    public double getTestCharge() {
-        return testCharge;
+    public double getCharge() {
+        return charge;
     }
 
-    public void setTestCharge(double testCharge) {
-        this.testCharge = testCharge;
+    public void setCharge(double charge) {
+        this.charge = charge;
     }
 
     public String getStatus() {
@@ -73,12 +73,12 @@ public class LabTest {
         this.doctor = doctor;
     }
 
-    public Employee getLabTechnician() {
-        return labTechnician;
+    public Employee getLabTech() {
+        return labTech;
     }
 
-    public void setLabTechnician(Employee labTechnician) {
-        this.labTechnician = labTechnician;
+    public void setLabTech(Employee labTech) {
+        this.labTech = labTech;
     }
 
     public Date getCreatedOn() {

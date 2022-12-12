@@ -11,7 +11,7 @@ import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Org.BedManagementDepartment;
 import Business.Org.Organization;
-import Business.Org.OrganizationDirectory;
+import Business.Org.organizationDir;
 import Business.Patient.Patient;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
@@ -25,7 +25,7 @@ import javax.swing.table.DefaultTableModel;
 public class ManageBedJPanel extends javax.swing.JPanel {
 
     JPanel userProcessContainer;
-    OrganizationDirectory organizationDirectory;
+    organizationDir organizationDirectory;
     Organization organization;
     BedManagementDepartment bedorg;
     Enterprise ent;
@@ -33,7 +33,7 @@ public class ManageBedJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManageBedJPanel
      */
-    public ManageBedJPanel(JPanel userProcessContainer, OrganizationDirectory organizationDirectory, Organization organization, BedManagementDepartment bedorg, Enterprise ent, EcoSystem system) {
+    public ManageBedJPanel(JPanel userProcessContainer, organizationDir organizationDirectory, Organization organization, BedManagementDepartment bedorg, Enterprise ent, EcoSystem system) {
         initComponents();
         this.userProcessContainer= userProcessContainer;
         this.organizationDirectory= organizationDirectory;

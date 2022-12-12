@@ -9,7 +9,7 @@ import Business.Enterprise.Enterprise;
 import Business.Enterprise.Insurance.Insurance;
 import Business.Enterprise.Insurance.InsuranceDetails;
 import Business.Enterprise.Insurance.InsuranceDirectory;
-import Business.Org.OrganizationDirectory;
+import Business.Org.organizationDir;
 import Business.Patient.Patient;
 import Business.Patient.PatientDirectory;
 import Business.Role.DoctorRole;
@@ -39,7 +39,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ManageInsuranceJPanel extends javax.swing.JPanel {
 
-    private OrganizationDirectory organizationDir;
+    private organizationDir organizationDir;
     private JPanel userProcessContainer;
     private Enterprise enterprise;
     private PatientDirectory  patientDir;
@@ -50,7 +50,7 @@ public class ManageInsuranceJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManageOrganizationJPanel
      */
-    public ManageInsuranceJPanel(JPanel userProcessContainer,OrganizationDirectory 
+    public ManageInsuranceJPanel(JPanel userProcessContainer,organizationDir 
             organizationDir, Enterprise enterprise, UserAccount useraccount) {
         initComponents();
         this.userProcessContainer = userProcessContainer;

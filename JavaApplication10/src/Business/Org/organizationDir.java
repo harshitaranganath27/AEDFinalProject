@@ -11,11 +11,11 @@ import java.util.ArrayList;
  *
  * @author harshita
  */
-public class OrganizationDirectory {
+public class organizationDir {
     
     private ArrayList<Organization> organizationList;
 
-    public OrganizationDirectory() {
+    public organizationDir() {
         organizationList = new ArrayList();
     }
 

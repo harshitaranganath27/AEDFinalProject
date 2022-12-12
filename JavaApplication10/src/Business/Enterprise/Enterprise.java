@@ -1,4 +1,4 @@
- /*
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -7,20 +7,19 @@ package Business.Enterprise;
 
 import Business.Network.Network;
 import Business.Org.Organization;
-import Business.Org.OrganizationDirectory;
+import Business.Org.organizationDir;
 
 /**
  *
- * @author 
+ * @author
  */
-public abstract class Enterprise extends Organization{
-    
-    private EnterpriseType enterpriseType;
-    private OrganizationDirectory organizationDirectory;
+public abstract class Enterprise extends Organization {
+
+    private enterprseType type;
+    private organizationDir orgDirectory;
     private Network network;
 
     public Network getNetwork() {
-        //networkName="Boston";
         return this.network;
     }
 
@@ -28,48 +27,49 @@ public abstract class Enterprise extends Organization{
         this.network = network;
     }
 
-    public OrganizationDirectory getOrganizationDirectory() {
-        return organizationDirectory;
+    public organizationDir getOrgDirectory() {
+        return orgDirectory;
     }
-    
-    public enum EnterpriseType{
+
+    public enum enterprseType {
         Hospital("Hospital"),
         Pharmacy("Pharmacy"),
         Lab("Lab"),
         Insurance("Insurance");
-        
+
         private String value;
-        
-        private EnterpriseType(String value){
-            this.value=value;
+
+        private enterprseType(String value) {
+            this.value = value;
         }
+
         public String getValue() {
             return value;
         }
+
         @Override
-        public String toString(){
-        return value;
-    }
-    }
-
-    public EnterpriseType getEnterpriseType() {
-        return enterpriseType;
+        public String toString() {
+            return value;
+        }
     }
 
-    public void setEnterpriseType(EnterpriseType enterpriseType) {
-        this.enterpriseType = enterpriseType;
+    public enterprseType getType() {
+        return type;
     }
-    
-    public Enterprise(String name,EnterpriseType type){
+
+    public void setType(enterprseType type) {
+        this.type = type;
+    }
+
+    public Enterprise(String name, enterprseType type) {
         super(name);
-        this.enterpriseType=type;
-        organizationDirectory=new OrganizationDirectory();
+        this.type = type;
+        orgDirectory = new organizationDir();
     }
-    
-    
+
     @Override
-    public String toString(){
+    public String toString() {
         return this.getName();
     }
-    
+
 }

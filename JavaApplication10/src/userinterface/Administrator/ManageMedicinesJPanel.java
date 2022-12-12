@@ -11,7 +11,7 @@ import Business.Enterprise.Pharmacy.Pharmacy;
 import Business.Medicine.Medicine;
 import Business.Medicine.MedicineDirectory;
 import Business.Org.Organization;
-import Business.Org.OrganizationDirectory;
+import Business.Org.organizationDir;
 import Business.Role.DoctorRole;
 import Business.Role.LabTechnicianRole;
 import Business.Role.NurseRole;
@@ -36,7 +36,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ManageMedicinesJPanel extends javax.swing.JPanel {
 
-    private OrganizationDirectory organizationDir;
+    private organizationDir organizationDir;
     private JPanel userProcessContainer;
     private Enterprise enterprise;
     private MedicineDirectory medicineDir;
@@ -44,7 +44,7 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManageOrganizationJPanel
      */
-    public ManageMedicinesJPanel(JPanel userProcessContainer,OrganizationDirectory organizationDir, Enterprise enterprise) {
+    public ManageMedicinesJPanel(JPanel userProcessContainer,organizationDir organizationDir, Enterprise enterprise) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.organizationDir = organizationDir;

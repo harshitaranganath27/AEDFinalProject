@@ -275,7 +275,7 @@ public class InsuranceDMainAreaJPanel extends javax.swing.JPanel {
         
         
         ManageInsuranceJPanel processWorkRequestJPanel = 
-                new ManageInsuranceJPanel(userProcessContainer, enterprise.getOrganizationDirectory(),  enterprise, userAccount);
+                new ManageInsuranceJPanel(userProcessContainer, enterprise.getOrgDirectory(),  enterprise, userAccount);
         userProcessContainer.add("ManageInsuranceJPanel", processWorkRequestJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);

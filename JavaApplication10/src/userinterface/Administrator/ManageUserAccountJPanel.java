@@ -75,7 +75,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     public void popOrganizationComboBox() {
         organizationJComboBox.removeAllItems();
         //organizationJComboBox2.removeAllItems();
-        for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
+        for (Organization organization : enterprise.getOrgDirectory().getOrganizationList()) {
             organizationJComboBox.addItem(organization);
           //  organizationJComboBox2.addItem(organization);
           //  selectDeptCmb.addItem(organization);// main cmb box of department
@@ -85,7 +85,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     public void popOrganizationComboBox2() {
         //organizationJComboBox.removeAllItems();
         organizationJComboBox2.removeAllItems();
-        for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
+        for (Organization organization : enterprise.getOrgDirectory().getOrganizationList()) {
            // organizationJComboBox.addItem(organization);
             organizationJComboBox2.addItem(organization);
             //selectDeptCmb.addItem(organization);// main cmb box of department
@@ -96,7 +96,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     public void popMainOrganizationComboBox() {
         //organizationJComboBox.removeAllItems();
         selectDeptCmb.removeAllItems();
-        for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
+        for (Organization organization : enterprise.getOrgDirectory().getOrganizationList()) {
             //organizationJComboBox.addItem(organization);
             //organizationJComboBox2.addItem(organization);
             selectDeptCmb.addItem(organization);// main cmb box of department
@@ -135,7 +135,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
         Organization selectedOrganization = (Organization) selectDeptCmb.getSelectedItem();
-        for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
+        for (Organization organization : enterprise.getOrgDirectory().getOrganizationList()) {
             if(organization.equals(selectedOrganization))
             {
                 for (UserAccount ua : organization.getUserAccountDirectory().getUserAccountList())
@@ -159,7 +159,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
         
-        for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
+        for (Organization organization : enterprise.getOrgDirectory().getOrganizationList()) {
             for (UserAccount ua : organization.getUserAccountDirectory().getUserAccountList()) {
                 Object row[] = new Object[3];
                 row[0] = ua;
@@ -1247,7 +1247,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
                 Organization org = (Organization) userJTable.getValueAt(row,2);
                 //reomve account
                 
-            for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) 
+            for (Organization organization : enterprise.getOrgDirectory().getOrganizationList()) 
             {
                 if(org.equals(organization)){
                 organization.getUserAccountDirectory().removeUserAccount(selectedUsrAcc);

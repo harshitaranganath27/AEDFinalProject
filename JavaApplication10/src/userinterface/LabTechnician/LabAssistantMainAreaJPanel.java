@@ -226,7 +226,7 @@ public class LabAssistantMainAreaJPanel extends javax.swing.JPanel {
             return;
         }
         LabTest lt = (LabTest) workRequestJTable.getValueAt(selectedRow, 4);
-        lt.setLabTechnician(userAccount.getEmployee());
+        lt.setLabTech(userAccount.getEmployee());
         lt.setStatus("In Process");
         request.setReceiver(userAccount);
         request.setStatus("Pending");

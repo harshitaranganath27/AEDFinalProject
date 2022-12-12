@@ -90,7 +90,7 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
         }
         txtDrRemarks.setText(request.getMessage());
         
-        testChargeTxt.setText(labTest.getTestCharge() == 0d ? "" :String.valueOf(labTest.getTestCharge()) );
+        testChargeTxt.setText(labTest.getCharge() == 0d ? "" :String.valueOf(labTest.getCharge()) );
         
         
         
@@ -101,9 +101,9 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
        //for (Appointment.AppointmentStatus type : Appointment.AppointmentStatus.values()){
             Object[] row = new Object[6];
             row[0]= labTest.getName();
-            row[1]= labTest.getTestCharge();
+            row[1]= labTest.getCharge();
             row[2]= currentDate;
-            row[3]= labTest.getLabTechnician().getEmpName();
+            row[3]= labTest.getLabTech().getEmpName();
             row[4]= cmbStatusType.getSelectedItem();
             row[5]= appointment.getPatient().getEmpName();
             dtm.addRow(row);
@@ -517,7 +517,7 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
             return;
         }
         labTest.setStatus("Completed");
-        labTest.setTestCharge(testCharge);
+        labTest.setCharge(testCharge);
         //String technicianName = technicianNameTxt.getText();
         //if(testName.equals("") || testDate.equals("") || technicianName.equals(""))
        Appointment app= appointment; //(Appointment)cmbStatusType.getSelectedItem();
@@ -559,9 +559,9 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
        //for (Appointment.AppointmentStatus type : Appointment.AppointmentStatus.values()){
             Object[] row = new Object[6];
             row[0]= labTest.getName();
-            row[1]= labTest.getTestCharge();
+            row[1]= labTest.getCharge();
             row[2]= currentDate;
-            row[3]= labTest.getLabTechnician().getEmpName();
+            row[3]= labTest.getLabTech().getEmpName();
             row[4]= cmbStatusType.getSelectedItem();
             row[5]= appointment.getPatient().getEmpName();
             dtm.addRow(row);

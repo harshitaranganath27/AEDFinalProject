@@ -66,7 +66,7 @@ public class Insurance extends Enterprise {
     
     //String enterpriseType;
     public Insurance(String name){
-        super(name,EnterpriseType.Insurance);
+        super(name,enterprseType.Insurance);
         
         indir= new InsuranceDirectory();
     }

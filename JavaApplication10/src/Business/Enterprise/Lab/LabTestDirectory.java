@@ -13,25 +13,22 @@ import java.util.List;
  * @author harshita
  */
 public class LabTestDirectory {
-    private List <LabTest> labTestList;
+    private List <LabTest> testList;
 
     public LabTestDirectory() {
-        labTestList= new ArrayList<>();
-        
-        
+        testList= new ArrayList<>();      
     }
 
-    public List<LabTest> getLabTestList() {
-        return labTestList;
+    public List<LabTest> getTestList() {
+        return testList;
     }
 
-    public void setLabTestList(List<LabTest> labTestList) {
-        this.labTestList = labTestList;
+    public void setTestList(List<LabTest> testList) {
+        this.testList = testList;
     }
     
     public LabTest addLabTest(LabTest labTest){
-       // LabTest labTest = new LabTest();
-        labTestList.add(labTest);
+        testList.add(labTest);
         return labTest;
     }
 }

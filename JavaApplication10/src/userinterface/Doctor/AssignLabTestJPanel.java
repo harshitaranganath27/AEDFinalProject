@@ -76,7 +76,7 @@ public class AssignLabTestJPanel extends javax.swing.JPanel {
             //nothing
         } else {
             for (Enterprise enterprise : enterprsList) {
-                if (enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.Lab.getValue())) {
+                if (enterprise.getType().getValue().equals(Enterprise.enterprseType.Lab.getValue())) {
                     {
                         labSelection.addItem(enterprise);
                     }
@@ -226,7 +226,7 @@ public class AssignLabTestJPanel extends javax.swing.JPanel {
                 lab.getWorkQueue().getWorkRequestList().add(workreq);
                 LabTest labTest= new LabTest();
                 labTest.setLab(lab);
-                labTest.setLabTechnician(null);
+                labTest.setLabTech(null);
                 labTest.setPatient(patient);
                 labTest.setName(testType);
                 labTest.setDoctor(appointment.getDoc());
@@ -269,8 +269,8 @@ public class AssignLabTestJPanel extends javax.swing.JPanel {
             labTestList= new LabTestDirectory();
             appointment.setLabTestList(labTestList);
         }
-        if(labTestList.getLabTestList() != null && !labTestList.getLabTestList().isEmpty()){
-        for (LabTest labTest : labTestList.getLabTestList()) {
+        if(labTestList.getTestList() != null && !labTestList.getTestList().isEmpty()){
+        for (LabTest labTest : labTestList.getTestList()) {
             Object[] row = new Object[5];
             row[0] = new Date();
             row[1] = labTest.getName();

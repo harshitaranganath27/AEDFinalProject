@@ -20,11 +20,9 @@ public class Lab extends Enterprise {
     int id;
     PatientDirectory patientList;
     Receptionist receptionist;
-    LabTechnicianDirectory labTechnicianList;
-    
-    //String enterpriseType;
+    LabTechDirectory labTechList;
     public Lab(String name){
-        super(name,Enterprise.EnterpriseType.Lab);
+        super(name,Enterprise.enterprseType.Lab);
     }
     @Override
     public ArrayList<Role> getSupportedRole() {

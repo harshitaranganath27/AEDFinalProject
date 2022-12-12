@@ -11,7 +11,7 @@ import java.util.List;
  *
  * @author harshita
  */
-public class LabTechnicianDirectory {
-    List<LabTechnician> labTechnicianList;
+public class LabTechDirectory {
+    List<LabTechnician> labTechList;
     
 }

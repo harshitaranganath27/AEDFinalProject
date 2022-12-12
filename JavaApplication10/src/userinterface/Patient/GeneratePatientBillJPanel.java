@@ -93,9 +93,9 @@ public class GeneratePatientBillJPanel extends javax.swing.JPanel {
         
         txtOperationCharge.setText(String.valueOf(operationCharge));
         Double labtestCharge = 0d;
-        if(appointment.getLabTestList() != null && appointment.getLabTestList().getLabTestList() != null){
-            for(LabTest labTest : appointment.getLabTestList().getLabTestList()){
-                labtestCharge += labTest.getTestCharge();
+        if(appointment.getLabTestList() != null && appointment.getLabTestList().getTestList() != null){
+            for(LabTest labTest : appointment.getLabTestList().getTestList()){
+                labtestCharge += labTest.getCharge();
             }
         }
         txtLabTestCharge.setText(String.valueOf(labtestCharge));
