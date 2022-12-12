@@ -186,7 +186,6 @@ void populateDetails(){
         btnviewBed = new javax.swing.JButton();
         txtBedAssignDate = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
         assignJPanel = new javax.swing.JPanel();
         lblBedStatus = new javax.swing.JLabel();
         bedStatusCmb = new javax.swing.JComboBox();
@@ -201,8 +200,6 @@ void populateDetails(){
         bedTypeCmb = new javax.swing.JComboBox();
         jLabel17 = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
-        jPanel14 = new javax.swing.JPanel();
-        jPanel13 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -362,7 +359,7 @@ void populateDetails(){
                 btnviewBedActionPerformed(evt);
             }
         });
-        viewDetailsJPanel.add(btnviewBed, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 550, 160, -1));
+        viewDetailsJPanel.add(btnviewBed, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 550, 160, -1));
 
         txtBedAssignDate.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
         txtBedAssignDate.addActionListener(new java.awt.event.ActionListener() {
@@ -375,9 +372,6 @@ void populateDetails(){
         jLabel16.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel16.setText("Assigned Date");
         viewDetailsJPanel.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 510, -1, -1));
-
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/BedMangmt.JPG"))); // NOI18N
-        viewDetailsJPanel.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 360, 220, -1));
 
         add(viewDetailsJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 580, 610));
 
@@ -488,7 +482,6 @@ void populateDetails(){
 
         add(assignJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 100, 440, 600));
 
-        btnBack.setBackground(new java.awt.Color(102, 147, 255));
         btnBack.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         btnBack.setText("Back");
         btnBack.setPreferredSize(new java.awt.Dimension(100, 40));
@@ -498,36 +491,6 @@ void populateDetails(){
             }
         });
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, -1, -1));
-
-        jPanel14.setBackground(new java.awt.Color(196, 224, 229));
-
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 180, Short.MAX_VALUE)
-        );
-
-        add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 180));
-
-        jPanel13.setBackground(new java.awt.Color(68, 145, 157));
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 200, -1));
 
         jLabel18.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(68, 145, 157));
@@ -800,7 +763,6 @@ void populateDetails(){
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -815,8 +777,6 @@ void populateDetails(){
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblBedStatus;

@@ -99,7 +99,7 @@ public class ManageBedbyNurseJPanel extends javax.swing.JPanel {
         searchEmailTxt = new javax.swing.JTextField();
         searchRequestIdCmb = new javax.swing.JComboBox();
 
-        setBackground(new java.awt.Color(164, 208, 215));
+        setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel3.setText("New Bed Count");
@@ -183,7 +183,6 @@ public class ManageBedbyNurseJPanel extends javax.swing.JPanel {
             }
         });
 
-        backJButton.setBackground(new java.awt.Color(102, 147, 255));
         backJButton.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         backJButton.setText("Back");
         backJButton.setPreferredSize(new java.awt.Dimension(100, 40));
