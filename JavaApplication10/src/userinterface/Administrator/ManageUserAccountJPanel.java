@@ -16,8 +16,8 @@ import Business.Role.PatientRole;
 import Business.Role.Receptionist;
 import Business.Role.Role;
 import Business.UserAccount.UserAccount;
-import static Business.Utility.EmailClass.sendEmailMessage;
-import static Business.Utility.EmailClass.sendTextMessage;
+import static Business.Utility.EmailClass.sendEmailFunc;
+import static Business.Utility.EmailClass.sendTextMessageFunc;
 import Business.Utility.Validation;
 import java.awt.CardLayout;
 import java.util.regex.Matcher;
@@ -847,8 +847,8 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
                 contact = phoneNumberTxt.getText() + "@tmomail.net";
             }
             //registrationRequest.setContactCarrierName(contact);
-            sendEmailMessage(uEmail, account);//.getText());
-            sendTextMessage(contact);
+            sendEmailFunc(uEmail, account);//.getText());
+            sendTextMessageFunc(contact);
         
              //JOptionPane.showMessageDialog(null, "User added successfully");
         

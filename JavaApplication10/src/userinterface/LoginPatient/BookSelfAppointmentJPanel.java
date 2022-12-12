@@ -18,8 +18,8 @@ import Business.Network.Network;
 import Business.Org.Organization;
 import Business.Patient.Patient;
 import Business.UserAccount.UserAccount;
-import static Business.Utility.EmailClass.sendEmailMessageAppointment;
-import static Business.Utility.EmailClass.sendTextMessageAppointment;
+import static Business.Utility.EmailClass.sendEmailAppointmentFunc;
+import static Business.Utility.EmailClass.sendTextAppointmentFunc;
 import Business.WorkQueue.DoctorWorkRequest;
 import Business.WorkQueue.LabTechnicianWorkRequest;
 import java.awt.CardLayout;
@@ -627,8 +627,8 @@ public class BookSelfAppointmentJPanel extends javax.swing.JPanel {
         UserAccount account = patient.getUserAccount();
         String phonecontact = patient.getPhoneNumber()+patient.getCarrier();
         //registrationRequest.setContactCarrierName(contact);
-        sendEmailMessageAppointment(uEmail, account, statusString);//.getText());
-        sendTextMessageAppointment(phonecontact, account, statusString);      
+        sendEmailAppointmentFunc(uEmail, account, statusString);//.getText());
+        sendTextAppointmentFunc(phonecontact, account, statusString);      
         setPanelTime();
         DB4OUtil.getInstance().storeSystem(system);
         

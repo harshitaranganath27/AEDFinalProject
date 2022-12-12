@@ -14,8 +14,8 @@ import Business.Enterprise.Lab.LabTest;
 import Business.Org.Organization;
 import Business.Patient.Patient;
 import Business.UserAccount.UserAccount;
-import static Business.Utility.EmailClass.sendEmailMessageAppointment;
-import static Business.Utility.EmailClass.sendTextMessageAppointment;
+import static Business.Utility.EmailClass.sendEmailAppointmentFunc;
+import static Business.Utility.EmailClass.sendTextAppointmentFunc;
 import Business.WorkQueue.DoctorWorkRequest;
 import Business.WorkQueue.LabTechnicianWorkRequest;
 import java.awt.CardLayout;
@@ -135,7 +135,6 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
         txtBookAppointment = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         txtAppointmentType = new javax.swing.JComboBox();
-        jLabel6 = new javax.swing.JLabel();
         jpnael10 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jpnael1014 = new javax.swing.JPanel();
@@ -148,9 +147,6 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
         jLabel12 = new javax.swing.JLabel();
         jpnael16 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
-        jPanel14 = new javax.swing.JPanel();
-        jPanel13 = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
         lblTestName = new javax.swing.JLabel();
         txtTestName = new javax.swing.JTextField();
 
@@ -161,9 +157,8 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(68, 145, 157));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Book Appointment");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 10, 220, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 70, 220, -1));
 
-        jButton1.setBackground(new java.awt.Color(102, 147, 255));
         jButton1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jButton1.setText("Back");
         jButton1.setPreferredSize(new java.awt.Dimension(100, 40));
@@ -235,7 +230,7 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
                 txtBookAppointmentActionPerformed(evt);
             }
         });
-        add(txtBookAppointment, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 520, -1, -1));
+        add(txtBookAppointment, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 520, 210, -1));
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -245,9 +240,6 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
         txtAppointmentType.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         txtAppointmentType.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "--Select--", "In-Person", "Online" }));
         add(txtAppointmentType, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 390, 148, -1));
-
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/bookAppomnt.png"))); // NOI18N
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 50, -1, 145));
 
         jpnael10.setBackground(new java.awt.Color(164, 208, 215));
         jpnael10.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -429,39 +421,6 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
 
         add(jpnael16, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 380, -1, 60));
 
-        jPanel14.setBackground(new java.awt.Color(196, 224, 229));
-
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
-        );
-
-        add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 200));
-
-        jPanel13.setBackground(new java.awt.Color(68, 145, 157));
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 200, -1));
-
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/SMS.jpg"))); // NOI18N
-        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 200, 560, 497));
-
         lblTestName.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         lblTestName.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblTestName.setText("Test Name:");
@@ -627,8 +586,8 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
         UserAccount account = patient.getUserAccount();
         String phonecontact = patient.getPhoneNumber()+patient.getCarrier();
         //registrationRequest.setContactCarrierName(contact);
-        sendEmailMessageAppointment(uEmail, account, statusString);//.getText());
-        sendTextMessageAppointment(phonecontact, account, statusString);      
+        sendEmailAppointmentFunc(uEmail, account, statusString);//.getText());
+        sendTextAppointmentFunc(phonecontact, account, statusString);      
         setPanelTime();
         //DB4OUtil.getInstance().storeSystem(system);
         
@@ -851,7 +810,6 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
     private javax.swing.JComboBox cmbDoctor;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -859,12 +817,9 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jpnael10;
     private javax.swing.JPanel jpnael1014;
     private javax.swing.JPanel jpnael11;

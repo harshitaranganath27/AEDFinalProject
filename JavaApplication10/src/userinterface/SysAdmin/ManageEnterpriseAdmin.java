@@ -7,8 +7,8 @@ import Business.Enterprise.Enterprise;
 import Business.Network.Network;
 import Business.Role.Admin;
 import Business.UserAccount.UserAccount;
-import static Business.Utility.EmailClass.sendEmailMessage;
-import static Business.Utility.EmailClass.sendTextMessage;
+import static Business.Utility.EmailClass.sendEmailFunc;
+import static Business.Utility.EmailClass.sendTextMessageFunc;
 import Business.Utility.Validation;
 import java.awt.CardLayout;
 import java.awt.Component;
@@ -500,8 +500,8 @@ public class ManageEnterpriseAdmin extends javax.swing.JPanel {
         } else if (contactCarrier.getSelectedItem().equals("TMobile")) {
             contact = phoneNumberTxt.getText() + "@tmomail.net";
         }
-        sendEmailMessage(uEmail, account);
-        sendTextMessage(contact);
+        sendEmailFunc(uEmail, account);
+        sendTextMessageFunc(contact);
 
         JOptionPane.showMessageDialog(null, "User added successfully");
         DB4OUtil.getInstance().storeSystem(system);
