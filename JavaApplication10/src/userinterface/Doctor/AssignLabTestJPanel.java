@@ -13,7 +13,7 @@ import Business.Enterprise.Lab.Lab;
 import Business.Enterprise.Lab.LabTest;
 import Business.Enterprise.Lab.LabTestDirectory;
 import Business.Network.Network;
-import Business.Organization.Organization;
+import Business.Org.Organization;
 import Business.Patient.Patient;
 import Business.Person.Person;
 import Business.UserAccount.UserAccount;

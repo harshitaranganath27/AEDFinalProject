@@ -5,7 +5,7 @@
 package Business.WorkQueue;
 
 import Business.Appointment.Appointment;
-import Business.Bill.Bill;
+import Business.TotalBill.Bill;
 import Business.Patient.Patient;
 
 /**

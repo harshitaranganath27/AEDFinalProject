@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Business.Organization;
+package Business.Org;
 
 import Business.Appointment.Appointment;
-import Business.Bill.Bill;
+import Business.TotalBill.Bill;
 import Business.Employee.Employee;
 import Business.Patient.Patient;
 import Business.Role.ReceptionistRole;

@@ -11,7 +11,7 @@ import Business.Employee.Employee;
 import Business.Enterprise.Enterprise;
 import Business.Enterprise.Lab.Lab;
 import Business.Enterprise.Lab.LabTest;
-import Business.Organization.Organization;
+import Business.Org.Organization;
 import Business.Patient.Patient;
 import Business.UserAccount.UserAccount;
 import static Business.Utility.EmailClass.sendEmailMessageAppointment;
@@ -80,7 +80,7 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
        if(enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.Hospital.getValue())){
            for(Organization dept : deptList)
                 {
-                    if(dept instanceof Business.Organization.GeneralOrganization){
+                    if(dept instanceof Business.Org.GeneralOrganization){
                     for(Employee emp : dept.getEmployeeDirectory().getEmployeeList()){
                         if(emp.getRole()!= null && (emp.getRole().equals("Doctor Role")))
                         {
@@ -92,8 +92,8 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
        }else if(enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.Lab.getValue())){
            for(Organization dept : deptList)
                 {
-                    if((dept instanceof Business.Organization.PathologyOrganization) || 
-                            (dept instanceof Business.Organization.RadiologyOrganization)){
+                    if((dept instanceof Business.Org.PathologyOrganization) || 
+                            (dept instanceof Business.Org.RadiologyOrganization)){
                     for(Employee emp : dept.getEmployeeDirectory().getEmployeeList()){
                         if(emp.getRole()!= null && (emp.getRole().equals("Lab Technician Role")))
                         {
@@ -548,13 +548,13 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
        ArrayList<Organization> deptList = enterprise.getOrganizationDirectory().getOrganizationList();
        for(Organization dept : deptList)
        {
-           if(dept instanceof Business.Organization.GeneralOrganization){
+           if(dept instanceof Business.Org.GeneralOrganization){
                 drUserAcc = dept.getUserAccountDirectory().getUserAccByEMployee(doctor);
              if(drUserAcc!=null ) {break;}
-           }else if(dept instanceof Business.Organization.PathologyOrganization){
+           }else if(dept instanceof Business.Org.PathologyOrganization){
                drUserAcc = dept.getUserAccountDirectory().getUserAccByEMployee(doctor);
               if(drUserAcc!=null ) {break;}
-           }else if(dept instanceof Business.Organization.RadiologyOrganization){
+           }else if(dept instanceof Business.Org.RadiologyOrganization){
                drUserAcc = dept.getUserAccountDirectory().getUserAccByEMployee(doctor);
              if(drUserAcc!=null ) {break;}
            }

@@ -12,7 +12,7 @@ import Business.Enterprise.Enterprise;
 import Business.Enterprise.Insurance.Insurance;
 import Business.Location.Location;
 import Business.Network.Network;
-import Business.Organization.Organization;
+import Business.Org.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;

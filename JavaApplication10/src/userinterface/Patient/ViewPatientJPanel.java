@@ -9,7 +9,7 @@ import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Location.Location;
-import Business.Organization.Organization;
+import Business.Org.Organization;
 import Business.Patient.Patient;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;

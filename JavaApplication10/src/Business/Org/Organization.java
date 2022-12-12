@@ -2,10 +2,10 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Business.Organization;
+package Business.Org;
 
-import Business.Bill.Bill;
-import Business.Bill.BillDirectory;
+import Business.TotalBill.Bill;
+import Business.TotalBill.BillDirectory;
 import Business.Employee.Employee;
 import Business.Employee.PersonDirectory;
 import Business.Patient.Patient;

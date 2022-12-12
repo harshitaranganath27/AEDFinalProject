@@ -8,7 +8,7 @@ package Business.Patient;
 import Business.Appointment.Appointment;
 import Business.Appointment.AppointmentDirectory;
 import Business.Appointment.PatientHistoryDetails;
-import Business.Bill.Bill;
+import Business.TotalBill.Bill;
 import Business.Employee.Employee;
 import Business.Enterprise.Insurance.Insurance;
 import Business.Enterprise.Lab.LabTestDirectory;

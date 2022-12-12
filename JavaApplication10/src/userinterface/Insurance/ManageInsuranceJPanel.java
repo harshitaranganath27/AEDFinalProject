@@ -9,7 +9,7 @@ import Business.Enterprise.Enterprise;
 import Business.Enterprise.Insurance.Insurance;
 import Business.Enterprise.Insurance.InsuranceDetails;
 import Business.Enterprise.Insurance.InsuranceDirectory;
-import Business.Organization.OrganizationDirectory;
+import Business.Org.OrganizationDirectory;
 import Business.Patient.Patient;
 import Business.Patient.PatientDirectory;
 import Business.Role.DoctorRole;

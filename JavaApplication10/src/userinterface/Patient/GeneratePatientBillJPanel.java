@@ -6,15 +6,15 @@
 package userinterface.Patient;
 
 import Business.Appointment.Appointment;
-import Business.Bill.Bill;
-import Business.Bill.BillDirectory;
+import Business.TotalBill.Bill;
+import Business.TotalBill.BillDirectory;
 import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Enterprise.HospEnterprise.Hospital;
 import Business.Enterprise.Insurance.Insurance;
 import Business.Enterprise.Lab.LabTest;
-import Business.Organization.Organization;
+import Business.Org.Organization;
 import Business.Patient.Patient;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.InsuranceWorkRequest;

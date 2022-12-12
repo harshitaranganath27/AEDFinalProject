@@ -2,9 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Business.Organization;
+package Business.Org;
 
-//import Business.Role.DoctorRole;
+//import Business.Role.AdminRole;
 import Business.Role.Role;
 import java.util.ArrayList;
 
@@ -12,17 +12,16 @@ import java.util.ArrayList;
  *
  * @author harshita
  */
-public class DoctorOrganization //extends Organization
-{
+public class AdminOrganization extends Organization{
 
-    public DoctorOrganization() {
-     //   super(Organization.Type.Doctor.getValue());
+    public AdminOrganization() {
+        super(Type.Admin.getValue());
     }
     
-    //@Override
+    @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
-        //roles.add(new DoctorRole());
+        //roles.add(new AdminRole());
         return roles;
     }
      

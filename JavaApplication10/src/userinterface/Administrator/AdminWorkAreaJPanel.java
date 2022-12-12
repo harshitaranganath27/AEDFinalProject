@@ -4,9 +4,9 @@ package userinterface.Administrator;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
-import Business.Organization.BedManagementDepartment;
-import Business.Organization.Organization;
-import Business.Organization.OrganizationDirectory;
+import Business.Org.BedManagementDepartment;
+import Business.Org.Organization;
+import Business.Org.OrganizationDirectory;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.ImageIcon;

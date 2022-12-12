@@ -6,7 +6,7 @@
 package Business;
 
 import Business.Network.Network;
-import Business.Organization.Organization;
+import Business.Org.Organization;
 import Business.Patient.PatientDirectory;
 import Business.Role.Role;
 import Business.Role.SystemAdminRole;

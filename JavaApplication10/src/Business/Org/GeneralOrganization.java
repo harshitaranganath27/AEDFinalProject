@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Business.Organization;
+package Business.Org;
 
-//import Business.Role.InsuranceDealerRole;
-
-import Business.Role.InsuranceDealerRole;
+import Business.Role.DoctorRole;
+import Business.Role.NurseRole;
+import Business.Role.ReceptionistRole;
 import Business.Role.Role;
 import java.util.ArrayList;
 
@@ -15,19 +15,21 @@ import java.util.ArrayList;
  *
  * @author harshita
  */
-public class InsuranceOrganization extends Organization
+public class GeneralOrganization extends Organization
 {
      
 
-    public InsuranceOrganization() {
+    public GeneralOrganization(String type) {
        // super(Organization.Type.Dental.getValue());
-       super(Organization.Type.Insurance.getValue());
+       super(type);
     }
 
     //@Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
-        roles.add(new InsuranceDealerRole());
+        roles.add(new DoctorRole());
+        roles.add(new NurseRole());
+        roles.add(new ReceptionistRole());
         return roles;
 }
     

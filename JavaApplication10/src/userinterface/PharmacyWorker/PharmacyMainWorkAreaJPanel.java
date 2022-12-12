@@ -7,7 +7,7 @@ package userinterface.PharmacyWorker;
 import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
-import Business.Organization.Organization;
+import Business.Org.Organization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.PharmacyWorkRequest;
 import Business.WorkQueue.WorkRequest;
@@ -26,7 +26,6 @@ public class PharmacyMainWorkAreaJPanel extends javax.swing.JPanel {
     private EcoSystem business;
     private UserAccount userAccount;
     private Organization organization;
-    //private LabOrganization organization;
     
     private Enterprise enterprise;
     /**
@@ -64,10 +63,10 @@ public class PharmacyMainWorkAreaJPanel extends javax.swing.JPanel {
             
             row[3] = request.getStatus();
            // LabTest lt= ((PharmacyWorkRequest)request).getLabTest();
-           if(((PharmacyWorkRequest)request).getAppointment().getPrescription().getStatus() == null){
+           if(((PharmacyWorkRequest)request).getAppointment().getPrescrption().getStatus() == null){
                row[4] = "New";
            }else{
-               row[4] = ((PharmacyWorkRequest)request).getAppointment().getPrescription().getStatus();
+               row[4] = ((PharmacyWorkRequest)request).getAppointment().getPrescrption().getStatus();
            }
            
 //            row[4] = request.getRequestDate();//.getName();

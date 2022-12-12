@@ -9,7 +9,7 @@ import Business.Appointment.Appointment;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Enterprise.Lab.LabTest;
-import Business.Organization.Organization;
+import Business.Org.Organization;
 import Business.Patient.Patient;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;

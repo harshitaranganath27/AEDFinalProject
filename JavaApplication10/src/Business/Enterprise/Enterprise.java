@@ -6,8 +6,8 @@
 package Business.Enterprise;
 
 import Business.Network.Network;
-import Business.Organization.Organization;
-import Business.Organization.OrganizationDirectory;
+import Business.Org.Organization;
+import Business.Org.OrganizationDirectory;
 
 /**
  *

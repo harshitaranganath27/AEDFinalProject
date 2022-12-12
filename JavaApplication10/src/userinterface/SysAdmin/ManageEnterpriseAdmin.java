@@ -246,6 +246,11 @@ public class ManageEnterpriseAdmin extends javax.swing.JPanel {
         passwordJPasswordField.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         passwordJPasswordField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         passwordJPasswordField.setSelectionColor(new java.awt.Color(68, 145, 157));
+        passwordJPasswordField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordJPasswordFieldActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 2, 18)); // NOI18N
         jLabel1.setText("Network");
@@ -507,6 +512,10 @@ public class ManageEnterpriseAdmin extends javax.swing.JPanel {
         usernameJTextField.setText("");
         phoneNumberTxt.setText("");
     }//GEN-LAST:event_submitJButtonActionPerformed
+
+    private void passwordJPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordJPasswordFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passwordJPasswordFieldActionPerformed
 public Boolean phoneNumberValidity(String customerContact) {
         String regex = "^\\(?([0-9]{3})\\)?[-.\\s]?([0-9]{3})[-.\\s]?([0-9]{4})$";
         Pattern pattern = Pattern.compile(regex);

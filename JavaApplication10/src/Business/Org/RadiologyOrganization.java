@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Business.Organization;
+package Business.Org;
 
 import Business.Role.LabTechnicianRole;
 import Business.Role.ReceptionistRole;
@@ -13,11 +13,11 @@ import java.util.ArrayList;
  *
  * @author harshita
  */
-public class PathologyOrganization extends Organization
+public class RadiologyOrganization extends Organization
 {
     
-    public PathologyOrganization() {
-        super(Organization.Type.Pathology.getValue());
+    public RadiologyOrganization() {
+        super(Organization.Type.Radiology.getValue());
     }
 
     //@Override

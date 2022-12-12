@@ -6,7 +6,7 @@
 package Business.Department;
 
 import Business.Bed.Bed;
-import Business.Organization.Organization;
+import Business.Org.Organization;
 import Business.Role.Role.RoleType;
 import java.util.List;
 

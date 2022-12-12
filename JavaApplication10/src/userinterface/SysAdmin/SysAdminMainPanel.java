@@ -8,7 +8,7 @@ package userinterface.SysAdmin;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
-import Business.Organization.Organization;
+import Business.Org.Organization;
 import java.awt.CardLayout;
 import java.util.ArrayList;
 import javax.swing.JPanel;
@@ -97,7 +97,6 @@ public class SysAdminMainPanel extends javax.swing.JPanel {
         manageNetworkBtn = new javax.swing.JButton();
         manageEnterpriseBtn = new javax.swing.JButton();
         manageEntAdminBtn = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -163,9 +162,6 @@ public class SysAdminMainPanel extends javax.swing.JPanel {
         });
         jPanel2.add(manageEntAdminBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(134, 476, -1, 194));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/pic.jpeg"))); // NOI18N
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 530, 710));
-
         jSplitPane.setRightComponent(jPanel2);
 
         add(jSplitPane, java.awt.BorderLayout.CENTER);
@@ -202,7 +198,6 @@ public class SysAdminMainPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

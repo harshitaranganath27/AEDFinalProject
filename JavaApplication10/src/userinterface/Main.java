@@ -8,7 +8,7 @@ import Business.EcoSystem;
 import Business.DB4OUtil.DB4OUtil;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
-import Business.Organization.Organization;
+import Business.Org.Organization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JFrame;
@@ -50,10 +50,10 @@ public class Main extends javax.swing.JFrame {
         lblPassword = new javax.swing.JLabel();
         loginJLabel = new javax.swing.JLabel();
         btnRegister = new javax.swing.JButton();
+        btnLogout = new javax.swing.JButton();
         container = new javax.swing.JPanel();
         kPanel1 = new userinterface.subPanel();
         jLabel1 = new javax.swing.JLabel();
-        btnLogout = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -119,7 +119,6 @@ public class Main extends javax.swing.JFrame {
 
         btnRegister.setBackground(new java.awt.Color(204, 204, 204));
         btnRegister.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
-        btnRegister.setForeground(new java.awt.Color(255, 255, 255));
         btnRegister.setText("New here? Register now!");
         btnRegister.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 204, 255)));
         btnRegister.addActionListener(new java.awt.event.ActionListener() {
@@ -127,7 +126,19 @@ public class Main extends javax.swing.JFrame {
                 btnRegisterActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 640, 190, 35));
+        jPanel1.add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 620, 190, 35));
+
+        btnLogout.setBackground(new java.awt.Color(204, 204, 204));
+        btnLogout.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
+        btnLogout.setText("Sign off!");
+        btnLogout.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 204, 255)));
+        btnLogout.setEnabled(false);
+        btnLogout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogoutActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 660, 140, 20));
 
         jSplitPane1.setLeftComponent(jPanel1);
 
@@ -147,18 +158,7 @@ public class Main extends javax.swing.JFrame {
         kPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/97350.jpg"))); // NOI18N
-        kPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, 690));
-
-        btnLogout.setFont(new java.awt.Font("Cochin", 1, 12)); // NOI18N
-        btnLogout.setText("LOGOUT");
-        btnLogout.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 204, 255)));
-        btnLogout.setEnabled(false);
-        btnLogout.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLogoutActionPerformed(evt);
-            }
-        });
-        kPanel1.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 170, 140, 35));
+        kPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1220, 690));
 
         container.add(kPanel1, "card2");
 

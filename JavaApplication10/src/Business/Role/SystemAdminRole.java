@@ -6,7 +6,7 @@ package Business.Role;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
-import Business.Organization.Organization;
+import Business.Org.Organization;
 import Business.UserAccount.UserAccount;
 import userinterface.SysAdmin.SysAdminMainPanel;
 import javax.swing.JPanel;

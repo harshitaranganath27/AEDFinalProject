@@ -5,12 +5,12 @@
 package userinterface.Insurance;
 
 import Business.Appointment.Appointment;
-import Business.Bill.Bill;
+import Business.TotalBill.Bill;
 import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Employee.Employee;
 import Business.Enterprise.Enterprise;
-import Business.Organization.Organization;
+import Business.Org.Organization;
 import Business.Patient.Patient;
 import Business.UserAccount.UserAccount;
 import Business.Utility.Validation;

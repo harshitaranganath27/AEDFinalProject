@@ -6,9 +6,9 @@
 package userinterface.Nurse;
 
 import Business.Bed.Bed;
-import Business.Organization.BedManagementDepartment;
-import Business.Organization.Organization;
-import Business.Organization.OrganizationDirectory;
+import Business.Org.BedManagementDepartment;
+import Business.Org.Organization;
+import Business.Org.OrganizationDirectory;
 import Business.Patient.Patient;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;

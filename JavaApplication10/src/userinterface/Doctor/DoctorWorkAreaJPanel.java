@@ -15,7 +15,7 @@ import Business.Medicine.Medicine;
 import Business.Medicine.MedicineDirectory;
 import Business.Network.Network;
 import Business.Operation.Operation;
-import Business.Organization.Organization;
+import Business.Org.Organization;
 import Business.Patient.Patient;
 import Business.UserAccount.UserAccount;
 import Business.Utility.Validation;

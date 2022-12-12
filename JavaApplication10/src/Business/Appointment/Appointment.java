@@ -5,7 +5,7 @@
  */
 package Business.Appointment;
 
-import Business.Bill.Bill;
+import Business.TotalBill.Bill;
 import Business.Employee.Employee;
 import Business.Enterprise.Lab.LabTestDirectory;
 import Business.Enterprise.Pharmacy.Pharmacy;
