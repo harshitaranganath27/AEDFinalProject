@@ -7,7 +7,7 @@ package Business.Operation;
 
 import Business.Bed.Bed;
 import Business.Employee.Employee;
-import Business.Patient.Patients;
+import Business.Patient.Patient;
 
 /**
  *
@@ -20,7 +20,7 @@ public class Operation {
     private double operationCharge;
     private String status; //new -by doctor, success - by doctor, on-going, scheduled- by nurse after bed confirmation
     private String oprType;
-    private Patients patient;
+    private Patient patient;
     private Employee doctor;
     private Employee person;  // for nurse??
     private static int count =0;
@@ -92,11 +92,11 @@ public class Operation {
         this.status = status;
     }
 
-    public Patients getPatient() {
+    public Patient getPatient() {
         return patient;
     }
 
-    public void setPatient(Patients patient) {
+    public void setPatient(Patient patient) {
         this.patient = patient;
     }
 

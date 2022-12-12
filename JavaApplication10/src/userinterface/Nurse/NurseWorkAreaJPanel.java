@@ -8,7 +8,7 @@ package userinterface.Nurse;
 import Business.Appointment.Appointment;
 import Business.Enterprise.Enterprise;
 import Business.Operation.Operation;
-import Business.Patient.Patients;
+import Business.Patient.Patient;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.NurseWorkRequest;
 import Business.WorkQueue.WorkRequest;
@@ -317,7 +317,7 @@ public class NurseWorkAreaJPanel extends javax.swing.JPanel {
         
         UserAccount doctor =(UserAccount) workRequestJTable.getValueAt(row, 0);
         
-        Patients patient = (Patients) workRequestJTable.getValueAt(row, 2);
+        Patient patient = (Patient) workRequestJTable.getValueAt(row, 2);
         
         Appointment appointment =(Appointment) workRequestJTable.getValueAt(row, 4);
         //FlightSchedule fsch= (FlightSchedule)  tblFlightSchedule.getValueAt(row,7);

@@ -16,7 +16,7 @@ import Business.Enterprise.Pharmacy.Pharmacy;
 import Business.Medicine.Medicine;
 import Business.Medicine.MedicineDirectory;
 import Business.Network.Network;
-import Business.Patient.Patients;
+import Business.Patient.Patient;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.PharmacyWorkRequest;
 import java.awt.CardLayout;
@@ -42,7 +42,7 @@ public class PrescriptionJPanel extends javax.swing.JPanel {
      */
     private JPanel userProcessContainer;
     private UserAccount userAccount;
-    private Patients patient;
+    private Patient patient;
     private Employee doctor;
     private Appointment appointment;
     private MedicineDirectory medicineList;
@@ -51,7 +51,7 @@ public class PrescriptionJPanel extends javax.swing.JPanel {
     private EcoSystem ecosystem;
     
 
-   public PrescriptionJPanel(JPanel userProcessContainer, Patients patient, Appointment appointment, Employee doctor,
+   public PrescriptionJPanel(JPanel userProcessContainer, Patient patient, Appointment appointment, Employee doctor,
             MedicineDirectory medicineList,EcoSystem ecosystem, Enterprise enterprise, UserAccount userAccount) {
         initComponents();
         this.userProcessContainer = userProcessContainer;

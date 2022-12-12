@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.Patient;
+package userinterface.PatientRole;
 
 import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
@@ -16,7 +16,7 @@ import Business.Org.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import Business.Patient.Patients;
+import Business.Patient.Patient;
 import Business.Patient.PatientDirectory;
 import Business.Role.PatientRole;
 import Business.Utility.Validation;
@@ -35,19 +35,18 @@ public class CreateNewPatientJPanel extends javax.swing.JPanel {
     /**
      * Creates new form CreateNewPatientJPanel
      */
-   
     JPanel userProcessContainer;
     Organization organization;
     Enterprise enterprise;
     UserAccount userAccount;
     EcoSystem ecosystem;
     Location locationPoint;
-    //Network network;
+
     public CreateNewPatientJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem ecosystem) {
         initComponents();
-        if(enterprise.getPatientDirectory() == null){
+        if (enterprise.getPatientDirectory() == null) {
             PatientDirectory patientDirectory = new PatientDirectory();
-            patientDirectory.setPatientList(new ArrayList<Patients>());
+            patientDirectory.setPatientList(new ArrayList<Patient>());
             enterprise.setPatientDirectory(patientDirectory);
         }
         this.userProcessContainer = userProcessContainer;
@@ -55,7 +54,6 @@ public class CreateNewPatientJPanel extends javax.swing.JPanel {
         this.enterprise = enterprise;
         this.userAccount = account;
         this.ecosystem = ecosystem;
-        //this.network = network;
         populateMobileCarrierComboBox();
         populateCmbInsurance();
     }
@@ -330,111 +328,93 @@ public class CreateNewPatientJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPatientNameActionPerformed
 
-    
-    void populateCmbInsurance(){
-         cmbInsuranceCompany.removeAllItems();;
-        for(Network network : ecosystem.getNetworkList()){
-        List<Enterprise> enterprsList = network.getEntDirectory().getEnterpriseList();
-        if (enterprsList == null || enterprsList.isEmpty()) {
-            //nothing
-        } else {
-            for (Enterprise enterprise : enterprsList) {
-                if (enterprise.getType().getValue().equals(Enterprise.enterprseType.Insurance.getValue())) {
-                    {
-                        cmbInsuranceCompany.addItem(enterprise);
+    void populateCmbInsurance() {
+        cmbInsuranceCompany.removeAllItems();;
+        for (Network network : ecosystem.getNetworkList()) {
+            List<Enterprise> enterprsList = network.getEntDirectory().getEnterpriseList();
+            if (enterprsList == null || enterprsList.isEmpty()) {
+                //nothing
+            } else {
+                for (Enterprise enterprise : enterprsList) {
+                    if (enterprise.getType().getValue().equals(Enterprise.enterprseType.Insurance.getValue())) {
+                        {
+                            cmbInsuranceCompany.addItem(enterprise);
+                        }
                     }
                 }
-            }
 
+            }
         }
-        }//netowrk for
     }
-    
-    
-    
-    
+
+
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
-        if(txtPatientName.getText().isEmpty() || txtGender.getSelectedIndex() == 0 ||
-                txtPhoneNumber.getText().isEmpty() || txtUserName.getText().isEmpty() ||
-                txtPassword.getText().isEmpty() || txtBloodGroup.getSelectedIndex() == 0
-//                || txtAddress.getText().isEmpty()
-                || txtEmail.getText().isEmpty()||
-                txtInsuranceID.getText().isEmpty()
-                || txtSSN.getText().isEmpty()
-                ){
+        if (txtPatientName.getText().isEmpty() || txtGender.getSelectedIndex() == 0
+                || txtPhoneNumber.getText().isEmpty() || txtUserName.getText().isEmpty()
+                || txtPassword.getText().isEmpty() || txtBloodGroup.getSelectedIndex() == 0
+                || txtEmail.getText().isEmpty()
+                || txtInsuranceID.getText().isEmpty()
+                || txtSSN.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "All fields are mandatory", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        
+
         String ssnString = txtSSN.getText();
         boolean checkSSN = Validation.checkSNNValidAndUnique(ssnString);
-        if(checkSSN == false)
-        {
+        if (checkSSN == false) {
             JOptionPane.showMessageDialog(null, "SSN is invalid", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        
-        String emailid= txtEmail.getText();
+
+        String emailid = txtEmail.getText();
         boolean valid = Validation.emailValidator(emailid);
-        if(valid == false)
-        {
+        if (valid == false) {
             JOptionPane.showMessageDialog(null, "Email ID invalid", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        
+
         String userName = txtUserName.getText();
-       // valid = enterprise.getUserAccountDirectory().checkIfUsernameIsUnique(userName);
-        
-        //if(valid == false)
-        //{
-         //   JOptionPane.showMessageDialog(null, "User name exists, try other name", "Warning", JOptionPane.WARNING_MESSAGE);
-          //  return;
-        //}
-        
-        
-        //check if username is unique
-         boolean isUserNameUnique = Validation.checkIfUserNameIsUniqueAcrossNetworks(ecosystem,userName);
-        System.out.println("isUserNameUnique: "+ isUserNameUnique);
-         if(isUserNameUnique== false)
-              {
-                  
-                  JOptionPane.showMessageDialog(null, "Username already exists, try another name!");
+        boolean isUserNameUnique = Validation.checkIfUserNameIsUniqueAcrossNetworks(ecosystem, userName);
+        System.out.println("isUserNameUnique: " + isUserNameUnique);
+        if (isUserNameUnique == false) {
+
+            JOptionPane.showMessageDialog(null, "Username already exists, try another name!");
             return;
-              }
+        }
         String phoneNumberString = txtPhoneNumber.getText();
-        
-        if(phoneNumberString.length() != 10){
+
+        if (phoneNumberString.length() != 10) {
             JOptionPane.showMessageDialog(null, "Phone number is not proper!");
             return;
         }
-        
+
         locationPoint = new Location();
         locationPoint.setStreet(txtAddrStreet.getText());
         locationPoint.setState(txtAddrState.getText());
         locationPoint.setCity(txtAddrCity.getText());
-        
-        Insurance insuranceE =(Insurance)cmbInsuranceCompany.getSelectedItem();
+
+        Insurance insuranceE = (Insurance) cmbInsuranceCompany.getSelectedItem();
         String insuranceId = txtInsuranceID.getText();
-        UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(txtUserName.getText(), txtPassword.getText(), null, new Patients());
-        Employee emp= enterprise.getPatientDirectory().createPatient(txtPatientName.getText(), phoneNumberString, txtGender.getSelectedItem().toString(),
-                txtBloodGroup.getSelectedItem().toString(), account, locationPoint, txtEmail.getText(),insuranceE,insuranceId , ssnString);
-        
+        UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(txtUserName.getText(), txtPassword.getText(), null, new PatientRole());
+        Employee emp = enterprise.getPatientDirectory().createPatient(txtPatientName.getText(), phoneNumberString, txtGender.getSelectedItem().toString(),
+                txtBloodGroup.getSelectedItem().toString(), account, locationPoint, txtEmail.getText(), insuranceE, insuranceId, ssnString);
+
         account.setEmployee(emp);
-       
+
         if (contactCarrier.getSelectedItem().equals("ATT")) {
-             phoneNumberString="@txt.att.net";
+            phoneNumberString = "@txt.att.net";
         } else if (contactCarrier.getSelectedItem().equals("Verizon")) {
-            phoneNumberString ="@vmobl.com";
+            phoneNumberString = "@vmobl.com";
         } else if (contactCarrier.getSelectedItem().equals("Sprint")) {
-            phoneNumberString =  "@messaging.sprintpcs.com";
+            phoneNumberString = "@messaging.sprintpcs.com";
         } else if (contactCarrier.getSelectedItem().equals("TMobile")) {
             phoneNumberString = "@tmomail.net";
         }
         emp.setCarrier(phoneNumberString);
-        
-        JOptionPane.showMessageDialog(null, "Patient added successfully!","Information", JOptionPane.INFORMATION_MESSAGE);
+
+        JOptionPane.showMessageDialog(null, "Patient added successfully!", "Information", JOptionPane.INFORMATION_MESSAGE);
         DB4OUtil.getInstance().storeSystem(ecosystem);
-        
+
         txtPatientName.setText("");
         txtPhoneNumber.setText("");
         txtGender.setSelectedIndex(0);
@@ -449,39 +429,35 @@ public class CreateNewPatientJPanel extends javax.swing.JPanel {
         txtSSN.setText("");
     }//GEN-LAST:event_btnSubmitActionPerformed
 
-    
-     public void populateMobileCarrierComboBox() {
+    public void populateMobileCarrierComboBox() {
         contactCarrier.removeAllItems();
         contactCarrier.addItem("ATT");
         contactCarrier.addItem("Sprint");
         contactCarrier.addItem("TMobile");
         contactCarrier.addItem("Verizon");
     }
-    
-    
+
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         userProcessContainer.remove(this);
-        Component[] componentArray =userProcessContainer.getComponents();
+        Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
         ReceptionistWorkAreaJPanel sysAdminwajp = (ReceptionistWorkAreaJPanel) component;
-        
-         if(enterprise.getType().getValue().equals("Hospital"))
-        {
-           sysAdminwajp.populatePatients();
+
+        if (enterprise.getType().getValue().equals("Hospital")) {
+            sysAdminwajp.populatePatients();
         }
-        
-        
-        if(enterprise.getType().getValue().equals("Lab"))
-        {
-           sysAdminwajp.populateTest();
+
+        if (enterprise.getType().getValue().equals("Lab")) {
+            sysAdminwajp.populateTest();
         }
-        
-       // .populatePatients();
+
+        // .populatePatients();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    
+
     private void contactCarrierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contactCarrierActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_contactCarrierActionPerformed

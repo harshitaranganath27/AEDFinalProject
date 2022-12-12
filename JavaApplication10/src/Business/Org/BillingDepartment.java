@@ -8,7 +8,7 @@ package Business.Org;
 import Business.Appointment.Appointment;
 import Business.TotalBill.Bill;
 import Business.Employee.Employee;
-import Business.Patient.Patients;
+import Business.Patient.Patient;
 import Business.Role.Receptionist;
 import Business.Role.Role;
 import java.util.ArrayList;
@@ -21,7 +21,7 @@ import java.util.Date;
 public class BillingDepartment extends Organization{
     String billingId;
     String billIssuer;
-    Patients patient;
+    Patient patient;
     Employee doctor;
     Appointment apptment;
     Bill bill;
@@ -43,7 +43,7 @@ public class BillingDepartment extends Organization{
        return bill;
    }
    
-   public void generateInvoice(Date date, Patients patient){
+   public void generateInvoice(Date date, Patient patient){
        //generate invoice
    }
     

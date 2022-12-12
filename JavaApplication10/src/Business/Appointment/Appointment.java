@@ -10,7 +10,7 @@ import Business.Employee.Employee;
 import Business.Enterprise.Lab.LabTestDirectory;
 import Business.Enterprise.Pharmacy.Pharmacy;
 import Business.Operation.Operation;
-import Business.Patient.Patients;
+import Business.Patient.Patient;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -24,7 +24,7 @@ public class Appointment {
     String type;
     Date date;
     Employee doc;
-    Patients patient;
+    Patient patient;
     String status;
     String location;
     private Operation operation;
@@ -116,11 +116,11 @@ public class Appointment {
         this.doc = doc;
     }
 
-    public Patients getPatient() {
+    public Patient getPatient() {
         return patient;
     }
 
-    public void setPatient(Patients patient) {
+    public void setPatient(Patient patient) {
         this.patient = patient;
     }
 

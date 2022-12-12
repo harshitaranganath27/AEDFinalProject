@@ -8,7 +8,7 @@ import Business.TotalBill.Bill;
 import Business.TotalBill.BillDirectory;
 import Business.Employee.Employee;
 import Business.Employee.PersonDirectory;
-import Business.Patient.Patients;
+import Business.Patient.Patient;
 import Business.Patient.PatientDirectory;
 import Business.Role.Role;
 import Business.UserAccount.UserAccount;
@@ -66,7 +66,7 @@ public abstract class Organization {
         userAccountDirectory = new UserAccountDirectory();
         patientDirectory = new PatientDirectory();
         if (patientDirectory.getPatientList() == null) {
-            patientDirectory.setPatientList(new ArrayList<Patients>());
+            patientDirectory.setPatientList(new ArrayList<Patient>());
         }
         billDirectory = new BillDirectory();
         if (billDirectory.getBillList() == null) {

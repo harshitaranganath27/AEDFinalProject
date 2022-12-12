@@ -11,7 +11,7 @@ import Business.EcoSystem;
 import Business.Employee.Employee;
 import Business.Enterprise.Enterprise;
 import Business.Org.Organization;
-import Business.Patient.Patients;
+import Business.Patient.Patient;
 import Business.UserAccount.UserAccount;
 import Business.Utility.Validation;
 import Business.WorkQueue.InsuranceWorkRequest;
@@ -38,7 +38,7 @@ public class InsuranceDWorkAreaJPanel extends javax.swing.JPanel {
     
     private Employee insurnceAprrover;
     private Appointment appointment;
-    private Patients patient;
+    private Patient patient;
     private WorkRequest request;
     private Enterprise enterprise;
     private Bill bill;

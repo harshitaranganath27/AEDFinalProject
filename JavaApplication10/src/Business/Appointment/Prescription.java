@@ -10,7 +10,7 @@ import Business.Employee.Employee;
 import Business.Enterprise.Lab.LabTestDirectory;
 import Business.Enterprise.Pharmacy.Pharmacy;
 import Business.Medicine.Medicine;
-import Business.Patient.Patients;
+import Business.Patient.Patient;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -56,7 +56,7 @@ public class Prescription {
     }
     private Date createdOn;
     Employee doctor;
-    Patients patient;
+    Patient patient;
     private String history;
 
     public Prescription() {
@@ -104,11 +104,11 @@ public class Prescription {
         this.doctor = doctor;
     }
 
-    public Patients getPatient() {
+    public Patient getPatient() {
         return patient;
     }
 
-    public void setPatient(Patients patient) {
+    public void setPatient(Patient patient) {
         this.patient = patient;
     }
 

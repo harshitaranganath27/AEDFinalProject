@@ -10,7 +10,7 @@ import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Org.Organization;
-import Business.Patient.Patients;
+import Business.Patient.Patient;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.util.ArrayList;
@@ -32,10 +32,10 @@ public class PatientHistoryJPanel extends javax.swing.JPanel {
     private Organization organization;
     private Enterprise enterprise;
     private EcoSystem ecosystem;
-    private Patients patient;
+    private Patient patient;
     private PatientHistoryDetails previuous;
 
-    PatientHistoryJPanel(JPanel userProcessContainer, UserAccount userAccount, Organization organization, Enterprise enterprise, EcoSystem ecosystem, Patients patient) {
+    PatientHistoryJPanel(JPanel userProcessContainer, UserAccount userAccount, Organization organization, Enterprise enterprise, EcoSystem ecosystem, Patient patient) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.userAccount = userAccount;

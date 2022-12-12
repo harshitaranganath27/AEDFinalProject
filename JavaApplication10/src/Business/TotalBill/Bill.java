@@ -8,7 +8,7 @@ package Business.TotalBill;
 import Business.Appointment.Appointment;
 import Business.Employee.Employee;
 import Business.Enterprise.Enterprise;
-import Business.Patient.Patients;
+import Business.Patient.Patient;
 
 /**
  *
@@ -16,7 +16,7 @@ import Business.Patient.Patients;
  */
 public class Bill {
     int billId;
-    Patients patient;
+    Patient patient;
     Employee doctor;
     Appointment appointment;
     double totalCharges;
@@ -45,11 +45,11 @@ public class Bill {
         this.billId = billId;
     }
 
-    public Patients getPatient() {
+    public Patient getPatient() {
         return patient;
     }
 
-    public void setPatient(Patients patient) {
+    public void setPatient(Patient patient) {
         this.patient = patient;
     }
 

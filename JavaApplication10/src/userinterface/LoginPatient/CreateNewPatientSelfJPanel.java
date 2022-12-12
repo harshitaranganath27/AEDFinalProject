@@ -15,7 +15,7 @@ import Business.Network.Network;
 import Business.UserAccount.UserAccount;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import Business.Patient.Patients;
+import Business.Patient.Patient;
 import Business.Patient.PatientDirectory;
 import Business.Role.PatientRole;
 import Business.Utility.Validation;
@@ -46,13 +46,13 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
         initComponents();
         if(ecosystem.getPatientDirectory() == null){
             PatientDirectory patientDirectory = new PatientDirectory();
-            patientDirectory.setPatientList(new ArrayList<Patients>());
+            patientDirectory.setPatientList(new ArrayList<Patient>());
             ecosystem.setPatientDirectory(patientDirectory);
         }
         
         if(ecosystem.getPatientDirectory().getPatientList() == null){
             
-            ecosystem.getPatientDirectory().setPatientList(new ArrayList<Patients>());
+            ecosystem.getPatientDirectory().setPatientList(new ArrayList<Patient>());
         
         }
        this.userProcessContainer = userProcessContainer;
@@ -340,7 +340,6 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
         for(Network network : ecosystem.getNetworkList()){
         List<Enterprise> enterprsList = network.getEntDirectory().getEnterpriseList();
         if (enterprsList == null || enterprsList.isEmpty()) {
-            //nothing
         } else {
             for (Enterprise enterprise : enterprsList) {
                 if (enterprise.getType().getValue().equals(Enterprise.enterprseType.Insurance.getValue())) {
@@ -351,7 +350,7 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
             }
 
         }
-        }//netowrk for
+        }
     }
     
     
@@ -411,7 +410,7 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
         
         Insurance insuranceE =(Insurance)cmbInsuranceCompany.getSelectedItem();
         String insuranceId = txtInsuranceID.getText();
-        UserAccount account = ecosystem.getUserAccountDirectory().createUserAccount(txtUserName.getText(), txtPassword.getText(), null, new Patients());
+        UserAccount account = ecosystem.getUserAccountDirectory().createUserAccount(txtUserName.getText(), txtPassword.getText(), null, new PatientRole());
        
        
         Employee emp= ecosystem.getPatientDirectory().createPatient(txtPatientName.getText(), phoneNumberString, txtGender.getSelectedItem().toString(),

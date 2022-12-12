@@ -10,7 +10,7 @@ import Business.EcoSystem;
 import Business.Employee.Employee;
 import Business.Enterprise.Enterprise;
 import Business.Org.Organization;
-import Business.Patient.Patients;
+import Business.Patient.Patient;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.text.SimpleDateFormat;
@@ -31,7 +31,7 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
     private Organization organization;
     private EcoSystem ecosystem;
     private Enterprise enterprise;
-    private Patients patient;
+    private Patient patient;
     private Appointment appointment;
     private Employee doctor;
     

@@ -6,7 +6,7 @@
 package Business.Bed;
 
 import Business.Appointment.Appointment;
-import Business.Patient.Patients;
+import Business.Patient.Patient;
 
 /**
  *
@@ -18,7 +18,7 @@ public class Bed {
     private Double price;
     private BedStatus status;
     private static int count =1;
-    private Patients patient;
+    private Patient patient;
     private Appointment appointment;
 
     public static int getCount() {
@@ -39,11 +39,11 @@ public class Bed {
     
     
 
-    public Patients getPatient() {
+    public Patient getPatient() {
         return patient;
     }
 
-    public void setPatient(Patients patient) {
+    public void setPatient(Patient patient) {
         this.patient = patient;
     }
     

@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.Patient;
+package userinterface.PatientRole;
 
 import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Location.Location;
 import Business.Org.Organization;
-import Business.Patient.Patients;
+import Business.Patient.Patient;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
@@ -33,9 +33,9 @@ public class ViewPatientJPanel extends javax.swing.JPanel {
     Organization organization;
     Enterprise enterprise;
     EcoSystem system;
-    Patients patient;
+    Patient patient;
     Location locationPoint;
-    public ViewPatientJPanel(JPanel userProcessContainer, UserAccount userAccount, Organization organization, Enterprise enterprise, EcoSystem system, Patients patient) {
+    public ViewPatientJPanel(JPanel userProcessContainer, UserAccount userAccount, Organization organization, Enterprise enterprise, EcoSystem system, Patient patient) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.userAccount = userAccount;

@@ -16,7 +16,7 @@ import Business.Enterprise.Lab.Lab;
 import Business.Enterprise.Lab.LabTest;
 import Business.Network.Network;
 import Business.Org.Organization;
-import Business.Patient.Patients;
+import Business.Patient.Patient;
 import Business.UserAccount.UserAccount;
 import static Business.Utility.EmailClass.sendEmailMessageAppointment;
 import static Business.Utility.EmailClass.sendTextMessageAppointment;
@@ -50,9 +50,9 @@ public class BookSelfAppointmentJPanel extends javax.swing.JPanel {
     Organization organization;
     Enterprise enterprise;
     EcoSystem system;
-    Patients patient;
+    Patient patient;
     Integer time;
-    public BookSelfAppointmentJPanel(JPanel userProcessContainer, UserAccount userAccount, Organization organization, Enterprise enterprise, EcoSystem system, Patients patient) {
+    public BookSelfAppointmentJPanel(JPanel userProcessContainer, UserAccount userAccount, Organization organization, Enterprise enterprise, EcoSystem system, Patient patient) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.organization = organization;
@@ -524,9 +524,9 @@ public class BookSelfAppointmentJPanel extends javax.swing.JPanel {
             appoint = patient.getLabAppointmentDirectory().createLabAppointment(patient, doctor, date1 , (String)txtAppointmentType.getSelectedItem());
             appoint.setTime(time);
         }
-        Patients pt=null;
-        List<Patients> patList=enterprise.getPatientDirectory().getPatientList();
-        for(Patients p: patList)
+        Patient pt=null;
+        List<Patient> patList=enterprise.getPatientDirectory().getPatientList();
+        for(Patient p: patList)
         {
             //if()
             if(p.getSSN()!=null && p.getInsuranceId() !=null &&p.getSSN().equals(patient.getSSN()) && p.getInsuranceId().equalsIgnoreCase(patient.getInsuranceId()) && p.getId() == patient.getId()){

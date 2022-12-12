@@ -10,7 +10,7 @@ import Business.Enterprise.Insurance.Insurance;
 import Business.Enterprise.Insurance.InsuranceDetails;
 import Business.Enterprise.Insurance.InsuranceDirectory;
 import Business.Org.organizationDir;
-import Business.Patient.Patients;
+import Business.Patient.Patient;
 import Business.Patient.PatientDirectory;
 import Business.Role.Doctor;
 import Business.Role.LabTechRole;
@@ -35,124 +35,109 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author 
+ * @author
  */
 public class ManageInsuranceJPanel extends javax.swing.JPanel {
 
     private organizationDir organizationDir;
     private JPanel userProcessContainer;
     private Enterprise enterprise;
-    private PatientDirectory  patientDir;
-    
+    private PatientDirectory patientDir;
+
     private UserAccount useraccount;
     private EcoSystem system;
-    
+
     /**
      * Creates new form ManageOrganizationJPanel
      */
-    public ManageInsuranceJPanel(JPanel userProcessContainer,organizationDir 
-            organizationDir, Enterprise enterprise, UserAccount useraccount) {
+    public ManageInsuranceJPanel(JPanel userProcessContainer, organizationDir organizationDir, Enterprise enterprise, UserAccount useraccount) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.organizationDir = organizationDir;
-        this.enterprise= enterprise;
-        this.useraccount= useraccount;
-        this.patientDir= ((Insurance)enterprise).getPatientDirectory();  //system.getPatientDirectory();//
-        //populateMainMedicinesComboBox();
-        //populateOrganizationEmpComboBox();
+        this.enterprise = enterprise;
+        this.useraccount = useraccount;
+        this.patientDir = ((Insurance) enterprise).getPatientDirectory();
         populateOrganizationComboBox();
         viewMedicineJPanel.setVisible(false);
         addMedicineJPanel.setVisible(false);
-        //this.system= system;
-        
-        populateTableALL();//(TOOL_TIP_TEXT_KEY);
+        populateTableALL();
     }
-    
-    public void populateOrganizationComboBox(){
+
+    public void populateOrganizationComboBox() {
         cmbSSN.removeAllItems();
-        if(patientDir==null)
-        {
+        if (patientDir == null) {
             PatientDirectory d = new PatientDirectory();
             enterprise.setPatientDirectory(patientDir);
         }
-        for ( Patients p: patientDir.getPatientList()){
+        for (Patient p : patientDir.getPatientList()) {
             cmbSSN.addItem(p.getSSN());
         }
     }
-    
-    
-    
-    private void populateTableALL(){
-        DefaultTableModel model = (DefaultTableModel) organizationJTable.getModel();
-        
-        model.setRowCount(0);
-        if(((Insurance)enterprise).getIndir()==null)
-        {
-            InsuranceDirectory indr = new InsuranceDirectory();
-            ((Insurance)enterprise).setIndir(indr);
-        }
-        
-         List<InsuranceDetails> inList = ((Insurance)enterprise).getIndir().getInsuranceDir();
-        
-         if(inList==null)
-         {
-              List<InsuranceDetails> inlist1 = new ArrayList<InsuranceDetails>();
-             ((Insurance)enterprise).getIndir().setInsuranceDir(inlist1);
-         }
-         
-         for (InsuranceDetails med :inList){
-            //if(med.getSSN().equals(SSN))
-            {
-            
-            Object[] row = new Object[7];
-            row[0] = med;//.getId();
-            row[1] = med.getInsuranceDealer().getEmpName();
-            row[2] = med.getPatient().getEmpName();
-            row[3] = med.getType();
-            row[4] = med.getPrice();
-            row[5] = med.getValidity();
-            row[6] = med.getCreatedOndate();
-            model.addRow(row);
-        //}
-        }
-    }
-    }
-   
 
-    private void populateTable(String SSN){
+    private void populateTableALL() {
         DefaultTableModel model = (DefaultTableModel) organizationJTable.getModel();
-        
+
         model.setRowCount(0);
-        if(((Insurance)enterprise).getIndir()==null)
-        {
+        if (((Insurance) enterprise).getIndir() == null) {
             InsuranceDirectory indr = new InsuranceDirectory();
-            ((Insurance)enterprise).setIndir(indr);
+            ((Insurance) enterprise).setIndir(indr);
         }
-        
-         List<InsuranceDetails> inList = ((Insurance)enterprise).getIndir().getInsuranceDetailsBySSN(SSN);
-        
-         if(inList==null)
-         {
-             return;
-         }
-         
-         for (InsuranceDetails med :inList){
+
+        List<InsuranceDetails> inList = ((Insurance) enterprise).getIndir().getInsuranceDir();
+
+        if (inList == null) {
+            List<InsuranceDetails> inlist1 = new ArrayList<InsuranceDetails>();
+            ((Insurance) enterprise).getIndir().setInsuranceDir(inlist1);
+        }
+
+        for (InsuranceDetails med : inList) {
+            {
+                Object[] row = new Object[7];
+                row[0] = med;//.getId();
+                row[1] = med.getInsuranceDealer().getEmpName();
+                row[2] = med.getPatient().getEmpName();
+                row[3] = med.getType();
+                row[4] = med.getPrice();
+                row[5] = med.getValidity();
+                row[6] = med.getCreatedOndate();
+                model.addRow(row);
+            }
+        }
+    }
+
+    private void populateTable(String SSN) {
+        DefaultTableModel model = (DefaultTableModel) organizationJTable.getModel();
+
+        model.setRowCount(0);
+        if (((Insurance) enterprise).getIndir() == null) {
+            InsuranceDirectory indr = new InsuranceDirectory();
+            ((Insurance) enterprise).setIndir(indr);
+        }
+
+        List<InsuranceDetails> inList = ((Insurance) enterprise).getIndir().getInsuranceDetailsBySSN(SSN);
+
+        if (inList == null) {
+            return;
+        }
+
+        for (InsuranceDetails med : inList) {
             //if(med.getSSN().equals(SSN))
             {
-            
-            Object[] row = new Object[7];
-            row[0] = med;//.getId();
-            row[1] = med.getInsuranceDealer().getEmpName();
-            row[2] = med.getPatient().getEmpName();
-            row[3] = med.getType();
-            row[4] = med.getPrice();
-            row[5] = med.getValidity();
-            row[6] = med.getCreatedOndate();
-            model.addRow(row);
-        //}
+
+                Object[] row = new Object[7];
+                row[0] = med;//.getId();
+                row[1] = med.getInsuranceDealer().getEmpName();
+                row[2] = med.getPatient().getEmpName();
+                row[3] = med.getType();
+                row[4] = med.getPrice();
+                row[5] = med.getValidity();
+                row[6] = med.getCreatedOndate();
+                model.addRow(row);
+                //}
+            }
         }
     }
-    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -511,172 +496,130 @@ public class ManageInsuranceJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        
-       String name= nameJTextField.getText();
-       String custName = custNameJTextField.getText();
-       //String type = cmb;
-       
-       if(cmbInsuranceType.getSelectedIndex() == 0)
-       {
-           JOptionPane.showMessageDialog(null, "Please select type","Warning",JOptionPane.WARNING_MESSAGE);
+
+        String name = nameJTextField.getText();
+        String custName = custNameJTextField.getText();
+        //String type = cmb;
+
+        if (cmbInsuranceType.getSelectedIndex() == 0) {
+            JOptionPane.showMessageDialog(null, "Please select type", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
-       }
-       
-       String type= (String) cmbInsuranceType.getSelectedItem();
-       String date = validity.getText(); 
-       
-       boolean valid=Validation.validateDate(date);
-       if(valid == false)
-       {
-           JOptionPane.showMessageDialog(null, "Please enter date properly","Warning",JOptionPane.WARNING_MESSAGE);
+        }
+
+        String type = (String) cmbInsuranceType.getSelectedItem();
+        String date = validity.getText();
+
+        boolean valid = Validation.validateDate(date);
+        if (valid == false) {
+            JOptionPane.showMessageDialog(null, "Please enter date properly", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
-       }
-       
-       String priceString = priceTxt.getText();
-        
-       if(name ==  null || name.equals("")
-               || 
-               custName ==  null || custName.equals("")
-               ||
-                              date ==  null || date.equals("")
-               ||
-               priceString ==  null || priceString.equals("")
-               ||
-               txtSSN.getText().equals("")
-               )
-       {
-            JOptionPane.showMessageDialog(null, "Please enter all details","Warning",JOptionPane.WARNING_MESSAGE);
+        }
+
+        String priceString = priceTxt.getText();
+
+        if (name == null || name.equals("")
+                || custName == null || custName.equals("")
+                || date == null || date.equals("")
+                || priceString == null || priceString.equals("")
+                || txtSSN.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Please enter all details", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
-       }
-       
-       //validation on data
+        }
+
+        //validation on data
         valid = Validation.validateString(name);
-       if(valid == false)
-       {
-           JOptionPane.showMessageDialog(null, "Please enter name correctly","Warning",JOptionPane.WARNING_MESSAGE);
-           return;
-       }
-       
-       valid = Validation.validateDouble(priceString);
-       if(valid == false)
-       {
-           JOptionPane.showMessageDialog(null, "Please enter price correctly","Warning",JOptionPane.WARNING_MESSAGE);
-           return;
-       }
-       
-       
-       
-       
-       valid = Validation.validateDate(date);
-       if(valid == false)
-       {
-           JOptionPane.showMessageDialog(null, "Please enter date correctly","Warning",JOptionPane.WARNING_MESSAGE);
-           return;
-       }
-       
-       String ssnString = txtSSN.getText();
+        if (valid == false) {
+            JOptionPane.showMessageDialog(null, "Please enter name correctly", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        valid = Validation.validateDouble(priceString);
+        if (valid == false) {
+            JOptionPane.showMessageDialog(null, "Please enter price correctly", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        valid = Validation.validateDate(date);
+        if (valid == false) {
+            JOptionPane.showMessageDialog(null, "Please enter date correctly", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        String ssnString = txtSSN.getText();
         boolean checkSSN = Validation.checkSNNValidAndUnique(ssnString);
-        if(checkSSN == false)
-        {
+        if (checkSSN == false) {
             JOptionPane.showMessageDialog(null, "SSN is invalid", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-       
-       
-       //parse
-           
-       
+
+        //parse
         double price = Double.parseDouble(priceString);
-        
-        if(price == 0.0)
-        {
-            JOptionPane.showMessageDialog(null, "Please enter price correctly, cannot be zero","Warning",JOptionPane.WARNING_MESSAGE);
-           return;
-            
+
+        if (price == 0.0) {
+            JOptionPane.showMessageDialog(null, "Please enter price correctly, cannot be zero", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+
         }
         //Date parse
-       
-        Date date1=null;
-        SimpleDateFormat formatter1=new SimpleDateFormat("yyyy-MM-dd");
+
+        Date date1 = null;
+        SimpleDateFormat formatter1 = new SimpleDateFormat("yyyy-MM-dd");
         try {
-           date1 =formatter1.parse(date);
+            date1 = formatter1.parse(date);
         } catch (ParseException ex) {
             System.out.println("Error in ManageMedicineJPanel for date paring");
             Logger.getLogger(ManageInsuranceJPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
-        Patients patient = new Patients();
+        Patient patient = new Patient();
         enterprise.getPatientDirectory().getPatientList().add(patient);
-        //system.getPatientDirectory().getPatientList().add(patient);
         patient.setEmpName(custName);
         patient.setSSN(ssnString);
-        //patient.set
         InsuranceDetails insrdtl = new InsuranceDetails();
-        //insrdtl.setCreatedOndate(date1);
         insrdtl.setPatient(patient);
         insrdtl.setPrice(price);
         insrdtl.setType(type);
         insrdtl.setValidity(date1);
         insrdtl.setSSN(ssnString);
         insrdtl.setInsuranceDealer(useraccount.getEmployee());
-        
-        if(((Insurance)enterprise).getIndir() == null)
-        {
-             InsuranceDirectory indr = new InsuranceDirectory();
-            ((Insurance)enterprise).setIndir(indr);
+
+        if (((Insurance) enterprise).getIndir() == null) {
+            InsuranceDirectory indr = new InsuranceDirectory();
+            ((Insurance) enterprise).setIndir(indr);
         }
-        
-        ((Insurance)enterprise).getIndir().getInsuranceDir().add(insrdtl);
-        
-        
-        
-        JOptionPane.showMessageDialog(null, "Added successfully","Information",JOptionPane.INFORMATION_MESSAGE);
-        
-         
-        
-       //populate table by using main medicine cmb box 
-        //String medType = (String) cmbSSN.getSelectedItem();
+
+        ((Insurance) enterprise).getIndir().getInsuranceDir().add(insrdtl);
+
+        JOptionPane.showMessageDialog(null, "Added successfully", "Information", JOptionPane.INFORMATION_MESSAGE);
+
         populateTableALL();
-        
+
         nameJTextField.setText("");
         custNameJTextField.setText("");
-      priceTxt.setText("");
-       //cmbMedicineType.setSelectedItem(med.getType());
-        validity.setText("");       
-         txtSSN.setText("");
-        
-        
-        
-        
+        priceTxt.setText("");
+        validity.setText("");
+        txtSSN.setText("");
+
+
     }//GEN-LAST:event_btnSaveActionPerformed
 
-    
-    public Role createObjectForRole(String roleString){
+    public Role createObjectForRole(String roleString) {
         Role role = null;
-        if(roleString.equals("DoctorRole"))
-        {
-            role=new Doctor();
+        if (roleString.equals("DoctorRole")) {
+            role = new Doctor();
+        } else if (roleString.equals("NurseRole")) {
+            role = new Nurse();
+        } else if (roleString.equals("LabTechnicianRole")) {
+            role = new LabTechRole();
+        } else if (roleString.equals("PatientRole")) {
+            role = new PatientRole();
+        } else if (roleString.equals("ReceptionistRole")) {
+            role = new Receptionist();
         }
-        else if(roleString.equals("NurseRole"))
-        {
-            role=new Nurse();
-        }
-        else if(roleString.equals("LabTechnicianRole"))
-        {
-            role=new LabTechRole();
-        }
-        else if(roleString.equals("PatientRole"))
-        {
-            role=new Patients();
-        }
-        else if(roleString.equals("ReceptionistRole"))
-        {
-            role=new Receptionist();
-        }
-        
+
         return role;
     }
-    
-    
+
+
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
 
         userProcessContainer.remove(this);
@@ -694,7 +637,7 @@ public class ManageInsuranceJPanel extends javax.swing.JPanel {
 
     private void cmbSSNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbSSNActionPerformed
         String medType = (String) cmbSSN.getSelectedItem();
-        if (patientDir != null && !patientDir.getPatientList().isEmpty()){
+        if (patientDir != null && !patientDir.getPatientList().isEmpty()) {
             populateTable(medType);
             //populateOrganizationEmpComboBox();  //based on organization seleted, get the supported roles only
         }
@@ -706,147 +649,118 @@ public class ManageInsuranceJPanel extends javax.swing.JPanel {
 
     private void btnSave1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSave1ActionPerformed
         // TODO add your handling code here:
-         String name= nameJTextField1.getText();
-       String custName = customerJTextField1.getText();
-       //String type = cmb;
-       
-       if(cmbInsuranceType1.getSelectedIndex() == 0)
-       {
-           JOptionPane.showMessageDialog(null, "Please select type","Warning",JOptionPane.WARNING_MESSAGE);
+        String name = nameJTextField1.getText();
+        String custName = customerJTextField1.getText();
+
+        if (cmbInsuranceType1.getSelectedIndex() == 0) {
+            JOptionPane.showMessageDialog(null, "Please select type", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
-       }
-       
-       String type= (String) cmbInsuranceType1.getSelectedItem();
-       String date = validity1.getText(); 
-       
-       boolean valid=Validation.validateDate(date);
-       if(valid == false)
-       {
-           JOptionPane.showMessageDialog(null, "Please enter date properly","Warning",JOptionPane.WARNING_MESSAGE);
+        }
+
+        String type = (String) cmbInsuranceType1.getSelectedItem();
+        String date = validity1.getText();
+
+        boolean valid = Validation.validateDate(date);
+        if (valid == false) {
+            JOptionPane.showMessageDialog(null, "Please enter date properly", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
-       }
-       
-       String priceString = priceTxt1.getText();
-        
-       if(name ==  null || name.equals("")
-               || 
-               custName ==  null || custName.equals("")
-               ||
-                              date ==  null || date.equals("")
-               ||
-               priceString ==  null || priceString.equals("")
-               ||
-               txtSSN1.getText().equals("")
-               )
-       {
-            JOptionPane.showMessageDialog(null, "Please enter all details","Warning",JOptionPane.WARNING_MESSAGE);
+        }
+
+        String priceString = priceTxt1.getText();
+
+        if (name == null || name.equals("")
+                || custName == null || custName.equals("")
+                || date == null || date.equals("")
+                || priceString == null || priceString.equals("")
+                || txtSSN1.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Please enter all details", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
-       }
-       
-       //validation on data
+        }
+
+        //validation on data
         valid = Validation.validateString(name);
-       if(valid == false)
-       {
-           JOptionPane.showMessageDialog(null, "Please enter name correctly","Warning",JOptionPane.WARNING_MESSAGE);
-           return;
-       }
-       
-       valid = Validation.validateDouble(priceString);
-       if(valid == false)
-       {
-           JOptionPane.showMessageDialog(null, "Please enter price correctly","Warning",JOptionPane.WARNING_MESSAGE);
-           return;
-       }
-       
-       
-       
-       
-       valid = Validation.validateDate(date);
-       if(valid == false)
-       {
-           JOptionPane.showMessageDialog(null, "Please enter date correctly","Warning",JOptionPane.WARNING_MESSAGE);
-           return;
-       }
-       
-       String ssnString = txtSSN1.getText();
+        if (valid == false) {
+            JOptionPane.showMessageDialog(null, "Please enter name correctly", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        valid = Validation.validateDouble(priceString);
+        if (valid == false) {
+            JOptionPane.showMessageDialog(null, "Please enter price correctly", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        valid = Validation.validateDate(date);
+        if (valid == false) {
+            JOptionPane.showMessageDialog(null, "Please enter date correctly", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        String ssnString = txtSSN1.getText();
         boolean checkSSN = Validation.checkSNNValidAndUnique(ssnString);
-        if(checkSSN == false)
-        {
+        if (checkSSN == false) {
             JOptionPane.showMessageDialog(null, "SSN is invalid", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-       
-       
-       //parse
-           
-       
+
+        //parse
         double price = Double.parseDouble(priceString);
-        
-        if(price == 0.0)
-        {
-            JOptionPane.showMessageDialog(null, "Please enter price correctly, cannot be zero","Warning",JOptionPane.WARNING_MESSAGE);
-           return;
-            
+
+        if (price == 0.0) {
+            JOptionPane.showMessageDialog(null, "Please enter price correctly, cannot be zero", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+
         }
         //Date parse
-       
-        Date date1=null;
-        SimpleDateFormat formatter1=new SimpleDateFormat("yyyy-MM-dd");
+
+        Date date1 = null;
+        SimpleDateFormat formatter1 = new SimpleDateFormat("yyyy-MM-dd");
         try {
-           date1 =formatter1.parse(date);
+            date1 = formatter1.parse(date);
         } catch (ParseException ex) {
             System.out.println("Error in ManageMedicineJPanel for date paring");
             Logger.getLogger(ManageInsuranceJPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
-        Patients patient = new Patients();
+        Patient patient = new Patient();
         enterprise.getPatientDirectory().getPatientList().add(patient);
-        
+
         patient.setEmpName(name);
         patient.setSSN(ssnString);
-        //patient.set
         int row = organizationJTable.getSelectedRow();
-        if(row<0){
+        if (row < 0) {
             JOptionPane.showMessageDialog(null, "Please select a row!!", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        InsuranceDetails insrdtl = (InsuranceDetails) organizationJTable.getValueAt(row,0);
-        //insrdtl.setCreatedOndate(date1);
+        InsuranceDetails insrdtl = (InsuranceDetails) organizationJTable.getValueAt(row, 0);
         insrdtl.setPatient(patient);
         insrdtl.setPrice(price);
         insrdtl.setType(type);
         insrdtl.setValidity(date1);
         insrdtl.setSSN(ssnString);
         insrdtl.setInsuranceDealer(useraccount.getEmployee());
-        //((Insurance)enterprise).getIndir().getInsuranceDir().add(insrdtl);
-        
-        
-     
-       
-        
-        JOptionPane.showMessageDialog(null, "Updated successfully","Information",JOptionPane.INFORMATION_MESSAGE);
-         
-        
-       //populate table by using main medicine cmb box 
+
+        JOptionPane.showMessageDialog(null, "Updated successfully", "Information", JOptionPane.INFORMATION_MESSAGE);
+
+        //populate table by using main medicine cmb box 
         String medType = (String) cmbSSN.getSelectedItem();
         populateTable(medType);
-        
-        
+
         cmbInsuranceType1.setEnabled(false);
         nameJTextField1.setEditable(false);
         customerJTextField1.setEditable(false);
         txtSSN1.setEditable(false);
-          validity1.setEditable(false);      
-           priceTxt1.setEditable(false);     
-         btnSave1.setEnabled(false);
-           btnUpdate1.setEnabled(true);   
-        
+        validity1.setEditable(false);
+        priceTxt1.setEditable(false);
+        btnSave1.setEnabled(false);
+        btnUpdate1.setEnabled(true);
+
         nameJTextField1.setText("");
         customerJTextField1.setText("");
-      priceTxt1.setText("");
-       //cmbMedicineType.setSelectedItem(med.getType());
-        validity1.setText("");       
-         txtSSN1.setText("");
-        
+        priceTxt1.setText("");
+        //cmbMedicineType.setSelectedItem(med.getType());
+        validity1.setText("");
+        txtSSN1.setText("");
+
     }//GEN-LAST:event_btnSave1ActionPerformed
 
     private void closebtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closebtn1ActionPerformed
@@ -862,59 +776,57 @@ public class ManageInsuranceJPanel extends javax.swing.JPanel {
         populateInsuranceType();
     }//GEN-LAST:event_btnAddActionPerformed
 
-    
-    void populateInsuranceType(){
-         cmbInsuranceType.removeAllItems();
-        
+    void populateInsuranceType() {
+        cmbInsuranceType.removeAllItems();
+
         //for (Organization organization : organizationDir.getOrganizationList()){
-            cmbInsuranceType.addItem("Select");
-             cmbInsuranceType.addItem("Medical");
-              cmbInsuranceType.addItem("Life");
-               cmbInsuranceType.addItem("Health");
+        cmbInsuranceType.addItem("Select");
+        cmbInsuranceType.addItem("Medical");
+        cmbInsuranceType.addItem("Life");
+        cmbInsuranceType.addItem("Health");
         //}
     }
-    
-    
-     void populateInsuranceType1(){
-         cmbInsuranceType1.removeAllItems();
-        
+
+    void populateInsuranceType1() {
+        cmbInsuranceType1.removeAllItems();
+
         //for (Organization organization : organizationDir.getOrganizationList()){
-            cmbInsuranceType1.addItem("Select");
-             cmbInsuranceType1.addItem("Medical");
-              cmbInsuranceType1.addItem("Life");
-               cmbInsuranceType1.addItem("Health");
+        cmbInsuranceType1.addItem("Select");
+        cmbInsuranceType1.addItem("Medical");
+        cmbInsuranceType1.addItem("Life");
+        cmbInsuranceType1.addItem("Health");
         //}
     }
-    
+
     private void btnUpdate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdate1ActionPerformed
         // TODO add your handling code here:
-        
+
         cmbInsuranceType1.setEnabled(true);
         nameJTextField1.setEditable(true);
         customerJTextField1.setEditable(true);
         custNameJTextField.setEditable(true);
-          validity1.setEditable(true);      
-           priceTxt1.setEditable(true); 
-           btnSave1.setEnabled(true);
-           btnUpdate1.setEnabled(false);
-           txtSSN.setEnabled(false);
+        validity1.setEditable(true);
+        priceTxt1.setEditable(true);
+        btnSave1.setEnabled(true);
+        btnUpdate1.setEnabled(false);
+        txtSSN.setEnabled(false);
     }//GEN-LAST:event_btnUpdate1ActionPerformed
 
     private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
         // TODO add your handling code here:
-          int row = organizationJTable.getSelectedRow();
-        if(row<0){
+        int row = organizationJTable.getSelectedRow();
+        if (row < 0) {
             JOptionPane.showMessageDialog(null, "Please select a row!!", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         viewMedicineJPanel.setVisible(true);
-        
+
         //populate 
-        InsuranceDetails med= (InsuranceDetails)  organizationJTable.getValueAt(row,0);
+        InsuranceDetails med = (InsuranceDetails) organizationJTable.getValueAt(row, 0);
         populateInsuranceType1();
         populateDetails(med);
-        
-       // nameJTextField.setText(useraccount.getEmployee().getName());
+
+        // nameJTextField.setText(useraccount.getEmployee().getName());
         nameJTextField.setEditable(false);
     }//GEN-LAST:event_btnViewActionPerformed
 
@@ -926,34 +838,29 @@ public class ManageInsuranceJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSSNActionPerformed
 
-    
-    void populateDetails(InsuranceDetails med){
-        
+    void populateDetails(InsuranceDetails med) {
+
         nameJTextField1.setText(med.getInsuranceDealer().getEmpName());
         customerJTextField1.setText(med.getPatient().getEmpName());
-      //availableQtyTxt1.setText(String.valueOf(med.getQuantity()));
-       cmbInsuranceType1.setSelectedItem(med.getType());
-       txtSSN1.setText(med.getSSN());
-       DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");  
+        cmbInsuranceType1.setSelectedItem(med.getType());
+        txtSSN1.setText(med.getSSN());
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String strDate = dateFormat.format(med.getValidity());
 
+        validity1.setText(strDate);
+        priceTxt1.setText(String.valueOf(med.getPrice()));
 
-
-        validity1.setText(strDate);       
-         priceTxt1.setText(String.valueOf(med.getPrice()));
-        
         cmbInsuranceType1.setEnabled(false);
         nameJTextField1.setEditable(false);
         customerJTextField1.setEditable(false);
         txtSSN1.setEditable(false);
-        //availableQtyTxt1.setEditable(false);
-          validity1.setEditable(false);      
-           priceTxt1.setEditable(false);     
-         btnSave1.setEnabled(false);
-           btnUpdate1.setEnabled(true);        
+        validity1.setEditable(false);
+        priceTxt1.setEditable(false);
+        btnSave1.setEnabled(false);
+        btnUpdate1.setEnabled(true);
     }
-    
-    
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel addMedicineJPanel;
     private javax.swing.JButton backJButton;

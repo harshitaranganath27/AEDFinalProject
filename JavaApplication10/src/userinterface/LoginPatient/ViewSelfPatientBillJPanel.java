@@ -10,7 +10,7 @@ import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Enterprise.Lab.LabTest;
 import Business.Org.Organization;
-import Business.Patient.Patients;
+import Business.Patient.Patient;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.text.SimpleDateFormat;
@@ -29,10 +29,10 @@ public class ViewSelfPatientBillJPanel extends javax.swing.JPanel {
     Organization organization;
     Enterprise enterprise;
     EcoSystem system;
-    Patients patient;
+    Patient patient;
     Appointment appointment;
     UserAccount useraccount;
-    ViewSelfPatientBillJPanel(JPanel userProcessContainer, Organization organization, Enterprise enterprise, EcoSystem system, Patients patient, Appointment appointment, UserAccount useraccount) {
+    ViewSelfPatientBillJPanel(JPanel userProcessContainer, Organization organization, Enterprise enterprise, EcoSystem system, Patient patient, Appointment appointment, UserAccount useraccount) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.organization = organization;

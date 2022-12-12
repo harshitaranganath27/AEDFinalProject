@@ -8,7 +8,7 @@ package userinterface.LoginPatient;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Org.Organization;
-import Business.Patient.Patients;
+import Business.Patient.Patient;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
@@ -167,7 +167,7 @@ public class PatientMainWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnBookAppointmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBookAppointmentActionPerformed
         
-            BookSelfAppointmentJPanel appointmentJPanel = new BookSelfAppointmentJPanel(userProcessContainer, userAccount, organization, enterprise, system,(Patients) (userAccount.getEmployee()));
+            BookSelfAppointmentJPanel appointmentJPanel = new BookSelfAppointmentJPanel(userProcessContainer, userAccount, organization, enterprise, system,(Patient) (userAccount.getEmployee()));
             userProcessContainer.add("BookSelfAppointmentJPanel",appointmentJPanel);
             CardLayout layout=(CardLayout)userProcessContainer.getLayout();
             layout.next(userProcessContainer);
@@ -177,7 +177,7 @@ public class PatientMainWorkAreaJPanel extends javax.swing.JPanel {
     private void btnViewAppointmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewAppointmentActionPerformed
         // TODO add your handling code here:
        
-            userinterface.LoginPatient.ViewSelfAppointmentJPanel viewAppointmentJPanel = new ViewSelfAppointmentJPanel(userProcessContainer, userAccount, organization, enterprise, system,(Patients) userAccount.getEmployee());
+            userinterface.LoginPatient.ViewSelfAppointmentJPanel viewAppointmentJPanel = new ViewSelfAppointmentJPanel(userProcessContainer, userAccount, organization, enterprise, system,(Patient) userAccount.getEmployee());
             userProcessContainer.add("ViewSelfAppointmentJPanel",viewAppointmentJPanel);
             CardLayout layout=(CardLayout)userProcessContainer.getLayout();
         layout.next(userProcessContainer);

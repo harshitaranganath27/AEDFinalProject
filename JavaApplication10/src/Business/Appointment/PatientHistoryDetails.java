@@ -5,7 +5,7 @@
  */
 package Business.Appointment;
 
-import Business.Patient.Patients;
+import Business.Patient.Patient;
 import Business.Person.Person;
 import java.util.Date;
 
@@ -15,7 +15,7 @@ import java.util.Date;
  */
 public class PatientHistoryDetails {
     private String allergies;
-    private Patients patientObj;
+    private Patient patientObj;
     private String prevDiagnosis;
     private Person personObj;
     private Date createdOn;
@@ -76,11 +76,11 @@ public class PatientHistoryDetails {
         this.allergies = allergies;
     }
 
-    public Patients getPatientObj() {
+    public Patient getPatientObj() {
         return patientObj;
     }
 
-    public void setPatientObj(Patients patientObj) {
+    public void setPatientObj(Patient patientObj) {
         this.patientObj = patientObj;
     }
 

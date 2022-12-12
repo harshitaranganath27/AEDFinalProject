@@ -16,7 +16,7 @@ import Business.Medicine.MedicineDirectory;
 import Business.Network.Network;
 import Business.Operation.Operation;
 import Business.Org.Organization;
-import Business.Patient.Patients;
+import Business.Patient.Patient;
 import Business.UserAccount.UserAccount;
 import Business.Utility.Validation;
 import Business.WorkQueue.DoctorWorkRequest;
@@ -41,7 +41,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
     private UserAccount userAccount;
     private Appointment appointment;
     private Employee doctor;
-    private Patients patient;
+    private Patient patient;
     private MedicineDirectory medicineList;
     private EcoSystem ecosystem;
    // private LabTestDirectory labTestList;
@@ -459,7 +459,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
     private void btnAddPatientHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddPatientHistoryActionPerformed
         int selectedRow = DoctorWorkAreaTable.getSelectedRow();
         if(selectedRow >= 0){
-            Patients patient = (Patients)DoctorWorkAreaTable.getValueAt(selectedRow,0);
+            Patient patient = (Patient)DoctorWorkAreaTable.getValueAt(selectedRow,0);
             //            Order order = (Order)OrderJTable.getValueAt(selectedRow, 0);
             PatientHistoryJPanel patientHistoryJPanel = new PatientHistoryJPanel(userProcessContainer, userAccount, organization, enterprise, ecosystem, patient);
             userProcessContainer.add("patientHistoryJPanel",patientHistoryJPanel);
@@ -486,7 +486,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
             return;
         }
            appointment = (Appointment) DoctorWorkAreaTable.getValueAt(selectedrow, 1);
-           Patients patient = (Patients) DoctorWorkAreaTable.getValueAt(selectedrow, 0);
+           Patient patient = (Patient) DoctorWorkAreaTable.getValueAt(selectedrow, 0);
            //Prescription prescri = (Appointment) DoctorWorkAreaTable.getValueAt(selectedrow, 1);
            ViewPrescriptionJPanel viewPrescriptionJPanel = new ViewPrescriptionJPanel(userProcessContainer, userAccount, organization, enterprise, ecosystem, appointment,patient, doctor);
         userProcessContainer.add("ViewPrescriptionJPanel",viewPrescriptionJPanel);
@@ -531,7 +531,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
                 }
                 Operation operation= new Operation();//(Operation)DoctorWorkAreaTable.getValueAt(selectedrow, 0);
                 
-                Patients patient = (Patients) DoctorWorkAreaTable.getValueAt(selectedrow, 0);
+                Patient patient = (Patient) DoctorWorkAreaTable.getValueAt(selectedrow, 0);
                 Appointment appointment = (Appointment) DoctorWorkAreaTable.getValueAt(selectedrow, 1);
                 
                 String date1=dateTxt.getText();
@@ -633,7 +633,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
             //return;
         }
             appointment = (Appointment) DoctorWorkAreaTable.getValueAt(selectedrow, 1);
-            patient = (Patients) DoctorWorkAreaTable.getValueAt(selectedrow, 0);
+            patient = (Patient) DoctorWorkAreaTable.getValueAt(selectedrow, 0);
           // scheduleSurgeryJPanel.setVisible(true);        
          //  appoinmtntDTxt.setText(String.valueOf(appointment.getAppointmentId()));
          //  patientNameTxt.setText(patient.getName());
@@ -694,7 +694,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
             docWr.setStatus("In Process");
             //return;
         }
-        patient = (Patients)DoctorWorkAreaTable.getValueAt(selectedRow, 0);
+        patient = (Patient)DoctorWorkAreaTable.getValueAt(selectedRow, 0);
         appointment= (Appointment)DoctorWorkAreaTable.getValueAt(selectedRow, 1);
         
         
@@ -750,7 +750,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
             docWr.setStatus("In Process");
             //return;
         }
-        patient = (Patients)DoctorWorkAreaTable.getValueAt(selectedRow, 0);
+        patient = (Patient)DoctorWorkAreaTable.getValueAt(selectedRow, 0);
         appointment= (Appointment)DoctorWorkAreaTable.getValueAt(selectedRow, 1);
         
         if(appointment.getStatus().equals(Appointment.AppointmentStatus.Markforbilling.getValue())
@@ -794,7 +794,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please select a Patient Appointment");
             return;
         }
-               patient = (Patients)DoctorWorkAreaTable.getValueAt(selectedRow, 0);
+               patient = (Patient)DoctorWorkAreaTable.getValueAt(selectedRow, 0);
         appointment= (Appointment)DoctorWorkAreaTable.getValueAt(selectedRow, 1);
         receptionist = (UserAccount)DoctorWorkAreaTable.getValueAt(selectedRow, 2);
         DoctorWorkRequest docWr = (DoctorWorkRequest) DoctorWorkAreaTable.getValueAt(selectedRow, 4);

@@ -6,7 +6,7 @@
 package Business.Enterprise.Lab;
 
 import Business.Employee.Employee;
-import Business.Patient.Patients;
+import Business.Patient.Patient;
 import java.util.Date;
 
 /**
@@ -16,7 +16,7 @@ import java.util.Date;
 public class Report {
     int id;
     Date date;
-    Patients patient;
+    Patient patient;
     Employee doctor;
     LabTechnician labTech;
     Lab lab;

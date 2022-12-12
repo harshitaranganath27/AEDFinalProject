@@ -21,7 +21,7 @@ import java.util.Date;
  *
  * @author harshita
  */
-public class Patients extends Employee{
+public class Patient extends Employee{
     
     //String phoneNum;
     AppointmentDirectory appointmentDirectory;
@@ -55,7 +55,7 @@ public class Patients extends Employee{
         this.SSN = SSN;
     }
     
-    public Patients()
+    public Patient()
     {
         super();
         this.patHistorydtls= new ArrayList<>();

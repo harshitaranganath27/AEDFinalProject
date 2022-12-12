@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.Patient;
+package userinterface.PatientRole;
 
 import Business.Appointment.Appointment;
 import Business.Appointment.Appointment.AppointmentStatus;
@@ -11,7 +11,7 @@ import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Org.Organization;
-import Business.Patient.Patients;
+import Business.Patient.Patient;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.text.SimpleDateFormat;
@@ -35,9 +35,9 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
     Organization organization;
     Enterprise enterprise;
     EcoSystem system;
-    Patients patient;
+    Patient patient;
     Appointment appointment;
-    public ViewAppointmentJPanel(JPanel userProcessContainer, UserAccount userAccount, Organization organization, Enterprise enterprise, EcoSystem system, Patients patient) {
+    public ViewAppointmentJPanel(JPanel userProcessContainer, UserAccount userAccount, Organization organization, Enterprise enterprise, EcoSystem system, Patient patient) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.organization = organization;
@@ -519,7 +519,7 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_txtAppointmentStatusActionPerformed
 
     private void btnGenerateBillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerateBillActionPerformed
-        //Patient patient = (Patients)enterprise.getPatientDirectory().getPatientList().get(selectedRow);
+        //Patient patient = (Patient)enterprise.getPatientDirectory().getPatientList().get(selectedRow);
         
         if(appointment == null )
         {
@@ -536,7 +536,7 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
         if(appointment != null){
             //Patient patient = enterprise.getPatientDirectory().findPatientById(Integer.parseInt(txtPatientId.getText()));
             
-            userinterface.Patient.GeneratePatientBillJPanel generatePatientBillJPanel = new userinterface.Patient.GeneratePatientBillJPanel(userProcessContainer, organization, enterprise, system, patient, appointment, userAccount);
+            userinterface.PatientRole.GeneratePatientBillJPanel generatePatientBillJPanel = new userinterface.PatientRole.GeneratePatientBillJPanel(userProcessContainer, organization, enterprise, system, patient, appointment, userAccount);
             userProcessContainer.add("generatePatientBillJPanel",generatePatientBillJPanel);
             CardLayout layout=(CardLayout)userProcessContainer.getLayout();
             layout.next(userProcessContainer);
@@ -592,9 +592,9 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
         
         
         if(appointment != null){
-          //  Patients patient = enterprise.getPatientDirectory().findPatientById(Integer.parseInt(txtPatientId.getText()));
+          //  Patient patient = enterprise.getPatientDirectory().findPatientById(Integer.parseInt(txtPatientId.getText()));
             
-            userinterface.Patient.ViewPatientBillJPanel generatePatientBillJPanel = new userinterface.Patient.ViewPatientBillJPanel(userProcessContainer, organization, enterprise, system, patient, appointment, userAccount);
+            userinterface.PatientRole.ViewPatientBillJPanel generatePatientBillJPanel = new userinterface.PatientRole.ViewPatientBillJPanel(userProcessContainer, organization, enterprise, system, patient, appointment, userAccount);
             userProcessContainer.add("ViewPatientBillJPanel",generatePatientBillJPanel);
             CardLayout layout=(CardLayout)userProcessContainer.getLayout();
             layout.next(userProcessContainer);

@@ -182,7 +182,7 @@ public class Validation {
     
     public static void sendEmailMessage(String emailId, String subject, String text) {
         String to = emailId;
-        String from = "aed.project.fall.2021@gmail.com";
+        String from = "harshitaranganath25@gmail.com";
         String pass = "2021@AED";
 
         Properties properties = System.getProperties();
@@ -223,7 +223,7 @@ properties.put("mail.smtp.ssl.protocols", "TLSv1.2");
      public static void sendEmailAttachment(String emailId, String subject, 
              String text, String inputfilepath) {
         String to = emailId;
-        String from = "aed.project.fall.2021@gmail.com";
+        String from = "harshitaranganath25@gmail.com";
         String pass = "2021@AED";
 
         Properties properties = System.getProperties();
@@ -283,7 +283,7 @@ properties.put("mail.smtp.ssl.protocols", "TLSv1.2");
     public static void sendTextMessage(String contact, String subject, String text) {
         String to = contact;
         System.out.println(contact+subject+text);
-        String from = "aed.project.fall.2021@gmail.com";
+        String from = "harshitaranganath25@gmail.com";
         String pass = "2021@AED";
         Properties properties = System.getProperties();
         String host = "smtp.gmail.com";
