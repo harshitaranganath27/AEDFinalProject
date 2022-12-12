@@ -75,10 +75,7 @@ public class PatientHistoryJPanel extends javax.swing.JPanel {
         patientDetailsTbl = new javax.swing.JTable();
         jLabel8 = new javax.swing.JLabel();
         patientNameTxt = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
         btnViewDetails = new javax.swing.JButton();
-        jPanel13 = new javax.swing.JPanel();
-        jPanel14 = new javax.swing.JPanel();
         txtpatientHistoryId = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -87,7 +84,7 @@ public class PatientHistoryJPanel extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(68, 145, 157));
         jLabel1.setText("Patient Details");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 170, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 70, 170, -1));
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel3.setText("Family History :");
@@ -142,7 +139,6 @@ public class PatientHistoryJPanel extends javax.swing.JPanel {
         });
         add(surgeryHistoryTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 160, 270, -1));
 
-        backJButton.setBackground(new java.awt.Color(102, 147, 255));
         backJButton.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         backJButton.setText("Back");
         backJButton.setPreferredSize(new java.awt.Dimension(100, 40));
@@ -151,7 +147,7 @@ public class PatientHistoryJPanel extends javax.swing.JPanel {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(58, 46, -1, -1));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
         btnAddPatientDetails.setBackground(new java.awt.Color(255, 155, 54));
         btnAddPatientDetails.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -164,7 +160,7 @@ public class PatientHistoryJPanel extends javax.swing.JPanel {
         });
         add(btnAddPatientDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 310, -1, -1));
 
-        patientDetailsTbl.setBackground(new java.awt.Color(255, 193, 131));
+        patientDetailsTbl.setBackground(new java.awt.Color(204, 204, 255));
         patientDetailsTbl.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 204, 255)));
         patientDetailsTbl.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         patientDetailsTbl.setModel(new javax.swing.table.DefaultTableModel(
@@ -207,9 +203,6 @@ public class PatientHistoryJPanel extends javax.swing.JPanel {
         });
         add(patientNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 110, 161, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/prescroption1.jpg"))); // NOI18N
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, -1, -1));
-
         btnViewDetails.setBackground(new java.awt.Color(255, 155, 54));
         btnViewDetails.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         btnViewDetails.setText("View Details");
@@ -220,36 +213,6 @@ public class PatientHistoryJPanel extends javax.swing.JPanel {
             }
         });
         add(btnViewDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 540, -1, -1));
-
-        jPanel13.setBackground(new java.awt.Color(68, 145, 157));
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 180, Short.MAX_VALUE)
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 180, -1));
-
-        jPanel14.setBackground(new java.awt.Color(196, 224, 229));
-
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 180, Short.MAX_VALUE)
-        );
-
-        add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 180));
 
         txtpatientHistoryId.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         txtpatientHistoryId.addActionListener(new java.awt.event.ActionListener() {
@@ -275,12 +238,6 @@ public class PatientHistoryJPanel extends javax.swing.JPanel {
     private void surgeryHistoryTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_surgeryHistoryTxtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_surgeryHistoryTxtActionPerformed
-
-    private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
-        userProcessContainer.remove(this);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.previous(userProcessContainer);
-    }//GEN-LAST:event_backJButtonActionPerformed
 
     private void btnAddPatientDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddPatientDetailsActionPerformed
          
@@ -386,6 +343,12 @@ public class PatientHistoryJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtpatientHistoryIdActionPerformed
 
+    private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_backJButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField alergiesTxt;
@@ -394,15 +357,12 @@ public class PatientHistoryJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnViewDetails;
     private javax.swing.JTextField familyHistoryTxt;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField medAlergiesTxt;
     private javax.swing.JTable patientDetailsTbl;

@@ -52,7 +52,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         //popData();
         createStaffPanel.setVisible(false);
         viewStaffPanel.setVisible(false);
-        jLabel6.setVisible(true);
+       // jLabel6.setVisible(true);
         //visitingChargeLbl.setEnabled(false);
         //visitingChargeTxt.setEnabled(false);
         //visitingChargeLbl.setVisible(false);
@@ -229,20 +229,15 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         viewStaff1 = new javax.swing.JButton();
         selectDeptCmb = new javax.swing.JComboBox();
         jLabel16 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        addStaffBtn = new javax.swing.JButton();
-        viewStaff = new javax.swing.JButton();
-        deleteStaffBtn = new javax.swing.JButton();
         backjButton1 = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        jPanel13 = new javax.swing.JPanel();
-        jPanel14 = new javax.swing.JPanel();
+        addStaffBtn = new javax.swing.JButton();
+        deleteStaffBtn = new javax.swing.JButton();
+        viewStaff = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setForeground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        userJTable.setBackground(new java.awt.Color(255, 193, 131));
         userJTable.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 204, 255)));
         userJTable.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         userJTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -583,7 +578,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
 
         add(viewStaffPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 250, 330, 455));
 
-        viewStaff1.setBackground(new java.awt.Color(68, 145, 157));
+        viewStaff1.setBackground(new java.awt.Color(102, 102, 102));
         viewStaff1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         viewStaff1.setForeground(new java.awt.Color(255, 255, 255));
         viewStaff1.setText("View Department Staff");
@@ -608,39 +603,6 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         jLabel16.setText("Select Department");
         add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 30, -1, -1));
 
-        jPanel1.setBackground(new java.awt.Color(164, 208, 215));
-
-        addStaffBtn.setBackground(new java.awt.Color(255, 155, 54));
-        addStaffBtn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        addStaffBtn.setForeground(new java.awt.Color(102, 102, 102));
-        addStaffBtn.setText("Add  Staff");
-        addStaffBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addStaffBtnActionPerformed(evt);
-            }
-        });
-
-        viewStaff.setBackground(new java.awt.Color(255, 155, 54));
-        viewStaff.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        viewStaff.setForeground(new java.awt.Color(102, 102, 102));
-        viewStaff.setText("View Staff");
-        viewStaff.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                viewStaffActionPerformed(evt);
-            }
-        });
-
-        deleteStaffBtn.setBackground(new java.awt.Color(255, 155, 54));
-        deleteStaffBtn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        deleteStaffBtn.setForeground(new java.awt.Color(102, 102, 102));
-        deleteStaffBtn.setText("Delete Staff");
-        deleteStaffBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deleteStaffBtnActionPerformed(evt);
-            }
-        });
-
-        backjButton1.setBackground(new java.awt.Color(102, 147, 255));
         backjButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         backjButton1.setForeground(new java.awt.Color(102, 102, 102));
         backjButton1.setText("Back");
@@ -649,70 +611,40 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
                 backjButton1ActionPerformed(evt);
             }
         });
+        add(backjButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 148, 40));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(backjButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(viewStaff, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(addStaffBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(deleteStaffBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(27, Short.MAX_VALUE)
-                .addComponent(backjButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(addStaffBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(viewStaff, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(deleteStaffBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
+        addStaffBtn.setBackground(new java.awt.Color(204, 255, 255));
+        addStaffBtn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        addStaffBtn.setForeground(new java.awt.Color(102, 102, 102));
+        addStaffBtn.setText("Add  Staff");
+        addStaffBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addStaffBtnActionPerformed(evt);
+            }
+        });
+        add(addStaffBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 140, 120));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
+        deleteStaffBtn.setBackground(new java.awt.Color(204, 255, 255));
+        deleteStaffBtn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        deleteStaffBtn.setForeground(new java.awt.Color(102, 102, 102));
+        deleteStaffBtn.setText("Delete Staff");
+        deleteStaffBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteStaffBtnActionPerformed(evt);
+            }
+        });
+        add(deleteStaffBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 140, 120));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/StaffImage.png"))); // NOI18N
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, 154, 230));
-
-        jPanel13.setBackground(new java.awt.Color(68, 145, 157));
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 170, Short.MAX_VALUE)
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 170, -1));
-
-        jPanel14.setBackground(new java.awt.Color(196, 224, 229));
-
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 140, Short.MAX_VALUE)
-        );
-
-        add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 140));
+        viewStaff.setBackground(new java.awt.Color(204, 255, 255));
+        viewStaff.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        viewStaff.setForeground(new java.awt.Color(102, 102, 102));
+        viewStaff.setText("View Staff");
+        viewStaff.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewStaffActionPerformed(evt);
+            }
+        });
+        add(viewStaff, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, 140, 120));
     }// </editor-fold>//GEN-END:initComponents
 
     private void createUserJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserJButtonActionPerformed
@@ -1392,13 +1324,9 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField nameJTextField;
     private javax.swing.JTextField nameJTextField2;

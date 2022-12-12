@@ -143,14 +143,11 @@ public class InsuranceDWorkAreaJPanel extends javax.swing.JPanel {
         txtEnterprise = new javax.swing.JTextField();
         btnSubmit = new javax.swing.JButton();
         cmbStatusType = new javax.swing.JComboBox<>();
-        jLabel7 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         txtApprovedAmt = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         txtDate = new javax.swing.JTextField();
-        jPanel14 = new javax.swing.JPanel();
-        jPanel13 = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -172,7 +169,6 @@ public class InsuranceDWorkAreaJPanel extends javax.swing.JPanel {
         jLabel3.setText("Insurance Approval Request");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 20, -1, -1));
 
-        backJButton.setBackground(new java.awt.Color(102, 147, 255));
         backJButton.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         backJButton.setText("Back");
         backJButton.setPreferredSize(new java.awt.Dimension(100, 40));
@@ -219,9 +215,6 @@ public class InsuranceDWorkAreaJPanel extends javax.swing.JPanel {
         });
         add(cmbStatusType, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 320, 160, -1));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/insurance2.jpg"))); // NOI18N
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 310, 530, 350));
-
         jLabel9.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel9.setText("Enterprise :");
         add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 270, -1, -1));
@@ -239,36 +232,6 @@ public class InsuranceDWorkAreaJPanel extends javax.swing.JPanel {
 
         txtDate.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         add(txtDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 420, 160, -1));
-
-        jPanel14.setBackground(new java.awt.Color(196, 224, 229));
-
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 170, Short.MAX_VALUE)
-        );
-
-        add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 170));
-
-        jPanel13.setBackground(new java.awt.Color(68, 145, 157));
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 180, Short.MAX_VALUE)
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 180, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
@@ -415,11 +378,8 @@ public class InsuranceDWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
     private javax.swing.JTextField txtApprovedAmt;
     private javax.swing.JTextField txtDate;
     private javax.swing.JTextField txtEnterprise;

@@ -133,9 +133,6 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtOprDescptn = new javax.swing.JTextArea();
-        jLabel6 = new javax.swing.JLabel();
-        jPanel13 = new javax.swing.JPanel();
-        jPanel14 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -174,7 +171,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
             DoctorWorkAreaTable.getColumnModel().getColumn(5).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 709, 260));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 110, 709, 260));
 
         refreshTestJButton.setBackground(new java.awt.Color(255, 155, 54));
         refreshTestJButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -185,13 +182,13 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
                 refreshTestJButtonActionPerformed(evt);
             }
         });
-        add(refreshTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 650, 200, -1));
+        add(refreshTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 673, 190, 50));
 
         enterpriseLabel.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         enterpriseLabel.setForeground(new java.awt.Color(68, 145, 157));
         enterpriseLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         enterpriseLabel.setText("Enterprise :");
-        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 70, 380, 30));
+        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 70, 380, 30));
 
         btnViewAppointments.setBackground(new java.awt.Color(255, 155, 54));
         btnViewAppointments.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -202,7 +199,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
                 btnViewAppointmentsActionPerformed(evt);
             }
         });
-        add(btnViewAppointments, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 370, 190, -1));
+        add(btnViewAppointments, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 190, 90));
 
         btnAddPatientHistory.setBackground(new java.awt.Color(255, 155, 54));
         btnAddPatientHistory.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -213,7 +210,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
                 btnAddPatientHistoryActionPerformed(evt);
             }
         });
-        add(btnAddPatientHistory, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 410, 190, -1));
+        add(btnAddPatientHistory, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 190, 90));
 
         btnViewPrescription.setBackground(new java.awt.Color(255, 155, 54));
         btnViewPrescription.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -224,7 +221,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
                 btnViewPrescriptionActionPerformed(evt);
             }
         });
-        add(btnViewPrescription, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 530, 200, -1));
+        add(btnViewPrescription, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, 190, 90));
 
         btnCompleted.setBackground(new java.awt.Color(255, 155, 54));
         btnCompleted.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -235,7 +232,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
                 btnCompletedActionPerformed(evt);
             }
         });
-        add(btnCompleted, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 610, 200, -1));
+        add(btnCompleted, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 410, 170, 120));
 
         btnPrescribeMeds.setBackground(new java.awt.Color(255, 155, 54));
         btnPrescribeMeds.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -246,7 +243,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
                 btnPrescribeMedsActionPerformed(evt);
             }
         });
-        add(btnPrescribeMeds, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 490, 200, -1));
+        add(btnPrescribeMeds, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 190, 90));
 
         btnScheduleSurgery.setBackground(new java.awt.Color(255, 155, 54));
         btnScheduleSurgery.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -257,7 +254,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
                 btnScheduleSurgeryActionPerformed(evt);
             }
         });
-        add(btnScheduleSurgery, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 570, 200, -1));
+        add(btnScheduleSurgery, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 580, 190, 80));
 
         btnScheduleLabTest.setBackground(new java.awt.Color(255, 155, 54));
         btnScheduleLabTest.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -268,7 +265,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
                 btnScheduleLabTestActionPerformed(evt);
             }
         });
-        add(btnScheduleLabTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 450, 190, -1));
+        add(btnScheduleLabTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 190, 90));
 
         scheduleSurgeryJPanel.setBackground(new java.awt.Color(164, 208, 215));
         scheduleSurgeryJPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Add Schedule"));
@@ -393,46 +390,13 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        add(scheduleSurgeryJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 420, -1, -1));
+        add(scheduleSurgeryJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 410, -1, -1));
         scheduleSurgeryJPanel.getAccessibleContext().setAccessibleName("Add Surgery");
-
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/doctoMain.JPG"))); // NOI18N
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 190, 188));
-
-        jPanel13.setBackground(new java.awt.Color(68, 145, 157));
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 220, Short.MAX_VALUE)
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 220, -1));
-
-        jPanel14.setBackground(new java.awt.Color(196, 224, 229));
-
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 210, Short.MAX_VALUE)
-        );
-
-        add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 210));
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(68, 145, 157));
         jLabel7.setText("Welcome back!");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 370, 37));
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 370, 37));
     }// </editor-fold>//GEN-END:initComponents
 
     private void refreshTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshTestJButtonActionPerformed
@@ -848,10 +812,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel oprDesc;

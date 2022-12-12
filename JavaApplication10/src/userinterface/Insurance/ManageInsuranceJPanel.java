@@ -185,10 +185,8 @@ public class ManageInsuranceJPanel extends javax.swing.JPanel {
         jLabel16 = new javax.swing.JLabel();
         lblUserName3 = new javax.swing.JLabel();
         txtSSN1 = new javax.swing.JTextField();
-        jPanel13 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         backJButton = new javax.swing.JButton();
-        jPanel14 = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -284,7 +282,7 @@ public class ManageInsuranceJPanel extends javax.swing.JPanel {
                 btnSaveActionPerformed(evt);
             }
         });
-        addMedicineJPanel.add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 63, -1));
+        addMedicineJPanel.add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 140, -1));
 
         closebtn.setBackground(new java.awt.Color(102, 147, 255));
         closebtn.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -404,7 +402,7 @@ public class ManageInsuranceJPanel extends javax.swing.JPanel {
                 btnSave1ActionPerformed(evt);
             }
         });
-        viewMedicineJPanel.add(btnSave1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 63, -1));
+        viewMedicineJPanel.add(btnSave1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 90, -1));
 
         btnUpdate1.setBackground(new java.awt.Color(102, 147, 255));
         btnUpdate1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -447,29 +445,13 @@ public class ManageInsuranceJPanel extends javax.swing.JPanel {
         txtSSN1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         viewMedicineJPanel.add(txtSSN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 120, -1));
 
-        add(viewMedicineJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 310, 310, 380));
-
-        jPanel13.setBackground(new java.awt.Color(68, 145, 157));
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 210, Short.MAX_VALUE)
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 210, -1));
+        add(viewMedicineJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 310, 310, 380));
 
         jLabel15.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(68, 145, 157));
         jLabel15.setText("Manage Insurance");
         add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 0, 270, 37));
 
-        backJButton.setBackground(new java.awt.Color(102, 147, 255));
         backJButton.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         backJButton.setText("Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -478,21 +460,6 @@ public class ManageInsuranceJPanel extends javax.swing.JPanel {
             }
         });
         add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 103, 39));
-
-        jPanel14.setBackground(new java.awt.Color(196, 224, 229));
-
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 140, Short.MAX_VALUE)
-        );
-
-        add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 140));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
@@ -889,8 +856,6 @@ public class ManageInsuranceJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblUserName2;
     private javax.swing.JLabel lblUserName3;
