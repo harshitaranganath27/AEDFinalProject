@@ -5,7 +5,7 @@
  */
 package Business.Org;
 
-import Business.Role.NurseRole;
+import Business.Role.Nurse;
 import Business.Role.Role;
 import java.util.ArrayList;
 import Business.Bed.BedDirectory;
@@ -53,7 +53,7 @@ public class BedManagementDepartment extends Organization {
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
-        roles.add(new NurseRole());
+        roles.add(new Nurse());
         return roles;
     }
 

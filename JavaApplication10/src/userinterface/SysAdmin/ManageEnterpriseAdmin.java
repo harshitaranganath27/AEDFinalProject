@@ -5,7 +5,7 @@ import Business.EcoSystem;
 import Business.Employee.Employee;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
-import Business.Role.AdminRole;
+import Business.Role.Admin;
 import Business.UserAccount.UserAccount;
 import static Business.Utility.EmailClass.sendEmailMessage;
 import static Business.Utility.EmailClass.sendTextMessage;
@@ -485,7 +485,7 @@ public class ManageEnterpriseAdmin extends javax.swing.JPanel {
 
         Employee employee = enterprise.getEmpDirectory().createEmployee(name);
         employee.setRole("Head Role");
-        UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new AdminRole());
+        UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new Admin());
         populateTable();
         //send email and sms
 

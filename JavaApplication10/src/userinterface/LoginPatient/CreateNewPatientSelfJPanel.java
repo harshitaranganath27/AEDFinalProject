@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import Business.Patient.Patient;
 import Business.Patient.PatientDirectory;
-import Business.Role.PatientRole;
+import Business.Role.Patient;
 import Business.Utility.Validation;
 import java.awt.CardLayout;
 import java.util.ArrayList;
@@ -425,7 +425,7 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
         
         Insurance insuranceE =(Insurance)cmbInsuranceCompany.getSelectedItem();
         String insuranceId = txtInsuranceID.getText();
-        UserAccount account = ecosystem.getUserAccountDirectory().createUserAccount(txtUserName.getText(), txtPassword.getText(), null, new PatientRole());
+        UserAccount account = ecosystem.getUserAccountDirectory().createUserAccount(txtUserName.getText(), txtPassword.getText(), null, new Patient());
        
        
         Employee emp= ecosystem.getPatientDirectory().createPatient(txtPatientName.getText(), phoneNumberString, txtGender.getSelectedItem().toString(),

@@ -4,10 +4,7 @@
  * and open the template in the editor.
  */
 package Business.Org;
-
-//import Business.Role.InsuranceDealerRole;
-
-import Business.Role.InsuranceDealerRole;
+import Business.Role.InsurancePersonnel;
 import Business.Role.Role;
 import java.util.ArrayList;
 
@@ -26,7 +23,7 @@ public class InsuranceOrg extends Organization
     //@Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
-        roles.add(new InsuranceDealerRole());
+        roles.add(new InsurancePersonnel());
         return roles;
 }
     

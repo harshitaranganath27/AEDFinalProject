@@ -23,10 +23,10 @@ public class BillingDepartment extends Organization{
     String billIssuer;
     Patient patient;
     Employee doctor;
-    Appointment appointment;
+    Appointment apptment;
     Bill bill;
-    String paymentStatus;
-    String paymentMode;
+    String paymntStatus;
+    String paymntMode;
 
     public BillingDepartment() {
       super(Organization.Type.Billing.getValue());

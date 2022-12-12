@@ -5,7 +5,7 @@
  */
 package Business.Department;
 
-import Business.Person.EmployeeDirectory;
+import Business.Person.EmpDirectory;
 
 /**
  *

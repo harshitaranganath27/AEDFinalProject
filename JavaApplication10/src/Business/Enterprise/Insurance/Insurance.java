@@ -8,7 +8,7 @@ package Business.Enterprise.Insurance;
 import Business.Enterprise.Enterprise;
 import Business.Patient.PatientDirectory;
 import Business.Department.Receptionist;
-import Business.Person.EmployeeDirectory;
+import Business.Person.EmpDirectory;
 import Business.Role.Role;
 import java.util.ArrayList;
 
@@ -18,7 +18,7 @@ import java.util.ArrayList;
  */
 public class Insurance extends Enterprise {
     int id;
-    EmployeeDirectory doctorList;
+    EmpDirectory doctorList;
     //NurseDirectory nurseList;
     PatientDirectory patientList;
     Receptionist receptionist;
@@ -32,11 +32,11 @@ public class Insurance extends Enterprise {
         this.id = id;
     }
 
-    public EmployeeDirectory getDoctorList() {
+    public EmpDirectory getDoctorList() {
         return doctorList;
     }
 
-    public void setDoctorList(EmployeeDirectory doctorList) {
+    public void setDoctorList(EmpDirectory doctorList) {
         this.doctorList = doctorList;
     }
 

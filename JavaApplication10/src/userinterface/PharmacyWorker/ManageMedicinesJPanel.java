@@ -10,10 +10,10 @@ import Business.Medicine.Medicine;
 import Business.Medicine.MedicineDirectory;
 import Business.Org.Organization;
 import Business.Org.organizationDir;
-import Business.Role.DoctorRole;
+import Business.Role.Doctor;
 import Business.Role.LabTechRole;
-import Business.Role.NurseRole;
-import Business.Role.PatientRole;
+import Business.Role.Nurse;
+import Business.Role.Patient;
 import Business.Role.ReceptionistRole;
 import Business.Role.Role;
 import Business.Utility.Validation;
@@ -686,11 +686,11 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
         Role role = null;
         if(roleString.equals("DoctorRole"))
         {
-            role=new DoctorRole();
+            role=new Doctor();
         }
         else if(roleString.equals("NurseRole"))
         {
-            role=new NurseRole();
+            role=new Nurse();
         }
         else if(roleString.equals("LabTechnicianRole"))
         {
@@ -698,7 +698,7 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
         }
         else if(roleString.equals("PatientRole"))
         {
-            role=new PatientRole();
+            role=new Patient();
         }
         else if(roleString.equals("ReceptionistRole"))
         {

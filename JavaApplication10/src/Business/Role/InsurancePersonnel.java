@@ -15,7 +15,7 @@ import userinterface.Insurance.InsuranceDMainAreaJPanel;
  *
  * @author harshita
  */
-public class InsuranceDealerRole extends Role{
+public class InsurancePersonnel extends Role{
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
