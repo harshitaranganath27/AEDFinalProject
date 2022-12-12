@@ -17,23 +17,22 @@ import java.util.Map;
 
 /**
  *
- * @author 
+ * @author Harshita
  */
 public class Prescription {
     LabTestDirectory labTestList;
-    //MedicineDirectory medicineList;
-    Map<Medicine, Double> medicinePrescribed;
-    Map<Medicine, Integer> medicineListquanity;
-    private Pharmacy phmacy;
+    Map<Medicine, Double> medsPrescribed;
+    Map<Medicine, Integer> medsList;
+    private Pharmacy pharmacy;
     private String status;
-    private double amount;
+    private double amt;
 
-    public double getAmount() {
-        return amount;
+    public double getAmt() {
+        return amt;
     }
 
-    public void setAmount(double amount) {
-        this.amount = amount;
+    public void setAmt(double amt) {
+        this.amt = amt;
     }
     
     
@@ -48,12 +47,12 @@ public class Prescription {
     
     
 
-    public Pharmacy getPhmacy() {
-        return phmacy;
+    public Pharmacy getPharmacy() {
+        return pharmacy;
     }
 
-    public void setPhmacy(Pharmacy phmacy) {
-        this.phmacy = phmacy;
+    public void setPharmacy(Pharmacy pharmacy) {
+        this.pharmacy = pharmacy;
     }
     private Date createdOn;
     Employee doctor;
@@ -62,8 +61,8 @@ public class Prescription {
 
     public Prescription() {
         this.createdOn = new Date();
-        medicinePrescribed = new HashMap<>();
-        medicineListquanity = new HashMap<>();
+        medsPrescribed = new HashMap<>();
+        medsList = new HashMap<>();
     }
 
     
@@ -75,20 +74,20 @@ public class Prescription {
         this.labTestList = labTestList;
     }
 
-    public Map<Medicine, Double> getMedicinePrescribed() {
-        return medicinePrescribed;
+    public Map<Medicine, Double> getMedsPrescribed() {
+        return medsPrescribed;
     }
 
-    public void setMedicinePrescribed(Map<Medicine, Double> medicinePrescribed) {
-        this.medicinePrescribed = medicinePrescribed;
+    public void setMedsPrescribed(Map<Medicine, Double> medsPrescribed) {
+        this.medsPrescribed = medsPrescribed;
     }
 
-    public Map<Medicine, Integer> getMedicineListquanity() {
-        return medicineListquanity;
+    public Map<Medicine, Integer> getMedsList() {
+        return medsList;
     }
 
-    public void setMedicineListquanity(Map<Medicine, Integer> medicineListquanity) {
-        this.medicineListquanity = medicineListquanity;
+    public void setMedsList(Map<Medicine, Integer> medsList) {
+        this.medsList = medsList;
     }
 
     

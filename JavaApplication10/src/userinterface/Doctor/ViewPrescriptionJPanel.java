@@ -47,7 +47,7 @@ public class ViewPrescriptionJPanel extends javax.swing.JPanel {
        this.appointment = appointment;
        this.patient = patient;
        this.doctor= doctor;
-       Prescription prescription = appointment.getPrescription();
+       Prescription prescription = appointment.getPrescrption();
        populatePrescription();
     }
         
@@ -115,16 +115,16 @@ public class ViewPrescriptionJPanel extends javax.swing.JPanel {
     public void populatePrescription(){
          DefaultTableModel model = (DefaultTableModel) viewPrescriptionTbl.getModel();
         model.setRowCount(0);
-        Prescription prelist = appointment.getPrescription();
+        Prescription prelist = appointment.getPrescrption();
         
         
-        for (Map.Entry<Medicine, Double> entry : appointment.getPrescription().getMedicinePrescribed().entrySet()){
+        for (Map.Entry<Medicine, Double> entry : appointment.getPrescrption().getMedsPrescribed().entrySet()){
          Object[] row = new Object[5];
             row[0] = patient.getName();
             row[1] = doctor.getName();
             row[2] = entry.getKey();
             row[3] = entry.getValue();
-            row[4] = prelist.getPhmacy().getName();
+            row[4] = prelist.getPharmacy().getName();
             model.addRow(row);
     }
         }

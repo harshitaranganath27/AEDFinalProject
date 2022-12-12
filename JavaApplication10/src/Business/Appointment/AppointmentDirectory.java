@@ -13,45 +13,44 @@ import java.util.List;
 
 /**
  *
- * @author 
+ * @author Harshita
  */
 public class AppointmentDirectory {
     private int count = 11;
-    List<Appointment> appointmentList;
-    //private Prescription prescription;
-    List<Prescription> prescriptionList;
-    List<PatientHistoryDetails> patientHistoryList;
+    List<Appointment> apptmentList;
+    List<Prescription> prescrptionList;
+    List<PatientHistoryDetails> patHistoryList;
 
     public AppointmentDirectory(){
-        appointmentList = new ArrayList<>();
-        prescriptionList = new ArrayList<>();
-        patientHistoryList = new ArrayList<>();
+        apptmentList = new ArrayList<>();
+        prescrptionList = new ArrayList<>();
+        patHistoryList = new ArrayList<>();
         
     }
     
     
-    public List<Appointment> getAppointmentList() {
-        return appointmentList;
+    public List<Appointment> getApptmentList() {
+        return apptmentList;
     }
 
-    public void setAppointmentList(List<Appointment> appointmentList) {
-        this.appointmentList = appointmentList;
+    public void setApptmentList(List<Appointment> apptmentList) {
+        this.apptmentList = apptmentList;
     }
 
-    public List<Prescription> getPrescriptionList() {
-        return prescriptionList;
+    public List<Prescription> getPrescrptionList() {
+        return prescrptionList;
     }
 
-    public void setPrescriptionList(List<Prescription> prescriptionList) {
-        this.prescriptionList = prescriptionList;
+    public void setPrescrptionList(List<Prescription> prescrptionList) {
+        this.prescrptionList = prescrptionList;
     }
 
-    public List<PatientHistoryDetails> getPatientHistoryList() {
-        return patientHistoryList;
+    public List<PatientHistoryDetails> getPatHistoryList() {
+        return patHistoryList;
     }
 
-    public void setPatientHistoryList(List<PatientHistoryDetails> patientHistoryList) {
-        this.patientHistoryList = patientHistoryList;
+    public void setPatHistoryList(List<PatientHistoryDetails> patHistoryList) {
+        this.patHistoryList = patHistoryList;
     }
     
     
@@ -64,7 +63,7 @@ public class AppointmentDirectory {
     
     //cancel appointment
     void cancelAppointment(Appointment app){
-        appointmentList.remove(app);
+        apptmentList.remove(app);
     }
     
     //search Appointment by patient and date
@@ -91,36 +90,36 @@ public class AppointmentDirectory {
     public Appointment createAppointment(Patient patient, Employee doctor, Date appointmetDate, String appointmentType) { 
         Appointment appointment = new Appointment(count++);
         appointment.setDate(appointmetDate);
-        appointment.setDoctor(doctor);
+        appointment.setDoc(doctor);
         appointment.setType(appointmentType);
         appointment.setPatient(patient);
         appointment.setStatus(Appointment.AppointmentStatus.New.getValue());
-        patient.getAppointmentDirectory().getAppointmentList().add(appointment);
+        patient.getAppointmentDirectory().getApptmentList().add(appointment);
        return appointment;
     }
     
     public Appointment createLabAppointment(Patient patient, Employee doctor, Date appointmetDate, String appointmentType) { 
         Appointment appointment = new Appointment(count++);
         appointment.setDate(appointmetDate);
-        appointment.setDoctor(doctor);
+        appointment.setDoc(doctor);
         appointment.setType(appointmentType);
         appointment.setPatient(patient);
         appointment.setStatus(Appointment.AppointmentStatus.New.getValue());
-        patient.getLabAppointmentDirectory().getAppointmentList().add(appointment);
+        patient.getLabAppointmentDirectory().getApptmentList().add(appointment);
        return appointment;
     }
     
     public Prescription addPrescription(){
         Prescription prescription = new Prescription();
-        prescriptionList.add(prescription);
+        prescrptionList.add(prescription);
         return prescription;
     }
     
     public AppointmentDirectory createNewAPPDir()
     {
             AppointmentDirectory appointmentDirectory = new AppointmentDirectory();
-            //List<Appointment> appointmentList = new ArrayList<Appointment>();
-            //appointmentDirectory.setAppointmentList(appointmentList);
+            //List<Appointment> apptmentList = new ArrayList<Appointment>();
+            //appointmentDirectory.setAppointmentList(apptmentList);
             return appointmentDirectory;
     }
 }

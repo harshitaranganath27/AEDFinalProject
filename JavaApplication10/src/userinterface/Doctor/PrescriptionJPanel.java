@@ -349,12 +349,12 @@ public class PrescriptionJPanel extends javax.swing.JPanel {
            JOptionPane.showMessageDialog(null, "Fields cannot be empty"); 
         }
         else
-        {Prescription prescription = appointment.getPrescription();//prescriptionList.addPrescription();
+        {Prescription prescription = appointment.getPrescrption();//prescriptionList.addPrescription();
         //prescription.setDate(date);
         prescription.setPatient(patient);
         prescription.setDoctor(doctor);
         
-        patient.getAppointmentDirectory().getPrescriptionList().add(prescription);
+        patient.getAppointmentDirectory().getPrescrptionList().add(prescription);
         
         //pharmacy work request created--todo
         PharmacyWorkRequest phWr = new PharmacyWorkRequest();
@@ -365,12 +365,12 @@ public class PrescriptionJPanel extends javax.swing.JPanel {
                 phWr.setAppointment(appointment);
                 phWr.setDoctor(doctor);
                 phWr.setPatient(patient);
-                phWr.setMedicineMap(appointment.getPrescription().getMedicinePrescribed());
+                phWr.setMedicineMap(appointment.getPrescrption().getMedsPrescribed());
                 //phWr.setReceiver(receptionist);
                 //Appointment appointment = (Appointment) 
                 Pharmacy pharEnterprise =(Pharmacy) cmbPharmacy.getSelectedItem();
                 pharEnterprise.getWorkQueue().getWorkRequestList().add(phWr);
-                prescription.setPhmacy(pharEnterprise);
+                prescription.setPharmacy(pharEnterprise);
                 //UserAccount recepUseracc = null;
                 //List<UserAccount> userAccDir=  organization.getUserAccountDirectory().getUserAccountList();
                 //List<UserAccount> nurseList = enterprise.getUserAccountDirectory().getUserAccountList();
@@ -386,7 +386,7 @@ public class PrescriptionJPanel extends javax.swing.JPanel {
         dosageTxt.setText("");
         remarksTxt.setText("");
         quantityTxt.setText("");
-        appointment.setPrescription(prescription);
+        appointment.setPrescrption(prescription);
        // JOptionPane.showMessageDialog(null, "Prescription sucessfully added"); 
         populate();
         }
@@ -400,9 +400,9 @@ public class PrescriptionJPanel extends javax.swing.JPanel {
          DefaultTableModel model = (DefaultTableModel) PrescriptionTable.getModel();
         
         model.setRowCount(0);
-        Prescription prescription = appointment.getPrescription();
+        Prescription prescription = appointment.getPrescrption();
         
-        prescription.getMedicinePrescribed().clear();
+        prescription.getMedsPrescribed().clear();
     }//GEN-LAST:event_cmbPharmacyActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -433,21 +433,21 @@ public class PrescriptionJPanel extends javax.swing.JPanel {
         double dosage = Double.parseDouble(dosageTxt.getText());
         int quantity = Integer.parseInt(quantityTxt.getText());
         
-        Prescription prescription = appointment.getPrescription();
+        Prescription prescription = appointment.getPrescrption();
         
-        if(prescription.getMedicinePrescribed() == null){
+        if(prescription.getMedsPrescribed() == null){
            Map<Medicine, Double>  medicinePrescribed = new HashMap<>();
-           prescription.setMedicinePrescribed(medicinePrescribed);
+           prescription.setMedsPrescribed(medicinePrescribed);
         }
-        prescription.getMedicinePrescribed().put(med, dosage);
+        prescription.getMedsPrescribed().put(med, dosage);
         
-        if(prescription.getMedicineListquanity() == null){
+        if(prescription.getMedsList() == null){
            Map<Medicine, Integer>  medicinePrescribed = new HashMap<>();
-           prescription.setMedicineListquanity(medicinePrescribed);
+           prescription.setMedsList(medicinePrescribed);
         }
         
         
-        prescription.getMedicineListquanity().put(med, quantity);
+        prescription.getMedsList().put(med, quantity);
         
         
         

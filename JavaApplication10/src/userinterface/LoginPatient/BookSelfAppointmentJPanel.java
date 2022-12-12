@@ -491,15 +491,15 @@ public class BookSelfAppointmentJPanel extends javax.swing.JPanel {
         }
         Employee doctor = (Employee)cmbDoctor.getSelectedItem();
         if(enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.Hospital.getValue())){
-            for(Appointment appointment : patient.getAppointmentDirectory().getAppointmentList()){
-                if((appointment.getDate().compareTo(date1) == 0) && (appointment.getDoctor().getId() == doctor.getId())&& !appointment.getStatus().equalsIgnoreCase(Appointment.AppointmentStatus.Cancel.getValue())){
+            for(Appointment appointment : patient.getAppointmentDirectory().getApptmentList()){
+                if((appointment.getDate().compareTo(date1) == 0) && (appointment.getDoc().getId() == doctor.getId())&& !appointment.getStatus().equalsIgnoreCase(Appointment.AppointmentStatus.Cancel.getValue())){
                     JOptionPane.showMessageDialog(null, "Patient has already booked appointment!", "Warning", JOptionPane.WARNING_MESSAGE);
                     return;
                 }
             }
         }else if(enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.Lab.getValue())){
-            for(Appointment appointment : patient.getLabAppointmentDirectory().getAppointmentList()){
-                if((appointment.getDate().compareTo(date1) == 0) && (appointment.getDoctor().getId() == doctor.getId()) &&  !appointment.getStatus().equalsIgnoreCase(Appointment.AppointmentStatus.Cancel.getValue())){
+            for(Appointment appointment : patient.getLabAppointmentDirectory().getApptmentList()){
+                if((appointment.getDate().compareTo(date1) == 0) && (appointment.getDoc().getId() == doctor.getId()) &&  !appointment.getStatus().equalsIgnoreCase(Appointment.AppointmentStatus.Cancel.getValue())){
                     JOptionPane.showMessageDialog(null, "Patient has already booked appointment!", "Warning", JOptionPane.WARNING_MESSAGE);
                     return;
                 }
@@ -592,7 +592,7 @@ public class BookSelfAppointmentJPanel extends javax.swing.JPanel {
                 labTest.setLabTechnician(null);
                 labTest.setPatient(patient);
                 labTest.setName("none");
-                labTest.setDoctor(appoint.getDoctor());
+                labTest.setDoctor(appoint.getDoc());
                 labTest.setStatus("New");
                 //labTest.setType(testType);
                 workreq.setLabTest(labTest);

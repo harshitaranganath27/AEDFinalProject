@@ -312,12 +312,12 @@ public class PatientHistoryJPanel extends javax.swing.JPanel {
         }
         
         //prescription.setDate(date);
-        patientHistoryDetails.setMedAlergies(medsalergies);
-        patientHistoryDetails.setPreviousDiagnosis(previousDiagnosis);
-        patientHistoryDetails.setPatient(patient);
+        patientHistoryDetails.setAllergies(medsalergies);
+        patientHistoryDetails.setPrevDiagnosis(previousDiagnosis);
+        patientHistoryDetails.setPatientObj(patient);
         patientHistoryDetails.setFamilyHistory(familyHistoryTxt.getText());
         patientHistoryDetails.setSurgeryHistory(surgeryHistoryTxt.getText());
-        patientHistoryDetails.setAlergy(alergiesTxt.getText());
+        patientHistoryDetails.setAllergy(alergiesTxt.getText());
         //dateTxt.setText("");
 //        patientNameTxt.setText("");
         previousDiagnosisTxt.setText("");
@@ -346,9 +346,9 @@ public class PatientHistoryJPanel extends javax.swing.JPanel {
         {
         
             Object[] row = new Object[6];
-            row[0] = phd.getMedAlergies();
-            row[1] = phd.getAlergy();
-            row[2] =phd.getPreviousDiagnosis();
+            row[0] = phd.getAllergies();
+            row[1] = phd.getAllergy();
+            row[2] =phd.getPrevDiagnosis();
             row[3] = phd.getFamilyHistory();
             row[4] = phd.getSurgeryHistory();
             row[5] = phd;//.getId();
@@ -373,9 +373,9 @@ public class PatientHistoryJPanel extends javax.swing.JPanel {
         
         previuous = fsch;
         patientNameTxt.setText(patient.getName());
-        previousDiagnosisTxt.setText(fsch.getPreviousDiagnosis());
-        medAlergiesTxt.setText(fsch.getMedAlergies());
-        alergiesTxt.setText(fsch.getAlergy());
+        previousDiagnosisTxt.setText(fsch.getPrevDiagnosis());
+        medAlergiesTxt.setText(fsch.getAllergies());
+        alergiesTxt.setText(fsch.getAllergy());
         surgeryHistoryTxt.setText(fsch.getSurgeryHistory());
         familyHistoryTxt.setText(fsch.getFamilyHistory());
         

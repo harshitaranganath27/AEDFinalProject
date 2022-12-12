@@ -44,8 +44,8 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
         this.ecosystem = ecosystem;
         this.appointment = appointment;
         this.patient= appointment.getPatient();
-        this.doctor= (Employee) appointment.getDoctor();
-        appointmentIDTxt.setText(String.valueOf(appointment.getAppointmentId()));
+        this.doctor= (Employee) appointment.getDoc();
+        appointmentIDTxt.setText(String.valueOf(appointment.getAppntmentID()));
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
         DateTxt.setText(formatter.format(appointment.getDate()) + " " + appointment.getTime() + ":00");
         appointmentTypeTxt.setText(appointment.getType());

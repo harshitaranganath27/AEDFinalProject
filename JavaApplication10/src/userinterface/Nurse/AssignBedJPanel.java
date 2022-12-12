@@ -114,7 +114,7 @@ public class AssignBedJPanel extends javax.swing.JPanel {
     
 void populateDetails(){
     viewPatientNametxt.setText(patient.getName());
-    viewAppnmtID.setText(String.valueOf(appointment.getAppointmentId()));
+    viewAppnmtID.setText(String.valueOf(appointment.getAppntmentID()));
     viewDrTxt.setText(doctor.getEmployee().getName());
     viewpatientIdTxt.setText(String.valueOf(patient.getId()));
     emailIDTxt.setText(patient.getEmailID());

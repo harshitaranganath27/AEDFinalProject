@@ -229,7 +229,7 @@ public class AssignLabTestJPanel extends javax.swing.JPanel {
                 labTest.setLabTechnician(null);
                 labTest.setPatient(patient);
                 labTest.setName(testType);
-                labTest.setDoctor(appointment.getDoctor());
+                labTest.setDoctor(appointment.getDoc());
                 labTest.setStatus("New");
                 //labTest.setType(testType);
                 workreq.setLabTest(labTest);

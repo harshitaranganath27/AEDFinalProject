@@ -73,16 +73,16 @@ public class GeneratePatientBillJPanel extends javax.swing.JPanel {
         
         SimpleDateFormat formatter1=new SimpleDateFormat("yyyy-MM-dd");
         txtPatientName.setText(patient.getName());
-        if(appointment.getDoctor().getSpecialization() == null){
-            txtDoctor.setText(appointment.getDoctor().getName() + " - Lab Technician");
+        if(appointment.getDoc().getSpecialization() == null){
+            txtDoctor.setText(appointment.getDoc().getName() + " - Lab Technician");
         }else{
-            txtDoctor.setText(appointment.getDoctor().getName() + " - " + appointment.getDoctor().getSpecialization().getValue());
+            txtDoctor.setText(appointment.getDoc().getName() + " - " + appointment.getDoc().getSpecialization().getValue());
         }
         
-        txtAppointmetId.setText(String.valueOf(appointment.getAppointmentId()));
+        txtAppointmetId.setText(String.valueOf(appointment.getAppntmentID()));
         txtAppointmetDate.setText(formatter1.format(appointment.getDate()));
         txtAppointmentType.setText(appointment.getType());
-        double visitingCharge = appointment.getDoctor().getVisitingCharge();
+        double visitingCharge = appointment.getDoc().getVisitingCharge();
         Double operationCharge = 0d;
         if((appointment.getOperation() != null)){
             operationCharge = appointment.getOperation().getOperationCharge();
@@ -365,12 +365,12 @@ public class GeneratePatientBillJPanel extends javax.swing.JPanel {
         Bill bill = new Bill();
         bill.setAppointment(appointment);
         bill.setPatient(patient);
-        bill.setDoctor(appointment.getDoctor());
+        bill.setDoctor(appointment.getDoc());
         bill.setStatus("Pending approval from Insurance");
         bill.setTotalCharges(Double.valueOf(txtTotalCharge.getText()));
         bill.setEnterprise(enterprise);
         bills.add(bill);
-        appointment.setHospitalbill(bill);
+        appointment.setBillObj(bill);
         appointment.setStatus(Appointment.AppointmentStatus.MarkForInsurance.getValue());
        // for(Appointment appointment : patient.getAppointmentDirectory().getAppointmentList()){
          //   if(appointment.getAppointmentId() == this.appointment.getAppointmentId()){

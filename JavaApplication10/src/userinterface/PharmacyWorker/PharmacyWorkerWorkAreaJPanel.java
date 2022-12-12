@@ -91,7 +91,7 @@ public class PharmacyWorkerWorkAreaJPanel extends javax.swing.JPanel {
          DefaultTableModel model = (DefaultTableModel) medicineQuantityTbl.getModel();
         model.setRowCount(0);
         Double totalPrice = 0.0;
-        for (Map.Entry<Medicine, Integer> entry : appointment.getPrescription().getMedicineListquanity().entrySet()){
+        for (Map.Entry<Medicine, Integer> entry : appointment.getPrescrption().getMedsList().entrySet()){
          Object[] row = new Object[5];
             row[0] = entry.getKey();
             row[1] = entry.getValue();
@@ -109,7 +109,7 @@ public class PharmacyWorkerWorkAreaJPanel extends javax.swing.JPanel {
             row[3] = entry.getValue() * medicine.getPrice();
             totalPrice += entry.getValue() * medicine.getPrice();
             }
-            row[4] = appointment.getPrescription().getPhmacy().getName();
+            row[4] = appointment.getPrescrption().getPharmacy().getName();
             model.addRow(row);
             
     }
@@ -334,9 +334,9 @@ public class PharmacyWorkerWorkAreaJPanel extends javax.swing.JPanel {
             return;
         }
         
-        Prescription prescription = appointment.getPrescription();
+        Prescription prescription = appointment.getPrescrption();
         prescription.setStatus("Processed");
-        prescription.setAmount(Double.parseDouble(totalPriceTxt.getText()));
+        prescription.setAmt(Double.parseDouble(totalPriceTxt.getText()));
         //labTest.setStatus("Completed");
         //labTest.setTestCharge(testCharge);
         //String technicianName = technicianNameTxt.getText();

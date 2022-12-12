@@ -20,25 +20,25 @@ import java.util.Date;
  * @author Harshita
  */
 public class Appointment {
-    int appointmentId;
-    String type; //online, in-person
+    int appntmentID;
+    String type;
     Date date;
-    Employee doctor;
+    Employee doc;
     Patient patient;
-    String status;  //new, booked, cancelled, rescheduled, completed , mark for billing
+    String status;
     String location;
     private Operation operation;
     LabTestDirectory labTestList;
-    Prescription prescription;
+    Prescription prescrption;
     Integer time;
-    Bill Hospitalbill;
+    Bill billObj;
 
-    public Bill getHospitalbill() {
-        return Hospitalbill;
+    public Bill getBillObj() {
+        return billObj;
     }
 
-    public void setHospitalbill(Bill bill) {
-        this.Hospitalbill = bill;
+    public void setBillObj(Bill bill) {
+        this.billObj = bill;
     }
 
     public Integer getTime() {
@@ -61,8 +61,8 @@ public class Appointment {
     Pharmacy pharmacy;
 
 
-    public Prescription getPrescription() {
-        return prescription;
+    public Prescription getPrescrption() {
+        return prescrption;
     }
 
     public LabTestDirectory getLabTestList() {
@@ -73,23 +73,23 @@ public class Appointment {
         this.labTestList = labTestList;
     }
 
-    public void setPrescription(Prescription prescription) {
-        this.prescription = prescription;
+    public void setPrescrption(Prescription prescrption) {
+        this.prescrption = prescrption;
     }
     
     public Appointment(int count){
-        this.appointmentId = count;
-        prescription= new Prescription();
+        this.appntmentID = count;
+        prescrption= new Prescription();
         labTestList = new LabTestDirectory();
         appoitmentHistory="";
     }
 
-    public int getAppointmentId() {
-        return appointmentId;
+    public int getAppntmentID() {
+        return appntmentID;
     }
 
-    public void setAppointmentId(int appointmentId) {
-        this.appointmentId = appointmentId;
+    public void setAppntmentID(int appntmentID) {
+        this.appntmentID = appntmentID;
     }
 
     public String getType() {
@@ -108,12 +108,12 @@ public class Appointment {
         this.date = date;
     }
 
-    public Employee getDoctor() {
-        return doctor;
+    public Employee getDoc() {
+        return doc;
     }
 
-    public void setDoctor(Employee doctor) {
-        this.doctor = doctor;
+    public void setDoc(Employee doc) {
+        this.doc = doc;
     }
 
     public Patient getPatient() {

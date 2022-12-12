@@ -57,7 +57,7 @@ public class AppointmentStatusGraphInEnterprise extends javax.swing.JPanel {
         {
             for (Patient p : enterprise.getPatientDirectory().getPatientList()) 
             {
-                workReqList.addAll(p.getAppointmentDirectory().getAppointmentList());
+                workReqList.addAll(p.getAppointmentDirectory().getApptmentList());
             }
         }
 
