@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.AdministrativeRole;
+package userinterface.Administrator;
 
 import Business.Bed.Bed;
 import Business.DB4OUtil.DB4OUtil;

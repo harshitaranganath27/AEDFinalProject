@@ -3,20 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.AdministrativeRole;
-
-import Business.Bed.Bed;
+package userinterface.Administrator;
+////
+import Business.Appointment.Appointment;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
-import Business.Network.Network;
-import Business.Organization.BedManagementDepartment;
-import Business.Organization.Organization;
+import Business.Enterprise.HospEnterprise.Hospital;
+import Business.Patient.Patient;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -28,76 +27,80 @@ import org.jfree.chart.ChartUtilities;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.general.DefaultPieDataset;
 import org.jfree.data.general.PieDataset;
-
-/**
- *
- * @author 
- */
-public class TotalBedCountGraph extends javax.swing.JPanel {
+////
+/////**
+//// *
+//// * @author 
+//// */
+public class AppointmentStatusGraphInEnterprise extends javax.swing.JPanel {
     
     JPanel userProcessContainer;
     EcoSystem system;
     JFreeChart barChart;
-   
-    Network selectedNetwork;
-//    /**
-//     * Creates new form ViewScenesGraph
-//     */
-    public TotalBedCountGraph(JPanel userProcessContainer, EcoSystem system, Network selectedNetwork) {
+    Enterprise enterprise;
+    /**
+     * Creates new form AppointmentTypeGraph
+     */
+    public AppointmentStatusGraphInEnterprise(JPanel userProcessContainer, EcoSystem system, Enterprise enterprise) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.system = system;
-        this.selectedNetwork= selectedNetwork;
-        jLabel6.setText("Bed Status Across " + selectedNetwork.getName().toUpperCase());
+        this.enterprise=enterprise;
         populateBarGraph();
-        
     }
-//    
+    
     public void populateBarGraph() {
-
         Map<String, Integer> workReqMap = new HashMap<>();
+        ArrayList<Appointment> workReqList = new ArrayList<>();
         
-        for (Enterprise epr : selectedNetwork.getEnterpriseDirectory().getEnterpriseList()) 
+        if (enterprise instanceof Hospital) 
         {
-            for (Organization org : epr.getOrganizationDirectory().getOrganizationList()) 
+            for (Patient p : enterprise.getPatientDirectory().getPatientList()) 
             {
-                if (org instanceof BedManagementDepartment) 
-                {
-                    List<Bed> bedList = ((BedManagementDepartment) org).getBedList().getBedList();
-                    for (Bed b : bedList) 
-                    {
-                        if (b.getStatus().getStatus().equals(Bed.BedStatus.Available.getStatus())) 
-                        {
-                            workReqMap.put("Available", workReqMap.getOrDefault("Available", 0) + 1);
-
-                        } else if (b.getStatus().getStatus().equals(Bed.BedStatus.Occupied.getStatus())) 
-                        {
-                            workReqMap.put("Occupied", workReqMap.getOrDefault("Occupied", 0) + 1);
-
-                        }
-                        if (b.getStatus().getStatus().equals(Bed.BedStatus.AssignedLaundry.getStatus())) 
-                        {
-                            workReqMap.put("Laundry", workReqMap.getOrDefault("Laundry", 0) + 1);
-
-                        }
-                    }
-                }
+                workReqList.addAll(p.getAppointmentDirectory().getAppointmentList());
             }
         }
-     
+
+        for (Appointment app : workReqList) 
+        {//--Select--, In-Person, Online
+            if (app.getStatus().equals(Appointment.AppointmentStatus.New.getValue())) {
+                workReqMap.put("New", workReqMap.getOrDefault("New", 0) + 1);
+
+            } else if (app.getStatus().equals(Appointment.AppointmentStatus.Close.getValue())) {
+                workReqMap.put("Close", workReqMap.getOrDefault("Close", 0) + 1);
+
+            } else if (app.getStatus().equals(Appointment.AppointmentStatus.ApprovedInsurance.getValue())) {
+                workReqMap.put("ApprovedInsurance", workReqMap.getOrDefault("ApprovedInsurance", 0) + 1);
+
+            } else if (app.getStatus().equals(Appointment.AppointmentStatus.MarkForInsurance.getValue())) {
+                workReqMap.put("MarkForInsurance", workReqMap.getOrDefault("MarkForInsurance", 0) + 1);
+
+            } else if (app.getStatus().equals(Appointment.AppointmentStatus.BedAssigned.getValue())) {
+                workReqMap.put("BedAssigned", workReqMap.getOrDefault("BedAssigned", 0) + 1);
+
+            } else if (app.getStatus().equals(Appointment.AppointmentStatus.GeneratedReport.getValue())) {
+                workReqMap.put("GeneratedReport", workReqMap.getOrDefault("GeneratedReport", 0) + 1);
+
+            } else if (app.getStatus().equals(Appointment.AppointmentStatus.Markforbilling.getValue())) {
+                workReqMap.put("Markforbilling", workReqMap.getOrDefault("Markforbilling", 0) + 1);
+
+            }
+        }
+
         barChart = ChartFactory.createPieChart(
-         "Number of beds Available, Occupied, Laundry",                     
+         "Appointment Status Report",            
          createDataset(workReqMap),          
+                 
          true, true, false);
          
         ChartPanel chartPanel = new ChartPanel( barChart );   
         jPanel1.removeAll();
         jPanel1.add(chartPanel, BorderLayout.CENTER);
-        jPanel1.validate(); 
+        jPanel1.validate();
+        
     }
     
-    private PieDataset createDataset(Map<String, Integer> workReqMap) {
-       
+    private PieDataset createDataset(Map<String, Integer>  workReqMap) {
         final DefaultPieDataset dataset = new DefaultPieDataset();  
 
         for(String r : workReqMap.keySet()) {
@@ -107,18 +110,18 @@ public class TotalBedCountGraph extends javax.swing.JPanel {
         return dataset; 
    }
     
-//    /**
-//     * This method is called from within the constructor to initialize the form.
-//     * WARNING: Do NOT modify this code. The content of this method is always
-//     * regenerated by the Form Editor.
-//     */
-//    @SuppressWarnings("unchecked")
+////    /**
+////     * This method is called from within the constructor to initialize the form.
+////     * WARNING: Do NOT modify this code. The content of this method is always
+////     * regenerated by the Form Editor.
+////     */
+////    @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         backJButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -128,9 +131,8 @@ public class TotalBedCountGraph extends javax.swing.JPanel {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.setLayout(new java.awt.BorderLayout());
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 730, 450));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 860, 600));
 
-        jButton1.setBackground(new java.awt.Color(255, 155, 54));
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(25, 56, 82));
         jButton1.setText("Download Graph");
@@ -140,13 +142,15 @@ public class TotalBedCountGraph extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 100, -1, -1));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 40, -1, -1));
 
-        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(68, 145, 157));
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("BEDS STATUS ACROSS ALL NETWORKS");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 70, 594, -1));
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(25, 56, 82));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("APPOINTMENT STATUS GRAPH");
+        jLabel1.setToolTipText("");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 10, 498, -1));
 
         backJButton.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         backJButton.setText("Back");
@@ -156,18 +160,19 @@ public class TotalBedCountGraph extends javax.swing.JPanel {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
             int width = 640;    /* Width of the image */
             int height = 480;   /* Height of the image */
-            File BarChart = new File( "BedsAcross"+selectedNetwork.getName()+".jpeg" );
+            File BarChart = new File( "AppointmentsAcross"+enterprise.getName()+".jpeg" );
             ChartUtilities.saveChartAsJPEG( BarChart , barChart , width , height );
-            JOptionPane.showMessageDialog(null, "A JPEG image file named BedsAcross"+selectedNetwork.getName()+".jpeg is downloaded in your current directory.");
-        } catch (IOException ex) {
-            Logger.getLogger(TotalBedCountGraph.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "A JPEG image file named AppointmentsAcross"+enterprise.getName()+".jpeg is downloaded in your current directory.");
+        } 
+        catch (IOException ex) {
+            Logger.getLogger(AppointmentStatusGraphInEnterprise.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -182,7 +187,7 @@ public class TotalBedCountGraph extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

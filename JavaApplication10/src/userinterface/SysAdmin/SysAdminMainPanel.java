@@ -35,14 +35,7 @@ public class SysAdminMainPanel extends javax.swing.JPanel {
     }
     
     public void setButtonProperty(){
-       /* btnManageEnterprise.setOpaque(false);
-        btnManageEnterprise.setBorderPainted(false);
-        btnManageEnterprise.setContentAreaFilled(false);
 
-        btnManageAdmin.setOpaque(false);
-        btnManageAdmin.setBorderPainted(false);
-        btnManageAdmin.setFocusPainted(true);
-        btnManageAdmin.setContentAreaFilled(false);*/
     }
     
     public void populateTree(){

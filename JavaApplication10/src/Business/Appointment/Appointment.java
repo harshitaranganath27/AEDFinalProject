@@ -17,7 +17,7 @@ import java.util.Date;
 
 /**
  *
- * @author 
+ * @author Harshita
  */
 public class Appointment {
     int appointmentId;

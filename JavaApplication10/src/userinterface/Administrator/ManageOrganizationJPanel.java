@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.AdministrativeRole;
+package userinterface.Administrator;
 
 import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;

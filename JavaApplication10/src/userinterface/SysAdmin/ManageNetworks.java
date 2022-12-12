@@ -12,9 +12,9 @@ import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
-import userinterface.AdministrativeRole.AppointmentStatusGraphNetwork;
-import userinterface.AdministrativeRole.AppointmentTypeGraph;
-import userinterface.AdministrativeRole.TotalBedCountGraph;
+import userinterface.Administrator.AppointmentStatusGraphNetwork;
+import userinterface.Administrator.AppointmentTypeGraph;
+import userinterface.Administrator.TotalBedCountGraph;
 
 /**
  *

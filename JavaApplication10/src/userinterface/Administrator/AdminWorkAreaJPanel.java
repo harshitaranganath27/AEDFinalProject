@@ -1,6 +1,6 @@
 
 
-package userinterface.AdministrativeRole;
+package userinterface.Administrator;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;

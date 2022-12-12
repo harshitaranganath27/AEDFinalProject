@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.PatientLogin;
+package userinterface.LoginPatient;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
@@ -177,7 +177,7 @@ public class PatientMainWorkAreaJPanel extends javax.swing.JPanel {
     private void btnViewAppointmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewAppointmentActionPerformed
         // TODO add your handling code here:
        
-            userinterface.PatientLogin.ViewSelfAppointmentJPanel viewAppointmentJPanel = new ViewSelfAppointmentJPanel(userProcessContainer, userAccount, organization, enterprise, system,(Patient) userAccount.getEmployee());
+            userinterface.LoginPatient.ViewSelfAppointmentJPanel viewAppointmentJPanel = new ViewSelfAppointmentJPanel(userProcessContainer, userAccount, organization, enterprise, system,(Patient) userAccount.getEmployee());
             userProcessContainer.add("ViewSelfAppointmentJPanel",viewAppointmentJPanel);
             CardLayout layout=(CardLayout)userProcessContainer.getLayout();
         layout.next(userProcessContainer);

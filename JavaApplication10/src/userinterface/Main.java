@@ -13,7 +13,7 @@ import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import userinterface.PatientLogin.CreateNewPatientSelfJPanel;
+import userinterface.LoginPatient.CreateNewPatientSelfJPanel;
 
 /**
  *
