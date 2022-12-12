@@ -60,9 +60,9 @@ public class ViewPatientJPanel extends javax.swing.JPanel {
         txtEmail.setEditable(false);
         txtUserName.setEditable(false);
         txtPassword.setEditable(false);
-        txtPatientName.setText(patient.getName());
+        txtPatientName.setText(patient.getEmpName());
         txtGender.setSelectedItem(patient.getPatientSex());
-        txtPhoneNumber.setText(patient.getPhoneNum());
+        txtPhoneNumber.setText(patient.getPhoneNumber());
         txtUserName.setText(patient.getUserAccount().getUsername());
         txtPassword.setText(patient.getUserAccount().getPassword());
         txtBloodGroup.setSelectedItem(patient.getBloodGroup());

@@ -73,7 +73,7 @@ public class InsuranceDWorkAreaJPanel extends javax.swing.JPanel {
         
         txtRequestedAmt.setEditable(false);
         txtApprovedAmt.setEditable(true);
-          txtPatientName.setText(patient.getName());
+          txtPatientName.setText(patient.getEmpName());
         
         Date date = new Date();
      // String timeFormatString = "hh:mm:ss a";

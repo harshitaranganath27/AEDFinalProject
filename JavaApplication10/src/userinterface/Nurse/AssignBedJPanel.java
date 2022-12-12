@@ -113,12 +113,12 @@ public class AssignBedJPanel extends javax.swing.JPanel {
     }
     
 void populateDetails(){
-    viewPatientNametxt.setText(patient.getName());
+    viewPatientNametxt.setText(patient.getEmpName());
     viewAppnmtID.setText(String.valueOf(appointment.getAppntmentID()));
-    viewDrTxt.setText(doctor.getEmployee().getName());
+    viewDrTxt.setText(doctor.getEmployee().getEmpName());
     viewpatientIdTxt.setText(String.valueOf(patient.getId()));
     emailIDTxt.setText(patient.getEmailID());
-    phoneNumberTxt.setText(patient.getPhoneNum());
+    phoneNumberTxt.setText(patient.getPhoneNumber());
     viewStatusCmb.setSelectedItem(appointment.getStatus());
     
     Date sDate=( workrequest.getRequestDate().equals("") == true) ? new Date() : workrequest.getRequestDate();

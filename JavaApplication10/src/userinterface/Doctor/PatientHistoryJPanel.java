@@ -44,7 +44,7 @@ public class PatientHistoryJPanel extends javax.swing.JPanel {
         this.ecosystem = ecosystem;
         this.patient = patient;
          patientNameTxt.setEditable(false);
-        patientNameTxt.setText(patient.getName());
+        patientNameTxt.setText(patient.getEmpName());
         txtpatientHistoryId.setVisible(false);
         populatePatientDetails();
     }
@@ -372,7 +372,7 @@ public class PatientHistoryJPanel extends javax.swing.JPanel {
          PatientHistoryDetails fsch= (PatientHistoryDetails)  patientDetailsTbl.getValueAt(row,5);
         
         previuous = fsch;
-        patientNameTxt.setText(patient.getName());
+        patientNameTxt.setText(patient.getEmpName());
         previousDiagnosisTxt.setText(fsch.getPrevDiagnosis());
         medAlergiesTxt.setText(fsch.getAllergies());
         alergiesTxt.setText(fsch.getAllergy());

@@ -176,6 +176,6 @@ public void createNewAppointmentDirectory(){
     
     @Override
     public String toString(){
-        return this.getName();
+        return this.getEmpName();
     }
 }

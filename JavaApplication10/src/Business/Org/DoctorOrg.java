@@ -12,10 +12,10 @@ import java.util.ArrayList;
  *
  * @author harshita
  */
-public class DoctorOrganization //extends Organization
+public class DoctorOrg //extends Organization
 {
 
-    public DoctorOrganization() {
+    public DoctorOrg() {
      //   super(Organization.Type.Doctor.getValue());
     }
     

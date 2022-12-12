@@ -26,7 +26,7 @@ public class OrganizationDirectory {
     public Organization createOrganization(Type type){
         Organization organization = null;
         if (type.getValue().equals(Type.Dental.getValue())){
-            organization = new GeneralOrganization(Type.Dental.getValue());
+            organization = new GeneralOrg(Type.Dental.getValue());
             organizationList.add(organization);
         }
         else if (type.getValue().equals(Type.Pathology.getValue())){
@@ -42,19 +42,19 @@ public class OrganizationDirectory {
             organizationList.add(organization);
         }
         else if (type.getValue().equals(Type.Cardiology.getValue())){
-            organization = new GeneralOrganization(Type.Cardiology.getValue());
+            organization = new GeneralOrg(Type.Cardiology.getValue());
             organizationList.add(organization);    
         }    
         else if (type.getValue().equals(Type.ENT.getValue())){
-            organization = new GeneralOrganization(Type.ENT.getValue());
+            organization = new GeneralOrg(Type.ENT.getValue());
             organizationList.add(organization);   
         }
         else if (type.getValue().equals(Type.CovidCenter.getValue())){
-            organization = new GeneralOrganization(Type.CovidCenter.getValue());
+            organization = new GeneralOrg(Type.CovidCenter.getValue());
             organizationList.add(organization);   
         }
         else if (type.getValue().equals(Type.UrgentCare.getValue())){
-            organization = new GeneralOrganization(Type.UrgentCare.getValue());
+            organization = new GeneralOrg(Type.UrgentCare.getValue());
             organizationList.add(organization);   
         }
         else if (type.getValue().equals(Type.Radiology.getValue())){
@@ -67,7 +67,7 @@ public class OrganizationDirectory {
         }
         
         else if (type.getValue().equals(Type.Insurance.getValue())){
-            organization = new InsuranceOrganization();
+            organization = new InsuranceOrg();
             organizationList.add(organization);
         }
         

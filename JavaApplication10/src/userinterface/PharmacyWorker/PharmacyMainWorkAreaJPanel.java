@@ -58,7 +58,7 @@ public class PharmacyMainWorkAreaJPanel extends javax.swing.JPanel {
             Object[] row = new Object[7];
             row[0] = request.getSender();
             //row[1] = request.getSender().getEmployee().getName();
-            row[1] = request.getReceiver() == null ? null : request.getReceiver().getEmployee().getName();
+            row[1] = request.getReceiver() == null ? null : request.getReceiver().getEmployee().getEmpName();
             row[2] = ((PharmacyWorkRequest)request).getPatient();
             
             row[3] = request.getStatus();

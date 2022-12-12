@@ -14,7 +14,7 @@ import java.util.List;
  *
  * @author 
  */
-public class Head {
+public class DeptHead {
     private RoleType staffType;
     private List<Bed> bedList;
     private List<Organization> orgList;

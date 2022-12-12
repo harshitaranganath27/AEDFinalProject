@@ -44,7 +44,7 @@ public class LabAssistantMainAreaJPanel extends javax.swing.JPanel {
         this.enterprise = enterprise;
         //this.business = business;
         this.organization = organization;
-        jLabel5.setText("Welcome " + account.getEmployee().getName());
+        jLabel5.setText("Welcome " + account.getEmployee().getEmpName());
         populateTable();
     }
     
@@ -62,7 +62,7 @@ public class LabAssistantMainAreaJPanel extends javax.swing.JPanel {
             Object[] row = new Object[8];
             row[0] = request.getSender();
             //row[1] = request.getSender().getEmployee().getName();
-            row[1] = request.getReceiver() == null ? null : request.getReceiver().getEmployee().getName();
+            row[1] = request.getReceiver() == null ? null : request.getReceiver().getEmployee().getEmpName();
             row[2] = ((LabTechnicianWorkRequest)request).getPatient();
             
             row[3] = request.getStatus();

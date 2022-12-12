@@ -65,7 +65,7 @@ public class PharmacyWorkerWorkAreaJPanel extends javax.swing.JPanel {
         //populateTable();
         
         technicianNameTxt.setEditable(false);
-        technicianNameTxt.setText(userAccount.getEmployee().getName());
+        technicianNameTxt.setText(userAccount.getEmployee().getEmpName());
         totalPriceTxt.setEditable(false);
         Date date = new Date();
      // String timeFormatString = "hh:mm:ss a";

@@ -108,7 +108,6 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         organizationJTable = new javax.swing.JTable();
-        jLabel2 = new javax.swing.JLabel();
         addDeptJPanel = new javax.swing.JPanel();
         closebtn = new javax.swing.JButton();
         addJButton = new javax.swing.JButton();
@@ -120,6 +119,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         addDeptShowJpanelBtn = new javax.swing.JButton();
         viewBtn = new javax.swing.JButton();
         deletBtn = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         backJButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -161,13 +161,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
             organizationJTable.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, -1, 148));
-
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 51, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Manage Department");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 50, 230, -1));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 200, -1, 148));
 
         addDeptJPanel.setBackground(new java.awt.Color(255, 255, 255));
         addDeptJPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Add Department", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 14), new java.awt.Color(68, 145, 157))); // NOI18N
@@ -245,7 +239,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
                 .addGap(114, 114, 114))
         );
 
-        add(addDeptJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 380, 350, -1));
+        add(addDeptJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 350, -1));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -285,6 +279,12 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
             }
         });
         jPanel1.add(deletBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 170, 200, 150));
+
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 51, 255));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Manage Department");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, 230, -1));
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 820, 80));
 

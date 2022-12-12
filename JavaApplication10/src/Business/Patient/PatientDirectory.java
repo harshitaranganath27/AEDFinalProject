@@ -37,8 +37,8 @@ public class PatientDirectory {
     public Patient createPatient(String patientName, String phoneNumber, String gender, String bloodGroup, UserAccount userAccount, Location locationPoint, String email,
             Insurance insuranceE, String insuranceId, String SSN) {
         Patient patient = new Patient();
-        patient.setName(patientName);
-        patient.setPhoneNum(phoneNumber);
+        patient.setEmpName(patientName);
+        patient.setPhoneNumber(phoneNumber);
         patient.setPatientSex(gender);
         //patient.setAddress(address);
         patient.setBloodGroup(bloodGroup);
@@ -57,10 +57,10 @@ public class PatientDirectory {
     public void updatePatient(int patientID, String name, String phoneNumber, String gender, String bloodGroup, Location locationPoint, String email) {
         for(Patient patient : patientList){
             if(patient.getId() == patientID){
-                patient.setName(name);
+                patient.setEmpName(name);
                 patient.setAddress(locationPoint);
                 patient.setPatientSex(gender);
-                patient.setPhoneNum(phoneNumber);
+                patient.setPhoneNumber(phoneNumber);
                 patient.setBloodGroup(bloodGroup);
                 patient.setEmailID(name);
             }

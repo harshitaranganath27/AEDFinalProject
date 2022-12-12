@@ -46,7 +46,7 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
         this.userAccount = account;
         this.system = business;
         
-        jLabel5.setText("Welcome " + account.getEmployee().getName());
+        jLabel5.setText("Welcome " + account.getEmployee().getEmpName());
         
         if(enterprise.getEnterpriseType().getValue().equals("Hospital"))
         {
@@ -82,7 +82,7 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
                     Object[] row = new Object[4];
                     row[0] = patient.getId();
                     row[1] = patient;//.getName();
-                    row[2] = patient.getPhoneNum();
+                    row[2] = patient.getPhoneNumber();
                     row[3] = patient.getBloodGroup();
                     model.addRow(row); 
             }
@@ -113,7 +113,7 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
                     Object[] row = new Object[4];
                     row[0] = patient.getId();
                     row[1] = patient;//getName();
-                    row[2] = patient.getPhoneNum();
+                    row[2] = patient.getPhoneNumber();
                     row[3] = patient.getBloodGroup();
                     model.addRow(row); 
                 }
@@ -139,7 +139,7 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
                     Object[] row = new Object[4];
                     row[0] = patient.getId();
                     row[1] = patient;
-                    row[2] = patient.getPhoneNum();
+                    row[2] = patient.getPhoneNumber();
                     row[3] = patient.getBloodGroup();
                     model.addRow(row); 
                 }

@@ -38,7 +38,7 @@ public class PatientMainWorkAreaJPanel extends javax.swing.JPanel {
         this.userAccount = account;
         this.system = business;
         
-        jLabel5.setText("Welcome " + userAccount.getEmployee().getName() + "!");
+        jLabel5.setText("Welcome " + userAccount.getEmployee().getEmpName() + "!");
         
     }
 

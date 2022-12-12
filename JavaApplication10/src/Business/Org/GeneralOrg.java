@@ -15,11 +15,11 @@ import java.util.ArrayList;
  *
  * @author harshita
  */
-public class GeneralOrganization extends Organization
+public class GeneralOrg extends Organization
 {
      
 
-    public GeneralOrganization(String type) {
+    public GeneralOrg(String type) {
        // super(Organization.Type.Dental.getValue());
        super(type);
     }

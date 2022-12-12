@@ -25,7 +25,7 @@ public class PersonDirectory {
     
     public Employee createEmployee(String name){
         Employee employee = new Employee();
-        employee.setName(name);
+        employee.setEmpName(name);
         employeeList.add(employee);
         return employee;
     }

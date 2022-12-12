@@ -62,8 +62,8 @@ public class PrescriptionJPanel extends javax.swing.JPanel {
         this.medicineList = medicineList;
         this.enterprise= enterprise;
         this.userAccount = userAccount;
-        patientNameTxt.setText(patient.getName());
-        doctorNameTxt.setText(doctor.getName());
+        patientNameTxt.setText(patient.getEmpName());
+        doctorNameTxt.setText(doctor.getEmpName());
         //docotr
         //appointment.
         //appointment.setPrescription(prescription);

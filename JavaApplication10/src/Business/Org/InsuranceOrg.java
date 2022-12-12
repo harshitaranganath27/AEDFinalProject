@@ -15,11 +15,11 @@ import java.util.ArrayList;
  *
  * @author harshita
  */
-public class InsuranceOrganization extends Organization
+public class InsuranceOrg extends Organization
 {
      
 
-    public InsuranceOrganization() {
+    public InsuranceOrg() {
        // super(Organization.Type.Dental.getValue());
        super(Organization.Type.Insurance.getValue());
     }

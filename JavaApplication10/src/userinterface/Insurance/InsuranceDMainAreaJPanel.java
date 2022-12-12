@@ -43,7 +43,7 @@ public class InsuranceDMainAreaJPanel extends javax.swing.JPanel {
         this.enterprise = enterprise;
         //this.business = business;
         this.organization = organization;
-        jLabel5.setText("Welcome " + account.getEmployee().getName());
+        jLabel5.setText("Welcome " + account.getEmployee().getEmpName());
         populateTable();
     }
     
@@ -61,7 +61,7 @@ public class InsuranceDMainAreaJPanel extends javax.swing.JPanel {
             Object[] row = new Object[8];
             row[0] = request.getSender();
             //row[1] = request.getSender().getEmployee().getName();
-            row[1] = request.getReceiver() == null ? null : request.getReceiver().getEmployee().getName();
+            row[1] = request.getReceiver() == null ? null : request.getReceiver().getEmployee().getEmpName();
             row[2] = ((InsuranceWorkRequest)request).getPatient();
             
             row[3] = request.getStatus() == null ? "New" : request.getStatus();

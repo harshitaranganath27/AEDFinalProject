@@ -50,8 +50,8 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
         DateTxt.setText(formatter.format(appointment.getDate()) + " " + appointment.getTime() + ":00");
         appointmentTypeTxt.setText(appointment.getType());
         //locationTxt.setText(appointment.setLocation());
-        patientNameTxt.setText(patient.getName());
-        doctorNameTxt.setText(doctor.getName());
+        patientNameTxt.setText(patient.getEmpName());
+        doctorNameTxt.setText(doctor.getEmpName());
         //appointment.setStatus(Appointment.AppointmentStatus.New.getValue());
         appointmentIDTxt.setEditable(false);
         DateTxt.setEditable(false);

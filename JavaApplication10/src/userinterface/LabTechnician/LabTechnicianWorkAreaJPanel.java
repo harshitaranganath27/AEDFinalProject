@@ -69,7 +69,7 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
         testNameTxt.setText(labTest.getName());
         testNameTxt.setEditable(false);
         technicianNameTxt.setEditable(false);
-        technicianNameTxt.setText(userAccount.getEmployee().getName());
+        technicianNameTxt.setText(userAccount.getEmployee().getEmpName());
         testDateTxt.setText(new Date().toString());
         
         Date date = new Date();
@@ -103,9 +103,9 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
             row[0]= labTest.getName();
             row[1]= labTest.getTestCharge();
             row[2]= currentDate;
-            row[3]= labTest.getLabTechnician().getName();
+            row[3]= labTest.getLabTechnician().getEmpName();
             row[4]= cmbStatusType.getSelectedItem();
-            row[5]= appointment.getPatient().getName();
+            row[5]= appointment.getPatient().getEmpName();
             dtm.addRow(row);
         }
         
@@ -561,9 +561,9 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
             row[0]= labTest.getName();
             row[1]= labTest.getTestCharge();
             row[2]= currentDate;
-            row[3]= labTest.getLabTechnician().getName();
+            row[3]= labTest.getLabTechnician().getEmpName();
             row[4]= cmbStatusType.getSelectedItem();
-            row[5]= appointment.getPatient().getName();
+            row[5]= appointment.getPatient().getEmpName();
             dtm.addRow(row);
         //}
         

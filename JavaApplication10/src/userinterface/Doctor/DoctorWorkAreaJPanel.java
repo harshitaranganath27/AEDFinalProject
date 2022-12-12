@@ -71,7 +71,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         //viewPrescriptionPanel.setVisible(false);
         //appointment.setAppointmentId(Integer.parseInt(appoinmtntDTxt.getText()));
         appoinmtntDTxt.setEditable(false);
-        jLabel7.setText("Welcome Dr. " + doctor.getName());
+        jLabel7.setText("Welcome Dr. " + doctor.getEmpName());
     }
 
     

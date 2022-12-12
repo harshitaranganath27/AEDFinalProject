@@ -101,7 +101,7 @@ jLabel6.setIcon(profilePic);
         if(appointment.getOperation() == null)
         {
             scheduleSurgeryJPanel.setVisible(true);
-            patientNameTxt.setText(patient.getName());
+            patientNameTxt.setText(patient.getEmpName());
             appoinmtntDTxt.setText(String.valueOf(appointment.getAppntmentID()));
             appoinmtntDTxt.setEditable(false);
             patientNameTxt.setEditable(false);

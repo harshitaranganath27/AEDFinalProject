@@ -102,7 +102,7 @@ public class ConfigureASystem {
 
                         u.setEmployee(e1);
                         e1.setEmailID(email);
-                        e1.setPhoneNum("8574246269");
+                        e1.setPhoneNumber("8574246269");
                         e1.setCarrier("@tmomail.net");
                         
                     }
@@ -188,7 +188,7 @@ public class ConfigureASystem {
                     
                     u.setEmployee(e1);
                     e1.setEmailID(email);
-                    e1.setPhoneNum("8574246269");
+                    e1.setPhoneNumber("8574246269");
                     e1.setCarrier("@tmomail.net");
                 
                 }
@@ -253,7 +253,7 @@ public class ConfigureASystem {
                     
                     u.setEmployee(e1);
                     e1.setEmailID(email);
-                    e1.setPhoneNum("8574246269");
+                    e1.setPhoneNumber("8574246269");
                     e1.setCarrier("@tmomail.net");
                 }
                 
@@ -326,7 +326,7 @@ public class ConfigureASystem {
                     
                         u.setEmployee(e1);
                         e1.setEmailID(email);
-                        e1.setPhoneNum("8574246269");
+                        e1.setPhoneNumber("8574246269");
                         e1.setCarrier("@tmomail.net");
                         
                         
@@ -373,7 +373,7 @@ public class ConfigureASystem {
                         
                         u.setEmployee(e1);
                         e1.setEmailID(email);
-                        e1.setPhoneNum("8574246269");
+                        e1.setPhoneNumber("8574246269");
                         e1.setCarrier("@tmomail.net");
                         
                     }
@@ -423,7 +423,7 @@ public class ConfigureASystem {
 
                         u.setEmployee(e1);
                         e1.setEmailID(email);
-                        e1.setPhoneNum("8574246269");
+                        e1.setPhoneNumber("8574246269");
                         e1.setCarrier("@tmomail.net");
                         
                     }
@@ -484,7 +484,7 @@ public class ConfigureASystem {
                     
                         u.setEmployee(e1);
                         e1.setEmailID(email);
-                        e1.setPhoneNum("8574246269");
+                        e1.setPhoneNumber("8574246269");
                         e1.setCarrier("@tmomail.net");
                         
                     }
@@ -570,7 +570,7 @@ public class ConfigureASystem {
                     
                     u.setEmployee(e1);
                     e1.setEmailID(email);
-                    e1.setPhoneNum("8574246269");
+                    e1.setPhoneNumber("8574246269");
                     e1.setCarrier("@tmomail.net");
                 
                 }
@@ -634,7 +634,7 @@ public class ConfigureASystem {
                     
                     u.setEmployee(e1);
                     e1.setEmailID(email);
-                    e1.setPhoneNum("8574246269");
+                    e1.setPhoneNumber("8574246269");
                     e1.setCarrier("@tmomail.net");
                 }
                 System.out.println();
@@ -705,7 +705,7 @@ public class ConfigureASystem {
 
                         u.setEmployee(e1);
                         e1.setEmailID(email);
-                        e1.setPhoneNum("8574246269");
+                        e1.setPhoneNumber("8574246269");
                         e1.setCarrier("@tmomail.net");
                         
                     }
@@ -748,7 +748,7 @@ public class ConfigureASystem {
                     
                         u.setEmployee(e1);
                         e1.setEmailID(email);
-                        e1.setPhoneNum("8574246269");
+                        e1.setPhoneNumber("8574246269");
                         e1.setCarrier("@tmomail.net");
                         
                     }
@@ -799,7 +799,7 @@ public class ConfigureASystem {
                         
                         u.setEmployee(e1);
                         e1.setEmailID(email);
-                        e1.setPhoneNum("8574246269");
+                        e1.setPhoneNumber("8574246269");
                         e1.setCarrier("@tmomail.net");
                         
                     }

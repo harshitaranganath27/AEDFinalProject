@@ -61,11 +61,11 @@ public class ViewSelfPatientBillJPanel extends javax.swing.JPanel {
     public void populatePatientData(){
         
         SimpleDateFormat formatter1=new SimpleDateFormat("yyyy-MM-dd");
-        txtPatientName.setText(patient.getName());
+        txtPatientName.setText(patient.getEmpName());
         if(appointment.getDoc().getSpecialization() == null){
-            txtDoctor.setText(appointment.getDoc().getName() + " - Lab Technician");
+            txtDoctor.setText(appointment.getDoc().getEmpName() + " - Lab Technician");
         }else{
-            txtDoctor.setText(appointment.getDoc().getName() + " - " + appointment.getDoc().getSpecialization().getValue());
+            txtDoctor.setText(appointment.getDoc().getEmpName() + " - " + appointment.getDoc().getSpecialization().getValue());
         }
         
         txtAppointmetId.setText(String.valueOf(appointment.getAppntmentID()));

@@ -802,7 +802,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         Employee employee =organization.getEmployeeDirectory().createEmployee(name);
         //UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee,role);// new AdmRole());
         employee.setEmailID(uEmail);
-        employee.setPhoneNum(phoneNo);
+        employee.setPhoneNumber(phoneNo);
         String phoneNumberString = null;
         if (contactCarrier.getSelectedItem().equals("ATT")) {
              phoneNumberString="@txt.att.net";
@@ -1085,11 +1085,11 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         Role uaRole= selectedUsrAcc.getRole();
         organizationJComboBox2.setSelectedItem((Organization)userJTable.getValueAt(row, 2));  //department at 2nd index
         roleJComboBox2.getModel().setSelectedItem(uaRole);
-        empNameJTextField2.setText(selectedUsrAcc.getEmployee().getName());
+        empNameJTextField2.setText(selectedUsrAcc.getEmployee().getEmpName());
         nameJTextField2.setText(selectedUsrAcc.getUsername());//username
         passwordJTextField2.setText(selectedUsrAcc.getPassword());
         uEmailTxt1.setText(selectedUsrAcc.getEmployee().getEmailID());
-        phoneNumberTxt1.setText(selectedUsrAcc.getEmployee().getPhoneNum());
+        phoneNumberTxt1.setText(selectedUsrAcc.getEmployee().getPhoneNumber());
         organizationJComboBox2.setEditable(false);
         roleJComboBox2.setEditable(false);
         empNameJTextField2.setEditable(false);
@@ -1195,9 +1195,9 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         
         //update properrty
         selectedStaff.setPassword(password);
-        selectedStaff.getEmployee().setName(staffName);
+        selectedStaff.getEmployee().setEmpName(staffName);
         selectedStaff.getEmployee().setEmailID(emailId);
-        selectedStaff.getEmployee().setPhoneNum(phonenum);
+        selectedStaff.getEmployee().setPhoneNumber(phonenum);
         if(selectedStaff.getRole().roleValue().equals("Doctor Role"))
         {
             selectedStaff.getEmployee().setVisitingCharge(visitingChgr);

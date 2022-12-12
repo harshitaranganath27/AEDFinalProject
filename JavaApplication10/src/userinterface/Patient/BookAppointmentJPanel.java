@@ -57,7 +57,7 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
         //this.system = system;
         this.patient = patient;
         
-        txtPatientName.setText(patient.getName());
+        txtPatientName.setText(patient.getEmpName());
         
         time=0;
         //populate doctor
@@ -80,7 +80,7 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
        if(enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.Hospital.getValue())){
            for(Organization dept : deptList)
                 {
-                    if(dept instanceof Business.Org.GeneralOrganization){
+                    if(dept instanceof Business.Org.GeneralOrg){
                     for(Employee emp : dept.getEmployeeDirectory().getEmployeeList()){
                         if(emp.getRole()!= null && (emp.getRole().equals("Doctor Role")))
                         {
@@ -523,7 +523,7 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
         
         
        
-        boolean check = doctor.checkScheduleIsAvaible(date1, time);
+        boolean check = doctor.checkScheduleAvailability(date1, time);
         if(check ==false)
         {
                 JOptionPane.showMessageDialog(null, "Doctor has other appointment already, please select other time!", "Warning", JOptionPane.WARNING_MESSAGE);
@@ -548,7 +548,7 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
        ArrayList<Organization> deptList = enterprise.getOrganizationDirectory().getOrganizationList();
        for(Organization dept : deptList)
        {
-           if(dept instanceof Business.Org.GeneralOrganization){
+           if(dept instanceof Business.Org.GeneralOrg){
                 drUserAcc = dept.getUserAccountDirectory().getUserAccByEMployee(doctor);
              if(drUserAcc!=null ) {break;}
            }else if(dept instanceof Business.Org.PathologyOrganization){
@@ -621,11 +621,11 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
                 
           //send email and sms
 
-        String statusString = "Hello! Your appointment is booked! Date: "+ date1 + "Doctor: "+ doctor.getName();
+        String statusString = "Hello! Your appointment is booked! Date: "+ date1 + "Doctor: "+ doctor.getEmpName();
 
         String uEmail= patient.getEmailID();
         UserAccount account = patient.getUserAccount();
-        String phonecontact = patient.getPhoneNum()+patient.getCarrier();
+        String phonecontact = patient.getPhoneNumber()+patient.getCarrier();
         //registrationRequest.setContactCarrierName(contact);
         sendEmailMessageAppointment(uEmail, account, statusString);//.getText());
         sendTextMessageAppointment(phonecontact, account, statusString);      

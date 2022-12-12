@@ -14,7 +14,6 @@ import Business.Person.EmployeeDirectory;
 public class Department {
     int id;
     String name;
-    String departmentType;  //dental, billing, etc
-//    EmployeeDirectory employeeList;
+    String deptType;
     
 }
