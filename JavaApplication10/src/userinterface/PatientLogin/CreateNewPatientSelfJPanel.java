@@ -9,7 +9,7 @@ import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Employee.Employee;
 import Business.Enterprise.Enterprise;
-import Business.Enterprise.InsuranceEnterprise.Insurance;
+import Business.Enterprise.Insurance.Insurance;
 import Business.Location.Location;
 import Business.Network.Network;
 import Business.UserAccount.UserAccount;

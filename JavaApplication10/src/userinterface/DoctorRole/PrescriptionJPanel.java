@@ -12,7 +12,7 @@ import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Employee.Employee;
 import Business.Enterprise.Enterprise;
-import Business.Enterprise.PharmacyEnterprise.Pharmacy;
+import Business.Enterprise.Pharmacy.Pharmacy;
 import Business.Medicine.Medicine;
 import Business.Medicine.MedicineDirectory;
 import Business.Network.Network;

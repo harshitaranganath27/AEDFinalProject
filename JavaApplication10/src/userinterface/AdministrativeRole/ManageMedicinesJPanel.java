@@ -7,7 +7,7 @@ package userinterface.AdministrativeRole;
 
 
 import Business.Enterprise.Enterprise;
-import Business.Enterprise.PharmacyEnterprise.Pharmacy;
+import Business.Enterprise.Pharmacy.Pharmacy;
 import Business.Medicine.Medicine;
 import Business.Medicine.MedicineDirectory;
 import Business.Organization.Organization;

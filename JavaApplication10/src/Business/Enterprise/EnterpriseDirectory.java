@@ -5,10 +5,10 @@
  */
 package Business.Enterprise;
 
-import Business.Enterprise.HospitalEnterprise.Hospital;
-import Business.Enterprise.InsuranceEnterprise.Insurance;
-import Business.Enterprise.LabEnterprise.Lab;
-import Business.Enterprise.PharmacyEnterprise.Pharmacy;
+import Business.Enterprise.HospEnterprise.Hospital;
+import Business.Enterprise.Insurance.Insurance;
+import Business.Enterprise.Lab.Lab;
+import Business.Enterprise.Pharmacy.Pharmacy;
 import java.util.ArrayList;
 
 /**

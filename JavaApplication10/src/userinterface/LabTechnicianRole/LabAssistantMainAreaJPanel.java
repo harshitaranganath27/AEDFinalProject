@@ -7,7 +7,7 @@ package userinterface.LabTechnicianRole;
 import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
-import Business.Enterprise.LabEnterprise.LabTest;
+import Business.Enterprise.Lab.LabTest;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.LabTechnicianWorkRequest;

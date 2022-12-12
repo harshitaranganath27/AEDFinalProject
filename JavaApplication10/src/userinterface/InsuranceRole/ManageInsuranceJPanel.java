@@ -6,9 +6,9 @@ package userinterface.InsuranceRole;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
-import Business.Enterprise.InsuranceEnterprise.Insurance;
-import Business.Enterprise.InsuranceEnterprise.InsuranceDetails;
-import Business.Enterprise.InsuranceEnterprise.InsuranceDirectory;
+import Business.Enterprise.Insurance.Insurance;
+import Business.Enterprise.Insurance.InsuranceDetails;
+import Business.Enterprise.Insurance.InsuranceDirectory;
 import Business.Organization.OrganizationDirectory;
 import Business.Patient.Patient;
 import Business.Patient.PatientDirectory;

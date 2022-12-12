@@ -3,12 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Business.Enterprise.HospitalEnterprise;
+package Business.Enterprise.Lab;
+
+import java.util.List;
 
 /**
  *
  * @author harshita
  */
-public class HospitalDirectory {
+public class LabTechnicianDirectory {
+    List<LabTechnician> labTechnicianList;
     
 }

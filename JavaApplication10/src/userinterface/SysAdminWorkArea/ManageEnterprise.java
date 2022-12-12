@@ -89,6 +89,7 @@ public class ManageEnterprise extends javax.swing.JPanel {
         btnDelete = new javax.swing.JButton();
         jPanel13 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -124,39 +125,40 @@ public class ManageEnterprise extends javax.swing.JPanel {
         enterpriseJTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(enterpriseJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 100, 555, 193));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 555, 193));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel1.setText("Network");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 400, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 370, -1, -1));
 
         networkJComboBox.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         networkJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(networkJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 400, 136, -1));
+        add(networkJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 370, 136, -1));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel2.setText("Name");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 520, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 470, -1, -1));
 
         nameJTextField.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        nameJTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(153, 204, 255)));
+        nameJTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         nameJTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nameJTextFieldActionPerformed(evt);
             }
         });
-        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 510, 130, 40));
+        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 460, 130, 40));
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel3.setText("Enterprise Type");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 460, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 420, -1, -1));
 
         enterpriseTypeJComboBox.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         enterpriseTypeJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(enterpriseTypeJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 460, 136, -1));
+        add(enterpriseTypeJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 420, 136, -1));
 
-        submitJButton.setBackground(new java.awt.Color(102, 147, 255));
+        submitJButton.setBackground(new java.awt.Color(0, 51, 255));
         submitJButton.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        submitJButton.setForeground(new java.awt.Color(255, 255, 255));
         submitJButton.setText("Submit");
         submitJButton.setPreferredSize(new java.awt.Dimension(100, 40));
         submitJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -164,7 +166,7 @@ public class ManageEnterprise extends javax.swing.JPanel {
                 submitJButtonActionPerformed(evt);
             }
         });
-        add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 590, -1, -1));
+        add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 530, -1, -1));
 
         backJButton.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         backJButton.setText("Back");
@@ -189,7 +191,7 @@ public class ManageEnterprise extends javax.swing.JPanel {
                 btnDeleteActionPerformed(evt);
             }
         });
-        add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 310, -1, -1));
+        add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 310, -1, -1));
 
         jPanel13.setBackground(new java.awt.Color(68, 145, 157));
 
@@ -206,10 +208,13 @@ public class ManageEnterprise extends javax.swing.JPanel {
 
         add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 220, -1));
 
-        jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(0, 51, 255));
+        jLabel12.setFont(new java.awt.Font("PingFang SC", 3, 36)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Manage Enterprise");
-        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 50, 220, 30));
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 40, 350, 40));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Building-the-Business-Case-for-Enterprise-Architecture-750x400.gif"))); // NOI18N
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 700));
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
@@ -281,6 +286,7 @@ public class ManageEnterprise extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField nameJTextField;

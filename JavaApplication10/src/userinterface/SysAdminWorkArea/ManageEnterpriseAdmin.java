@@ -66,18 +66,18 @@ public class ManageEnterpriseAdmin extends javax.swing.JPanel {
     }
 
     private void populateNetworkComboBox(){
-        networkJComboBox.removeAllItems();
+        networkComboBox.removeAllItems();
         
         for (Network network : system.getNetworkList()){
-            networkJComboBox.addItem(network);
+            networkComboBox.addItem(network);
         }
     }
     
     private void populateEnterpriseComboBox(Network network){
-        enterpriseJComboBox.removeAllItems();
+        enterpriseComboBox.removeAllItems();
         //enterpeirse-> bostonHospital!
         for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()){
-            enterpriseJComboBox.addItem(enterprise);
+            enterpriseComboBox.addItem(enterprise);
         }
         
     }
@@ -95,14 +95,14 @@ public class ManageEnterpriseAdmin extends javax.swing.JPanel {
         enterpriseJTable = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         submitJButton = new javax.swing.JButton();
-        networkJComboBox = new javax.swing.JComboBox();
+        networkComboBox = new javax.swing.JComboBox();
         jLabel2 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         usernameJTextField = new javax.swing.JTextField();
         contactCarrier = new javax.swing.JComboBox();
         jLabel3 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        enterpriseJComboBox = new javax.swing.JComboBox();
+        enterpriseComboBox = new javax.swing.JComboBox();
         phoneNumberTxt = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -114,11 +114,11 @@ public class ManageEnterpriseAdmin extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         backJButton = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        enterpriseJTable.setBackground(new java.awt.Color(255, 193, 131));
         enterpriseJTable.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(68, 145, 157)));
         enterpriseJTable.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         enterpriseJTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -143,7 +143,7 @@ public class ManageEnterpriseAdmin extends javax.swing.JPanel {
         enterpriseJTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(enterpriseJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 400, 210));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 280, 400, 210));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(68, 145, 157)));
@@ -158,11 +158,11 @@ public class ManageEnterpriseAdmin extends javax.swing.JPanel {
             }
         });
 
-        networkJComboBox.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        networkJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        networkJComboBox.addActionListener(new java.awt.event.ActionListener() {
+        networkComboBox.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        networkComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        networkComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                networkJComboBoxActionPerformed(evt);
+                networkComboBoxActionPerformed(evt);
             }
         });
 
@@ -174,7 +174,7 @@ public class ManageEnterpriseAdmin extends javax.swing.JPanel {
         jLabel11.setText("Carrier");
 
         usernameJTextField.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        usernameJTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(153, 204, 255)));
+        usernameJTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         usernameJTextField.setSelectionColor(new java.awt.Color(204, 204, 204));
 
         contactCarrier.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -198,12 +198,12 @@ public class ManageEnterpriseAdmin extends javax.swing.JPanel {
         jLabel9.setForeground(new java.awt.Color(25, 56, 82));
         jLabel9.setText("Phone Number");
 
-        enterpriseJComboBox.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        enterpriseJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        enterpriseComboBox.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        enterpriseComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         phoneNumberTxt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         phoneNumberTxt.setForeground(new java.awt.Color(25, 56, 82));
-        phoneNumberTxt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(153, 204, 255)));
+        phoneNumberTxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         phoneNumberTxt.setSelectionColor(new java.awt.Color(68, 145, 157));
         phoneNumberTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -231,7 +231,7 @@ public class ManageEnterpriseAdmin extends javax.swing.JPanel {
 
         uEmailTxt.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         uEmailTxt.setForeground(new java.awt.Color(25, 56, 82));
-        uEmailTxt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(153, 204, 255)));
+        uEmailTxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         uEmailTxt.setSelectionColor(new java.awt.Color(68, 145, 157));
         uEmailTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -245,11 +245,11 @@ public class ManageEnterpriseAdmin extends javax.swing.JPanel {
         });
 
         nameJTextField.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        nameJTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(153, 204, 255)));
+        nameJTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         nameJTextField.setSelectionColor(new java.awt.Color(68, 145, 157));
 
         passwordJPasswordField.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        passwordJPasswordField.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(153, 204, 255)));
+        passwordJPasswordField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         passwordJPasswordField.setSelectionColor(new java.awt.Color(68, 145, 157));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -259,7 +259,7 @@ public class ManageEnterpriseAdmin extends javax.swing.JPanel {
         jLabel5.setText("Name");
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 51, 255));
+        jLabel6.setForeground(new java.awt.Color(0, 0, 102));
         jLabel6.setText("Add Enterprise Head");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -289,8 +289,8 @@ public class ManageEnterpriseAdmin extends javax.swing.JPanel {
                                         .addComponent(jLabel3))
                                     .addGap(52, 52, 52)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(networkJComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(enterpriseJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(networkComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(enterpriseComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel2)
@@ -302,10 +302,10 @@ public class ManageEnterpriseAdmin extends javax.swing.JPanel {
                                         .addComponent(usernameJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(passwordJPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(uEmailTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                .addGap(119, 119, 119))
+                .addGap(50, 50, 50))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(94, 94, 94))
+                .addGap(43, 43, 43))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -315,11 +315,11 @@ public class ManageEnterpriseAdmin extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(networkJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(networkComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(enterpriseJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(enterpriseComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -349,10 +349,11 @@ public class ManageEnterpriseAdmin extends javax.swing.JPanel {
                 .addGap(16, 16, 16))
         );
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 130, -1, -1));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 420, -1));
 
+        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
         jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(0, 51, 255));
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setText("Manage Enterprise Head");
         add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 40, 450, 40));
@@ -367,17 +368,20 @@ public class ManageEnterpriseAdmin extends javax.swing.JPanel {
             }
         });
         add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon("/Users/sirius/Downloads/1939.jpg_860.jpg")); // NOI18N
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 700));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void networkJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_networkJComboBoxActionPerformed
+    private void networkComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_networkComboBoxActionPerformed
 
-        Network network = (Network) networkJComboBox.getSelectedItem();
+        Network network = (Network) networkComboBox.getSelectedItem();
         if (network != null){
             populateEnterpriseComboBox(network);
         }
         
         
-    }//GEN-LAST:event_networkJComboBoxActionPerformed
+    }//GEN-LAST:event_networkComboBoxActionPerformed
 
     
     
@@ -417,29 +421,6 @@ public class ManageEnterpriseAdmin extends javax.swing.JPanel {
 
     private void phoneNumberTxtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_phoneNumberTxtKeyReleased
         // TODO add your handling code here:
-        //        if(uContact.getText().trim().length() != 11){
-            //          contactFormatMessage.setVisible(true);
-            //          contactValid = false;
-            //        }
-        //        else if (!contactValidity(uContact.getText())) {
-            //            contactFormatMessage.setVisible(true);
-            //            contactValid = false;
-            //        } else {
-            //            uContact.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-            //            uContact.setForeground(Color.BLACK);
-            //            contactFormatMessage.setVisible(false);
-            //            contactSuccessLabel.setVisible(true);
-            //            contactValid = true;
-            //            int delay = 2500; //milliseconds
-            //            ActionListener taskPerformer = new ActionListener() {
-                //                public void actionPerformed(ActionEvent evt) {
-                    //                    contactSuccessLabel.setVisible(false);
-                    //                }
-                //            };
-            //            javax.swing.Timer tick = new javax.swing.Timer(delay, taskPerformer);
-            //            tick.setRepeats(false);
-            //            tick.start();
-            //        }
     }//GEN-LAST:event_phoneNumberTxtKeyReleased
 
     private void phoneNumberTxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_phoneNumberTxtKeyTyped
@@ -456,7 +437,7 @@ public class ManageEnterpriseAdmin extends javax.swing.JPanel {
 
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
 
-        Enterprise enterprise = (Enterprise) enterpriseJComboBox.getSelectedItem();
+        Enterprise enterprise = (Enterprise) enterpriseComboBox.getSelectedItem();
 
         String username = usernameJTextField.getText();
         String password = String.valueOf(passwordJPasswordField.getPassword());
@@ -546,7 +527,7 @@ public Boolean phoneNumberValidity(String customerContact) {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;
     private javax.swing.JComboBox contactCarrier;
-    private javax.swing.JComboBox enterpriseJComboBox;
+    private javax.swing.JComboBox enterpriseComboBox;
     private javax.swing.JTable enterpriseJTable;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
@@ -557,11 +538,12 @@ public Boolean phoneNumberValidity(String customerContact) {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField nameJTextField;
-    private javax.swing.JComboBox networkJComboBox;
+    private javax.swing.JComboBox networkComboBox;
     private javax.swing.JPasswordField passwordJPasswordField;
     private javax.swing.JTextField phoneNumberTxt;
     private javax.swing.JButton submitJButton;

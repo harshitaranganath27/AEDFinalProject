@@ -2,10 +2,10 @@ package Business;
 
 import Business.Employee.Employee;
 import Business.Enterprise.Enterprise;
-import Business.Enterprise.HospitalEnterprise.Hospital;
-import Business.Enterprise.InsuranceEnterprise.Insurance;
-import Business.Enterprise.LabEnterprise.Lab;
-import Business.Enterprise.PharmacyEnterprise.Pharmacy;
+import Business.Enterprise.HospEnterprise.Hospital;
+import Business.Enterprise.Insurance.Insurance;
+import Business.Enterprise.Lab.Lab;
+import Business.Enterprise.Pharmacy.Pharmacy;
 import Business.Location.Location;
 import Business.Organization.BedManagementDepartment;
 import Business.Organization.Organization;

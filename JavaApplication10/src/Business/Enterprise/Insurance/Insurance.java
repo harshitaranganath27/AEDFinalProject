@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Business.Enterprise.InsuranceEnterprise;
+package Business.Enterprise.Insurance;
 
 import Business.Enterprise.Enterprise;
 import Business.Patient.PatientDirectory;

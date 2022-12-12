@@ -8,8 +8,8 @@ package Business.Appointment;
 
 import Business.Employee.Employee;
 //import static Business.Enterprise.Enterprise.EnterpriseType.Pharmacy;
-import Business.Enterprise.LabEnterprise.LabTestDirectory;
-import Business.Enterprise.PharmacyEnterprise.Pharmacy;
+import Business.Enterprise.Lab.LabTestDirectory;
+import Business.Enterprise.Pharmacy.Pharmacy;
 import Business.Medicine.Medicine;
 import Business.Patient.Patient;
 import java.util.Date;

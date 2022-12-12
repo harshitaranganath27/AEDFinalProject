@@ -5,7 +5,7 @@
  */
 package Business.Patient;
 
-import Business.Enterprise.InsuranceEnterprise.Insurance;
+import Business.Enterprise.Insurance.Insurance;
 import Business.Location.Location;
 import Business.UserAccount.UserAccount;
 import java.util.ArrayList;

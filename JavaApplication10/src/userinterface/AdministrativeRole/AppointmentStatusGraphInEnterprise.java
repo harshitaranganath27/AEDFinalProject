@@ -8,7 +8,7 @@ package userinterface.AdministrativeRole;
 import Business.Appointment.Appointment;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
-import Business.Enterprise.HospitalEnterprise.Hospital;
+import Business.Enterprise.HospEnterprise.Hospital;
 import Business.Patient.Patient;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;

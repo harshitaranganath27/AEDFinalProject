@@ -7,8 +7,8 @@ package Business.Appointment;
 
 import Business.Bill.Bill;
 import Business.Employee.Employee;
-import Business.Enterprise.LabEnterprise.LabTestDirectory;
-import Business.Enterprise.PharmacyEnterprise.Pharmacy;
+import Business.Enterprise.Lab.LabTestDirectory;
+import Business.Enterprise.Pharmacy.Pharmacy;
 import Business.Operation.Operation;
 import Business.Patient.Patient;
 import java.text.DateFormat;

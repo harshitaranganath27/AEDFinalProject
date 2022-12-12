@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Business.Enterprise.InsuranceEnterprise;
+package Business.Enterprise.Insurance;
 
-import Business.Enterprise.HospitalEnterprise.*;
 import java.util.ArrayList;
 import java.util.List;
 
