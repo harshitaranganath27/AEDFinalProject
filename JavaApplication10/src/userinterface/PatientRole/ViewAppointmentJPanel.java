@@ -177,7 +177,6 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         cmbAppointmentStatus = new javax.swing.JComboBox<>();
         btnSubmit = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         txtAppointmentStatus = new javax.swing.JTextField();
         btnGenerateBill = new javax.swing.JButton();
@@ -191,10 +190,7 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
         jLabel11 = new javax.swing.JLabel();
         txtInsuranceE = new javax.swing.JTextField();
         btnViewBill = new javax.swing.JButton();
-        jPanel14 = new javax.swing.JPanel();
-        jPanel13 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -203,7 +199,6 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 13, 188, -1));
 
-        jButton1.setBackground(new java.awt.Color(102, 147, 255));
         jButton1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jButton1.setText("Back");
         jButton1.setPreferredSize(new java.awt.Dimension(100, 40));
@@ -300,7 +295,6 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
         cmbAppointmentStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(cmbAppointmentStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 50, 187, -1));
 
-        btnSubmit.setBackground(new java.awt.Color(102, 147, 255));
         btnSubmit.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         btnSubmit.setText("Search");
         btnSubmit.setPreferredSize(new java.awt.Dimension(100, 40));
@@ -310,9 +304,6 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
             }
         });
         add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 40, 116, -1));
-
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/viewAppont.png"))); // NOI18N
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 244, 165));
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel8.setText("Appointment Status:");
@@ -334,7 +325,7 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
                 btnGenerateBillActionPerformed(evt);
             }
         });
-        add(btnGenerateBill, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 650, 162, -1));
+        add(btnGenerateBill, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 650, 162, -1));
 
         jLabel9.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -351,7 +342,7 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
                 btnCloseActionPerformed(evt);
             }
         });
-        add(btnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 650, 162, -1));
+        add(btnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 650, 162, -1));
 
         jLabel12.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -382,43 +373,10 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
         });
         add(btnViewBill, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 650, 162, -1));
 
-        jPanel14.setBackground(new java.awt.Color(196, 224, 229));
-
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 190, Short.MAX_VALUE)
-        );
-
-        add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 190));
-
-        jPanel13.setBackground(new java.awt.Color(68, 145, 157));
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 180, Short.MAX_VALUE)
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 180, -1));
-
         jLabel13.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(68, 145, 157));
         jLabel13.setText("View Appointment");
         add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 0, 270, 37));
-
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/receptionist.jpg"))); // NOI18N
-        add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 400, 290, 280));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtAppointmetDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAppointmetDateActionPerformed
@@ -616,17 +574,13 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField txtAppointmentStatus;
     private javax.swing.JComboBox txtAppointmentType;

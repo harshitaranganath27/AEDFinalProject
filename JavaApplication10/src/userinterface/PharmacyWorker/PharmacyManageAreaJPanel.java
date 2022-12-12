@@ -52,9 +52,6 @@ public class PharmacyManageAreaJPanel extends javax.swing.JPanel {
         manageMedicineBtn = new javax.swing.JButton();
         managePatientsBtn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jPanel14 = new javax.swing.JPanel();
-        jPanel13 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -68,7 +65,7 @@ public class PharmacyManageAreaJPanel extends javax.swing.JPanel {
                 manageMedicineBtnActionPerformed(evt);
             }
         });
-        add(manageMedicineBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 256, 75));
+        add(manageMedicineBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, 256, 240));
 
         managePatientsBtn.setBackground(new java.awt.Color(255, 155, 54));
         managePatientsBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -78,49 +75,16 @@ public class PharmacyManageAreaJPanel extends javax.swing.JPanel {
                 managePatientsBtnActionPerformed(evt);
             }
         });
-        add(managePatientsBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 130, 256, 75));
+        add(managePatientsBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 170, 256, 240));
 
         jLabel2.setBackground(new java.awt.Color(68, 145, 157));
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 10, 270, 30));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/pharmacyRecp1.PNG"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 260, 700, 376));
-
-        jPanel14.setBackground(new java.awt.Color(196, 224, 229));
-
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
-        );
-
-        add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 200));
-
-        jPanel13.setBackground(new java.awt.Color(68, 145, 157));
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 200, -1));
-
         jLabel15.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(68, 145, 157));
         jLabel15.setText("Welcome, Pharmacist!");
-        add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 250, 37));
+        add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 250, 37));
     }// </editor-fold>//GEN-END:initComponents
 
     private void managePatientsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_managePatientsBtnActionPerformed
@@ -142,11 +106,8 @@ public class PharmacyManageAreaJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
     private javax.swing.JButton manageMedicineBtn;
     private javax.swing.JButton managePatientsBtn;
     // End of variables declaration//GEN-END:variables

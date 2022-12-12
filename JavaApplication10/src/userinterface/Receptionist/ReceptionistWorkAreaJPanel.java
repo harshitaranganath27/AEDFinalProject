@@ -167,7 +167,6 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
         btnBookAppointment = new javax.swing.JButton();
         btnViewAppointment = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -253,9 +252,6 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, 550, 130));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/receptionist.jpg"))); // NOI18N
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 20, -1, 230));
-
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(68, 145, 157));
         jLabel5.setText("What would you like to do?");
@@ -324,7 +320,6 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnManagePatient;
     private javax.swing.JButton btnViewAppointment;
     private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
