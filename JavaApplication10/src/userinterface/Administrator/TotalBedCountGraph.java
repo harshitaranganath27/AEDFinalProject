@@ -57,7 +57,7 @@ public class TotalBedCountGraph extends javax.swing.JPanel {
 
         Map<String, Integer> workReqMap = new HashMap<>();
         
-        for (Enterprise epr : selectedNetwork.getEnterpriseDirectory().getEnterpriseList()) 
+        for (Enterprise epr : selectedNetwork.getEntDirectory().getEnterpriseList()) 
         {
             for (Organization org : epr.getOrgDirectory().getOrganizationList()) 
             {

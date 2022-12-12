@@ -12,17 +12,18 @@ import java.util.Date;
  * @author harshita
  */
 public class Medicine {
+
     int id;
     String name;
-    Date expiryDate;
     String dosage;
     double price;
+    Date expiryDate;
     int quantity;
-    String type;//liquid, tablet, gel
-    static int count =1;
-    
-    public Medicine(){
-        this.id= count++;
+    String type;
+    static int count = 1;
+
+    public Medicine() {
+        this.id = count++;
     }
 
     public int getQuantity() {
@@ -32,7 +33,6 @@ public class Medicine {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-    
 
     public int getId() {
         return id;
@@ -83,22 +83,18 @@ public class Medicine {
     }
 
     public void setValues(String name, Date date1, String dosage, double price, int quantity, String type) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         this.setDosage(dosage);
         this.setExpiryDate(date1);
         this.setName(name);
         this.setPrice(price);
         this.setQuantity(quantity);
         this.setType(type);
-    
-    
+
     }
-    
-    
+
     @Override
-    public String toString(){
-        return "Med " +String.valueOf(this.getId()) +  " "+this.getName();
+    public String toString() {
+        return "Med " + String.valueOf(this.getId()) + " " + this.getName();
     }
-    
-    
+
 }

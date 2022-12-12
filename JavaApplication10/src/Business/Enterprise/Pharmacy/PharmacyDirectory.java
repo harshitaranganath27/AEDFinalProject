@@ -13,16 +13,6 @@ import java.util.List;
  */
 public class PharmacyDirectory {
     List<Pharmacy> pharmacyList;
-    
-    
-    //create
-    
-    //search
-    
-    //view
-    
-    //update
-
     public List<Pharmacy> getPharmacyList() {
         return pharmacyList;
     }

@@ -107,7 +107,7 @@ public class ConfigureASystem {
                         
                     }
             System.out.println();
-            system.getNetworkList().get(0).getEnterpriseDirectory().getEnterpriseList().add(Ie) ;
+            system.getNetworkList().get(0).getEntDirectory().getEnterpriseList().add(Ie) ;
 
         
             // Boston Hospital - Enterprise
@@ -270,7 +270,7 @@ public class ConfigureASystem {
                 //((BillingDepartment)o).generateInvoice(date, patient);
                 
          
-            system.getNetworkList().get(0).getEnterpriseDirectory().getEnterpriseList().add(e) ;
+            system.getNetworkList().get(0).getEntDirectory().getEnterpriseList().add(e) ;
         
         
             // Boston Lab - Enterprise
@@ -380,7 +380,7 @@ public class ConfigureASystem {
                     
                     System.out.println();
         
-            system.getNetworkList().get(0).getEnterpriseDirectory().getEnterpriseList().add(e) ;
+            system.getNetworkList().get(0).getEntDirectory().getEnterpriseList().add(e) ;
         
             // Boston Pharmacy - Enterprise
             System.err.println("Boston CVS Pharmacy");
@@ -430,7 +430,7 @@ public class ConfigureASystem {
                     
                     System.out.println();
         
-            system.getNetworkList().get(0).getEnterpriseDirectory().getEnterpriseList().add(e) ;
+            system.getNetworkList().get(0).getEntDirectory().getEnterpriseList().add(e) ;
              
             
         
@@ -490,7 +490,7 @@ public class ConfigureASystem {
                     }
         
             System.out.println();
-            system.getNetworkList().get(1).getEnterpriseDirectory().getEnterpriseList().add(Ie) ;
+            system.getNetworkList().get(1).getEntDirectory().getEnterpriseList().add(Ie) ;
         
             // Boston Hospital - Enterprise
             System.err.println("Seattle Grey-Sloan Hospital");
@@ -649,7 +649,7 @@ public class ConfigureASystem {
                 o = e.getOrgDirectory().createOrganization(Organization.Type.Billing);
                 
             
-            system.getNetworkList().get(1).getEnterpriseDirectory().getEnterpriseList().add(e) ;
+            system.getNetworkList().get(1).getEntDirectory().getEnterpriseList().add(e) ;
         
         
             // Seattle Lab - Enterprise
@@ -754,7 +754,7 @@ public class ConfigureASystem {
                     }
             System.out.println();
         
-            system.getNetworkList().get(1).getEnterpriseDirectory().getEnterpriseList().add(e) ;
+            system.getNetworkList().get(1).getEntDirectory().getEnterpriseList().add(e) ;
         
             // Seattle Pharmacy - Enterprise
             System.err.println("Seattle Walgreens Pharmacy");
@@ -804,7 +804,7 @@ public class ConfigureASystem {
                         
                     }
             System.out.println();
-            system.getNetworkList().get(1).getEnterpriseDirectory().getEnterpriseList().add(e) ;
+            system.getNetworkList().get(1).getEntDirectory().getEnterpriseList().add(e) ;
 
         return system;
     }

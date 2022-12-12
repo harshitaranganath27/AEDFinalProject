@@ -5,7 +5,6 @@
  */
 package Business.Operation;
 
-
 import Business.Employee.Employee;
 import Business.Patient.Patient;
 import java.util.List;
@@ -15,19 +14,8 @@ import java.util.List;
  * @author harshita
  */
 public class OperationDirectory {
+
     List<Operation> operationlist;
-
-    
-    
-    
-    
-    //add
-    
-    //update
-
-    //searchbyOperationdate
-    
-    //delete-cancel
 
     public List<Operation> getOperationlist() {
         return operationlist;
@@ -36,40 +24,39 @@ public class OperationDirectory {
     public void setOperationlist(List<Operation> operationlist) {
         this.operationlist = operationlist;
     }
-    
-    public Operation addOperation(){
-       Operation operation= new Operation();
+
+    public Operation addOperation() {
+        Operation operation = new Operation();
         operationlist.add(operation);
         return operation;
-        
+
     }
-    
-    public Operation searchOperationbyDate(String date){
-        for(Operation operation : operationlist){
-        if(operation.getOperationDate()== date ){
-            return operation; 
-        }
+
+    public Operation searchOperationbyDate(String date) {
+        for (Operation operation : operationlist) {
+            if (operation.getOperationDate() == date) {
+                return operation;
+            }
         }
         return null;
     }
 
-    public void updateOperation(int operationNumber, String operationDate, String operationDescription, double operationCharge, String status, Patient patient, Employee doctor){
-        for(Operation operation: operationlist){
-            if(operation.getOperationNumber()==(operationNumber)){
+    public void updateOperation(int operationNumber, String operationDate, String operationDescription, double operationCharge, String status, Patient patient, Employee doctor) {
+        for (Operation operation : operationlist) {
+            if (operation.getOperationNumber() == (operationNumber)) {
                 operation.setOperationDate(operationDate);
                 operation.setOperationDescription(operationDescription);
                 operation.setOperationCharge(operationCharge);
                 operation.setStatus(status);
                 operation.setPatient(patient);
                 operation.setDoctor(doctor);
-                
+
             }
         }
     }
-    
-    public void cancelOperation(Operation operation){
+
+    public void cancelOperation(Operation operation) {
         operationlist.remove(operation);
     }
-    
-    
+
 }

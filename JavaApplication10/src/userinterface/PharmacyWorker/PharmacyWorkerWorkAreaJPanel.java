@@ -96,7 +96,7 @@ public class PharmacyWorkerWorkAreaJPanel extends javax.swing.JPanel {
             row[0] = entry.getKey();
             row[1] = entry.getValue();
             Medicine medicine = null;
-            for(Medicine med : ((Pharmacy) enterprise).getMedicineList().getMedicineList()){
+            for(Medicine med : ((Pharmacy) enterprise).getMedicineList().getList()){
                 if(med.equals(entry.getKey())){
             row[2] = med.getPrice();       
                medicine = med;

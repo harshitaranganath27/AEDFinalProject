@@ -254,7 +254,7 @@ public class Main extends javax.swing.JFrame {
             //Step 2: Go inside each network and check each enterprise
             for (Network network : system.getNetworkList()) {
                 //Step 2.a: check against each enterprise
-                for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
+                for (Enterprise enterprise : network.getEntDirectory().getEnterpriseList()) {
                     userAccount = enterprise.getUserAccountDirectory().authenticateUser(userName, password);
                     if (userAccount == null) {
                         //Step 3:check against each organization for each enterprise

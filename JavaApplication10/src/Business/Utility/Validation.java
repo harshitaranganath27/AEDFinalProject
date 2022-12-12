@@ -321,7 +321,7 @@ properties.put("mail.smtp.ssl.protocols", "TLSv1.2");
         //boolean flag = false;
         for(Network net : system.getNetworkList())
         {
-            List<Enterprise> entrList = net.getEnterpriseDirectory().getEnterpriseList();
+            List<Enterprise> entrList = net.getEntDirectory().getEnterpriseList();
             for(Enterprise entpr: entrList)
             {
               isUserNameUnique  = entpr.getUserAccountDirectory().checkIfUsernameIsUnique(username);

@@ -46,7 +46,7 @@ public class ManageEnterpriseAdmin extends javax.swing.JPanel {
 
         model.setRowCount(0);
         for (Network network : system.getNetworkList()) {
-            for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
+            for (Enterprise enterprise : network.getEntDirectory().getEnterpriseList()) {
                 for (UserAccount userAccount : enterprise.getUserAccountDirectory().getUserAccountList()) {
                     if(userAccount.getRole().roleValue().equals("Admin Role")){
                         Object[] row = new Object[3];
@@ -71,7 +71,7 @@ public class ManageEnterpriseAdmin extends javax.swing.JPanel {
     
     private void populateEntrprsComboBox(Network network){
         enterpriseComboBox.removeAllItems();
-        for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()){
+        for (Enterprise enterprise : network.getEntDirectory().getEnterpriseList()){
             enterpriseComboBox.addItem(enterprise);
         }
         

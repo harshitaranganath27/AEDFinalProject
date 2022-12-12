@@ -62,7 +62,7 @@ public class SysAdminMainPanel extends javax.swing.JPanel {
             networkNode=new DefaultMutableTreeNode(network.getName());
             networks.insert(networkNode, i);
             
-            enterpriseList=network.getEnterpriseDirectory().getEnterpriseList();
+            enterpriseList=network.getEntDirectory().getEnterpriseList();
             for(int j=0; j<enterpriseList.size();j++){
                 enterprise=enterpriseList.get(j);
                 enterpriseNode=new DefaultMutableTreeNode(enterprise.getName());

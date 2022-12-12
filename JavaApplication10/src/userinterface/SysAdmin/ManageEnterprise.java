@@ -41,7 +41,7 @@ public class ManageEnterprise extends javax.swing.JPanel {
 
         model.setRowCount(0);
         for (Network network : system.getNetworkList()) {
-            for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
+            for (Enterprise enterprise : network.getEntDirectory().getEnterpriseList()) {
                 Object[] row = new Object[3];
                 row[0] = enterprise; //enterprise.getNetwork();
                 row[1] = network;//.getName();
@@ -230,7 +230,7 @@ public class ManageEnterprise extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Enter name!");
             return;
         }
-        Enterprise enterprise = network.getEnterpriseDirectory().createAndAddEnterprise(name, type);
+        Enterprise enterprise = network.getEntDirectory().createAndAddEnterprise(name, type);
         enterprise.setNetwork(network);
         nameTextField.setText("");
         populateTable();
@@ -259,7 +259,7 @@ public class ManageEnterprise extends javax.swing.JPanel {
             if (dialogResult == JOptionPane.YES_OPTION) {
                 Enterprise enter = (Enterprise) entTable.getValueAt(selectedRow, 0);
                 Network netwrk = (Network) entTable.getValueAt(selectedRow, 1);
-                netwrk.getEnterpriseDirectory().getEnterpriseList().remove(enter);
+                netwrk.getEntDirectory().getEnterpriseList().remove(enter);
                 populateTable();
                 dB4OUtil.storeSystem(system);
                 JOptionPane.showMessageDialog(null, "Deleted successfully");

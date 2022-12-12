@@ -83,7 +83,7 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
         
         String date1=null;
         SimpleDateFormat formatter1=new SimpleDateFormat("yyyy-MM-dd");
-        for (Medicine med : medicineDir.getMedicineList()){
+        for (Medicine med : medicineDir.getList()){
             if(med.getType().equals(medType))
             {
             
@@ -481,7 +481,7 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
         medicine.setQuantity(quantity);
         medicine.setType(type);
         //Add to dir           
-        medicineDir.getMedicineList().add(medicine);
+        medicineDir.getList().add(medicine);
         
         
         JOptionPane.showMessageDialog(null, "Added successfully","Information",JOptionPane.INFORMATION_MESSAGE);
@@ -549,7 +549,7 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
 
     private void cmbMainMedicineTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbMainMedicineTypeActionPerformed
         String medType = (String) cmbMainMedicineType.getSelectedItem();
-        if (medicineDir != null && !medicineDir.getMedicineList().isEmpty()){
+        if (medicineDir != null && !medicineDir.getList().isEmpty()){
             populateTable(medType);
             //populateOrganizationEmpComboBox();  //based on organization seleted, get the supported roles only
         }

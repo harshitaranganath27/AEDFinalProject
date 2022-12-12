@@ -334,7 +334,7 @@ public class CreateNewPatientJPanel extends javax.swing.JPanel {
     void populateCmbInsurance(){
          cmbInsuranceCompany.removeAllItems();;
         for(Network network : ecosystem.getNetworkList()){
-        List<Enterprise> enterprsList = network.getEnterpriseDirectory().getEnterpriseList();
+        List<Enterprise> enterprsList = network.getEntDirectory().getEnterpriseList();
         if (enterprsList == null || enterprsList.isEmpty()) {
             //nothing
         } else {

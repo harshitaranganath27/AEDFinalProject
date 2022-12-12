@@ -15,19 +15,19 @@ import java.util.List;
 public class MedicineDirectory {
     
     
-    List<Medicine> medicineList;
+    List<Medicine> list;
 
-    public List<Medicine> getMedicineList() {
-        return medicineList;
+    public List<Medicine> getList() {
+        return list;
     }
 
-    public void setMedicineList(List<Medicine> medicineList) {
-        this.medicineList = medicineList;
+    public void setList(List<Medicine> list) {
+        this.list = list;
     }
     
     
     public MedicineDirectory(){
-        medicineList= new ArrayList<>();
+        list= new ArrayList<>();
     }
     
     
