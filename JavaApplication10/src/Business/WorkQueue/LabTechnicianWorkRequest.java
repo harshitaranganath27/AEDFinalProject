@@ -6,7 +6,7 @@ package Business.WorkQueue;
 
 import Business.Appointment.Appointment;
 import Business.Enterprise.Lab.LabTest;
-import Business.Patient.Patient;
+import Business.Patient.Patients;
 
 /**
  *
@@ -25,7 +25,7 @@ public class LabTechnicianWorkRequest extends WorkRequest{
     
     
     */
-    private Patient patient;
+    private Patients patient;
     private Appointment appointment;
     private LabTest labTest;
     //private UserAccount doctorUserAccount;
@@ -39,11 +39,11 @@ public class LabTechnicianWorkRequest extends WorkRequest{
     }
 
 
-    public Patient getPatient() {
+    public Patients getPatient() {
         return patient;
     }
 
-    public void setPatient(Patient patient) {
+    public void setPatient(Patients patient) {
         this.patient = patient;
     }
 

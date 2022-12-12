@@ -6,7 +6,7 @@
 package Business.Org;
 
 import Business.Bed.Bed;
-import Business.Patient.Patient;
+import Business.Patient.Patients;
 import java.util.Date;
 
 /**
@@ -16,7 +16,7 @@ import java.util.Date;
 public class BedPatient {
  
     Bed bed;
-    Patient patient;
+    Patients patient;
     Date date;
 
     public Bed getBed() {
@@ -27,11 +27,11 @@ public class BedPatient {
         this.bed = bed;
     }
 
-    public Patient getPatient() {
+    public Patients getPatient() {
         return patient;
     }
 
-    public void setPatient(Patient patient) {
+    public void setPatient(Patients patient) {
         this.patient = patient;
     }
 

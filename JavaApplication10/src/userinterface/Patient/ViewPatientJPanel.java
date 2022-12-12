@@ -10,7 +10,7 @@ import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Location.Location;
 import Business.Org.Organization;
-import Business.Patient.Patient;
+import Business.Patient.Patients;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
@@ -33,9 +33,9 @@ public class ViewPatientJPanel extends javax.swing.JPanel {
     Organization organization;
     Enterprise enterprise;
     EcoSystem system;
-    Patient patient;
+    Patients patient;
     Location locationPoint;
-    public ViewPatientJPanel(JPanel userProcessContainer, UserAccount userAccount, Organization organization, Enterprise enterprise, EcoSystem system, Patient patient) {
+    public ViewPatientJPanel(JPanel userProcessContainer, UserAccount userAccount, Organization organization, Enterprise enterprise, EcoSystem system, Patients patient) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.userAccount = userAccount;

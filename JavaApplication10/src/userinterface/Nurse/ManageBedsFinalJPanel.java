@@ -12,7 +12,7 @@ import Business.Operation.Operation;
 import Business.Org.BedManagementDepartment;
 import Business.Org.Organization;
 import Business.Org.organizationDir;
-import Business.Patient.Patient;
+import Business.Patient.Patients;
 import Business.UserAccount.UserAccount;
 import Business.Utility.Validation;
 import java.awt.CardLayout;
@@ -480,12 +480,12 @@ public class ManageBedsFinalJPanel extends javax.swing.JPanel {
                 {
                     //selectedBed.getPatient().
                     //free patient
-                    Patient pat= selectedBed.getPatient();
+                    Patients pat= selectedBed.getPatient();
                     Appointment appointment = selectedBed.getAppointment();
                     selectedBed.setStatus(Bed.BedStatus.AssignedLaundry);
                     appointment.getOperation().setStatus(Operation.OperationStatus.Completed.getValue());
                     JOptionPane.showMessageDialog(null, "Bed status changed Successfully!", "Information", JOptionPane.INFORMATION_MESSAGE);
-//                    Patient pat= bedorg.getPatientByBedNDate(selectedBed,date1);
+//                    Patients pat= bedorg.getPatientByBedNDate(selectedBed,date1);
 //                    List<Appointment> appnmtList = pat.getAppointmentDirectory().getAppointmentList();
 //                    //add appouintmt in patient app dir also when creating
 //                    for(Appointment app : appnmtList)

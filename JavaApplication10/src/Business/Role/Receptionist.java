@@ -10,26 +10,23 @@ import Business.Enterprise.Enterprise;
 import Business.Org.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
-import userinterface.LoginPatient.PatientMainWorkAreaJPanel;
-
+import userinterface.Receptionist.ReceptionistWorkAreaJPanel;
 
 /**
  *
  * @author harshita
  */
-public class Patient extends Role {
+public class Receptionist extends Role {
 
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, 
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account,
             Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new PatientMainWorkAreaJPanel(userProcessContainer, account, organization, enterprise, business);
+        return new ReceptionistWorkAreaJPanel(userProcessContainer, account, organization, enterprise, business);
     }
     
     @Override
     public String roleValue()
     {
-        return "Patient Role";
+        return "Receptionist Role";
     }
-    
-    
 }

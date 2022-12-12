@@ -15,9 +15,9 @@ import Business.Network.Network;
 import Business.UserAccount.UserAccount;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import Business.Patient.Patient;
+import Business.Patient.Patients;
 import Business.Patient.PatientDirectory;
-import Business.Role.Patient;
+import Business.Role.PatientRole;
 import Business.Utility.Validation;
 import java.awt.CardLayout;
 import java.util.ArrayList;
@@ -36,13 +36,9 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
      */
    
     JPanel userProcessContainer;
-    //Organization organization;
-    //Enterprise enterprise;
-    //UserAccount userAccount;
     DB4OUtil dB4OUtil ;
     EcoSystem ecosystem;
     Location locationPoint;
-    //Network network;
     public CreateNewPatientSelfJPanel(
             JPanel userProcessContainer,
             DB4OUtil dB4OUtil 
@@ -50,22 +46,20 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
         initComponents();
         if(ecosystem.getPatientDirectory() == null){
             PatientDirectory patientDirectory = new PatientDirectory();
-            patientDirectory.setPatientList(new ArrayList<Patient>());
+            patientDirectory.setPatientList(new ArrayList<Patients>());
             ecosystem.setPatientDirectory(patientDirectory);
         }
         
         if(ecosystem.getPatientDirectory().getPatientList() == null){
             
-            ecosystem.getPatientDirectory().setPatientList(new ArrayList<Patient>());
-           // ecosystem.setPatientDirectory(patientDirectory);
+            ecosystem.getPatientDirectory().setPatientList(new ArrayList<Patients>());
+        
         }
        this.userProcessContainer = userProcessContainer;
-        //this.organization = organization;
-        //this.enterprise = enterprise;
-       // this.userAccount = account;
+ 
         this.ecosystem = ecosystem;
         this.dB4OUtil = dB4OUtil;
-        //this.network = network;
+
         populateMobileCarrierComboBox();
         populateCmbInsurance();
     }
@@ -392,15 +386,7 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
             return;
         }
         
-        String userName = txtUserName.getText();
-       // valid = enterprise.getUserAccountDirectory().checkIfUsernameIsUnique(userName);
-        
-        //if(valid == false)
-        //{
-         //   JOptionPane.showMessageDialog(null, "User name exists, try other name", "Warning", JOptionPane.WARNING_MESSAGE);
-          //  return;
-        //}
-        
+        String userName = txtUserName.getText();  
         
         //check if username is unique
          boolean isUserNameUnique = Validation.checkIfUserNameIsUniqueAcrossNetworks(ecosystem,userName);
@@ -425,7 +411,7 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
         
         Insurance insuranceE =(Insurance)cmbInsuranceCompany.getSelectedItem();
         String insuranceId = txtInsuranceID.getText();
-        UserAccount account = ecosystem.getUserAccountDirectory().createUserAccount(txtUserName.getText(), txtPassword.getText(), null, new Patient());
+        UserAccount account = ecosystem.getUserAccountDirectory().createUserAccount(txtUserName.getText(), txtPassword.getText(), null, new Patients());
        
        
         Employee emp= ecosystem.getPatientDirectory().createPatient(txtPatientName.getText(), phoneNumberString, txtGender.getSelectedItem().toString(),
@@ -470,13 +456,8 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
     
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-//        userProcessContainer.remove(this);
-//       
-//        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-//        layout.previous(userProcessContainer);
 
       userProcessContainer.removeAll();
-        //JPanel blankJP = new JPanel();
         subPanel blankJP = new subPanel();
         userProcessContainer.add("blank", blankJP);
         CardLayout crdLyt = (CardLayout) userProcessContainer.getLayout();

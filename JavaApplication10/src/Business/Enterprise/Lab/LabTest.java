@@ -6,7 +6,7 @@
 package Business.Enterprise.Lab;
 
 import Business.Employee.Employee;
-import Business.Patient.Patient;
+import Business.Patient.Patients;
 import java.util.Date;
 
 /**
@@ -22,7 +22,7 @@ public class LabTest {
     String status;
     Employee doctor;
     Employee labTech;
-    private Patient patient;
+    private Patients patient;
     private Lab lab;
 
     public int getId() {
@@ -85,11 +85,11 @@ public class LabTest {
         return createdOn;
     }
 
-    public Patient getPatient() {
+    public Patients getPatient() {
         return patient;
     }
 
-    public void setPatient(Patient patient) {
+    public void setPatient(Patients patient) {
         this.patient = patient;
     }
 

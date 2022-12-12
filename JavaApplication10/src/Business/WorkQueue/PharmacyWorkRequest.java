@@ -7,7 +7,7 @@ package Business.WorkQueue;
 import Business.Appointment.Appointment;
 import Business.Employee.Employee;
 import Business.Medicine.Medicine;
-import Business.Patient.Patient;
+import Business.Patient.Patients;
 import java.util.Map;
 
 /**
@@ -28,15 +28,15 @@ public class PharmacyWorkRequest extends WorkRequest{
     
     */
     private Appointment appointment;
-    private Patient patient;
+    private Patients patient;
     private Employee doctor;
     private Map<Medicine,Double> medicineMap;
 
-    public Patient getPatient() {
+    public Patients getPatient() {
         return patient;
     }
 
-    public void setPatient(Patient patient) {
+    public void setPatient(Patients patient) {
         this.patient = patient;
     }
 

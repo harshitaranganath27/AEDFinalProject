@@ -12,7 +12,7 @@ import Business.Enterprise.Enterprise;
 import Business.Org.BedManagementDepartment;
 import Business.Org.Organization;
 import Business.Org.organizationDir;
-import Business.Patient.Patient;
+import Business.Patient.Patients;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -61,7 +61,7 @@ public class ManageBedJPanel extends javax.swing.JPanel {
             Object[] row = new Object[3];
             row[0] = bed.getBedID();
             row[1] = bed.getStatus().getStatus();
-            Patient p = bed.getPatient();
+            Patients p = bed.getPatient();
             row[2] = p == null ? "": p;
             model.addRow(row);
             //row[2] = 

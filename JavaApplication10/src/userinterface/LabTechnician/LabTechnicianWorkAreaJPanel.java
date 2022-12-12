@@ -13,7 +13,7 @@ import Business.Enterprise.Lab.Lab;
 import Business.Enterprise.Lab.LabTest;
 import Business.Org.LabOrganization;
 import Business.Org.Organization;
-import Business.Patient.Patient;
+import Business.Patient.Patients;
 import Business.UserAccount.UserAccount;
 import Business.Utility.Validation;
 import Business.WorkQueue.DoctorWorkRequest;
@@ -45,7 +45,7 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
     private LabTest labTest;
     private Employee labTechnician;
     private Appointment appointment;
-    private Patient patient;
+    private Patients patient;
     private WorkRequest request;
     private Enterprise enterprise;
     /**
@@ -435,7 +435,7 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
 //                boolean isAdd = true;
 //                if(lab.getPatientDirectory() != null && 
 //                        lab.getPatientDirectory().getPatientList() != null){
-//                    for(Patient p : lab.getPatientDirectory().getPatientList()){
+//                    for(Patients p : lab.getPatientDirectory().getPatientList()){
 //                        if(p.getId() == patient.getId()){
 //                            isAdd = false;
 //                            break;

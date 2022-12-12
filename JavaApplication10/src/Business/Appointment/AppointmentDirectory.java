@@ -6,7 +6,7 @@
 package Business.Appointment;
 
 import Business.Employee.Employee;
-import Business.Patient.Patient;
+import Business.Patient.Patients;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -67,7 +67,7 @@ public class AppointmentDirectory {
     }
     
     //search Appointment by patient and date
-    Appointment searchAppointment(Patient patient, Date date){
+    Appointment searchAppointment(Patients patient, Date date){
         Appointment app= null;
         
         
@@ -78,7 +78,7 @@ public class AppointmentDirectory {
     
     
     //Return List of Appointments by patient
-    List<Appointment> searchAppointment(Patient patient){
+    List<Appointment> searchAppointment(Patients patient){
         List<Appointment> app= null;
         
         
@@ -87,7 +87,7 @@ public class AppointmentDirectory {
         return app;
     }
 
-    public Appointment createAppointment(Patient patient, Employee doctor, Date appointmetDate, String appointmentType) { 
+    public Appointment createAppointment(Patients patient, Employee doctor, Date appointmetDate, String appointmentType) { 
         Appointment appointment = new Appointment(count++);
         appointment.setDate(appointmetDate);
         appointment.setDoc(doctor);
@@ -98,7 +98,7 @@ public class AppointmentDirectory {
        return appointment;
     }
     
-    public Appointment createLabAppointment(Patient patient, Employee doctor, Date appointmetDate, String appointmentType) { 
+    public Appointment createLabAppointment(Patients patient, Employee doctor, Date appointmetDate, String appointmentType) { 
         Appointment appointment = new Appointment(count++);
         appointment.setDate(appointmetDate);
         appointment.setDoc(doctor);

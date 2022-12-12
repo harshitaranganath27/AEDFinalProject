@@ -5,35 +5,23 @@
 package Business.WorkQueue;
 
 import Business.Appointment.Appointment;
-import Business.Patient.Patient;
+import Business.Patient.Patients;
 
 /**
  *
  * @author harshita
  */
 public class DoctorWorkRequest extends WorkRequest{
-    /* inherited
-    
-    private String message;
-    private UserAccount sender;  -- nurse useraccount
-    private UserAccount receiver;  -- docrtor user account
-    private String status;
-    private Date requestDate;
-    private Date resolveDate;
-    
-    
-    
-    */
-    //private String testResult;
+
      private Appointment appointment;
 
-    private Patient patient;
+    private Patients patient;
 
-    public Patient getPatient() {
+    public Patients getPatient() {
         return patient;
     }
 
-    public void setPatient(Patient patient) {
+    public void setPatient(Patients patient) {
         this.patient = patient;
     }
 
@@ -44,11 +32,9 @@ public class DoctorWorkRequest extends WorkRequest{
     public void setAppointment(Appointment appointment) {
         this.appointment = appointment;
     }
-   
-   
     
     public DoctorWorkRequest(){
-        //appointment = new Appointment();
+       
     }
     
     

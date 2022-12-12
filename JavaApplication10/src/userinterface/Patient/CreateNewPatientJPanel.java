@@ -16,9 +16,9 @@ import Business.Org.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import Business.Patient.Patient;
+import Business.Patient.Patients;
 import Business.Patient.PatientDirectory;
-import Business.Role.Patient;
+import Business.Role.PatientRole;
 import Business.Utility.Validation;
 import java.awt.CardLayout;
 import java.awt.Component;
@@ -47,7 +47,7 @@ public class CreateNewPatientJPanel extends javax.swing.JPanel {
         initComponents();
         if(enterprise.getPatientDirectory() == null){
             PatientDirectory patientDirectory = new PatientDirectory();
-            patientDirectory.setPatientList(new ArrayList<Patient>());
+            patientDirectory.setPatientList(new ArrayList<Patients>());
             enterprise.setPatientDirectory(patientDirectory);
         }
         this.userProcessContainer = userProcessContainer;
@@ -415,7 +415,7 @@ public class CreateNewPatientJPanel extends javax.swing.JPanel {
         
         Insurance insuranceE =(Insurance)cmbInsuranceCompany.getSelectedItem();
         String insuranceId = txtInsuranceID.getText();
-        UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(txtUserName.getText(), txtPassword.getText(), null, new Patient());
+        UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(txtUserName.getText(), txtPassword.getText(), null, new Patients());
         Employee emp= enterprise.getPatientDirectory().createPatient(txtPatientName.getText(), phoneNumberString, txtGender.getSelectedItem().toString(),
                 txtBloodGroup.getSelectedItem().toString(), account, locationPoint, txtEmail.getText(),insuranceE,insuranceId , ssnString);
         

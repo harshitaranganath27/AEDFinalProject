@@ -8,8 +8,8 @@ package Business.Org;
 import Business.Appointment.Appointment;
 import Business.TotalBill.Bill;
 import Business.Employee.Employee;
-import Business.Patient.Patient;
-import Business.Role.ReceptionistRole;
+import Business.Patient.Patients;
+import Business.Role.Receptionist;
 import Business.Role.Role;
 import java.util.ArrayList;
 import java.util.Date;
@@ -21,7 +21,7 @@ import java.util.Date;
 public class BillingDepartment extends Organization{
     String billingId;
     String billIssuer;
-    Patient patient;
+    Patients patient;
     Employee doctor;
     Appointment apptment;
     Bill bill;
@@ -35,7 +35,7 @@ public class BillingDepartment extends Organization{
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
-        roles.add(new ReceptionistRole());
+        roles.add(new Receptionist());
         return roles;
     }
    Bill processBilling(Date date){
@@ -43,7 +43,7 @@ public class BillingDepartment extends Organization{
        return bill;
    }
    
-   public void generateInvoice(Date date, Patient patient){
+   public void generateInvoice(Date date, Patients patient){
        //generate invoice
    }
     

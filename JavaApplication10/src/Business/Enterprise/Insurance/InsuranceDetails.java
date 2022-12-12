@@ -6,7 +6,7 @@
 package Business.Enterprise.Insurance;
 
 import Business.Employee.Employee;
-import Business.Patient.Patient;
+import Business.Patient.Patients;
 import java.util.Date;
 
 /**
@@ -15,7 +15,7 @@ import java.util.Date;
  */
 public class InsuranceDetails {
     private String id;
-    private Patient patient;
+    private Patients patient;
     private Date createdOndate;
     private Date validity;
    private  String type;
@@ -60,11 +60,11 @@ private Employee insuranceDealer;
         this.id = id;
     }
 
-    public Patient getPatient() {
+    public Patients getPatient() {
         return patient;
     }
 
-    public void setPatient(Patient patient) {
+    public void setPatient(Patients patient) {
         this.patient = patient;
     }
 

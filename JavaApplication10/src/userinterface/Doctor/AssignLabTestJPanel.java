@@ -14,7 +14,7 @@ import Business.Enterprise.Lab.LabTest;
 import Business.Enterprise.Lab.LabTestDirectory;
 import Business.Network.Network;
 import Business.Org.Organization;
-import Business.Patient.Patient;
+import Business.Patient.Patients;
 import Business.Person.Person;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.LabTechnicianWorkRequest;
@@ -36,7 +36,7 @@ public class AssignLabTestJPanel extends javax.swing.JPanel {
      * Creates new form AssignLabTestJPanel
      */
     private JPanel userProcessContainer;
-    private Patient patient;
+    private Patients patient;
     private Person person;
     private Appointment appointment;
     private LabTestDirectory labTestList;
@@ -47,7 +47,7 @@ public class AssignLabTestJPanel extends javax.swing.JPanel {
     private Date createdOn;
     private EcoSystem system;
 
-    public AssignLabTestJPanel(JPanel userProcessContainer, Patient patient, Appointment appointment, Network network, UserAccount userAccount, Organization organization, EcoSystem system) {
+    public AssignLabTestJPanel(JPanel userProcessContainer, Patients patient, Appointment appointment, Network network, UserAccount userAccount, Organization organization, EcoSystem system) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.patient = patient;

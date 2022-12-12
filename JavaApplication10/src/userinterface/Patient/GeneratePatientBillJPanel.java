@@ -15,7 +15,7 @@ import Business.Enterprise.HospEnterprise.Hospital;
 import Business.Enterprise.Insurance.Insurance;
 import Business.Enterprise.Lab.LabTest;
 import Business.Org.Organization;
-import Business.Patient.Patient;
+import Business.Patient.Patients;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.InsuranceWorkRequest;
 import java.awt.CardLayout;
@@ -40,10 +40,10 @@ public class GeneratePatientBillJPanel extends javax.swing.JPanel {
     Organization organization;
     Enterprise enterprise;
     EcoSystem system;
-    Patient patient;
+    Patients patient;
     Appointment appointment;
     UserAccount useraccount;
-    GeneratePatientBillJPanel(JPanel userProcessContainer, Organization organization, Enterprise enterprise, EcoSystem system, Patient patient, Appointment appointment, UserAccount useraccount) {
+    GeneratePatientBillJPanel(JPanel userProcessContainer, Organization organization, Enterprise enterprise, EcoSystem system, Patients patient, Appointment appointment, UserAccount useraccount) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.organization = organization;

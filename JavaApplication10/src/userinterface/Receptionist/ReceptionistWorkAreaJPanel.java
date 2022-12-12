@@ -9,7 +9,7 @@ import Business.Appointment.Appointment;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Org.Organization;
-import Business.Patient.Patient;
+import Business.Patient.Patients;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.ReceptionistWorkRequest;
 import Business.WorkQueue.WorkRequest;
@@ -78,7 +78,7 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) PatientDataJTable.getModel();
         model.setRowCount(0);
         if(enterprise.getPatientDirectory()!= null && enterprise.getPatientDirectory().getPatientList() != null){
-            for (Patient patient : enterprise.getPatientDirectory().getPatientList()) {
+            for (Patients patient : enterprise.getPatientDirectory().getPatientList()) {
                     Object[] row = new Object[4];
                     row[0] = patient.getId();
                     row[1] = patient;//.getName();
@@ -100,7 +100,7 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
                 if(wr instanceof ReceptionistWorkRequest)
                 {
                     Appointment app = ((ReceptionistWorkRequest) wr).getApp();
-                Patient patient = ((ReceptionistWorkRequest)wr).getPatient();
+                Patients patient = ((ReceptionistWorkRequest)wr).getPatient();
                 if(patient == null && app !=null){
                     patient= ((ReceptionistWorkRequest) wr).getApp().getPatient();
                             
@@ -132,7 +132,7 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
                 if(wr instanceof ReceptionistWorkRequest)
                 {
                 
-                Patient patient = ((ReceptionistWorkRequest)wr).getPatient();
+                Patients patient = ((ReceptionistWorkRequest)wr).getPatient();
                 if(patient!=null)
                 {
                 
@@ -273,7 +273,7 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         int selectedRow = PatientDataJTable.getSelectedRow();
         if(selectedRow >= 0){
-            Patient patient = (Patient)PatientDataJTable.getValueAt(selectedRow,1);
+            Patients patient = (Patients)PatientDataJTable.getValueAt(selectedRow,1);
 //            Order order = (Order)OrderJTable.getValueAt(selectedRow, 0);
             ViewPatientJPanel viewPatientJPanel = new ViewPatientJPanel(userProcessContainer, userAccount, organization, enterprise, system, patient);
             userProcessContainer.add("viewPatientJPanel",viewPatientJPanel);
@@ -291,7 +291,7 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
         int selectedRow = PatientDataJTable.getSelectedRow();
         if(selectedRow >= 0){
             //int patientId = (int) PatientDataJTable.getValueAt(selectedRow, 0);
-            Patient temp = (Patient)  PatientDataJTable.getValueAt(selectedRow, 1);
+            Patients temp = (Patients)  PatientDataJTable.getValueAt(selectedRow, 1);
             BookAppointmentJPanel appointmentJPanel = new BookAppointmentJPanel(userProcessContainer, userAccount, organization, enterprise, system, temp);
             userProcessContainer.add("appointmentJPanel",appointmentJPanel);
             CardLayout layout=(CardLayout)userProcessContainer.getLayout();
@@ -306,7 +306,7 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
        int selectedRow = PatientDataJTable.getSelectedRow();
         if(selectedRow >= 0){
              
-            Patient temp = (Patient) PatientDataJTable.getValueAt(selectedRow, 1);
+            Patients temp = (Patients) PatientDataJTable.getValueAt(selectedRow, 1);
            
             userinterface.Patient.ViewAppointmentJPanel viewAppointmentJPanel = new userinterface.Patient.ViewAppointmentJPanel(userProcessContainer, userAccount, organization, enterprise, system, temp);
             userProcessContainer.add("viewAppointmentJPanel",viewAppointmentJPanel);

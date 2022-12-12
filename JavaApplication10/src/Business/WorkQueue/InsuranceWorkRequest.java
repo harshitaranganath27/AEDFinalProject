@@ -6,37 +6,23 @@ package Business.WorkQueue;
 
 import Business.Appointment.Appointment;
 import Business.TotalBill.Bill;
-import Business.Patient.Patient;
+import Business.Patient.Patients;
 
 /**
  *
  * @author harshita
  */
 public class InsuranceWorkRequest extends WorkRequest{
-        /* inherited
-    
-    private String message;
-    private UserAccount sender;
-    private UserAccount receiver;
-    private String status;
-    private Date requestDate;
-    private Date resolveDate;
-    
-    
-    
-    */
-    private Patient patient;
-    private Appointment appointment;
 
+    private Patients patient;
+    private Appointment appointment;
     public Bill getHospitalBill() {
         return hospitalBill;
     }
 
-    //private LabTest labTest;
     public void setHospitalBill(Bill hospitalBill) {
         this.hospitalBill = hospitalBill;
     }
-    //private UserAccount doctorUserAccount;
     private String amount;
     private Bill hospitalBill;
 
@@ -47,13 +33,11 @@ public class InsuranceWorkRequest extends WorkRequest{
     public void setAmount(String amount) {
         this.amount = amount;
     }
-
-
-    public Patient getPatient() {
+    public Patients getPatient() {
         return patient;
     }
 
-    public void setPatient(Patient patient) {
+    public void setPatient(Patients patient) {
         this.patient = patient;
     }
 

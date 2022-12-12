@@ -6,7 +6,7 @@ package Business.WorkQueue;
 
 import Business.Appointment.Appointment;
 import Business.Employee.Employee;
-import Business.Patient.Patient;
+import Business.Patient.Patients;
 
 /**
  *
@@ -28,7 +28,7 @@ public class ReceptionistWorkRequest extends WorkRequest{
     
     //set its parameter
     private Appointment app;
-    private Patient patient;
+    private Patients patient;
  private Employee doctor;
 
     public Appointment getApp() {
@@ -39,11 +39,11 @@ public class ReceptionistWorkRequest extends WorkRequest{
         this.app = app;
     }
 
-    public Patient getPatient() {
+    public Patients getPatient() {
         return patient;
     }
 
-    public void setPatient(Patient patient) {
+    public void setPatient(Patients patient) {
         this.patient = patient;
     }
 

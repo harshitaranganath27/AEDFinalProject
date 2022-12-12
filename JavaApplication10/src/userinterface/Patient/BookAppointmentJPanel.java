@@ -12,7 +12,7 @@ import Business.Enterprise.Enterprise;
 import Business.Enterprise.Lab.Lab;
 import Business.Enterprise.Lab.LabTest;
 import Business.Org.Organization;
-import Business.Patient.Patient;
+import Business.Patient.Patients;
 import Business.UserAccount.UserAccount;
 import static Business.Utility.EmailClass.sendEmailMessageAppointment;
 import static Business.Utility.EmailClass.sendTextMessageAppointment;
@@ -46,9 +46,9 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
     Organization organization;
     Enterprise enterprise;
     //EcoSystem system;
-    Patient patient;
+    Patients patient;
     Integer time;
-    public BookAppointmentJPanel(JPanel userProcessContainer, UserAccount userAccount, Organization organization, Enterprise enterprise, EcoSystem system, Patient patient) {
+    public BookAppointmentJPanel(JPanel userProcessContainer, UserAccount userAccount, Organization organization, Enterprise enterprise, EcoSystem system, Patients patient) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.organization = organization;

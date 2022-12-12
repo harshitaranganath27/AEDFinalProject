@@ -11,7 +11,7 @@ import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Org.Organization;
-import Business.Patient.Patient;
+import Business.Patient.Patients;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.text.SimpleDateFormat;
@@ -35,9 +35,9 @@ public class ViewSelfAppointmentJPanel extends javax.swing.JPanel {
     Organization organization;
     Enterprise enterprise;
     EcoSystem system;
-    Patient patient;
+    Patients patient;
     Appointment appointment;
-    public ViewSelfAppointmentJPanel(JPanel userProcessContainer, UserAccount userAccount, Organization organization, Enterprise enterprise, EcoSystem system, Patient patient) {
+    public ViewSelfAppointmentJPanel(JPanel userProcessContainer, UserAccount userAccount, Organization organization, Enterprise enterprise, EcoSystem system, Patients patient) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.organization = organization;

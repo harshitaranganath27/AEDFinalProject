@@ -8,21 +8,19 @@ package Business.TotalBill;
 import Business.Appointment.Appointment;
 import Business.Employee.Employee;
 import Business.Enterprise.Enterprise;
-import Business.Patient.Patient;
+import Business.Patient.Patients;
 
 /**
  *
  * @author 
  */
 public class Bill {
-    //cumulative charges->> labs, medicine, consultation, hospital charges
     int billId;
-    Patient patient;
+    Patients patient;
     Employee doctor;
     Appointment appointment;
     double totalCharges;
-    String status;//paid, unpaid
-    //int invoiceNumber;
+    String status;
     private static int count = 1;
     private Enterprise enterprise;
 
@@ -47,11 +45,11 @@ public class Bill {
         this.billId = billId;
     }
 
-    public Patient getPatient() {
+    public Patients getPatient() {
         return patient;
     }
 
-    public void setPatient(Patient patient) {
+    public void setPatient(Patients patient) {
         this.patient = patient;
     }
 
@@ -86,8 +84,6 @@ public class Bill {
     public void setStatus(String status) {
         this.status = status;
     }
-    
-    
     
     @Override 
     public String toString(){

@@ -13,7 +13,7 @@ import Business.Employee.Employee;
 import Business.Enterprise.Enterprise;
 import Business.Medicine.MedicineDirectory;
 import Business.Operation.Operation;
-import Business.Patient.Patient;
+import Business.Patient.Patients;
 import Business.UserAccount.UserAccount;
 import Business.Utility.Validation;
 import Business.WorkQueue.NurseWorkRequest;
@@ -40,7 +40,7 @@ import javax.swing.table.DefaultTableModel;
 public class ScheduleSurgeryJPanel extends javax.swing.JPanel {
  private JPanel userProcessContainer;
     private UserAccount userAccount;
-    private Patient patient;
+    private Patients patient;
     private Employee doctor;
     private Appointment appointment;
     private MedicineDirectory medicineList;
@@ -51,7 +51,7 @@ public class ScheduleSurgeryJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ScheduleSurgeryJPanel
      */
-    public ScheduleSurgeryJPanel(JPanel userProcessContainer, Patient patient, Appointment appointment, Employee doctor,
+    public ScheduleSurgeryJPanel(JPanel userProcessContainer, Patients patient, Appointment appointment, Employee doctor,
             MedicineDirectory medicineList,EcoSystem ecosystem, Enterprise enterprise, UserAccount userAccount) {
        initComponents();
         this.userProcessContainer = userProcessContainer;
@@ -389,7 +389,7 @@ jLabel6.setIcon(profilePic);
               //  }
                 Operation operation= new Operation();//(Operation)DoctorWorkAreaTable.getValueAt(selectedrow, 0);
 
-               // Patient patient = this.patient;
+               // Patients patient = this.patient;
               //  Appointment appointment = 
 
                 String date1=dateTxt.getText();

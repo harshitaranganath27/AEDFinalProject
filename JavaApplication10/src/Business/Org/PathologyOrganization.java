@@ -5,7 +5,7 @@
 package Business.Org;
 
 import Business.Role.LabTechRole;
-import Business.Role.ReceptionistRole;
+import Business.Role.Receptionist;
 import Business.Role.Role;
 import java.util.ArrayList;
 
@@ -23,7 +23,7 @@ public class PathologyOrganization extends Organization {
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
         roles.add(new LabTechRole());
-        roles.add(new ReceptionistRole());
+        roles.add(new Receptionist());
         return roles;
     }
 

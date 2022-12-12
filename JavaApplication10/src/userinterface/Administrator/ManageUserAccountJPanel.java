@@ -12,8 +12,8 @@ import Business.Org.Organization;
 import Business.Role.Doctor;
 import Business.Role.LabTechRole;
 import Business.Role.Nurse;
-import Business.Role.Patient;
-import Business.Role.ReceptionistRole;
+import Business.Role.PatientRole;
+import Business.Role.Receptionist;
 import Business.Role.Role;
 import Business.UserAccount.UserAccount;
 import static Business.Utility.EmailClass.sendEmailMessage;
@@ -915,11 +915,11 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         }
         else if(roleString.equals("PatientRole"))
         {
-            role=new Patient();
+            role=new PatientRole();
         }
         else if(roleString.equals("ReceptionistRole"))
         {
-            role=new ReceptionistRole();
+            role=new Receptionist();
         }
         
         return role;

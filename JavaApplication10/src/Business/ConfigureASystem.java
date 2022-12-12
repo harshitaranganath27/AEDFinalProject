@@ -9,16 +9,16 @@ import Business.Enterprise.Pharmacy.Pharmacy;
 import Business.Location.Location;
 import Business.Org.BedManagementDepartment;
 import Business.Org.Organization;
-import Business.Patient.Patient;
+import Business.Patient.Patients;
 import Business.Role.Admin;
 import Business.Role.Doctor;
 import Business.Role.InsurancePersonnel;
 import Business.Role.LabTechRole;
 import Business.Role.Nurse;
-import Business.Role.Patient;
-import Business.Role.PharmacyWorkerRole;
-import Business.Role.ReceptionistRole;
-import Business.Role.SystemAdminRole;
+import Business.Role.PatientRole;
+import Business.Role.PharmacyEmp;
+import Business.Role.Receptionist;
+import Business.Role.SysAdmin;
 import Business.UserAccount.UserAccount;
 import com.github.javafaker.Faker;
 import java.util.Locale;
@@ -43,7 +43,7 @@ public class ConfigureASystem {
         
         Employee employee = new Employee();//system.getEmployeeDirectory().createEmployee("sysadmin");
         
-        UserAccount ua = system.getUserAccountDirectory().createUserAccount("sysadmin", "sysadmin", employee, new SystemAdminRole());
+        UserAccount ua = system.getUserAccountDirectory().createUserAccount("sysadmin", "sysadmin", employee, new SysAdmin());
         
         String [] bgs = {"A+","A-","B+","B-","O+","O-","AB+","AB-"};
         String bg;
@@ -165,8 +165,8 @@ public class ConfigureASystem {
                     {
                         System.out.println("Receptionist: " + username);
                         e1 =  o.getEmpDirectory().createEmployee(name);
-                        e1.setRole((new ReceptionistRole()).roleValue());
-                        u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new ReceptionistRole());
+                        e1.setRole((new Receptionist()).roleValue());
+                        u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new Receptionist());
                     }
                     else
                     {
@@ -180,10 +180,10 @@ public class ConfigureASystem {
                         locationPoint.setStreet(faker.address().streetAddress());
                         locationPoint.setState(faker.address().state());
                         locationPoint.setCity(faker.address().cityName());
-                        u = system.getUserAccountDirectory().createUserAccount(username, "Sam123!!", null, new Patient());
+                        u = system.getUserAccountDirectory().createUserAccount(username, "Sam123!!", null, new Patients());
                         e1= system.getPatientDirectory().createPatient(name, "8574246269", gender, bg, u, locationPoint, "email",(Insurance)Ie,insId , ssn);
-                        e.getPatientDirectory().getPatientList().add((Patient)e1);
-                        Ie.getPatientDirectory().getPatientList().add((Patient)e1);
+                        e.getPatientDirectory().getPatientList().add((Patients)e1);
+                        Ie.getPatientDirectory().getPatientList().add((Patients)e1);
                     }
                     
                     u.setEmployee(e1);
@@ -230,8 +230,8 @@ public class ConfigureASystem {
                     {
                         System.out.println("Receptionist: " + username);
                         e1 =  o.getEmpDirectory().createEmployee(name);
-                        e1.setRole((new ReceptionistRole()).roleValue());
-                        u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new ReceptionistRole());
+                        e1.setRole((new Receptionist()).roleValue());
+                        u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new Receptionist());
                     }
                     else
                     {
@@ -245,10 +245,10 @@ public class ConfigureASystem {
                         locationPoint.setStreet(faker.address().streetAddress());
                         locationPoint.setState(faker.address().state());
                         locationPoint.setCity(faker.address().cityName());
-                        u = system.getUserAccountDirectory().createUserAccount(username, "Sam123!!", null, new Patient());
+                        u = system.getUserAccountDirectory().createUserAccount(username, "Sam123!!", null, new Patients());
                         e1= system.getPatientDirectory().createPatient(name, "8574246269", gender, bg, u, locationPoint, email,(Insurance)Ie,insId,ssn);
-                        e.getPatientDirectory().getPatientList().add((Patient)e1);
-                        Ie.getPatientDirectory().getPatientList().add((Patient)e1);
+                        e.getPatientDirectory().getPatientList().add((Patients)e1);
+                        Ie.getPatientDirectory().getPatientList().add((Patients)e1);
                     }
                     
                     u.setEmployee(e1);
@@ -320,8 +320,8 @@ public class ConfigureASystem {
                         {
                             System.out.println("Receptionist: " + username);
                             e1 =  o.getEmpDirectory().createEmployee(name);
-                            e1.setRole((new ReceptionistRole()).roleValue());
-                            u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new ReceptionistRole());
+                            e1.setRole((new Receptionist()).roleValue());
+                            u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new Receptionist());
                         }
                     
                         u.setEmployee(e1);
@@ -367,8 +367,8 @@ public class ConfigureASystem {
                         {
                             System.out.println("Receptionist: " + username);
                             e1 =  o.getEmpDirectory().createEmployee(name);
-                            e1.setRole((new ReceptionistRole()).roleValue());
-                            u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new ReceptionistRole());
+                            e1.setRole((new Receptionist()).roleValue());
+                            u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new Receptionist());
                         }
                         
                         u.setEmployee(e1);
@@ -418,8 +418,8 @@ public class ConfigureASystem {
                     
                         System.out.println("Pharmacy Worker: "  + username);
                         e1 =  o.getEmpDirectory().createEmployee(name);
-                        e1.setRole((new PharmacyWorkerRole()).roleValue());
-                        u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new PharmacyWorkerRole());
+                        e1.setRole((new PharmacyEmp()).roleValue());
+                        u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new PharmacyEmp());
 
                         u.setEmployee(e1);
                         e1.setEmailID(email);
@@ -546,8 +546,8 @@ public class ConfigureASystem {
                     {
                         System.out.println("Receptionist: " + username);
                         e1 =  o.getEmpDirectory().createEmployee(name);
-                        e1.setRole((new ReceptionistRole()).roleValue());
-                        u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new ReceptionistRole());
+                        e1.setRole((new Receptionist()).roleValue());
+                        u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new Receptionist());
                     }
                     else
                     {
@@ -562,10 +562,10 @@ public class ConfigureASystem {
                         locationPoint.setStreet(faker.address().streetAddress());
                         locationPoint.setState(faker.address().state());
                         locationPoint.setCity(faker.address().cityName());
-                        u = system.getUserAccountDirectory().createUserAccount(username, "Sam123!!", null, new Patient());
+                        u = system.getUserAccountDirectory().createUserAccount(username, "Sam123!!", null, new Patients());
                         e1= system.getPatientDirectory().createPatient(name, "8574246269", gender, bg, u, locationPoint, email,(Insurance)Ie, insId , ssn);
-                        e.getPatientDirectory().getPatientList().add((Patient)e1);
-                        Ie.getPatientDirectory().getPatientList().add((Patient)e1);
+                        e.getPatientDirectory().getPatientList().add((Patients)e1);
+                        Ie.getPatientDirectory().getPatientList().add((Patients)e1);
                     }
                     
                     u.setEmployee(e1);
@@ -611,8 +611,8 @@ public class ConfigureASystem {
                     {
                         System.out.println("Receptionist: " + username);
                         e1 =  o.getEmpDirectory().createEmployee(name);
-                        e1.setRole((new ReceptionistRole()).roleValue());
-                        u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new ReceptionistRole());
+                        e1.setRole((new Receptionist()).roleValue());
+                        u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new Receptionist());
                     }
                     else
                     {
@@ -626,10 +626,10 @@ public class ConfigureASystem {
                         locationPoint.setStreet(faker.address().streetAddress());
                         locationPoint.setState(faker.address().state());
                         locationPoint.setCity(faker.address().cityName());
-                        u = system.getUserAccountDirectory().createUserAccount(username, "Sam123!!", null, new Patient());
+                        u = system.getUserAccountDirectory().createUserAccount(username, "Sam123!!", null, new Patients());
                         e1= system.getPatientDirectory().createPatient(name, "8574246269", gender, bg, u, locationPoint, email,(Insurance)Ie,insId , ssn);
-                        e.getPatientDirectory().getPatientList().add((Patient)e1);
-                        Ie.getPatientDirectory().getPatientList().add((Patient)e1);
+                        e.getPatientDirectory().getPatientList().add((Patients)e1);
+                        Ie.getPatientDirectory().getPatientList().add((Patients)e1);
                     }
                     
                     u.setEmployee(e1);
@@ -699,8 +699,8 @@ public class ConfigureASystem {
                         {
                             System.out.println("Receptionist: " + username);
                             e1 =  o.getEmpDirectory().createEmployee(name);
-                            e1.setRole((new ReceptionistRole()).roleValue());
-                            u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new ReceptionistRole());
+                            e1.setRole((new Receptionist()).roleValue());
+                            u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new Receptionist());
                         }
 
                         u.setEmployee(e1);
@@ -742,8 +742,8 @@ public class ConfigureASystem {
                         {
                             System.out.println("Receptionist: " + username);
                             e1 =  o.getEmpDirectory().createEmployee(name);
-                            e1.setRole((new ReceptionistRole()).roleValue());
-                            u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new ReceptionistRole());
+                            e1.setRole((new Receptionist()).roleValue());
+                            u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new Receptionist());
                         }
                     
                         u.setEmployee(e1);
@@ -792,10 +792,10 @@ public class ConfigureASystem {
                     
                         System.out.println("Pharmacy Worker: " + username);
                         e1 =  o.getEmpDirectory().createEmployee(name);
-                        e1.setRole((new PharmacyWorkerRole()).roleValue());
+                        e1.setRole((new PharmacyEmp()).roleValue());
                         e1.setSpecialization(Employee.SpecializationType.Physician);
                         e1.setVisitingCharge(20);
-                        u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new PharmacyWorkerRole());
+                        u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new PharmacyEmp());
                         
                         u.setEmployee(e1);
                         e1.setEmailID(email);

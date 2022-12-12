@@ -14,7 +14,7 @@ import Business.Enterprise.Pharmacy.Pharmacy;
 import Business.Medicine.Medicine;
 import Business.Org.LabOrganization;
 import Business.Org.Organization;
-import Business.Patient.Patient;
+import Business.Patient.Patients;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.PharmacyWorkRequest;
 import Business.WorkQueue.WorkRequest;
@@ -42,7 +42,7 @@ public class PharmacyWorkerWorkAreaJPanel extends javax.swing.JPanel {
    // private LabTest labTest;
     private Employee labTechnician;
     private Appointment appointment;
-    private Patient patient;
+    private Patients patient;
     private WorkRequest request;
     private Enterprise enterprise;
     /**

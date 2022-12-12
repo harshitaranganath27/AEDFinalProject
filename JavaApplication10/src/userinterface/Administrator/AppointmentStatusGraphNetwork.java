@@ -10,7 +10,7 @@ import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Enterprise.HospEnterprise.Hospital;
 import Business.Network.Network;
-import Business.Patient.Patient;
+import Business.Patient.Patients;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.io.File;
@@ -60,7 +60,7 @@ public class AppointmentStatusGraphNetwork extends javax.swing.JPanel {
         {
             if (enterprise instanceof Hospital) 
             {
-                for (Patient p : enterprise.getPatientDirectory().getPatientList()) 
+                for (Patients p : enterprise.getPatientDirectory().getPatientList()) 
                 {
                     workReqList.addAll(p.getAppointmentDirectory().getApptmentList());
                 }

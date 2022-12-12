@@ -12,7 +12,7 @@ import Business.Operation.Operation;
 import Business.Org.BedManagementDepartment;
 import Business.Org.Organization;
 import Business.Org.organizationDir;
-import Business.Patient.Patient;
+import Business.Patient.Patients;
 import Business.UserAccount.UserAccount;
 import Business.Utility.Validation;
 import Business.WorkQueue.WorkRequest;
@@ -39,7 +39,7 @@ public class AssignBedJPanel extends javax.swing.JPanel {
     JPanel userProcessContainer;
     Enterprise enterprise;
     Appointment appointment;
-    Patient patient;
+    Patients patient;
     UserAccount doctor;
     UserAccount nurseUserAccount;
     WorkRequest workrequest;
@@ -47,7 +47,7 @@ public class AssignBedJPanel extends javax.swing.JPanel {
     /**
      * Creates new form AssignBed
      */
-    public AssignBedJPanel(JPanel userProcessContainer, Enterprise enterprise, Appointment appointment, Patient patient, UserAccount doctor, UserAccount nurseUserAccount, WorkRequest workrequest) {
+    public AssignBedJPanel(JPanel userProcessContainer, Enterprise enterprise, Appointment appointment, Patients patient, UserAccount doctor, UserAccount nurseUserAccount, WorkRequest workrequest) {
         initComponents();
         this.userProcessContainer= userProcessContainer;
         this.enterprise= enterprise;
@@ -647,7 +647,7 @@ void populateDetails(){
             Object[] row = new Object[2];
             row[0] = bed;//.getBedID();
            // row[1] = bed.getStatus().getStatus();
-//            Patient p = bed.getPatient();
+//            Patients p = bed.getPatient();
 //            row[1] = p == null ? "": p;
 //            row[2] = "";
             row[1] = bed.getBedType();

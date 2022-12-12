@@ -12,7 +12,7 @@ import Business.Employee.Employee;
 import Business.Enterprise.Enterprise;
 import Business.Medicine.Medicine;
 import Business.Org.Organization;
-import Business.Patient.Patient;
+import Business.Patient.Patients;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.util.Map;
@@ -34,10 +34,10 @@ public class ViewPrescriptionJPanel extends javax.swing.JPanel {
     private Enterprise enterprise;
     private EcoSystem ecosystem;
     private Appointment appointment;
-    private Patient patient;
+    private Patients patient;
     private Employee doctor;
     
-    public ViewPrescriptionJPanel( JPanel userProcessContainer, UserAccount userAccount,Organization organization,Enterprise enterprise,EcoSystem ecosystem, Appointment appointment, Patient patient, Employee doctor) {
+    public ViewPrescriptionJPanel( JPanel userProcessContainer, UserAccount userAccount,Organization organization,Enterprise enterprise,EcoSystem ecosystem, Appointment appointment, Patients patient, Employee doctor) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.userAccount = userAccount;

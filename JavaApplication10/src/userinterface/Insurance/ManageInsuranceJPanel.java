@@ -10,13 +10,13 @@ import Business.Enterprise.Insurance.Insurance;
 import Business.Enterprise.Insurance.InsuranceDetails;
 import Business.Enterprise.Insurance.InsuranceDirectory;
 import Business.Org.organizationDir;
-import Business.Patient.Patient;
+import Business.Patient.Patients;
 import Business.Patient.PatientDirectory;
 import Business.Role.Doctor;
 import Business.Role.LabTechRole;
 import Business.Role.Nurse;
-import Business.Role.Patient;
-import Business.Role.ReceptionistRole;
+import Business.Role.PatientRole;
+import Business.Role.Receptionist;
 import Business.Role.Role;
 import Business.UserAccount.UserAccount;
 import Business.Utility.Validation;
@@ -75,7 +75,7 @@ public class ManageInsuranceJPanel extends javax.swing.JPanel {
             PatientDirectory d = new PatientDirectory();
             enterprise.setPatientDirectory(patientDir);
         }
-        for ( Patient p: patientDir.getPatientList()){
+        for ( Patients p: patientDir.getPatientList()){
             cmbSSN.addItem(p.getSSN());
         }
     }
@@ -604,7 +604,7 @@ public class ManageInsuranceJPanel extends javax.swing.JPanel {
             System.out.println("Error in ManageMedicineJPanel for date paring");
             Logger.getLogger(ManageInsuranceJPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
-        Patient patient = new Patient();
+        Patients patient = new Patients();
         enterprise.getPatientDirectory().getPatientList().add(patient);
         //system.getPatientDirectory().getPatientList().add(patient);
         patient.setEmpName(custName);
@@ -666,11 +666,11 @@ public class ManageInsuranceJPanel extends javax.swing.JPanel {
         }
         else if(roleString.equals("PatientRole"))
         {
-            role=new Patient();
+            role=new Patients();
         }
         else if(roleString.equals("ReceptionistRole"))
         {
-            role=new ReceptionistRole();
+            role=new Receptionist();
         }
         
         return role;
@@ -798,7 +798,7 @@ public class ManageInsuranceJPanel extends javax.swing.JPanel {
             System.out.println("Error in ManageMedicineJPanel for date paring");
             Logger.getLogger(ManageInsuranceJPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
-        Patient patient = new Patient();
+        Patients patient = new Patients();
         enterprise.getPatientDirectory().getPatientList().add(patient);
         
         patient.setEmpName(name);

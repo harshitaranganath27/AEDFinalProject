@@ -16,7 +16,7 @@ import java.util.List;
  * @author harshita
  */
 public class PatientDirectory {
-    private List<Patient> patientList;
+    private List<Patients> patientList;
 
     public PatientDirectory() {
         patientList = new ArrayList<>();
@@ -24,19 +24,19 @@ public class PatientDirectory {
     
     
 
-    public List<Patient> getPatientList() {
+    public List<Patients> getPatientList() {
         return patientList;
     }
 
-    public void setPatientList(List<Patient> patientList) {
+    public void setPatientList(List<Patients> patientList) {
         this.patientList = patientList;
     }
     
     
 
-    public Patient createPatient(String patientName, String phoneNumber, String gender, String bloodGroup, UserAccount userAccount, Location locationPoint, String email,
+    public Patients createPatient(String patientName, String phoneNumber, String gender, String bloodGroup, UserAccount userAccount, Location locationPoint, String email,
             Insurance insuranceE, String insuranceId, String SSN) {
-        Patient patient = new Patient();
+        Patients patient = new Patients();
         patient.setEmpName(patientName);
         patient.setPhoneNumber(phoneNumber);
         patient.setPatientSex(gender);
@@ -55,7 +55,7 @@ public class PatientDirectory {
     }
 
     public void updatePatient(int patientID, String name, String phoneNumber, String gender, String bloodGroup, Location locationPoint, String email) {
-        for(Patient patient : patientList){
+        for(Patients patient : patientList){
             if(patient.getId() == patientID){
                 patient.setEmpName(name);
                 patient.setAddress(locationPoint);
@@ -68,8 +68,8 @@ public class PatientDirectory {
     }
     
     
-    public Patient findPatientById(int patientId){
-        for(Patient patient : patientList){
+    public Patients findPatientById(int patientId){
+        for(Patients patient : patientList){
             if(patient.getId() == patientId){
                 return patient;
             }
@@ -78,8 +78,8 @@ public class PatientDirectory {
     }
     
     
-    public Patient findPatientBySSN(String ssn){
-        for(Patient patient : patientList){
+    public Patients findPatientBySSN(String ssn){
+        for(Patients patient : patientList){
             if(patient.getSSN().equals(ssn)){
                 return patient;
             }
