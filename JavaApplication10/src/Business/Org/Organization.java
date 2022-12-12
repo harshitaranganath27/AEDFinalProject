@@ -25,37 +25,35 @@ public abstract class Organization {
     private String name;
     private String location;
     private WorkQueue workQueue;
-    private PersonDirectory employeeDirectory;
+    private PersonDirectory empDirectory;
     private UserAccountDirectory userAccountDirectory;
     private PatientDirectory patientDirectory;
     private BillDirectory billDirectory;
-    //private BedManagementDepartment 
-    private int organizationID;
-    private static int counter=1;
-    
-    public enum Type{
+    private int orgID;
+    private static int counter = 1;
+
+    public enum Type {
         Admin("Admin"),
-        //Doctor("Doctor"),        
         Dental("Dental Department"),
         ENT("ENT Department"),
         CovidCenter("Covid-19 Treatment Department"),
         MedicalStore("Medical Store Department"),
         BedManagement("Bed Management Department"),
-        //Laundry("Laundry Service Department"),
         Pathology("Pathology Department"),
         Radiology("Radiology Department"),
-        //Inventory("Inventory Management Department"),
         UrgentCare("Urgent Care Department"),
         Cardiology("Cardiology Department"),
         Billing("Billing Department"),
         Lab("Lab"),
         Insurance("Insurance"),
         Other("Other Department");
-        
+
         private String value;
+
         private Type(String value) {
             this.value = value;
         }
+
         public String getValue() {
             return value;
         }
@@ -64,34 +62,34 @@ public abstract class Organization {
     public Organization(String name) {
         this.name = name;
         workQueue = new WorkQueue();
-        employeeDirectory = new PersonDirectory();
+        empDirectory = new PersonDirectory();
         userAccountDirectory = new UserAccountDirectory();
         patientDirectory = new PatientDirectory();
-        if(patientDirectory.getPatientList() == null){
+        if (patientDirectory.getPatientList() == null) {
             patientDirectory.setPatientList(new ArrayList<Patient>());
         }
         billDirectory = new BillDirectory();
-        if(billDirectory.getBillList() == null){
+        if (billDirectory.getBillList() == null) {
             billDirectory.setBillList(new ArrayList<Bill>());
         }
-        organizationID = counter;
+        orgID = counter;
         ++counter;
     }
 
     public abstract ArrayList<Role> getSupportedRole();
-    
+
     public UserAccountDirectory getUserAccountDirectory() {
         return userAccountDirectory;
     }
 
-    public int getOrganizationID() {
-        return organizationID;
+    public int getOrgID() {
+        return orgID;
     }
 
-    public PersonDirectory getEmployeeDirectory() {
-        return employeeDirectory;
+    public PersonDirectory getEmpDirectory() {
+        return empDirectory;
     }
-    
+
     public String getName() {
         return name;
     }
@@ -123,26 +121,23 @@ public abstract class Organization {
     public void setBillDirectory(BillDirectory billDirectory) {
         this.billDirectory = billDirectory;
     }
-    
+
     @Override
     public String toString() {
         return name;
     }
-    
-    
-    public void removeAllUserAccount(){
-        for(UserAccount ua : userAccountDirectory.getUserAccountList())
-        {
+
+    public void removeAllUserAccount() {
+        for (UserAccount ua : userAccountDirectory.getUserAccountList()) {
             this.userAccountDirectory.removeUserAccount(ua);
         }
-        
-    } 
-    
-    public void removeAllEmployee(){
-                 for(Employee ua : employeeDirectory.getEmployeeList())
-        {
-            this.employeeDirectory.removeEmployee(ua);
-        }    
-                }
-    
+
+    }
+
+    public void removeAllEmployee() {
+        for (Employee ua : empDirectory.getEmployeeList()) {
+            this.empDirectory.removeEmployee(ua);
+        }
+    }
+
 }

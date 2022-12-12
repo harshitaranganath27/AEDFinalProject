@@ -13,27 +13,27 @@ import java.util.List;
  *
  * @author harshita
  */
-public class OperationDirectory {
+public class OpsDirectory {
 
-    List<Operation> operationlist;
+    List<Operation> opsList;
 
-    public List<Operation> getOperationlist() {
-        return operationlist;
+    public List<Operation> getOpsList() {
+        return opsList;
     }
 
-    public void setOperationlist(List<Operation> operationlist) {
-        this.operationlist = operationlist;
+    public void setOpsList(List<Operation> opsList) {
+        this.opsList = opsList;
     }
 
     public Operation addOperation() {
         Operation operation = new Operation();
-        operationlist.add(operation);
+        opsList.add(operation);
         return operation;
 
     }
 
     public Operation searchOperationbyDate(String date) {
-        for (Operation operation : operationlist) {
+        for (Operation operation : opsList) {
             if (operation.getOperationDate() == date) {
                 return operation;
             }
@@ -42,7 +42,7 @@ public class OperationDirectory {
     }
 
     public void updateOperation(int operationNumber, String operationDate, String operationDescription, double operationCharge, String status, Patient patient, Employee doctor) {
-        for (Operation operation : operationlist) {
+        for (Operation operation : opsList) {
             if (operation.getOperationNumber() == (operationNumber)) {
                 operation.setOperationDate(operationDate);
                 operation.setOperationDescription(operationDescription);
@@ -56,7 +56,7 @@ public class OperationDirectory {
     }
 
     public void cancelOperation(Operation operation) {
-        operationlist.remove(operation);
+        opsList.remove(operation);
     }
 
 }

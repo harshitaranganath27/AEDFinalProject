@@ -13,7 +13,7 @@ import Business.Org.organizationDir;
 import Business.Patient.Patient;
 import Business.Patient.PatientDirectory;
 import Business.Role.DoctorRole;
-import Business.Role.LabTechnicianRole;
+import Business.Role.LabTechRole;
 import Business.Role.NurseRole;
 import Business.Role.PatientRole;
 import Business.Role.ReceptionistRole;
@@ -662,7 +662,7 @@ public class ManageInsuranceJPanel extends javax.swing.JPanel {
         }
         else if(roleString.equals("LabTechnicianRole"))
         {
-            role=new LabTechnicianRole();
+            role=new LabTechRole();
         }
         else if(roleString.equals("PatientRole"))
         {

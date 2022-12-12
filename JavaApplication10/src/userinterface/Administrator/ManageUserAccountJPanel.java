@@ -10,7 +10,7 @@ import Business.Employee.Employee;
 import Business.Enterprise.Enterprise;
 import Business.Org.Organization;
 import Business.Role.DoctorRole;
-import Business.Role.LabTechnicianRole;
+import Business.Role.LabTechRole;
 import Business.Role.NurseRole;
 import Business.Role.PatientRole;
 import Business.Role.ReceptionistRole;
@@ -75,7 +75,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     public void popOrganizationComboBox() {
         organizationJComboBox.removeAllItems();
         //organizationJComboBox2.removeAllItems();
-        for (Organization organization : enterprise.getOrgDirectory().getOrganizationList()) {
+        for (Organization organization : enterprise.getOrgDirectory().getOrgList()) {
             organizationJComboBox.addItem(organization);
           //  organizationJComboBox2.addItem(organization);
           //  selectDeptCmb.addItem(organization);// main cmb box of department
@@ -85,7 +85,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     public void popOrganizationComboBox2() {
         //organizationJComboBox.removeAllItems();
         organizationJComboBox2.removeAllItems();
-        for (Organization organization : enterprise.getOrgDirectory().getOrganizationList()) {
+        for (Organization organization : enterprise.getOrgDirectory().getOrgList()) {
            // organizationJComboBox.addItem(organization);
             organizationJComboBox2.addItem(organization);
             //selectDeptCmb.addItem(organization);// main cmb box of department
@@ -96,7 +96,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     public void popMainOrganizationComboBox() {
         //organizationJComboBox.removeAllItems();
         selectDeptCmb.removeAllItems();
-        for (Organization organization : enterprise.getOrgDirectory().getOrganizationList()) {
+        for (Organization organization : enterprise.getOrgDirectory().getOrgList()) {
             //organizationJComboBox.addItem(organization);
             //organizationJComboBox2.addItem(organization);
             selectDeptCmb.addItem(organization);// main cmb box of department
@@ -135,7 +135,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
         Organization selectedOrganization = (Organization) selectDeptCmb.getSelectedItem();
-        for (Organization organization : enterprise.getOrgDirectory().getOrganizationList()) {
+        for (Organization organization : enterprise.getOrgDirectory().getOrgList()) {
             if(organization.equals(selectedOrganization))
             {
                 for (UserAccount ua : organization.getUserAccountDirectory().getUserAccountList())
@@ -159,7 +159,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
         
-        for (Organization organization : enterprise.getOrgDirectory().getOrganizationList()) {
+        for (Organization organization : enterprise.getOrgDirectory().getOrgList()) {
             for (UserAccount ua : organization.getUserAccountDirectory().getUserAccountList()) {
                 Object row[] = new Object[3];
                 row[0] = ua;
@@ -799,7 +799,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         
         //Employee employee = (Employee) employeeJComboBox.getSelectedItem();
         
-        Employee employee =organization.getEmployeeDirectory().createEmployee(name);
+        Employee employee =organization.getEmpDirectory().createEmployee(name);
         //UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee,role);// new AdmRole());
         employee.setEmailID(uEmail);
         employee.setPhoneNumber(phoneNo);
@@ -911,7 +911,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         }
         else if(roleString.equals("LabTechnicianRole"))
         {
-            role=new LabTechnicianRole();
+            role=new LabTechRole();
         }
         else if(roleString.equals("PatientRole"))
         {
@@ -1247,12 +1247,12 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
                 Organization org = (Organization) userJTable.getValueAt(row,2);
                 //reomve account
                 
-            for (Organization organization : enterprise.getOrgDirectory().getOrganizationList()) 
+            for (Organization organization : enterprise.getOrgDirectory().getOrgList()) 
             {
                 if(org.equals(organization)){
                 organization.getUserAccountDirectory().removeUserAccount(selectedUsrAcc);
                 
-                organization.getEmployeeDirectory().removeEmployee(selectedUsrAcc.getEmployee());
+                organization.getEmpDirectory().removeEmployee(selectedUsrAcc.getEmployee());
                 
                  popData();
                  JOptionPane.showMessageDialog(null, "Deleted successfully!!");

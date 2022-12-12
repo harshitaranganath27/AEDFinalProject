@@ -163,7 +163,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         boolean flag=false;
         BedManagementDepartment bedOrg=null;
         organizationDir orgDir = enterprise.getOrgDirectory();
-        for(Organization org : orgDir.getOrganizationList() ){
+        for(Organization org : orgDir.getOrgList() ){
             if(org.getName().equals(Organization.Type.BedManagement.getValue()))
             {
                 //if bed management departemtn is present then navigate to bed management screen

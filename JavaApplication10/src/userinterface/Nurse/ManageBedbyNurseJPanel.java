@@ -37,7 +37,7 @@ public class ManageBedbyNurseJPanel extends javax.swing.JPanel {
         btnUpdate.setEnabled(true);
         btnSave.setEnabled(false);
         bedCountTxt.setEditable(false);
-        currentBedCountTxt.setText(String.valueOf(this.bedorg.getBedCount()));
+        currentBedCountTxt.setText(String.valueOf(this.bedorg.getCount()));
         currentBedCountTxt.setEditable(false);
         populateBedTable();
         
@@ -49,7 +49,7 @@ public class ManageBedbyNurseJPanel extends javax.swing.JPanel {
         
         model.setRowCount(0);
         String bedStatus = (String)bedStatusCmb.getSelectedItem();
-        for (Bed bed : bedorg.getBedList().getBedList()){
+        for (Bed bed : bedorg.getList().getBedList()){
             if(bed.getStatus().getStatus().equals(bedStatus)){
             Object[] row = new Object[3];
             row[0] = bed.getBedID();
@@ -400,7 +400,7 @@ public class ManageBedbyNurseJPanel extends javax.swing.JPanel {
             return;
         }
         int newCountBed = Integer.parseInt(bedCountTxt.getText());
-        int currentCount = bedorg.getBedCount();
+        int currentCount = bedorg.getCount();
         
         if(currentCount > newCountBed){
             JOptionPane.showMessageDialog(null, "Cannot decrease bed Count!");
@@ -417,7 +417,7 @@ public class ManageBedbyNurseJPanel extends javax.swing.JPanel {
         btnUpdate.setEnabled(true);
         btnSave.setEnabled(false);
         bedCountTxt.setEditable(false);
-        currentBedCountTxt.setText(String.valueOf(bedorg.getBedCount()));
+        currentBedCountTxt.setText(String.valueOf(bedorg.getCount()));
         bedCountTxt.setText("");
     }//GEN-LAST:event_btnSaveActionPerformed
 

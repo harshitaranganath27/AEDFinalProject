@@ -84,7 +84,7 @@ public class AssignBedJPanel extends javax.swing.JPanel {
         boolean flag=false;
         BedManagementDepartment bedOrg=null;
         organizationDir orgDir = enterprise.getOrgDirectory();
-        for(Organization org : orgDir.getOrganizationList() ){
+        for(Organization org : orgDir.getOrgList() ){
             if(org.getName().equals(Organization.Type.BedManagement.getValue()))
             {
                 //if bed management departemtn is present then navigate to bed management screen
@@ -630,7 +630,7 @@ void populateDetails(){
         SimpleDateFormat formatter1=new SimpleDateFormat("yyyy-MM-dd");
         Date date1=formatter1.parse(dateString);
         
-        List<Bed> bedList = bedorg.getBedList().getBedList();
+        List<Bed> bedList = bedorg.getList().getBedList();
         DefaultTableModel model = (DefaultTableModel) bedJTable.getModel();
         
         model.setRowCount(0);

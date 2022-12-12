@@ -88,9 +88,9 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
 
-        for (Organization organization : directory.getOrganizationList()) {
+        for (Organization organization : directory.getOrgList()) {
             Object[] row = new Object[2];
-            row[0] = organization.getOrganizationID();
+            row[0] = organization.getOrgID();
             row[1] = organization;//.getName();
 
             model.addRow(row);
@@ -303,7 +303,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
     private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed
 
         Type type = (Type) organizationJComboBox.getSelectedItem();
-        for (Organization org : directory.getOrganizationList()) {
+        for (Organization org : directory.getOrgList()) {
             if (org.getName().equals(type.getValue())) {
                 JOptionPane.showMessageDialog(null, "Department already exists, cannot create new!");
                 return;
@@ -378,7 +378,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         int dialogResult = JOptionPane.showConfirmDialog(null, "Would you like to delete the department details?", "Warning", dialogButton);
         if (dialogResult == JOptionPane.YES_OPTION) {
             Organization org = (Organization) organizationJTable.getValueAt(row, 1);
-            ArrayList<Organization> orgList = enterprise.getOrgDirectory().getOrganizationList();
+            ArrayList<Organization> orgList = enterprise.getOrgDirectory().getOrgList();
             org.removeAllUserAccount();
             org.removeAllEmployee();
             orgList.remove(org);

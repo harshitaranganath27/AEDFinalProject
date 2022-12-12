@@ -76,12 +76,12 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
     void populateDoctor(){
        List<Employee> empList= new ArrayList<>();//enterprise.getEmployeeDirectory().getDoctorList();
        
-       ArrayList<Organization> deptList = enterprise.getOrgDirectory().getOrganizationList();
+       ArrayList<Organization> deptList = enterprise.getOrgDirectory().getOrgList();
        if(enterprise.getType().getValue().equals(Enterprise.enterprseType.Hospital.getValue())){
            for(Organization dept : deptList)
                 {
                     if(dept instanceof Business.Org.GeneralOrg){
-                    for(Employee emp : dept.getEmployeeDirectory().getEmployeeList()){
+                    for(Employee emp : dept.getEmpDirectory().getEmployeeList()){
                         if(emp.getRole()!= null && (emp.getRole().equals("Doctor Role")))
                         {
                             empList.add(emp);
@@ -94,7 +94,7 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
                 {
                     if((dept instanceof Business.Org.PathologyOrganization) || 
                             (dept instanceof Business.Org.RadiologyOrganization)){
-                    for(Employee emp : dept.getEmployeeDirectory().getEmployeeList()){
+                    for(Employee emp : dept.getEmpDirectory().getEmployeeList()){
                         if(emp.getRole()!= null && (emp.getRole().equals("Lab Technician Role")))
                         {
                             empList.add(emp);
@@ -545,7 +545,7 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
        
        List<Employee> empList= new ArrayList<>();//enterprise.getEmployeeDirectory().getDoctorList();
        UserAccount drUserAcc =null;
-       ArrayList<Organization> deptList = enterprise.getOrgDirectory().getOrganizationList();
+       ArrayList<Organization> deptList = enterprise.getOrgDirectory().getOrgList();
        for(Organization dept : deptList)
        {
            if(dept instanceof Business.Org.GeneralOrg){

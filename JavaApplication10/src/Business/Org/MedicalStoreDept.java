@@ -23,22 +23,15 @@ public class MedicalStoreDept extends Organization {
 
     public MedicalStoreDept() {
         super(Organization.Type.MedicalStore.getValue());
-        //this.medicineList= this.
-       // medicineList = new MedicineDirectory();
-      // super(type);
     }
 
     //@Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
         roles.add(new PharmacyWorkerRole());
-        //roles.add(new WorkerRole());
         return roles;
-}
-
-    
-    
+}  
     public void generateBill(Prescription prescription){
-       //generates bill for medicines bought at the store
+       //generates medicine bill
     }
 }

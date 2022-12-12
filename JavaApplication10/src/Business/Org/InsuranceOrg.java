@@ -20,7 +20,6 @@ public class InsuranceOrg extends Organization
      
 
     public InsuranceOrg() {
-       // super(Organization.Type.Dental.getValue());
        super(Organization.Type.Insurance.getValue());
     }
 

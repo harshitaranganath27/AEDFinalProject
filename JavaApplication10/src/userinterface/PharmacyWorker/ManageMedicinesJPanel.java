@@ -11,7 +11,7 @@ import Business.Medicine.MedicineDirectory;
 import Business.Org.Organization;
 import Business.Org.organizationDir;
 import Business.Role.DoctorRole;
-import Business.Role.LabTechnicianRole;
+import Business.Role.LabTechRole;
 import Business.Role.NurseRole;
 import Business.Role.PatientRole;
 import Business.Role.ReceptionistRole;
@@ -57,7 +57,7 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
     public void populateOrganizationComboBox(){
         cmbMainMedicineType.removeAllItems();
         
-        for (Organization organization : organizationDir.getOrganizationList()){
+        for (Organization organization : organizationDir.getOrgList()){
             cmbMainMedicineType.addItem(organization);
         }
     }
@@ -694,7 +694,7 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
         }
         else if(roleString.equals("LabTechnicianRole"))
         {
-            role=new LabTechnicianRole();
+            role=new LabTechRole();
         }
         else if(roleString.equals("PatientRole"))
         {

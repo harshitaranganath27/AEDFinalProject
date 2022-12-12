@@ -96,13 +96,13 @@ public class BookSelfAppointmentJPanel extends javax.swing.JPanel {
        List<Employee> empList= new ArrayList<>();//enterprise.getEmployeeDirectory().getDoctorList();
        
        
-       if(enterprise !=null && enterprise.getOrgDirectory() != null && enterprise.getOrgDirectory().getOrganizationList() !=null){
-       ArrayList<Organization> deptList = enterprise.getOrgDirectory().getOrganizationList();
+       if(enterprise !=null && enterprise.getOrgDirectory() != null && enterprise.getOrgDirectory().getOrgList() !=null){
+       ArrayList<Organization> deptList = enterprise.getOrgDirectory().getOrgList();
        if(enterprise.getType().getValue().equals(Enterprise.enterprseType.Hospital.getValue())){
            for(Organization dept : deptList)
                 {
                     if(dept instanceof Business.Org.GeneralOrg){
-                    for(Employee emp : dept.getEmployeeDirectory().getEmployeeList()){
+                    for(Employee emp : dept.getEmpDirectory().getEmployeeList()){
                         if(emp.getRole()!= null && (emp.getRole().equals("Doctor Role")))
                         {
                             empList.add(emp);
@@ -546,7 +546,7 @@ public class BookSelfAppointmentJPanel extends javax.swing.JPanel {
        
        List<Employee> empList= new ArrayList<>();//enterprise.getEmployeeDirectory().getDoctorList();
        UserAccount drUserAcc =null;
-       ArrayList<Organization> deptList = enterprise.getOrgDirectory().getOrganizationList();
+       ArrayList<Organization> deptList = enterprise.getOrgDirectory().getOrgList();
        for(Organization dept : deptList)
        {
            if(dept instanceof Business.Org.GeneralOrg){

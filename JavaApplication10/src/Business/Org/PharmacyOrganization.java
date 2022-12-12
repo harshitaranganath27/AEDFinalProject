@@ -12,19 +12,12 @@ import Business.Medicine.MedicineDirectory;
  * @author harshita
  */
 public class PharmacyOrganization {
-    
-    
-    MedicineDirectory medicinedir;
-    
-    
-    public  PharmacyOrganization(){
-        medicinedir = new MedicineDirectory();
-                
+
+    MedicineDirectory medDir;
+
+    public PharmacyOrganization() {
+        medDir = new MedicineDirectory();
+
     }
-    
-    
-    
-    
-    
-    
+
 }

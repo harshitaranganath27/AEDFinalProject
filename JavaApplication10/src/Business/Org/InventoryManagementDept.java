@@ -12,8 +12,8 @@ import Business.Department.Inventory;
  * @author harshita
  */
 public class InventoryManagementDept {
-    String productID;
-    Inventory inventory;
+    String prodID;
+    Inventory inventoryObj;
 
     
 
