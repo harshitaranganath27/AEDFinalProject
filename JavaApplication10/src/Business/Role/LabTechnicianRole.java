@@ -8,7 +8,7 @@ import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
-import userinterface.LabTechnicianRole.LabAssistantMainAreaJPanel;
+import userinterface.LabTechnician.LabAssistantMainAreaJPanel;
 import javax.swing.JPanel;
 
 /**

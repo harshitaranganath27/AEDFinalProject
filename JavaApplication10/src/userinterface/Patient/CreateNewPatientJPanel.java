@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.PatientLogin;
+package userinterface.Patient;
 
 import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
@@ -12,6 +12,7 @@ import Business.Enterprise.Enterprise;
 import Business.Enterprise.Insurance.Insurance;
 import Business.Location.Location;
 import Business.Network.Network;
+import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -20,51 +21,40 @@ import Business.Patient.PatientDirectory;
 import Business.Role.PatientRole;
 import Business.Utility.Validation;
 import java.awt.CardLayout;
+import java.awt.Component;
 import java.util.ArrayList;
 import java.util.List;
-import userinterface.subPanel;
-
+import userinterface.Receptionist.ReceptionistWorkAreaJPanel;
 
 /**
  *
  * @author harshita
  */
-public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
+public class CreateNewPatientJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form CreateNewPatientJPanel
      */
    
     JPanel userProcessContainer;
-    //Organization organization;
-    //Enterprise enterprise;
-    //UserAccount userAccount;
-    DB4OUtil dB4OUtil ;
+    Organization organization;
+    Enterprise enterprise;
+    UserAccount userAccount;
     EcoSystem ecosystem;
     Location locationPoint;
     //Network network;
-    public CreateNewPatientSelfJPanel(
-            JPanel userProcessContainer,
-            DB4OUtil dB4OUtil 
-            ,EcoSystem ecosystem) {
+    public CreateNewPatientJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem ecosystem) {
         initComponents();
-        if(ecosystem.getPatientDirectory() == null){
+        if(enterprise.getPatientDirectory() == null){
             PatientDirectory patientDirectory = new PatientDirectory();
             patientDirectory.setPatientList(new ArrayList<Patient>());
-            ecosystem.setPatientDirectory(patientDirectory);
+            enterprise.setPatientDirectory(patientDirectory);
         }
-        
-        if(ecosystem.getPatientDirectory().getPatientList() == null){
-            
-            ecosystem.getPatientDirectory().setPatientList(new ArrayList<Patient>());
-           // ecosystem.setPatientDirectory(patientDirectory);
-        }
-       this.userProcessContainer = userProcessContainer;
-        //this.organization = organization;
-        //this.enterprise = enterprise;
-       // this.userAccount = account;
+        this.userProcessContainer = userProcessContainer;
+        this.organization = organization;
+        this.enterprise = enterprise;
+        this.userAccount = account;
         this.ecosystem = ecosystem;
-        this.dB4OUtil = dB4OUtil;
         //this.network = network;
         populateMobileCarrierComboBox();
         populateCmbInsurance();
@@ -83,7 +73,6 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
         lblPatientName = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txtPatientName = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
         lblGender = new javax.swing.JLabel();
         txtGender = new javax.swing.JComboBox();
         lblPhoneNumber = new javax.swing.JLabel();
@@ -95,7 +84,6 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         txtBloodGroup = new javax.swing.JComboBox();
         btnSubmit = new javax.swing.JButton();
-        txtAddrStreet = new javax.swing.JTextField();
         lblemail = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
@@ -110,6 +98,8 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         lblUserName2 = new javax.swing.JLabel();
         txtSSN = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        txtAddrStreet = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         txtAddrCity = new javax.swing.JTextField();
@@ -121,7 +111,7 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
 
         jButton1.setBackground(new java.awt.Color(102, 147, 255));
         jButton1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jButton1.setText("Back");
+        jButton1.setLabel("Back");
         jButton1.setPreferredSize(new java.awt.Dimension(100, 40));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -133,13 +123,13 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
         lblPatientName.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         lblPatientName.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblPatientName.setText("Patient Name:");
-        add(lblPatientName, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 124, -1));
+        add(lblPatientName, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 124, -1));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(68, 145, 157));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Register Patient");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, 199, -1));
+        jLabel2.setText("Create Patient");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 10, 199, -1));
 
         txtPatientName.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         txtPatientName.addActionListener(new java.awt.event.ActionListener() {
@@ -147,54 +137,49 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
                 txtPatientNameActionPerformed(evt);
             }
         });
-        add(txtPatientName, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 166, -1));
-
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel3.setText("Street:");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 470, 60, -1));
+        add(txtPatientName, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 110, 166, -1));
 
         lblGender.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         lblGender.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblGender.setText("Gender:");
-        add(lblGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 124, -1));
+        add(lblGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 124, -1));
 
         txtGender.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         txtGender.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "--Select--", "Male", "Female", "Other" }));
-        add(txtGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, 166, -1));
+        add(txtGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, 166, -1));
 
         lblPhoneNumber.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         lblPhoneNumber.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblPhoneNumber.setText("Phone Number:");
-        add(lblPhoneNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, 124, -1));
+        add(lblPhoneNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 124, -1));
 
         txtPhoneNumber.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        add(txtPhoneNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 166, -1));
+        add(txtPhoneNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 166, -1));
 
         lblUserName.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         lblUserName.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblUserName.setText("Username:");
-        add(lblUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 280, 90, -1));
+        lblUserName.setText("UserName:");
+        add(lblUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, 90, -1));
 
         txtUserName.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, 166, -1));
+        add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 166, -1));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel1.setText("Password:");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, 74, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 360, 74, -1));
 
         txtPassword.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 330, 166, -1));
+        add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 360, 166, -1));
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText("Blood Group:");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 380, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 410, -1, -1));
 
         txtBloodGroup.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         txtBloodGroup.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "--Select--", "A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-" }));
-        add(txtBloodGroup, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 380, 166, -1));
+        add(txtBloodGroup, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 410, 166, -1));
 
         btnSubmit.setBackground(new java.awt.Color(102, 147, 255));
         btnSubmit.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -205,28 +190,20 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
                 btnSubmitActionPerformed(evt);
             }
         });
-        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 750, -1, -1));
-
-        txtAddrStreet.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtAddrStreet.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtAddrStreetActionPerformed(evt);
-            }
-        });
-        add(txtAddrStreet, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 470, 166, -1));
+        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 770, -1, -1));
 
         lblemail.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         lblemail.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblemail.setText("Email:");
-        add(lblemail, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 129, -1));
+        add(lblemail, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 129, -1));
 
         txtEmail.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 240, 166, -1));
+        add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, 166, -1));
 
         jLabel11.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(25, 56, 82));
         jLabel11.setText("Carrier:");
-        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, -1, 20));
+        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, -1, 20));
 
         contactCarrier.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         contactCarrier.setForeground(new java.awt.Color(25, 56, 82));
@@ -241,27 +218,27 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
                 contactCarrierKeyTyped(evt);
             }
         });
-        add(contactCarrier, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 160, 165, -1));
+        add(contactCarrier, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, 165, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/CreatePatient.jpg"))); // NOI18N
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 80, 299, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 80, 299, -1));
 
         lblUserName1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         lblUserName1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblUserName1.setText("Insurance ID:");
-        add(lblUserName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 600, 110, -1));
+        add(lblUserName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 630, 110, -1));
 
         txtInsuranceID.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        add(txtInsuranceID, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 600, 166, -1));
+        add(txtInsuranceID, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 630, 166, -1));
 
         lblGender1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         lblGender1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblGender1.setText("Insurance Company:");
-        add(lblGender1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 650, 160, -1));
+        add(lblGender1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 670, 170, -1));
 
         cmbInsuranceCompany.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         cmbInsuranceCompany.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "--Select--", "Male", "Female", "Other" }));
-        add(cmbInsuranceCompany, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 650, 160, -1));
+        add(cmbInsuranceCompany, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 670, 160, -1));
 
         jPanel14.setBackground(new java.awt.Color(196, 224, 229));
 
@@ -273,10 +250,10 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 210, Short.MAX_VALUE)
+            .addGap(0, 230, Short.MAX_VALUE)
         );
 
-        add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 210));
+        add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 230));
 
         jPanel13.setBackground(new java.awt.Color(68, 145, 157));
 
@@ -284,35 +261,48 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
         jPanel13.setLayout(jPanel13Layout);
         jPanel13Layout.setHorizontalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
+            .addGap(0, 230, Short.MAX_VALUE)
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 40, Short.MAX_VALUE)
         );
 
-        add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 200, -1));
+        add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 230, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/createPatient2.png"))); // NOI18N
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 350, 530, 340));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 340, 500, 340));
 
         lblUserName2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         lblUserName2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblUserName2.setText("SSN:");
-        add(lblUserName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 700, 110, -1));
+        add(lblUserName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 720, 110, -1));
 
         txtSSN.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        add(txtSSN, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 700, 166, -1));
+        add(txtSSN, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 720, 166, -1));
+
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel3.setText("Street:");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 490, 60, -1));
+
+        txtAddrStreet.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        txtAddrStreet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAddrStreetActionPerformed(evt);
+            }
+        });
+        add(txtAddrStreet, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 490, 166, -1));
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel7.setText("ADDRESS");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 430, 90, -1));
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 450, 90, -1));
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel8.setText("City:");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 510, 60, -1));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 530, 60, -1));
 
         txtAddrCity.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         txtAddrCity.addActionListener(new java.awt.event.ActionListener() {
@@ -320,12 +310,12 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
                 txtAddrCityActionPerformed(evt);
             }
         });
-        add(txtAddrCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 510, 166, -1));
+        add(txtAddrCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 530, 166, -1));
 
         jLabel9.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel9.setText("State:");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 550, 60, -1));
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 570, 60, -1));
 
         txtAddrState.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         txtAddrState.addActionListener(new java.awt.event.ActionListener() {
@@ -333,7 +323,7 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
                 txtAddrStateActionPerformed(evt);
             }
         });
-        add(txtAddrState, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 550, 166, -1));
+        add(txtAddrState, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 570, 166, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtPatientNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPatientNameActionPerformed
@@ -367,7 +357,7 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
         if(txtPatientName.getText().isEmpty() || txtGender.getSelectedIndex() == 0 ||
                 txtPhoneNumber.getText().isEmpty() || txtUserName.getText().isEmpty() ||
                 txtPassword.getText().isEmpty() || txtBloodGroup.getSelectedIndex() == 0
-                || txtAddrStreet.getText().isEmpty()
+//                || txtAddress.getText().isEmpty()
                 || txtEmail.getText().isEmpty()||
                 txtInsuranceID.getText().isEmpty()
                 || txtSSN.getText().isEmpty()
@@ -425,11 +415,10 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
         
         Insurance insuranceE =(Insurance)cmbInsuranceCompany.getSelectedItem();
         String insuranceId = txtInsuranceID.getText();
-        UserAccount account = ecosystem.getUserAccountDirectory().createUserAccount(txtUserName.getText(), txtPassword.getText(), null, new PatientRole());
-       
-       
-        Employee emp= ecosystem.getPatientDirectory().createPatient(txtPatientName.getText(), phoneNumberString, txtGender.getSelectedItem().toString(),
+        UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(txtUserName.getText(), txtPassword.getText(), null, new PatientRole());
+        Employee emp= enterprise.getPatientDirectory().createPatient(txtPatientName.getText(), phoneNumberString, txtGender.getSelectedItem().toString(),
                 txtBloodGroup.getSelectedItem().toString(), account, locationPoint, txtEmail.getText(),insuranceE,insuranceId , ssnString);
+        
         account.setEmployee(emp);
        
         if (contactCarrier.getSelectedItem().equals("ATT")) {
@@ -443,7 +432,8 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
         }
         emp.setCarrier(phoneNumberString);
         
-        JOptionPane.showMessageDialog(null, "Registered successfully!","Information", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Patient added successfully!","Information", JOptionPane.INFORMATION_MESSAGE);
+        DB4OUtil.getInstance().storeSystem(ecosystem);
         
         txtPatientName.setText("");
         txtPhoneNumber.setText("");
@@ -470,19 +460,25 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
     
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-//        userProcessContainer.remove(this);
-//       
-//        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-//        layout.previous(userProcessContainer);
-
-      userProcessContainer.removeAll();
-        //JPanel blankJP = new JPanel();
-        subPanel blankJP = new subPanel();
-        userProcessContainer.add("blank", blankJP);
-        CardLayout crdLyt = (CardLayout) userProcessContainer.getLayout();
-        crdLyt.next(userProcessContainer);
-        dB4OUtil.storeSystem(ecosystem);
-
+        userProcessContainer.remove(this);
+        Component[] componentArray =userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        ReceptionistWorkAreaJPanel sysAdminwajp = (ReceptionistWorkAreaJPanel) component;
+        
+         if(enterprise.getEnterpriseType().getValue().equals("Hospital"))
+        {
+           sysAdminwajp.populatePatients();
+        }
+        
+        
+        if(enterprise.getEnterpriseType().getValue().equals("Lab"))
+        {
+           sysAdminwajp.populateTest();
+        }
+        
+       // .populatePatients();
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     
