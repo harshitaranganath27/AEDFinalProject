@@ -115,12 +115,12 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         lblNumofBeds = new javax.swing.JLabel();
         cmbBedNUmber = new javax.swing.JComboBox();
-        jPanel1 = new javax.swing.JPanel();
-        addDeptShowJpanelBtn = new javax.swing.JButton();
-        viewBtn = new javax.swing.JButton();
-        deletBtn = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         backJButton = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        addDeptShowJpanelBtn1 = new javax.swing.JButton();
+        deletBtn1 = new javax.swing.JButton();
+        viewBtn1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -161,7 +161,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
             organizationJTable.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 200, -1, 148));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 310, -1, 148));
 
         addDeptJPanel.setBackground(new java.awt.Color(255, 255, 255));
         addDeptJPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Add Department", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 14), new java.awt.Color(68, 145, 157))); // NOI18N
@@ -239,54 +239,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
                 .addGap(114, 114, 114))
         );
 
-        add(addDeptJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 350, -1));
-
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        addDeptShowJpanelBtn.setBackground(new java.awt.Color(0, 51, 255));
-        addDeptShowJpanelBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        addDeptShowJpanelBtn.setForeground(new java.awt.Color(255, 255, 255));
-        addDeptShowJpanelBtn.setText("Create Department");
-        addDeptShowJpanelBtn.setPreferredSize(new java.awt.Dimension(167, 40));
-        addDeptShowJpanelBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addDeptShowJpanelBtnActionPerformed(evt);
-            }
-        });
-        jPanel1.add(addDeptShowJpanelBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 200, 150));
-
-        viewBtn.setBackground(new java.awt.Color(0, 51, 255));
-        viewBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        viewBtn.setForeground(new java.awt.Color(255, 255, 255));
-        viewBtn.setText("View Department");
-        viewBtn.setPreferredSize(new java.awt.Dimension(167, 40));
-        viewBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                viewBtnActionPerformed(evt);
-            }
-        });
-        jPanel1.add(viewBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 170, 200, 150));
-
-        deletBtn.setBackground(new java.awt.Color(0, 51, 255));
-        deletBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        deletBtn.setForeground(new java.awt.Color(255, 255, 255));
-        deletBtn.setText("Delete Department");
-        deletBtn.setPreferredSize(new java.awt.Dimension(167, 40));
-        deletBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deletBtnActionPerformed(evt);
-            }
-        });
-        jPanel1.add(deletBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 170, 200, 150));
-
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 51, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Manage Department");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, 230, -1));
-
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 820, 80));
+        add(addDeptJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 300, 350, -1));
 
         backJButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         backJButton.setForeground(new java.awt.Color(0, 51, 255));
@@ -298,6 +251,73 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
             }
         });
         add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 142, 55));
+
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 51, 255));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Manage Department");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, 230, -1));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        addDeptShowJpanelBtn1.setBackground(new java.awt.Color(255, 155, 54));
+        addDeptShowJpanelBtn1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        addDeptShowJpanelBtn1.setForeground(new java.awt.Color(102, 102, 102));
+        addDeptShowJpanelBtn1.setText("Create Department");
+        addDeptShowJpanelBtn1.setPreferredSize(new java.awt.Dimension(167, 40));
+        addDeptShowJpanelBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addDeptShowJpanelBtn1ActionPerformed(evt);
+            }
+        });
+
+        deletBtn1.setBackground(new java.awt.Color(255, 155, 54));
+        deletBtn1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        deletBtn1.setForeground(new java.awt.Color(102, 102, 102));
+        deletBtn1.setText("Delete Department");
+        deletBtn1.setPreferredSize(new java.awt.Dimension(167, 40));
+        deletBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deletBtn1ActionPerformed(evt);
+            }
+        });
+
+        viewBtn1.setBackground(new java.awt.Color(255, 155, 54));
+        viewBtn1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        viewBtn1.setForeground(new java.awt.Color(102, 102, 102));
+        viewBtn1.setText("View Department");
+        viewBtn1.setPreferredSize(new java.awt.Dimension(167, 40));
+        viewBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewBtn1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(88, 88, 88)
+                .addComponent(addDeptShowJpanelBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                .addComponent(viewBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(63, 63, 63)
+                .addComponent(deletBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(65, 65, 65))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(addDeptShowJpanelBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(deletBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(viewBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed
@@ -345,57 +365,68 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
 
     }//GEN-LAST:event_organizationJComboBoxActionPerformed
 
-    private void viewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewBtnActionPerformed
-        // TODO add your handling code here:
-        ManageUserAccountJPanel muajp = new ManageUserAccountJPanel(userProcessContainer, enterprise, system);
-        userProcessContainer.add("ManageUserAccountJPanel", muajp);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_viewBtnActionPerformed
-
     private void closebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closebtnActionPerformed
         addDeptJPanel.setVisible(false);
     }//GEN-LAST:event_closebtnActionPerformed
 
-    private void addDeptShowJpanelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addDeptShowJpanelBtnActionPerformed
+    private void addDeptShowJpanelBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addDeptShowJpanelBtn1ActionPerformed
         // TODO add your handling code here:
         addDeptJPanel.setVisible(true);
         lblNumofBeds.setVisible(false);
         cmbBedNUmber.setVisible(false);
         populateCombo();
-    }//GEN-LAST:event_addDeptShowJpanelBtnActionPerformed
+    }//GEN-LAST:event_addDeptShowJpanelBtn1ActionPerformed
 
-    private void deletBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletBtnActionPerformed
+    private void viewBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewBtn1ActionPerformed
+        // TODO add your handling code here:
+        ManageUserAccountJPanel muajp = new ManageUserAccountJPanel(userProcessContainer, enterprise, system);
+        userProcessContainer.add("ManageUserAccountJPanel", muajp);
+
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_viewBtn1ActionPerformed
+
+    private void deletBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletBtn1ActionPerformed
         // TODO add your handling code here:
 
         int row = organizationJTable.getSelectedRow();
-        if (row < 0) {
+        if(row<0){
             JOptionPane.showMessageDialog(null, "Please select a row!!", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
-        int dialogButton = JOptionPane.YES_NO_CANCEL_OPTION;
-        int dialogResult = JOptionPane.showConfirmDialog(null, "Would you like to delete the department details?", "Warning", dialogButton);
-        if (dialogResult == JOptionPane.YES_OPTION) {
-            Organization org = (Organization) organizationJTable.getValueAt(row, 1);
+        int dialogButton= JOptionPane.YES_NO_CANCEL_OPTION;
+        int dialogResult = JOptionPane.showConfirmDialog(null, "Would you like to delete the department details?", "Warning",dialogButton);
+        if(dialogResult==JOptionPane.YES_OPTION){
+            //UserAccount selectedUsrAcc = (UserAccount) organizationJTable.getValueAt(row,0);
+            Organization org = (Organization) organizationJTable.getValueAt(row,1);
+            //reomve account
             ArrayList<Organization> orgList = enterprise.getOrgDirectory().getOrgList();
-            org.removeAllUserAccount();
-            org.removeAllEmployee();
-            orgList.remove(org);
-            populateTable();
-            JOptionPane.showMessageDialog(null, "Deleted successfully!!");
+            // for (Organization organization : orgList)
+            // {
+                ///   if(org.equals(organization)){
+
+                    org.removeAllUserAccount();
+                    org.removeAllEmployee();
+                    //org.getEmployeeDirectory().removeAllEmployee();
+                    orgList.remove(org);
+                    populateTable();
+                    // populateCombo();
+                    JOptionPane.showMessageDialog(null, "Deleted successfully!!");
+                    // }//inner for
+                //}//if
         }
 
-    }//GEN-LAST:event_deletBtnActionPerformed
+    }//GEN-LAST:event_deletBtn1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel addDeptJPanel;
-    private javax.swing.JButton addDeptShowJpanelBtn;
+    private javax.swing.JButton addDeptShowJpanelBtn1;
     private javax.swing.JButton addJButton;
     private javax.swing.JButton backJButton;
     private javax.swing.JButton closebtn;
     private javax.swing.JComboBox cmbBedNUmber;
-    private javax.swing.JButton deletBtn;
+    private javax.swing.JButton deletBtn1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
@@ -403,6 +434,6 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblNumofBeds;
     private javax.swing.JComboBox organizationJComboBox;
     private javax.swing.JTable organizationJTable;
-    private javax.swing.JButton viewBtn;
+    private javax.swing.JButton viewBtn1;
     // End of variables declaration//GEN-END:variables
 }

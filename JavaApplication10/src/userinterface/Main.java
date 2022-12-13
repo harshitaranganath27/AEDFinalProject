@@ -10,22 +10,27 @@ import Business.Enterprise.Enterprise;
 import Business.Network.Network;
 import Business.Org.Organization;
 import Business.UserAccount.UserAccount;
+import java.awt.GraphicsEnvironment;
 import java.awt.CardLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import userinterface.LoginPatient.CreateNewPatientSelfJPanel;
 
 /**
  *
- * @author 
+ * @author
  */
 public class Main extends javax.swing.JFrame {
 
     /**
      * Creates new form Main
      */
+    static boolean maximized = true;
+    static ImageIcon ii;
     private EcoSystem system;
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
+    
     public Main() {
         initComponents();
         system = dB4OUtil.retrieveSystem();
@@ -51,6 +56,7 @@ public class Main extends javax.swing.JFrame {
         loginJLabel = new javax.swing.JLabel();
         btnRegister = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
+        maxBtn = new javax.swing.JButton();
         container = new javax.swing.JPanel();
         kPanel1 = new userinterface.subPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -140,6 +146,15 @@ public class Main extends javax.swing.JFrame {
         });
         jPanel1.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 660, 140, 20));
 
+        maxBtn.setBackground(new java.awt.Color(204, 204, 204));
+        maxBtn.setText("maximize");
+        maxBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                maxBtnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(maxBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, -1, -1));
+
         jSplitPane1.setLeftComponent(jPanel1);
 
         container.setBackground(new java.awt.Color(161, 237, 246));
@@ -221,11 +236,11 @@ public class Main extends javax.swing.JFrame {
         txtUsername.setEnabled(true);
         txtPasswordField.setEnabled(true);
         btnLogin.setEnabled(true);
-
+        
         btnRegister.setEnabled(true);
         txtUsername.setText("");
         txtPasswordField.setText("");
-
+        
         container.removeAll();
         container.add("blank", kPanel1);
         CardLayout crdLyt = (CardLayout) container.getLayout();
@@ -246,7 +261,7 @@ public class Main extends javax.swing.JFrame {
 
         //Step1: Check in the system admin user account directory if you have the user
         UserAccount userAccount = system.getUserAccountDirectory().authenticateUser(userName, password);
-
+        
         Enterprise inEnterprise = null;
         Organization inOrganization = null;
         Network assignedNetwork = null;
@@ -267,7 +282,7 @@ public class Main extends javax.swing.JFrame {
                                 break;
                             }
                         }
-
+                        
                     } else {
                         inEnterprise = enterprise;
                         break;
@@ -281,7 +296,7 @@ public class Main extends javax.swing.JFrame {
                 }
             }
         }
-
+        
         if (userAccount == null) {
             JOptionPane.showMessageDialog(null, "Invalid credentials");
             return;
@@ -291,7 +306,7 @@ public class Main extends javax.swing.JFrame {
             //System.out.println("In network-> "+ assignedNetwork.getName());
             layout.next(container);
         }
-
+        
         btnLogin.setEnabled(false);
         btnLogout.setEnabled(true);
         txtUsername.setEnabled(false);
@@ -302,8 +317,26 @@ public class Main extends javax.swing.JFrame {
     private void txtPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPasswordFieldActionPerformed
+
+    private void maxBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_maxBtnActionPerformed
+        // TODO add your handling code here:
+        if (maximized) {
+            //handle fullscreen - taskbar
+            Main.this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+            GraphicsEnvironment env = GraphicsEnvironment.getLocalGraphicsEnvironment();
+            Main.this.setMaximizedBounds(env.getMaximumWindowBounds());
+            maxBtn.setText("Minimize");
+            maximized = false;
+        } else {
+            
+            setExtendedState(JFrame.NORMAL);
+            maxBtn.setText("Maximize");
+            maximized = true;
+        }
+    }//GEN-LAST:event_maxBtnActionPerformed
     int xy1;
     int xx1;
+
     /**
      * @param args the command line arguments
      */
@@ -353,6 +386,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblUsername;
     private javax.swing.JLabel loginJLabel;
+    private javax.swing.JButton maxBtn;
     private javax.swing.JPasswordField txtPasswordField;
     private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables
