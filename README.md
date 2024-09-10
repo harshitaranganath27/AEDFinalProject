@@ -1,4 +1,4 @@
-# AEDFinalProject
+# Hospital Management System - JAVA project
 README.md
 ---------------------------------------------------------------------------------------------------------------------
 The "Hospital Management System” is an enterprise solution to manage the day to day activities of a hospital. This program was created to function as a whole, comprising Employees, Doctors (Surgeons), Nurses, Patients, Bills, and Complaints, among other things. Employees, Doctors, patients,Nurses and accounts will all be tracked by the suggested system, which will also produce reports outlining the organization. Through several user-friendly menu-driven modules, this project's GUI-based software will assist in creating accounts, storing patient information, updating records, and retrieving the information.
